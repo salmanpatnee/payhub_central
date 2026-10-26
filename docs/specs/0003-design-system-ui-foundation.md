@@ -1,7 +1,7 @@
 # 0003. Design system and UI foundation
 
 **Date**: 2026-10-26
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
@@ -212,12 +212,12 @@ Library code in `resources/js/lib/`: `formatMoney(cents, currency)` and `formatR
 
 Order follows Tracer Bullet: first one thin thread that changes how a real page looks end to end (tokens, shell, a Home page using a header and an empty state), then thicken with the parts that later pages need.
 
-1. Set the tokens in `resources/css/app.css`, set the font to Instrument Sans (400, 500, 600) as PayHub does, add the sidebar dot pattern rule and the PayHub logo, set `APP_NAME`, remove the `.dark` block, `useAppearance`, `AppearanceTabs`, the Appearance page, route and menu entry, the `HandleAppearance` middleware and its registration, the `appearance` cookie exception, and the dark script and `@class` in `app.blade.php`, change the inline page background to the new `--background`, keep a never matching `dark` variant, satisfies **AC-1**, **AC-2**, **AC-12**
-2. Update the shell: `collapsible="icon"`, text mark in the header, Home nav item, skip link, `SchedulerBanner` slot under the top bar, satisfies **AC-3**, **AC-9**, **AC-10**
-3. Add `PageHeader` and `EmptyState`, and rebuild the `dashboard` page with them (the thin thread end to end), satisfies **AC-4**, **AC-7**, **AC-13**
-4. Add `formatMoney`, `formatRelative`, `useNow`, `MoneyByCurrency` and `RelativeTime`, with unit tests for the two formatters, satisfies **AC-5**, **AC-6**
-5. Add `StatCard`, `StatCardSkeleton` and the reduced motion rule, satisfies **AC-7**
-6. Add the `success`, `warning` and `danger` badge variants and the shadcn-vue `Table` part, satisfies **AC-8**, **AC-11**
+1. [x] Set the tokens in `resources/css/app.css`, set the font to Instrument Sans (400, 500, 600) as PayHub does, add the sidebar dot pattern rule and the PayHub logo, set `APP_NAME`, remove the `.dark` block, `useAppearance`, `AppearanceTabs`, the Appearance page, route and menu entry, the `HandleAppearance` middleware and its registration, the `appearance` cookie exception, and the dark script and `@class` in `app.blade.php`, change the inline page background to the new `--background`, keep a never matching `dark` variant, satisfies **AC-1**, **AC-2**, **AC-12**
+2. [x] Update the shell: `collapsible="icon"`, text mark in the header, Home nav item, skip link, `SchedulerBanner` slot under the top bar, satisfies **AC-3**, **AC-9**, **AC-10**
+3. [x] Add `PageHeader` and `EmptyState`, and rebuild the `dashboard` page with them (the thin thread end to end), satisfies **AC-4**, **AC-7**, **AC-13**
+4. [x] Add `formatMoney`, `formatRelative`, `useNow`, `MoneyByCurrency` and `RelativeTime`, with unit tests for the two formatters, satisfies **AC-5**, **AC-6**
+5. [x] Add `StatCard`, `StatCardSkeleton` and the reduced motion rule, satisfies **AC-7**
+6. [x] Add the `success`, `warning` and `danger` badge variants and the shadcn-vue `Table` part, satisfies **AC-8**, **AC-11**
 7. Accessibility and phone pass: strengthen the kit's weak focus ring where needed, check token contrast, tab through everything, check at 375px, satisfies **AC-10**, **AC-11**
 8. Publish the preview artifact (type, colour, spacing, focus, every part, loading and empty states), get the engineer's approval, and update the scope's "done when" to point to it, satisfies **AC-13**
 
