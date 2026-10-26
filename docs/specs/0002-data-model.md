@@ -1,7 +1,7 @@
 # 0002. Data model for deployments and saved pulls
 
 **Date**: 2026-10-26
-**Status**: Proposed
+**Status**: Accepted
 
 ## Summary
 

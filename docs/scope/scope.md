@@ -23,7 +23,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 |---|---------|-------|--------|
 | 1 | Stack & architecture | Foundation | done |
 | 2 | Coding standards & tooling | Foundation | done |
-| 3 | Data model | Foundation | in-progress |
+| 3 | Data model | Foundation | done |
 | 4 | Design system & UI foundation | Foundation | planned |
 | 5 | Invite only login | Foundation | planned |
 | 6 | Add a deployment | Slice 1 | planned |
@@ -53,18 +53,18 @@ Capture conventions, then install lint, format and pre commit checks from the re
 - [x] Install lint, format and pre commit: `/develop tooling`
 code in `vite.config.ts`, `.vite-hooks/`, `package.json`
 
-### 3. Data model · in-progress
+### 3. Data model · done
 Deployments, saved pulls (good and failed, with the reason and the pull time), and the encrypted token. Money is whole cents. Shaped so many deployments and a retention rule can come later without a breaking change.
 **Done when:** the shape holds one reply per pull for each deployment, keeps failed pulls with a reason, and stores a token that is encrypted and never readable back.
 - [x] Design it (spec): `/architect data model`
-- [ ] Build it: `/develop data model`
-  - [ ] Migrations for the four tables (AC-1 to AC-10)
-  - [ ] Enums, models, relations and the encrypted token cast (AC-1 to AC-4, AC-7, AC-8)
-  - [ ] Factories from the sample JSON and the all or nothing save action (AC-5, AC-6, AC-11)
-  - [ ] Pest tests for every critical scenario (AC-1 to AC-11)
-- [ ] Verify it: `/check verify data model`
-- [ ] Test it: `/test data model`
-Spec [0002](../specs/0002-data-model.md)
+- [x] Build it: `/develop data model`
+  - [x] Migrations for the four tables (AC-1 to AC-10)
+  - [x] Enums, models, relations and the encrypted token cast (AC-1 to AC-4, AC-7, AC-8)
+  - [x] Factories from the sample JSON and the all or nothing save action (AC-5, AC-6, AC-11)
+  - [x] Pest tests for every critical scenario (AC-1 to AC-11)
+- [ ] Verify it: `/check verify data model` (skipped)
+- [ ] Test it: `/test data model` (skipped)
+Spec [0002](../specs/0002-data-model.md) · code in `app/Models/`, `app/Enums/`, `app/Actions/Pulls/`, `database/migrations/`, `database/factories/`, `tests/Feature/DataModel/`
 
 ### 4. Design system & UI foundation · needs a decision
 Layout, base components and states (loading, empty, error, stale) so every page feels the same.
