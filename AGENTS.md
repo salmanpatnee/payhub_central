@@ -26,6 +26,18 @@ npm run build                     # Build (run locally, upload public/build)
 php artisan test                  # Test (Pest)
 ```
 
+Scripts that exist now (from `composer.json` and `package.json`):
+
+```bash
+composer run setup                # First time setup (install, .env, key, migrate, build)
+composer run lint                 # Pint, fixes files (lint:check only reports)
+composer run types:check          # PHPStan (Larastan, level 7)
+composer run test                 # Pint check, PHPStan, then php artisan test
+composer run ci:check             # npm run check, npm run types:check, then composer test
+npm run check                     # Front end lint and format (vp check, --fix via check:fix)
+npm run types:check               # vue-tsc
+```
+
 ## Specs
 
 Stored in `docs/specs/`. Scope in `docs/scope/scope.md`.
