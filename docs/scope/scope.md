@@ -24,7 +24,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 1 | Stack & architecture | Foundation | done |
 | 2 | Coding standards & tooling | Foundation | done |
 | 3 | Data model | Foundation | done |
-| 4 | Design system & UI foundation | Foundation | planned |
+| 4 | Design system & UI foundation | Foundation | in-progress |
 | 5 | Invite only login | Foundation | planned |
 | 6 | Add a deployment | Slice 1 | planned |
 | 7 | Pull a summary by hand | Slice 1 | planned |
@@ -66,10 +66,19 @@ Deployments, saved pulls (good and failed, with the reason and the pull time), a
 - [ ] Test it: `/test data model` (skipped)
 Spec [0002](../specs/0002-data-model.md) · code in `app/Models/`, `app/Enums/`, `app/Actions/Pulls/`, `database/migrations/`, `database/factories/`, `tests/Feature/DataModel/`
 
-### 4. Design system & UI foundation · needs a decision
-Layout, base components and states (loading, empty, error, stale) so every page feels the same.
-**Done when:** the base components cover type, colour, spacing and keyboard focus, and a sample page shows them.
-- [ ] Design it (spec): `/architect design system & UI foundation`
+### 4. Design system & UI foundation · in-progress
+Layout, base components and states (loading and empty now; stale and unavailable are designed in later features) so every page feels the same.
+**Done when:** the base components cover type, colour, spacing and keyboard focus, an approved preview artifact shows them, and the Home page uses them.
+- [x] Design it (spec): `/architect design system & UI foundation`
+- [ ] Build it: `/develop design system & UI foundation`
+  - [ ] Tokens, Inter font, light only and the sidebar shell with banner (AC-1, AC-2, AC-3, AC-9, AC-10, AC-12)
+  - [ ] Page header, empty state and the Home page thread (AC-4, AC-7, AC-13)
+  - [ ] Money, time and stat card parts with formatter tests (AC-5, AC-6, AC-7)
+  - [ ] Badge variants, table part, keyboard and phone pass (AC-8, AC-10, AC-11)
+  - [ ] Publish the preview artifact and get it approved (AC-13)
+- [ ] Verify it: `/check verify design system & UI foundation`
+- [ ] Test it: `/test design system & UI foundation`
+Spec [0003](../specs/0003-design-system-ui-foundation.md)
 
 ### 5. Invite only login · needs a decision
 Staff sign in with an account an admin created for them. No public sign up. Everyone who can log in is an admin for now.
