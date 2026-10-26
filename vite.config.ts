@@ -68,6 +68,8 @@ export default defineConfig({
         htmlWhitespaceSensitivity: 'css',
         ignorePatterns: [
             '.github/**',
+            '**/*.md',
+            'docs/**',
             'composer.json',
             'resources/js/components/ui/*',
             'resources/views/mail/*',
@@ -76,5 +78,12 @@ export default defineConfig({
             functions: ['clsx', 'cn', 'cva'],
             stylesheet: 'resources/css/app.css',
         },
+    },
+    staged: {
+        '*.php': (files) => [
+            `vendor/bin/pint ${files.join(' ')}`,
+            `vendor/bin/phpstan analyse --memory-limit=1G ${files.join(' ')}`,
+        ],
+        '*.{js,ts,vue,css,json}': 'vp check --fix',
     },
 });

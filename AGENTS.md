@@ -55,8 +55,8 @@ Stored in `docs/specs/`. Scope in `docs/scope/scope.md`.
 ## Tooling
 
 Chosen here, installed by `/develop tooling`:
-- Lint and format: Laravel Pint (PHP), ESLint and Prettier (Vue and TypeScript). No PHP static analysis for now.
-- Pre-commit: format, lint and type checks on changed files only. Tests do not run on commit.
+- Lint and format: Laravel Pint (PHP), Vite+ `vp check` (Vue and TypeScript, replaces ESLint and Prettier; markdown and `docs/` are not formatted). PHPStan (Larastan, level 7) for PHP static analysis.
+- Pre-commit: `vp staged` (set in `vite.config.ts`, hook in `.vite-hooks/`, installed by `npm run prepare`) runs Pint and PHPStan on staged PHP and `vp check --fix` on staged JS, TS, Vue, CSS and JSON. Tests do not run on commit.
 - Tests: Pest unit and feature tests. Pull logic is tested with faked replies built from `docs/central-dashboard-sample.json`.
 - CI: not yet (add when a second person works on the code).
 

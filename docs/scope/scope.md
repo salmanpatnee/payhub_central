@@ -22,7 +22,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | # | Feature | Phase | Status |
 |---|---------|-------|--------|
 | 1 | Stack & architecture | Foundation | done |
-| 2 | Coding standards & tooling | Foundation | planned |
+| 2 | Coding standards & tooling | Foundation | done |
 | 3 | Data model | Foundation | planned |
 | 4 | Design system & UI foundation | Foundation | planned |
 | 5 | Invite only login | Foundation | planned |
@@ -49,7 +49,9 @@ Spec [0001](../specs/0001-stack-and-architecture/index.md) · code in the repo r
 ### 2. Coding standards & tooling
 Capture conventions, then install lint, format and pre commit checks from the real scaffolded project.
 **Done when:** root `AGENTS.md` reflects the real stack, and lint, format and pre commit run clean.
-- [ ] Capture conventions + tooling choices: `/audit`
+- [x] Capture conventions + tooling choices: `/audit`
+- [x] Install lint, format and pre commit: `/develop tooling`
+code in `vite.config.ts`, `.vite-hooks/`, `package.json`
 
 ### 3. Data model · needs a decision
 Deployments, saved pulls (good and failed, with the reason and the pull time), and the encrypted token. Money is whole cents. Shaped so many deployments and a retention rule can come later without a breaking change.
