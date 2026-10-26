@@ -1,7 +1,7 @@
 # 0001. Stack and architecture for the Central Dashboard
 
 **Date**: 2026-10-26
-**Status**: Proposed
+**Status**: Accepted
 
 ## Summary
 

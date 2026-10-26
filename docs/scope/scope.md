@@ -21,7 +21,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 
 | # | Feature | Phase | Status |
 |---|---------|-------|--------|
-| 1 | Stack & architecture | Foundation | in-progress |
+| 1 | Stack & architecture | Foundation | done |
 | 2 | Coding standards & tooling | Foundation | planned |
 | 3 | Data model | Foundation | planned |
 | 4 | Design system & UI foundation | Foundation | planned |
@@ -37,14 +37,14 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 
 ## Foundations
 
-### 1. Stack & architecture · in-progress
+### 1. Stack & architecture · done
 Record the stack from the brief (Laravel, Vue with Inertia, Tailwind, MySQL, queued jobs) as a decision, then scaffold a project that boots.
 **Done when:** the stack is recorded in a spec and the empty scaffold boots locally and passes its build.
 - [x] Decide the stack (spec): `/architect stack & architecture`
-- [ ] Scaffold from the decision: `/develop stack & architecture`
-- [ ] Verify it: `/check verify stack & architecture`
-- [ ] Test it: `/test stack & architecture`
-Spec [0001](../specs/0001-stack-and-architecture/index.md)
+- [x] Scaffold from the decision: `/develop stack & architecture`
+- [ ] Verify it: `/check verify stack & architecture` (skipped)
+- [ ] Test it: `/test stack & architecture` (skipped)
+Spec [0001](../specs/0001-stack-and-architecture/index.md) · code in the repo root (`app/`, `resources/js/`, `tests/`)
 
 ### 2. Coding standards & tooling
 Capture conventions, then install lint, format and pre commit checks from the real scaffolded project.
