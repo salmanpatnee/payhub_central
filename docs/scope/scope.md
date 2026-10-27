@@ -116,14 +116,14 @@ Spec [0005](../specs/0005-add-a-deployment/index.md) · code in `app/Http/Contro
 Call `GET /api/central/v1/summary` for one deployment, check the reply against contract v1, and save it with the pull time. Save failed pulls with the reason. Build and test it against the sample JSON and faked replies.
 **Done when:** a good reply is saved as is, unknown keys and currencies are accepted, a version other than `v1`, a 401, 403, 404, 429 or 503 is saved as a failed pull, and the last good reply is kept.
 - [x] Design it (spec): `/architect pull a summary by hand`
-- [ ] Build it: `/develop pull a summary by hand`
-  - [ ] Thin thread: `pulls:run` command, the pull action and the call, a good pull saved from the sample JSON (AC-1, AC-2, AC-3)
-  - [ ] Failed pulls: status mapping, redirect, timeout, network, and the 429 wait (AC-4, AC-5, AC-7)
-  - [ ] Reply checks: version, key, required fields, lengths and sums, with the 2 KB body cut (AC-6)
-  - [ ] Guards: paused, waiting, lock, removed, unreadable token, no token leaks, last good kept (AC-8 to AC-11)
-- [ ] Verify it: `/check verify pull a summary by hand`
+- [x] Build it: `/develop pull a summary by hand`
+  - [x] Thin thread: `pulls:run` command, the pull action and the call, a good pull saved from the sample JSON (AC-1, AC-2, AC-3)
+  - [x] Failed pulls: status mapping, redirect, timeout, network, and the 429 wait (AC-4, AC-5, AC-7)
+  - [x] Reply checks: version, key, required fields, lengths and sums, with the 2 KB body cut (AC-6)
+  - [x] Guards: paused, waiting, lock, removed, unreadable token, no token leaks, last good kept (AC-8 to AC-11)
+- [x] Verify it: `/check verify pull a summary by hand` (all steps in verify.md ticked, real pull on payhub-staging good, 2026-10-27)
 - [ ] Test it: `/test pull a summary by hand`
-Spec [0006](../specs/0006-pull-a-summary-by-hand.md)
+Spec [0006](../specs/0006-pull-a-summary-by-hand/index.md) · code in `app/Actions/Pulls/PullDeployment.php`, `app/Actions/Pulls/FetchSummary.php`, `app/Console/Commands/PullDeploymentCommand.php`
 
 ### 8. Home page with a deployment card · needs a decision
 The first real page. A card for the deployment showing today, this month, status and last updated, with money shown per currency.

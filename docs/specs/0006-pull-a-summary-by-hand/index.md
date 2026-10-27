@@ -1,21 +1,11 @@
 # 0006. Pull a summary by hand
 
 **Date**: 2026-10-27
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
 An admin runs one command, `php artisan pulls:run payhub1`, and the dashboard asks that PayHub deployment for its summary, checks the reply, and saves it. A good reply is saved exactly as received. Anything else (a wrong password, a slow server, a broken reply) is saved as a failed pull with a short reason, and the last good reply stays untouched. There is no button yet, because Home and the deployment page come in features 8 and 10, and they can call the same code later.
-
-## Context
-
-Scope feature 7 is the second step of Slice 1 (the thin first thread). Feature 6 can now create a deployment with an encrypted token. Spec 0002 already built the tables, the five enums, and `SaveGoodPull`, the one class that writes a good pull, its four windows and its money rows in one transaction. It also left this feature three jobs: map every HTTP status and failure to a failure code, check that link counts add up, and cap `Retry-After`.
-
-The agreement with PayHub is `docs/central-dashboard-api.md` (contract v1). It says any non 200 reply means "unavailable", unknown keys and currencies must be accepted, a `contract_version` other than `v1` is an error, PayHub allows 6 calls a minute per token, and the token is never to be logged. The sample reply is `docs/central-dashboard-sample.json`.
-
-The main risk is the token. It is sent in a request header to whatever host was saved in feature 6, and an error message from the HTTP library can contain the URL. Nothing from an exception may reach the database, a log or the screen. The second risk is the rate limit: two pulls at the same moment could use up the 6 calls a minute.
-
-No scheduler or queue exists yet (feature 9). Retries, queued jobs and the 5 minute cycle are out of scope here.
 
 ## Requirements
 
@@ -39,42 +29,6 @@ No scheduler or queue exists yet (feature 9). Retries, queued jobs and the 5 min
 - **AC-10**: The token never appears in a saved failure message, a saved body, a log line, the command output or an exception shown to the admin. A null or empty token, or one that cannot be decrypted, is saved as `token_unreadable` and no call is made. An error thrown anywhere in the pull never reaches the default error handler, so no stack trace can carry part of the token.
 - **AC-11**: If the deployment is removed while the call is running, nothing is saved.
 
-## Options considered
-
-### Option 1: An Artisan command over one pull action
-
-A command `pulls:run {key}` calls an action class that does the whole pull. Feature 8 and 10 add a button later that calls the same action, and feature 9 calls it from a queued job.
-
-**Pros**:
-- Smallest change, and no screen is needed. It fits the Tracer Bullet slice.
-- One action is reused by the button and the job later, so nothing is built twice.
-- Easy to test with faked replies built from the sample JSON.
-
-**Cons**:
-- Only someone with server access can run it until feature 8 or 10 adds a button.
-
-### Option 2: A "Pull now" button on Home
-
-A POST route and a button in the browser.
-
-**Pros**:
-- Usable without a terminal.
-
-**Cons**:
-- Home has no deployment list until feature 8, so the button has nowhere sensible to sit.
-- Adds a web route that spends a live token on request, which needs CSRF, throttling and a result screen decided now.
-
-### Option 3: Queue a job per pull now
-
-Dispatch a queued job so the pull runs in the background.
-
-**Pros**:
-- Matches how feature 9 will work.
-
-**Cons**:
-- Feature 9 owns the queue, retries and `Retry-After` handling, so this builds it twice.
-- Adds a worker that must be running just to test one call.
-
 ## Decision
 
 **Chosen option**: Option 1: An Artisan command over one pull action.
@@ -82,12 +36,6 @@ Dispatch a queued job so the pull runs in the background.
 Add `pulls:run {key}` and a `PullDeployment` action that checks the rules for pulling, makes the one call, checks the reply and saves either a good or a failed pull. No UI, no route, no queue.
 
 **Implementation skills**: none installed (see spec 0001).
-
-## Rationale
-
-The scope says feature 7 is the first call and the place where every failure code lives. The slice only needs a way to make that call work and be seen. A command does that with the least code, and it keeps the action free of any web or queue detail, so feature 8, 10 and 9 can each call it as they arrive. A button now (Option 2) would need a place to sit and a result screen that feature 8 will design. A queued job now (Option 3) would pull feature 9's work forward.
-
-The strict number check was chosen because spec 0002 leaves it to this feature, and a reply whose links do not add up should never become the "last good" reply that feature 8 shows. Redirects are never followed because the token is in the request header, and a redirect could send it to another host. Paused deployments are refused even for a manual pull, so "paused" has one meaning everywhere.
 
 ## Feature design
 
@@ -186,12 +134,12 @@ The strict number check was chosen because spec 0002 leaves it to this feature, 
 
 Approach is Tracer Bullet: first one thin working thread (command, one call, a good pull saved), then thicken one strand at a time. No migration is needed because the tables exist. Every test step uses `Http::fake()`; nothing here calls a real PayHub.
 
-1. Add the command, `PullDeployment` and `FetchSummary` and let `SaveGoodPull` accept a null `app_release`, so a faked 200 from the sample JSON is saved through `SaveGoodPull` and the command prints the result, satisfies **AC-1**, **AC-2**, **AC-3**
-2. Add `SaveFailedPull`, `PullFailureKind::message()` and the status mapping (401, 403, 404, 429, other non 200, 3xx, timeout, network), satisfies **AC-4**, **AC-5**
-3. Add the reply checks: JSON and size, version, key, `CheckSummaryReply`, and `invalid_reply` when `SaveGoodPull` throws, with the 2 KB body cut, satisfies **AC-6**
-4. Add the 429 wait: read `Retry-After`, cap it, set `do_not_pull_before`, satisfies **AC-7**
-5. Add the refusals and guards: paused, waiting, lock, removed (before and during the call), unreadable token, satisfies **AC-8**, **AC-10**, **AC-11**
-6. Check that nothing leaks (messages, bodies, logs, output) and that a failed pull leaves the last good one alone, satisfies **AC-9**, **AC-10**
+- [x] 1. Add the command, `PullDeployment` and `FetchSummary` and let `SaveGoodPull` accept a null `app_release`, so a faked 200 from the sample JSON is saved through `SaveGoodPull` and the command prints the result, satisfies **AC-1**, **AC-2**, **AC-3**
+- [x] 2. Add `SaveFailedPull`, `PullFailureKind::message()` and the status mapping (401, 403, 404, 429, other non 200, 3xx, timeout, network), satisfies **AC-4**, **AC-5**
+- [x] 3. Add the reply checks: JSON and size, version, key, `CheckSummaryReply`, and `invalid_reply` when `SaveGoodPull` throws, with the 2 KB body cut, satisfies **AC-6**
+- [x] 4. Add the 429 wait: read `Retry-After`, cap it, set `do_not_pull_before`, satisfies **AC-7**
+- [x] 5. Add the refusals and guards: paused, waiting, lock, removed (before and during the call), unreadable token, satisfies **AC-8**, **AC-10**, **AC-11**
+- [x] 6. Check that nothing leaks (messages, bodies, logs, output) and that a failed pull leaves the last good one alone, satisfies **AC-9**, **AC-10**
 
 ## Consequences
 
