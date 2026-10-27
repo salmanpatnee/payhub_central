@@ -5,7 +5,7 @@
 
 ## Summary
 
-This sets the look and the shared building blocks for every page: one set of colours, one font, one page layout, and a few small parts that show money, times, empty pages and loading pages the same way everywhere. It is the Laravel Vue starter kit with PayHub's own look laid on top (orange accent, Instrument Sans, warm cream sidebar, white pages), as tokens (named style values), light mode only. The exact PayHub values are in `docs/design-reference-payhub.md`. Money always shows one row per currency and is never added across currencies. A preview page (published as an artifact) is the sample page you approve, and the Home page proves the parts in the real app.
+This sets the look and the shared building blocks for every page: one set of colours, one font, one page layout, and a few small parts that show money, times, empty pages and loading pages the same way everywhere. It is the Laravel Vue starter kit with PayHub's own look laid on top (orange accent, Instrument Sans, warm cream sidebar, white pages), as tokens (named style values), light mode only. The exact PayHub values are in `docs/design-reference-payhub.md`. Money always shows one row per currency and is never added across currencies. The Home page proves the parts in the real app. There is no separate preview or sample page.
 
 ## Context
 
@@ -40,7 +40,7 @@ This sets the look and the shared building blocks for every page: one set of col
 - **AC-10**: Every control shows a visible keyboard focus indicator with at least 3:1 contrast. Text has at least 4.5:1 contrast. A "Skip to main content" link is the first tab stop and jumps to `<main id="main-content" tabindex="-1">`. All parts work by keyboard alone.
 - **AC-11**: At 375px width there is no sideways scroll on the page. Cards stack in one column. Wide tables scroll inside their own wrapper.
 - **AC-12**: The font Instrument Sans (400, 500, 600, the same as PayHub) is self hosted through the kit's font tool, with no outside font request at runtime. Digits are tabular in money, tables and numbers.
-- **AC-13**: The `dashboard` route (the Home placeholder) renders in the new shell with `PageHeader` and an `EmptyState` ("No deployments yet"), and needs a login. The engineer approves the preview artifact as the sample page that shows type, colour, spacing, focus and every part above.
+- **AC-13**: The `dashboard` route (the Home placeholder) renders in the new shell with `PageHeader` and an `EmptyState` ("No deployments yet"), and needs a login.
 
 ## Options considered
 
@@ -83,7 +83,7 @@ Use a different library (a larger all in one kit) or add Storybook to document p
 
 **Chosen option**: Option 1: Extend the starter kit with our own tokens and a few shared parts.
 
-Keep shadcn-vue and the kit layout, copy PayHub's look (orange accent, Instrument Sans, warm inset sidebar, white pages, `rounded-xl` cards with a soft shadow, pill status badges, uppercase small labels), apply the tokens and rules below, add the shared parts below, and use a published preview artifact as the sample page.
+Keep shadcn-vue and the kit layout, copy PayHub's look (orange accent, Instrument Sans, warm inset sidebar, white pages, `rounded-xl` cards with a soft shadow, pill status badges, uppercase small labels), apply the tokens and rules below, add the shared parts below. There is no preview artifact or sample page (engineer's choice, 2026-10-27); the Home page is the proof in the real app.
 
 **Implementation skills**: none installed.
 
@@ -206,7 +206,7 @@ Library code in `resources/js/lib/`: `formatMoney(cents, currency)` and `formatR
 - Auth: a logged out request to the Home page is redirected to login, verifies **AC-13**
 - Dark mode gone: the Appearance route returns 404, no `dark` class is set in the HTML, and with the browser emulating a dark computer the parts still render light, verifies **AC-2**
 - Keyboard: tab through the shell and sample parts, every stop shows a focus indicator and the skip link is first, verifies **AC-10**
-- Phone: at 375px width the Home page and the preview have no sideways scroll, verifies **AC-11**
+- Phone: at 375px width the Home page has no sideways scroll, verifies **AC-11**
 
 ## Build plan
 
@@ -219,7 +219,7 @@ Order follows Tracer Bullet: first one thin thread that changes how a real page 
 5. [x] Add `StatCard`, `StatCardSkeleton` and the reduced motion rule, satisfies **AC-7**
 6. [x] Add the `success`, `warning` and `danger` badge variants and the shadcn-vue `Table` part, satisfies **AC-8**, **AC-11**
 7. Accessibility and phone pass: strengthen the kit's weak focus ring where needed, check token contrast, tab through everything, check at 375px, satisfies **AC-10**, **AC-11**
-8. Publish the preview artifact (type, colour, spacing, focus, every part, loading and empty states), get the engineer's approval, and update the scope's "done when" to point to it, satisfies **AC-13**
+8. ~~Publish the preview artifact~~ Dropped by the engineer on 2026-10-27. No preview artifact is built, and nothing replaces it. AC-13 is met by the Home page alone.
 
 ## Consequences
 
@@ -231,7 +231,6 @@ Order follows Tracer Bullet: first one thin thread that changes how a real page 
 **Negative / tradeoffs**:
 - The exact PayHub orange is used only for the logo, the nav marker and large shapes. Buttons and links use a darker orange, so they look slightly deeper than PayHub's. If PayHub changes its orange, `--brand` and `--primary` both need updating.
 - Light only, unlike PayHub. Staff who prefer a dark screen cannot switch. The dark tokens are deleted, so bringing dark mode back later is a small piece of work, not a toggle.
-- The sample page is an artifact, not a page in the app. It can drift from the real components over time, so it is a one time design approval, not living documentation. The scope's "done when" wording changes to match.
 - Stale and unavailable states are not designed here. Feature 8 must design the unavailable display, and a later feature the stale badge. The reserved colours and the badge variants make that cheap, but the risk is that the brief's "never show zero" rule is first seen on screen in feature 8.
 - A fixed `en-US` style and 2 decimals for every currency may differ from how a local bank writes some currencies (for example yen). Accepted because the contract sends hundredths.
 - Changing the font and removing dark mode touches several kit files, so merging future kit updates by hand will need care.
@@ -242,7 +241,7 @@ Order follows Tracer Bullet: first one thin thread that changes how a real page 
 
 ## Follow-up
 
-- [ ] Update the scope row for feature 4: "done when" now says an approved preview artifact shows the parts and the Home page uses them (no in app sample page).
+- [x] Scope row for feature 4: "done when" no longer mentions a preview artifact (done in the scope, 2026-10-27).
 - [ ] Confirm at build time whether the `bunny()` font tool serves Instrument Sans from our own site, as PayHub appears to. If not, use `@fontsource/instrument-sans` and record it here.
 - [ ] Ask PayHub to confirm that all currencies are sent in hundredths (the contract implies it). Only then is the 2 decimal rule final.
 - [ ] Confirm Vite+ can run unit tests (`vp test`). If not, test `formatMoney` and `formatRelative` through the lightest option available and record the choice.

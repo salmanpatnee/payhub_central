@@ -68,14 +68,14 @@ Spec [0002](../specs/0002-data-model.md) · code in `app/Models/`, `app/Enums/`,
 
 ### 4. Design system & UI foundation · in-progress
 Layout, base components and states (loading and empty now; stale and unavailable are designed in later features) so every page feels the same.
-**Done when:** the base components cover type, colour, spacing and keyboard focus, an approved preview artifact shows them, and the Home page uses them.
+**Done when:** the base components cover type, colour, spacing and keyboard focus, and the Home page uses them (no preview artifact, skipped by the engineer).
 - [x] Design it (spec): `/architect design system & UI foundation`
 - [ ] Build it: `/develop design system & UI foundation`
   - [x] Tokens, Inter font, light only and the sidebar shell with banner (AC-1, AC-2, AC-3, AC-9, AC-10, AC-12)
   - [x] Page header, empty state and the Home page thread (AC-4, AC-7, AC-13)
   - [x] Money, time and stat card parts with formatter tests (AC-5, AC-6, AC-7)
   - [ ] Badge variants, table part, keyboard and phone pass (AC-8, AC-10, AC-11)
-  - [ ] Publish the preview artifact and get it approved (AC-13)
+  - [x] Preview artifact: skipped, engineer did not want one (AC-13)
 - [ ] Verify it: `/check verify design system & UI foundation`
 - [ ] Test it: `/test design system & UI foundation`
 Spec [0003](../specs/0003-design-system-ui-foundation.md) · code in `resources/css/app.css`, `resources/js/components/`, `resources/js/lib/`, `resources/js/layouts/`
