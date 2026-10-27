@@ -13,6 +13,7 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Models/PullWindow.php`, `Models/PullWindowAmount.php` | The four windows of a good pull and the money per kind and currency, in whole cents |
 | `Enums/` | `PullStatus`, `PullSource`, `PullFailureKind`, `WindowName`, `AmountKind`. Cast on the models, no free text in those columns |
 | `Actions/Pulls/SaveGoodPull.php` | The only place that writes a good pull, its four windows and its money rows, in one transaction |
+| `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005). The request holds all the rules; saving never calls PayHub |
 | `Concerns/` | Shared validation rules from the starter kit (password, profile) |
 | `Http/Controllers/Settings/` | Profile and security pages from the starter kit, locked down for invite only login (spec 0004) |
 
@@ -38,6 +39,7 @@ php artisan test           # Pest; data model tests are in tests/Feature/DataMod
 - `Pull::deployment()` includes removed deployments (`withTrashed()`), so old pulls still resolve their deployment.
 - `latestGoodPull()` and `latestPull()` use `ofMany` with `id` as a tie breaker, because two pulls can share the same second.
 - Do not write good pulls anywhere except `SaveGoodPull`. It enforces "four windows, all or nothing" in code, not in the database.
+- `bootstrap/app.php` calls `dontFlash(['token'])` because sessions are stored in the database. Without it a refused form would write the plain token into the `sessions` table. Keep any new form that takes a token on this guard.
 - Money is `unsignedBigInteger` cents. Never add different currencies together.
 
 ## Related specs

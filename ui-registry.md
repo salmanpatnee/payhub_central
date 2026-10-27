@@ -177,6 +177,24 @@ Last updated: 2026-10-27
 
 **Pattern notes:** use this for any value a person may see but not edit. Say who can change it in the hint.
 
+### Admin form (add deployment)
+
+File: `resources/js/pages/deployments/Create.vue`
+Last updated: 2026-10-27
+
+| Property | Class |
+| --- | --- |
+| Page wrapper | `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6`, `PageHeader` first |
+| Form | Inertia `Form`, `max-w-xl space-y-6`, no card around it |
+| One field | `grid gap-2`: `Label`, kit `Input` (no extra classes), optional hint, `InputError` |
+| Hint | `text-sm text-muted-foreground` |
+| Secret field | `PasswordInput`, `autocomplete="off"`, `data-1p-ignore="true"`, `data-lpignore="true"`, `aria-label`, cleared with `reset-on-error` |
+| On or off switch | kit `Checkbox` inside a `Label` with `flex items-center space-x-3`, same as Remember me |
+| Submit | kit `Button` (primary) with `Spinner` while `processing`, not full width |
+| Shadow / border | none |
+
+**Pattern notes:** use this for every admin form (edit deployment in feature 12, staff in feature 13). Errors sit directly under their field. Never refill a secret field after an error. Put text containing `//` in a script constant, not in a template attribute.
+
 ## Global rules
 
 | Property | Rule |
