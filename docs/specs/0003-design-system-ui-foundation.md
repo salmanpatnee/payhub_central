@@ -243,7 +243,7 @@ Order follows Tracer Bullet: first one thin thread that changes how a real page 
 
 - [x] Scope row for feature 4: "done when" no longer mentions a preview artifact (done in the scope, 2026-10-27).
 - [ ] Confirm at build time whether the `bunny()` font tool serves Instrument Sans from our own site, as PayHub appears to. If not, use `@fontsource/instrument-sans` and record it here.
-- [ ] Ask PayHub to confirm that all currencies are sent in hundredths (the contract implies it). Only then is the 2 decimal rule final.
+- [x] Confirmed in the PayHub code on 2026-10-27: `payments.amount` is an integer, PayHub divides by 100 with 2 decimals, `CentralSummary` sends the raw sum, and only usd, gbp and pkr are supported. The 2 decimal rule is final.
 - [ ] Confirm Vite+ can run unit tests (`vp test`). If not, test `formatMoney` and `formatRelative` through the lightest option available and record the choice.
 - [ ] Feature 8 (home page) designs the unavailable state. The stale badge and its time limits stay in the scope's Deferred list.
 - [ ] Feature 9 (scheduled pulls) writes the scheduler heartbeat and the `scheduler.stale` shared prop. Until then the banner stays hidden, so a dead cron is not visible before feature 9 ships.
