@@ -50,6 +50,7 @@ Stored in `docs/specs/`. Scope in `docs/scope/scope.md`.
 - Money is whole cents (integers), never floats. Never add different currencies together.
 - Tokens are encrypted, hidden from serialization, never sent to the browser, never logged, and never passed to a job (pass the deployment id).
 - Any non 200 reply from PayHub means "unavailable": keep the last good reply and mark it stale. Never show zero.
+- Do not write tests (Pest or `vp test`) unless the user asks. Building a feature does not include writing its tests; they come later from `/test` or an explicit request. Running the existing suite to check nothing broke is fine.
 - Conventional commit messages (`feat:`, `fix:`, and so on).
 
 ## Tooling
