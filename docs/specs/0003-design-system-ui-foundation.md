@@ -1,7 +1,7 @@
 # 0003. Design system and UI foundation
 
 **Date**: 2026-10-26
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 
@@ -218,7 +218,7 @@ Order follows Tracer Bullet: first one thin thread that changes how a real page 
 4. [x] Add `formatMoney`, `formatRelative`, `useNow`, `MoneyByCurrency` and `RelativeTime`, with unit tests for the two formatters, satisfies **AC-5**, **AC-6**
 5. [x] Add `StatCard`, `StatCardSkeleton` and the reduced motion rule, satisfies **AC-7**
 6. [x] Add the `success`, `warning` and `danger` badge variants and the shadcn-vue `Table` part, satisfies **AC-8**, **AC-11**
-7. Accessibility and phone pass: strengthen the kit's weak focus ring where needed, check token contrast, tab through everything, check at 375px, satisfies **AC-10**, **AC-11**
+7. [x] Accessibility and phone pass: strengthen the kit's weak focus ring where needed, check token contrast, tab through everything, check at 375px, satisfies **AC-10**, **AC-11**
 8. ~~Publish the preview artifact~~ Dropped by the engineer on 2026-10-27. No preview artifact is built, and nothing replaces it. AC-13 is met by the Home page alone.
 
 ## Consequences
