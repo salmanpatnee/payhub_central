@@ -49,7 +49,7 @@ class SaveGoodPull
                 'contract_version' => $this->string($reply, 'contract_version'),
                 'generated_at' => CarbonImmutable::parse($this->string($reply, 'generated_at'))->utc(),
                 'timezone' => $this->string($reply, 'timezone'),
-                'app_release' => $this->string($this->array($reply, 'deployment'), 'app_release'),
+                'app_release' => $this->array($reply, 'deployment')['app_release'] ?? null,
                 'raw_reply' => $rawBody,
             ]);
 
