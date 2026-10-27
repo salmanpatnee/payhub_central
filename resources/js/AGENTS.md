@@ -30,7 +30,7 @@ npm run build        # also regenerates the Wayfinder routes
 - Use tokens only. No hard coded colours in components. Green, amber and red mean status and nothing else, and always come with a word or icon. Orange `--brand` is for the logo, the nav marker and large shapes, never text.
 - Light only. Nothing sets a `dark` class. Do not add `dark:` styling or a theme switch.
 - Format money and time with the helpers above, never inline. Never add amounts across currencies.
-- Every page has exactly one `h1`, through `PageHeader`. Pages use `p-4 md:p-6` padding and `max-w-7xl`.
+- Every page has exactly one `h1`, through `PageHeader`. Exceptions: auth pages (the auth layout's title) and settings pages (an `sr-only` h1). Pages use `p-4 md:p-6` padding and `max-w-7xl`.
 - Icons come from `@lucide/vue` (not `lucide-vue-next`).
 - Money in the browser is whole cents. No float maths.
 
