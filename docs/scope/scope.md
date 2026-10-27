@@ -28,7 +28,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 5 | Invite only login | Foundation | done |
 | 6 | Add a deployment | Slice 1 | done |
 | 7 | Pull a summary by hand | Slice 1 | done |
-| 8 | Home page with a deployment card | Slice 1 | planned |
+| 8 | Home page with a deployment card | Slice 1 | in-progress |
 | 9 | Scheduled pulls | Slice 2 | planned |
 | 10 | Deployment page | Slice 3 | planned |
 | 11 | Recent pull history | Slice 3 | planned |
@@ -125,10 +125,19 @@ Call `GET /api/central/v1/summary` for one deployment, check the reply against c
 - [x] Test it: `/test pull a summary by hand` (121 Pest tests in tests/Unit/Pulls and tests/Feature/Pulls, all passing, 2026-10-27)
 Spec [0006](../specs/0006-pull-a-summary-by-hand/index.md) · code in `app/Actions/Pulls/PullDeployment.php`, `app/Actions/Pulls/FetchSummary.php`, `app/Console/Commands/PullDeploymentCommand.php`
 
-### 8. Home page with a deployment card · needs a decision
+### 8. Home page with a deployment card
 The first real page. A card for the deployment showing today, this month, status and last updated, with money shown per currency.
 **Done when:** after a pull the card shows the saved numbers per currency in cents formatted as money, shows "last updated", and shows an unavailable state instead of zero when the last pull failed.
-- [ ] Design it (spec): `/architect home page`
+- [x] Design it (spec): `/architect home page`
+- [ ] Build it: `/develop home page`
+  - [ ] Thin thread: `HomeController`, route, a plain card with Today completed money (AC-1, AC-3)
+  - [ ] Card builder with safe fields, both windows, fixed query count (AC-3, AC-4, AC-9, AC-12)
+  - [ ] Live, Unavailable, Paused and new states with notes and "No data yet" (AC-2, AC-5, AC-6, AC-7)
+  - [ ] Final `DeploymentCard` layout, grid, footnote, headings (AC-10, AC-11)
+  - [ ] 60 second polling (AC-8)
+- [ ] Verify it: `/check verify home page`
+- [ ] Test it: `/test home page`
+Spec [0007](../specs/0007-home-page/index.md)
 
 ## Slice 2: Scheduled pulls
 
