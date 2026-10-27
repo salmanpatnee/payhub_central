@@ -9,7 +9,7 @@ A read only internal app. It pulls a payment summary from each PayHub deployment
 - **Key dependencies**: Fortify (invite only login, two factor for admins), Tailwind CSS 4, shadcn-vue (Reka UI), MySQL, Pest 4
 - **Package manager**: composer and npm
 - **Runtime parts**: database queue, Laravel scheduler started by cron (`schedule:run` every minute), Hostinger hosting
-- Full decision and build rules: `docs/specs/0001-stack-and-architecture/index.md`. Not scaffolded yet, so versions are to confirm.
+- Full decision and build rules: `docs/specs/0001-stack-and-architecture/index.md`. Scaffolded. Versions: Laravel 13.17, Inertia 3, Vue 3.5, Tailwind 4, Pest 4, Vite+ 1.4.
 
 ## Build approach
 
@@ -17,7 +17,7 @@ Tracer Bullet (build one thin working thread through every layer first, then thi
 
 ## Commands
 
-Expected after the scaffold (confirm once it exists):
+The scaffold exists, so the basics are confirmed:
 
 ```bash
 composer install && npm install   # Install
@@ -36,6 +36,8 @@ composer run test                 # Pint check, PHPStan, then php artisan test
 composer run ci:check             # npm run check, npm run types:check, then composer test
 npm run check                     # Front end lint and format (vp check, --fix via check:fix)
 npm run types:check               # vue-tsc
+npm test                          # Front end unit tests (vp test)
+php artisan db:seed               # Create the first admin (see database/seeders/DatabaseSeeder.php)
 ```
 
 ## Specs
@@ -50,6 +52,7 @@ Stored in `docs/specs/`. Scope in `docs/scope/scope.md`.
 - Money is whole cents (integers), never floats. Never add different currencies together.
 - Tokens are encrypted, hidden from serialization, never sent to the browser, never logged, and never passed to a job (pass the deployment id).
 - Any non 200 reply from PayHub means "unavailable": keep the last good reply and mark it stale. Never show zero.
+- Light only, no dark mode. Money and time are formatted only by the helpers in `resources/js/lib`.
 - Do not write tests (Pest or `vp test`) unless the user asks. Building a feature does not include writing its tests; they come later from `/test` or an explicit request. Running the existing suite to check nothing broke is fine.
 - Conventional commit messages (`feat:`, `fix:`, and so on).
 
@@ -67,6 +70,6 @@ Chosen here, installed by `/develop tooling`:
 
 ## Context files
 
-<!-- Nested AGENTS.md files are listed here as they are created -->
+- [resources/js/AGENTS.md](resources/js/AGENTS.md): the Vue front end, design tokens, shared parts, money and time formatting
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
