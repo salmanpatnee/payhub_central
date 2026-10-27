@@ -1,7 +1,7 @@
 # 0006. Pull a summary by hand
 
 **Date**: 2026-10-27
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 

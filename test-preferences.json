@@ -1,0 +1,9 @@
+{
+    "tool": "pest",
+    "gate": null,
+    "additionalTools": [],
+    "e2eTool": "none",
+    "testDir": "tests",
+    "filePattern": "*Test.php",
+    "packageManager": "composer"
+}

@@ -27,7 +27,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 4 | Design system & UI foundation | Foundation | done |
 | 5 | Invite only login | Foundation | done |
 | 6 | Add a deployment | Slice 1 | done |
-| 7 | Pull a summary by hand | Slice 1 | in-progress |
+| 7 | Pull a summary by hand | Slice 1 | done |
 | 8 | Home page with a deployment card | Slice 1 | planned |
 | 9 | Scheduled pulls | Slice 2 | planned |
 | 10 | Deployment page | Slice 3 | planned |
@@ -112,7 +112,7 @@ An admin adds one deployment: key, name, base URL, token and on or off. The toke
 - [ ] Document it: `/document add a deployment`
 Spec [0005](../specs/0005-add-a-deployment/index.md) · code in `app/Http/Controllers/DeploymentController.php`, `app/Http/Requests/StoreDeploymentRequest.php`, `resources/js/pages/deployments/Create.vue`
 
-### 7. Pull a summary by hand · in-progress
+### 7. Pull a summary by hand · done
 Call `GET /api/central/v1/summary` for one deployment, check the reply against contract v1, and save it with the pull time. Save failed pulls with the reason. Build and test it against the sample JSON and faked replies.
 **Done when:** a good reply is saved as is, unknown keys and currencies are accepted, a version other than `v1`, a 401, 403, 404, 429 or 503 is saved as a failed pull, and the last good reply is kept.
 - [x] Design it (spec): `/architect pull a summary by hand`
@@ -122,7 +122,7 @@ Call `GET /api/central/v1/summary` for one deployment, check the reply against c
   - [x] Reply checks: version, key, required fields, lengths and sums, with the 2 KB body cut (AC-6)
   - [x] Guards: paused, waiting, lock, removed, unreadable token, no token leaks, last good kept (AC-8 to AC-11)
 - [x] Verify it: `/check verify pull a summary by hand` (all steps in verify.md ticked, real pull on payhub-staging good, 2026-10-27)
-- [ ] Test it: `/test pull a summary by hand`
+- [x] Test it: `/test pull a summary by hand` (121 Pest tests in tests/Unit/Pulls and tests/Feature/Pulls, all passing, 2026-10-27)
 Spec [0006](../specs/0006-pull-a-summary-by-hand/index.md) · code in `app/Actions/Pulls/PullDeployment.php`, `app/Actions/Pulls/FetchSummary.php`, `app/Console/Commands/PullDeploymentCommand.php`
 
 ### 8. Home page with a deployment card · needs a decision
