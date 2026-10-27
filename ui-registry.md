@@ -144,6 +144,39 @@ Last updated: 2026-10-27
 
 **Pattern notes:** the page never scrolls sideways. Only the table wrapper does.
 
+## Forms
+
+### Login form (auth pages)
+
+File: `resources/js/pages/auth/Login.vue`, `resources/js/layouts/auth/AuthSimpleLayout.vue`
+Last updated: 2026-10-27
+
+| Property | Class |
+| --- | --- |
+| Page background | `bg-background`, centred with `flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10` |
+| Form layout | `flex flex-col gap-6`, fields `grid gap-6`, one field `grid gap-2` (Label, then Input, then `InputError`) |
+| Title | `text-xl font-medium` (the layout's only `h1`) |
+| Description | `text-sm text-muted-foreground` |
+| Submit | kit `Button` (primary), `mt-4 w-full`, `Spinner` while `processing` |
+| Remember me | kit `Checkbox` inside a `Label` with `flex items-center space-x-3` |
+| Status message | `mb-4 text-center text-sm font-medium text-green-600` |
+| Shadow / border | none (no card around the form) |
+
+**Pattern notes:** no "forgot password" or sign up links (invite only, spec 0004). Every auth page uses the same field stack, so new auth forms (such as the two factor code) should match it.
+
+### Read only field (profile email)
+
+File: `resources/js/pages/settings/Profile.vue`
+Last updated: 2026-10-27
+
+| Property | Class |
+| --- | --- |
+| Field wrapper | `grid gap-2`, Label then Input then hint |
+| Input | kit `Input`, `mt-1 block w-full`, `disabled`, bound with `:model-value`, no `name` |
+| Hint | `text-sm text-muted-foreground` |
+
+**Pattern notes:** use this for any value a person may see but not edit. Say who can change it in the hint.
+
 ## Global rules
 
 | Property | Rule |

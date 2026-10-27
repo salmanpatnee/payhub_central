@@ -25,7 +25,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 2 | Coding standards & tooling | Foundation | done |
 | 3 | Data model | Foundation | done |
 | 4 | Design system & UI foundation | Foundation | done |
-| 5 | Invite only login | Foundation | in-progress |
+| 5 | Invite only login | Foundation | done |
 | 6 | Add a deployment | Slice 1 | planned |
 | 7 | Pull a summary by hand | Slice 1 | planned |
 | 8 | Home page with a deployment card | Slice 1 | planned |
@@ -80,18 +80,18 @@ Layout, base components and states (loading and empty now; stale and unavailable
 - [ ] Test it: `/test design system & UI foundation` (skipped, engineer asked for no tests yet)
 Spec [0003](../specs/0003-design-system-ui-foundation.md) · code in `resources/css/app.css`, `resources/js/components/`, `resources/js/lib/`, `resources/js/layouts/`
 
-### 5. Invite only login · in-progress
-Staff sign in with an account an admin created for them. No public sign up. Everyone who can log in is an admin for now.
+### 5. Invite only login · done
+Staff sign in with an account an admin created for them. No public sign up and no forgot password. Everyone who can log in is an admin for now.
 **Done when:** a seeded first admin can sign in and out, a stranger cannot register, and every page below needs a login.
 - [x] Design it (spec): `/architect invite only login`
-- [ ] Build it: `/develop invite only login`
-  - [ ] Prove the kit login thread with the seeded admin (AC-1, AC-2, AC-4 to AC-7)
-  - [ ] Redirect `/` to the dashboard and remove the Welcome page (AC-3, AC-10)
-  - [ ] Lock the profile email and put profile routes behind verified (AC-8)
-  - [ ] Remove delete account, refresh route helpers, fix old tests (AC-9, AC-10)
-- [ ] Verify it: `/check verify invite only login`
-- [ ] Test it: `/test invite only login`
-Spec [0004](../specs/0004-invite-only-login.md) · code in `routes/`, `app/Http/Controllers/Settings/`, `resources/js/pages/settings/`
+- [x] Build it: `/develop invite only login`
+  - [x] Prove the kit login thread with the seeded admin (AC-1, AC-2, AC-4, AC-5, AC-7)
+  - [x] Redirect `/` to the dashboard and remove the Welcome page (AC-3, AC-10)
+  - [x] Lock the profile email and put profile routes behind verified (AC-8)
+  - [x] Remove delete account, refresh route helpers, fix old tests (AC-9, AC-10)
+- [ ] Verify it: `/check verify invite only login` (skipped)
+- [ ] Test it: `/test invite only login` (skipped)
+Spec [0004](../specs/0004-invite-only-login/index.md) · code in `routes/`, `app/Http/Controllers/Settings/`, `resources/js/pages/settings/`
 
 ## Slice 1: Pull one deployment end to end
 

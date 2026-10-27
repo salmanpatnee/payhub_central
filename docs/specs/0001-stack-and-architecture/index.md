@@ -81,7 +81,7 @@ These close the gaps a cross check found. They are rules, not steps. `/develop` 
 - Fortify registration is turned off in `config/fortify.php`. Login throttling is on.
 - Session cookies: secure, encrypted, `http_only`, `same_site=lax`, 120 minute lifetime. Trusted proxies are set so Hostinger's HTTPS is detected, and URLs are forced to HTTPS in production.
 - The first admin is created with an `app:create-admin` command that asks for email and password. There is no seeded default password.
-- Invites: an admin creates the user with a random unusable password. The app emails a "set your password" link built on Fortify's password reset, with a longer expiry (48 hours). These users are marked email verified.
+- Invites: an admin creates the user with a random unusable password. The app emails a "set your password" link with a longer expiry (48 hours). Fortify's password reset is turned off (spec 0004), so feature 13 decides how that link works. These users are marked email verified.
 
 **Environment and deploy**
 - `composer.json` sets `config.platform.php` to `8.3`, so the lock file installs on Hostinger even if Herd runs PHP 8.4. Confirm Hostinger's PHP and MySQL versions before the first deploy.
