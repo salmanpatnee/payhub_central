@@ -37,6 +37,7 @@ composer run ci:check             # npm run check, npm run types:check, then com
 npm run check                     # Front end lint and format (vp check, --fix via check:fix)
 npm run types:check               # vue-tsc
 npm test                          # Front end unit tests (vp test)
+php artisan pulls:run {key}       # Pull one deployment's summary by hand (spec 0006)
 php artisan db:seed               # Create the first admin (see database/seeders/DatabaseSeeder.php). Its password is `password`, so change it after any production seed
 ```
 

@@ -13,6 +13,11 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Models/PullWindow.php`, `Models/PullWindowAmount.php` | The four windows of a good pull and the money per kind and currency, in whole cents |
 | `Enums/` | `PullStatus`, `PullSource`, `PullFailureKind`, `WindowName`, `AmountKind`. Cast on the models, no free text in those columns |
 | `Actions/Pulls/SaveGoodPull.php` | The only place that writes a good pull, its four windows and its money rows, in one transaction |
+| `Actions/Pulls/PullDeployment.php` | One manual pull: refuses paused, waiting, locked or removed, reads the token, makes the call, maps the answer, saves a good or failed pull. Returns the `Pull` or throws `PullRefused` |
+| `Actions/Pulls/FetchSummary.php`, `FetchedSummary.php` | The one HTTP call (10 seconds, no redirects, no retry) and what came back: an answer or a failure code |
+| `Actions/Pulls/CheckSummaryReply.php` | Required fields, text lengths and sums for a v1 reply. Pure, no database |
+| `Actions/Pulls/SaveFailedPull.php` | The only place that writes a failed pull. Fixed message per code, body cut to 2 KB for three codes |
+| `Console/Commands/PullDeploymentCommand.php` | `php artisan pulls:run {key}`. Prints one line and exits 1 on a failed pull or refusal (spec 0006) |
 | `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005). The request holds all the rules; saving never calls PayHub |
 | `Concerns/` | Shared validation rules from the starter kit (password, profile) |
 | `Http/Controllers/Settings/` | Profile and security pages from the starter kit, locked down for invite only login (spec 0004) |
@@ -22,7 +27,8 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 ```bash
 composer run types:check   # PHPStan level 7 over app/, bootstrap/app.php, config/, database/, routes/
 composer run lint          # Pint, fixes files
-php artisan test           # Pest; data model tests are in tests/Feature/DataModel/
+php artisan test           # Pest; data model tests are in tests/Feature/DataModel/, pull tests in tests/Feature/Pulls/ and tests/Unit/Pulls/
+php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs the deployment's key)
 ```
 
 ## Conventions
@@ -41,11 +47,17 @@ php artisan test           # Pest; data model tests are in tests/Feature/DataMod
 - Do not write good pulls anywhere except `SaveGoodPull`. It enforces "four windows, all or nothing" in code, not in the database.
 - `bootstrap/app.php` calls `dontFlash(['token'])` because sessions are stored in the database. Without it a refused form would write the plain token into the `sessions` table. Keep any new form that takes a token on this guard.
 - Money is `unsignedBigInteger` cents. Never add different currencies together.
+- Only `SaveGoodPull` writes a good pull and only `SaveFailedPull` writes a failed one. Failed pull text comes from `PullFailureKind::message()`, never from a response, URL or exception.
+- `PullDeployment` reads the token with `Crypt::decryptString` on the raw column (the model cast cannot be caught by PHPStan) and passes it only to `FetchSummary` as a `#[SensitiveParameter]`. Anything thrown while saving a reply is caught and saved as `invalid_reply`.
+- Set `do_not_pull_before` with `Deployment::whereKey($id)->update(...)`, not `save()`, so a removed deployment is not touched.
+- Guzzle 8 has no cURL error number on exceptions. A timeout is a `ConnectTimeoutException`, `NetworkTimeoutException` or `ResponseTimeoutException` (message `cURL error 28` is the fallback).
+- In tests, `Http::fake()` called twice keeps the first stub. Call `Http::swap(new Factory)` between replies.
 
 ## Related specs
 
 - [0002 Data model](../docs/specs/0002-data-model.md)
 - [0004 Invite only login](../docs/specs/0004-invite-only-login/index.md)
 - [0005 Add a deployment](../docs/specs/0005-add-a-deployment/index.md)
+- [0006 Pull a summary by hand](../docs/specs/0006-pull-a-summary-by-hand/index.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
