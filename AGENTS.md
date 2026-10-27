@@ -73,6 +73,7 @@ Chosen here, installed by `/develop tooling`:
 ## Context files
 
 - [ui-registry.md](ui-registry.md): the visual patterns to match before building any component
+- [app/AGENTS.md](app/AGENTS.md): the Laravel back end, models, enums, the pull save action and their gotchas
 - [resources/js/AGENTS.md](resources/js/AGENTS.md): the Vue front end, design tokens, shared parts, money and time formatting
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
