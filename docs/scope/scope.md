@@ -101,16 +101,16 @@ This slice is the walking skeleton: one deployment, added by an admin, pulled by
 An admin adds one deployment: key, name, base URL, token and on or off. The token is stored encrypted and never shown again. Raised to `GA` because it holds secrets for live payment systems.
 **Done when:** an admin can save a deployment, the token never appears again on screen, in logs or in the browser, and a bad URL or empty token is refused with a clear message.
 - [x] Design it (spec): `/architect add a deployment`
-- [ ] Build it: `/develop add a deployment`
-  - [ ] Thin thread: routes, controller, plain form, save and redirect Home with the toast (AC-1, AC-2, AC-7, AC-9)
-  - [ ] Full rules for key, name, https URL and 64 character token, with field messages (AC-3 to AC-6)
-  - [ ] Keep the token from leaking: no flashed input, empty field after an error, no token in page data (AC-8)
-  - [ ] Sidebar item, Home empty state link, keyboard and phone pass (AC-10)
+- [x] Build it: `/develop add a deployment`
+  - [x] Thin thread: routes, controller, plain form, save and redirect Home with the toast (AC-1, AC-2, AC-7, AC-9)
+  - [x] Full rules for key, name, https URL and 64 character token, with field messages (AC-3 to AC-6)
+  - [x] Keep the token from leaking: no flashed input, empty field after an error, no token in page data (AC-8)
+  - [x] Sidebar item, Home empty state link, keyboard and phone pass (AC-10)
 - [ ] Verify it: `/check verify add a deployment`
 - [ ] Test it: `/test add a deployment`
 - [ ] Review it (fresh model): `/check review add a deployment`
 - [ ] Document it: `/document add a deployment`
-Spec [0005](../specs/0005-add-a-deployment.md)
+Spec [0005](../specs/0005-add-a-deployment/index.md) · code in `app/Http/Controllers/DeploymentController.php`, `app/Http/Requests/StoreDeploymentRequest.php`, `resources/js/pages/deployments/Create.vue`
 
 ### 7. Pull a summary by hand · needs a decision
 Call `GET /api/central/v1/summary` for one deployment, check the reply against contract v1, and save it with the pull time. Save failed pulls with the reason. Build and test it against the sample JSON and faked replies.

@@ -44,6 +44,6 @@ php artisan test           # Pest; data model tests are in tests/Feature/DataMod
 
 - [0002 Data model](../docs/specs/0002-data-model.md)
 - [0004 Invite only login](../docs/specs/0004-invite-only-login/index.md)
-- [0005 Add a deployment](../docs/specs/0005-add-a-deployment.md)
+- [0005 Add a deployment](../docs/specs/0005-add-a-deployment/index.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
