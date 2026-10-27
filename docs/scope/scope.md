@@ -26,7 +26,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 3 | Data model | Foundation | done |
 | 4 | Design system & UI foundation | Foundation | done |
 | 5 | Invite only login | Foundation | done |
-| 6 | Add a deployment | Slice 1 | in-progress |
+| 6 | Add a deployment | Slice 1 | done |
 | 7 | Pull a summary by hand | Slice 1 | planned |
 | 8 | Home page with a deployment card | Slice 1 | planned |
 | 9 | Scheduled pulls | Slice 2 | planned |
@@ -97,7 +97,7 @@ Spec [0004](../specs/0004-invite-only-login/index.md) · code in `routes/`, `app
 
 This slice is the walking skeleton: one deployment, added by an admin, pulled by hand, saved, and shown on the home page.
 
-### 6. Add a deployment · in-progress · GA
+### 6. Add a deployment · done · GA
 An admin adds one deployment: key, name, base URL, token and on or off. The token is stored encrypted and never shown again. Raised to `GA` because it holds secrets for live payment systems.
 **Done when:** an admin can save a deployment, the token never appears again on screen, in logs or in the browser, and a bad URL or empty token is refused with a clear message.
 - [x] Design it (spec): `/architect add a deployment`
@@ -106,7 +106,7 @@ An admin adds one deployment: key, name, base URL, token and on or off. The toke
   - [x] Full rules for key, name, https URL and 64 character token, with field messages (AC-3 to AC-6)
   - [x] Keep the token from leaking: no flashed input, empty field after an error, no token in page data (AC-8)
   - [x] Sidebar item, Home empty state link, keyboard and phone pass (AC-10)
-- [ ] Verify it: `/check verify add a deployment`
+- [x] Verify it: `/check verify add a deployment` (steps in verify.md ticked by the engineer, 2026-10-27)
 - [ ] Test it: `/test add a deployment`
 - [ ] Review it (fresh model): `/check review add a deployment`
 - [ ] Document it: `/document add a deployment`

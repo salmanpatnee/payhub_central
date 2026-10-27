@@ -1,7 +1,7 @@
 # 0005. Add a deployment
 
 **Date**: 2026-10-27
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 
