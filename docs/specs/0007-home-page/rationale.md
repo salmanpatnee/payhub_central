@@ -53,3 +53,26 @@ The page renders the shell, and Vue calls a new JSON endpoint on load and every 
 Spec 0003 gave the shared parts and left only the card and its states to design, so the smallest solution is one new part plus a data builder. Option 1 wins over Option 2 because the page handles payment numbers behind a token, and `AGENTS.md` says nothing secret may reach the browser. Copying named fields into an array makes that rule hold by construction, where hiding attributes on a model relies on remembering every new column. Option 3 adds an endpoint and a first paint spinner that Inertia partial reloads already avoid, which is not worth it for an internal page with a handful of cards.
 
 The engineer chose three behaviours that shape the design. Completed and pending money both show, so the card has two groups per window and `MoneyByCurrency` needs a small size. Paused deployments get their own neutral badge, because a paused card showing Live would hide that nothing is updating. The numbers on an Unavailable or Paused card are not faded: fading text lowers contrast below the 4.5:1 rule from spec 0003, so the badge and the note carry the warning instead. Polling every 60 seconds matches a pull every 5 minutes with a margin, and Inertia handles the pause for hidden tabs.
+
+
+## Update 2026-10-28: Balanced card
+
+### Why the first card changed
+
+The first card showed Today and This month as stacked lists of completed and pending money. With three currencies it was tall, it left out the link counts (total, pending, failed, expired) that PayHub already sends, and it gave staff no way to see which deployments had trouble. The engineer called it "not professional looking" and asked for the failed count.
+
+### Options considered
+
+Three card designs were built as viewable artifacts with the same example data, and the engineer picked the third.
+
+- **Executive Overview**: paid money is the headline. Easy to read, but problems get one line, so failed and pending links are easy to miss.
+- **Operations & Monitoring**: a summary strip, connection health and a status split bar. Best at spotting problems, but the busiest card, and the connection details it shows (release code, connection state) are mostly not in the data.
+- **Balanced Dashboard (chosen)**: four numbers, a currency table and a footer with freshness and warnings. It is compact enough for two cards per row and answers both "how busy" and "how healthy".
+
+### Rationale
+
+The Balanced layout fits the data that exists. Links, paid, pending, expired and failed are all saved per window already, so no PayHub change is needed. The payment provider is not in the contract (it says provider keys and names are never returned), so it was dropped rather than invented. The release code was dropped at the engineer's request. The domain is kept, but only the host of `base_url`, taken on the server, so the rule that no URL or token reaches the browser still holds.
+
+The success rate is completed links divided by links created. Both come from the same window and the same date basis, so the ratio is honest. Dividing paid money by anything would mix the "created date" and "paid date" bases the contract warns about, so it is not used. The "N payments" figure comes from the money side (`paid_count`) and the footnote explains why it can differ from Paid.
+
+The period switch runs in the browser because all three windows are already saved and small, so switching costs no request and the polling reply stays the same shape. Warnings are also computed in the browser from the numbers sent, which lets them follow the picked period. Their limits (5% failed, 25% expired, at least 3 links) are a starting guess, kept in one file so they are easy to tune. Hiding currencies with no activity keeps cards short, at the cost of the earlier rule that a real zero shows as `0.00`; this is a recorded tradeoff in the spec.

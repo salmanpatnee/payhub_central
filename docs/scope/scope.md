@@ -130,14 +130,15 @@ The first real page. A card for the deployment showing today, this month, status
 **Done when:** after a pull the card shows the saved numbers per currency in cents formatted as money, shows "last updated", and shows an unavailable state instead of zero when the last pull failed.
 - [x] Design it (spec): `/architect home page`
 - [ ] Build it: `/develop home page`
-  - [ ] Thin thread: `HomeController`, route, a plain card with Today completed money (AC-1, AC-3)
-  - [ ] Card builder with safe fields, both windows, fixed query count (AC-3, AC-4, AC-9, AC-12)
-  - [ ] Live, Unavailable, Paused and new states with notes and "No data yet" (AC-2, AC-5, AC-6, AC-7)
-  - [ ] Final `DeploymentCard` layout, grid, footnote, headings (AC-10, AC-11)
-  - [ ] 60 second polling (AC-8)
+  - [x] Thin thread: `HomeController`, route, a plain card with Today completed money (AC-1, AC-3)
+  - [x] Card builder with safe fields, both windows, fixed query count (AC-3, AC-4, AC-9, AC-12)
+  - [x] Live, Unavailable, Paused and new states with notes and "No data yet" (AC-2, AC-5, AC-6, AC-7)
+  - [x] Final `DeploymentCard` layout, grid, footnote, headings (AC-10, AC-11)
+  - [x] 60 second polling (AC-8)
+  - [ ] Rework to the Balanced card: builder with domain and three periods, new card, period switch, warnings, 2 column grid (AC-3, AC-9, AC-10, AC-11, AC-13, AC-14)
 - [ ] Verify it: `/check verify home page`
 - [ ] Test it: `/test home page`
-Spec [0007](../specs/0007-home-page/index.md)
+Spec [0007](../specs/0007-home-page/index.md) · code in `app/Actions/Home/BuildDeploymentCards.php`, `app/Http/Controllers/HomeController.php`, `resources/js/components/DeploymentCard.vue`, `resources/js/pages/Dashboard.vue`
 
 ## Slice 2: Scheduled pulls
 
