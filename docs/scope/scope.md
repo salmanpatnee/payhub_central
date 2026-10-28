@@ -34,6 +34,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 11 | Recent pull history | Slice 3 | done |
 | 12 | Edit, pause and remove deployments | Slice 3 | in-progress |
 | 13 | Manage staff logins | Slice 3 | planned |
+| 14 | Deployments list page | Slice 3 | in-progress |
 
 ## Foundations
 
@@ -205,6 +206,20 @@ Spec [0011](../specs/0011-edit-pause-remove-deployments.md) - code in `app/Http/
 An admin invites and removes staff accounts.
 **Done when:** an admin can invite a person and remove a login, and a removed person can no longer sign in.
 - [ ] Build it: `/develop manage staff logins`
+
+### 14. Deployments list page
+A Deployments page in the sidebar lists every deployment in a table with its status and the actions Edit, Pause or Resume and Remove. Add deployment moves to a button on that page.
+**Done when:** the sidebar shows Deployments instead of Add deployment, the page lists all deployments with status, and each row can be edited, paused, resumed or removed without opening the deployment first.
+- [x] Design it (spec): `/architect deployments list page`
+- [ ] Build it: `/develop deployments list page`
+  - [ ] Thin thread: the list route, row action and page with Name and Status, plus the sidebar item (AC-1, AC-2, AC-7, AC-9)
+  - [ ] Row actions: Edit, Pause or Resume, and the pause redirect (AC-3, AC-5)
+  - [ ] Shared Remove dialog, remove redirect and 404 handling (AC-4, AC-10)
+  - [ ] Empty state, Add button, breadcrumbs and the add and poll redirects (AC-6, AC-8, AC-12)
+  - [ ] Phone, keyboard and dialog focus pass (AC-11)
+- [ ] Verify it: `/check verify deployments list page`
+- [ ] Test it: `/test deployments list page`
+Spec [0012](../specs/0012-deployments-list-page.md)
 
 ## Deferred
 
