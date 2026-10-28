@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { Head, setLayoutProps, usePage, usePoll } from '@inertiajs/vue3';
+import { ChevronDown } from '@lucide/vue';
 import { computed, ref, watchEffect } from 'vue';
 import PageHeader from '@/components/PageHeader.vue';
 import RelativeTime from '@/components/RelativeTime.vue';
 import { Badge } from '@/components/ui/badge';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+} from '@/components/ui/collapsible';
 import {
     Table,
     TableBody,
@@ -581,63 +587,111 @@ const compareLabel =
             </div>
         </template>
 
-        <section
-            class="space-y-3 rounded-xl border border-border/70 bg-card p-4 shadow-sm"
+        <Collapsible
+            as="section"
+            class="overflow-hidden rounded-xl border border-border/70 bg-card shadow-sm"
             aria-labelledby="pulls-title"
         >
-            <h2 id="pulls-title" :class="eyebrow">Recent pulls</h2>
-            <p v-if="pulls.length === 0" class="text-sm text-muted-foreground">
-                No pulls yet.
-            </p>
-            <div v-else class="overflow-x-auto">
-                <Table>
-                    <TableCaption class="sr-only">
-                        The 10 most recent pulls, newest first.
-                    </TableCaption>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead scope="col" class="px-3">Time</TableHead>
-                            <TableHead scope="col" class="px-3"
-                                >Result</TableHead
+            <h2 id="pulls-title" class="m-0">
+                <CollapsibleTrigger as-child>
+                    <button
+                        type="button"
+                        class="group flex w-full items-center justify-between gap-4 px-4 py-3 text-left outline-none hover:bg-muted/40 focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:ring-inset"
+                    >
+                        <span class="space-y-0.5">
+                            <span :class="[eyebrow, 'block']"
+                                >Recent pulls</span
                             >
-                            <TableHead scope="col" class="px-3">
-                                How it started
-                            </TableHead>
-                            <TableHead scope="col" class="px-3"
-                                >Reason</TableHead
+                            <span
+                                v-if="pulls.length === 0"
+                                class="block text-sm font-normal text-muted-foreground"
                             >
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        <TableRow v-for="pull in pulls" :key="pull.id">
-                            <TableCell
-                                class="px-3 py-2 text-sm whitespace-nowrap"
-                            >
-                                <RelativeTime
-                                    :at="pull.at"
-                                    :timezone="deployment.timezone"
-                                />
-                            </TableCell>
-                            <TableCell class="px-3 py-2">
-                                <Badge
-                                    :variant="pull.ok ? 'success' : 'danger'"
+                                No pulls yet.
+                            </span>
+                        </span>
+                        <ChevronDown
+                            class="size-4 shrink-0 text-muted-foreground transition-transform group-data-[state=open]:rotate-180"
+                            aria-hidden="true"
+                        />
+                    </button>
+                </CollapsibleTrigger>
+            </h2>
+            <CollapsibleContent v-if="pulls.length > 0">
+                <div class="overflow-x-auto border-t border-border/60">
+                    <Table>
+                        <TableCaption class="sr-only">
+                            The 10 most recent pulls, newest first.
+                        </TableCaption>
+                        <TableHeader class="bg-muted/40">
+                            <TableRow class="hover:bg-transparent">
+                                <TableHead scope="col" class="px-4"
+                                    >Time</TableHead
                                 >
-                                    {{ pull.ok ? 'Good' : 'Failed' }}
-                                </Badge>
-                            </TableCell>
-                            <TableCell class="px-3 py-2 text-sm">
-                                {{ sourceLabels[pull.source] }}
-                            </TableCell>
-                            <TableCell
-                                class="min-w-56 px-3 py-2 text-sm whitespace-normal"
+                                <TableHead scope="col" class="px-4"
+                                    >Result</TableHead
+                                >
+                                <TableHead scope="col" class="px-4">
+                                    How it started
+                                </TableHead>
+                                <TableHead scope="col" class="px-4"
+                                    >Reason</TableHead
+                                >
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            <TableRow
+                                v-for="pull in pulls"
+                                :key="pull.id"
+                                :class="
+                                    pull.ok
+                                        ? 'border-border/50'
+                                        : 'border-danger-border/60 bg-danger-soft hover:bg-danger-soft'
+                                "
                             >
-                                {{ reasonText(pull) }}
-                            </TableCell>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </div>
-        </section>
+                                <TableCell
+                                    :class="[
+                                        'px-4 py-3 text-sm font-medium tabular-nums',
+                                        !pull.ok &&
+                                            'shadow-[inset_3px_0_0_var(--color-danger)]',
+                                    ]"
+                                >
+                                    <RelativeTime
+                                        :at="pull.at"
+                                        :timezone="deployment.timezone"
+                                    />
+                                </TableCell>
+                                <TableCell class="px-4 py-3">
+                                    <Badge
+                                        :variant="
+                                            pull.ok ? 'success' : 'danger'
+                                        "
+                                    >
+                                        {{ pull.ok ? 'Good' : 'Failed' }}
+                                    </Badge>
+                                </TableCell>
+                                <TableCell class="px-4 py-3 text-sm">
+                                    <span
+                                        class="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs font-semibold text-foreground"
+                                    >
+                                        {{ sourceLabels[pull.source] }}
+                                    </span>
+                                </TableCell>
+                                <TableCell
+                                    :class="[
+                                        'min-w-64 px-4 py-3 text-sm whitespace-normal',
+                                        pull.ok
+                                            ? 'text-muted-foreground'
+                                            : 'text-foreground',
+                                    ]"
+                                >
+                                    {{ reasonText(pull) }}
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </div>
+            </CollapsibleContent>
+        </Collapsible>
 
         <p
             v-if="deployment.windows && current"
