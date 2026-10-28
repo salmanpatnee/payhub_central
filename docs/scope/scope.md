@@ -30,7 +30,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 7 | Pull a summary by hand | Slice 1 | done |
 | 8 | Home page with a deployment card | Slice 1 | done |
 | 9 | Scheduled pulls | Slice 2 | done |
-| 10 | Deployment page | Slice 3 | in-progress |
+| 10 | Deployment page | Slice 3 | done |
 | 11 | Recent pull history | Slice 3 | planned |
 | 12 | Edit, pause and remove deployments | Slice 3 | planned |
 | 13 | Manage staff logins | Slice 3 | planned |
@@ -159,17 +159,17 @@ Spec [0008](../specs/0008-scheduled-pulls/index.md) ï¿½ code in `app/Actions/Pul
 
 ## Slice 3: Deployment page and admin care
 
-### 10. Deployment page · in-progress
+### 10. Deployment page · done
 All four windows (all time, today, this month, last 30 days) with link counts, money per currency, paid count and last updated. The release version is not shown (engineer's choice, spec 0009). Links and money are shown as two views with a plain explanation of why they can differ.
 **Done when:** every window shows its link counts and per currency money, the two date rules are explained on the page, and an unknown currency still shows.
 - [x] Design it (spec): `/architect deployment page`
 - [x] Build it: `/develop deployment page`
   - [x] Thin thread: route by slug, controller, action, plain page, Home card name link (AC-1, AC-2)
   - [x] Shared status rules on both sides and the page header (AC-3)
-  - [x] Full page data, Links table, Money table and window date ranges (AC-4, AC-5, AC-6, AC-9, AC-12)
+  - [x] Full page data, period switch, summary cards, link outcomes, All periods table and the range line (AC-4, AC-5, AC-6, AC-9, AC-12)
   - [x] Explanations and the no data, unavailable, paused and new states (AC-7, AC-8)
   - [x] Polling, phone and keyboard pass, `create` key rule and spec 0007 slug update (AC-10, AC-11, AC-2, AC-9)
-- [ ] Verify it: `/check verify deployment page`
+- [x] Verify it: `/check verify deployment page`
 - [ ] Test it: `/test deployment page`
 Spec [0009](../specs/0009-deployment-page/index.md) · code in `app/Actions/Deployments/`, `resources/js/pages/deployments/Show.vue`, `resources/js/lib/deploymentStatus.ts`
 
