@@ -18,6 +18,7 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Actions/Pulls/CheckSummaryReply.php` | Required fields, text lengths and sums for a v1 reply. Pure, no database |
 | `Actions/Pulls/SaveFailedPull.php` | The only place that writes a failed pull. Fixed message per code, body cut to 2 KB for three codes |
 | `Actions/Home/BuildDeploymentCards.php` | The Home page cards: one plain array per deployment (domain host only, state, reason, three periods). Selects only safe columns, so the token and raw reply never load. Fixed query count (spec 0007) |
+| `Http/Controllers/HomeController.php` | The Home page (the `dashboard` route). Passes the card arrays from `BuildDeploymentCards` to the Dashboard page, never a model (spec 0007) |
 | `Console/Commands/PullDeploymentCommand.php` | `php artisan pulls:run {key}`. Prints one line and exits 1 on a failed pull or refusal (spec 0006) |
 | `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005). The request holds all the rules; saving never calls PayHub |
 | `Concerns/` | Shared validation rules from the starter kit (password, profile) |
