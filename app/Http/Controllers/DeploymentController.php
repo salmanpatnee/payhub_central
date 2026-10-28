@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Actions\Deployments\BuildDeploymentDetail;
+use App\Actions\Deployments\BuildRecentPulls;
 use App\Http\Requests\StoreDeploymentRequest;
 use App\Models\Deployment;
 use Illuminate\Database\UniqueConstraintViolationException;
@@ -25,11 +26,13 @@ class DeploymentController extends Controller
 
     /**
      * Show one deployment. Found by slug text, not model binding, so the token is never loaded.
+     * The pull list is a closure, so the page poll (which asks only for `deployment`) never runs its query.
      */
-    public function show(string $deployment, BuildDeploymentDetail $detail): Response
+    public function show(string $deployment, BuildDeploymentDetail $detail, BuildRecentPulls $recent): Response
     {
         return Inertia::render('deployments/Show', [
             'deployment' => $detail->handle($deployment),
+            'pulls' => fn () => $recent->handle($deployment),
         ]);
     }
 

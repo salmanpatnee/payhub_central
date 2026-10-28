@@ -1,7 +1,7 @@
 # 0010. Recent pull history on the Deployment page
 
 **Date**: 2026-10-28
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
@@ -195,12 +195,12 @@ type PullRow = {
 
 Approach is Tracer Bullet: first one thin thread that shows a real saved pull on the real page end to end, then thicken one strand at a time. No schema work is needed.
 
-1. Thin thread: add `BuildRecentPulls` with the query and 10 row cap, pass `pulls` from `DeploymentController::show` as a lazy closure, and render a plain list on `deployments/Show.vue` showing each row's time text and result word, satisfies **AC-1**, **AC-5**
-2. Safe fields and shape: fix the five column select list, the `PullRow` type and the stable order, and keep models and the other columns out of the page data, satisfies **AC-1**, **AC-6**, **AC-7**
-3. The table: kit `Table` with caption and headings, `RelativeTime` with the page timezone, Good and Failed badges, Scheduled and Manual words, and the reason rules, satisfies **AC-2**, **AC-3**
-4. Placement and states: end the numbers block after the Link outcomes and All periods row, render the section after it with no condition, move the closing note under its own condition so it stays last, add "No pulls yet.", satisfies **AC-4**
-5. Poll behaviour: check the poll skips the list and its query and does not reset the table, satisfies **AC-5**, **AC-7**
-6. Phone, keyboard and contrast pass, then run the page checks of spec 0009 again, satisfies **AC-3**, **AC-8**
+- [x] 1. Thin thread: add `BuildRecentPulls` with the query and 10 row cap, pass `pulls` from `DeploymentController::show` as a lazy closure, and render a plain list on `deployments/Show.vue` showing each row's time text and result word, satisfies **AC-1**, **AC-5**
+- [x] 2. Safe fields and shape: fix the five column select list, the `PullRow` type and the stable order, and keep models and the other columns out of the page data, satisfies **AC-1**, **AC-6**, **AC-7**
+- [x] 3. The table: kit `Table` with caption and headings, `RelativeTime` with the page timezone, Good and Failed badges, Scheduled and Manual words, and the reason rules, satisfies **AC-2**, **AC-3**
+- [x] 4. Placement and states: end the numbers block after the Link outcomes and All periods row, render the section after it with no condition, move the closing note under its own condition so it stays last, add "No pulls yet.", satisfies **AC-4**
+- [ ] 5. Poll behaviour: check the poll skips the list and its query and does not reset the table, satisfies **AC-5**, **AC-7**
+- [ ] 6. Phone, keyboard and contrast pass, then run the page checks of spec 0009 again, satisfies **AC-3**, **AC-8**
 
 ## Consequences
 

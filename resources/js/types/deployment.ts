@@ -69,3 +69,15 @@ export type DeploymentDetail = {
     // Null when there is no good pull.
     windows: Record<WindowKey, WindowDetail> | null;
 };
+
+// Mirrors the array built by App\Actions\Deployments\BuildRecentPulls.
+export type PullRow = {
+    id: number;
+    // pulled_at, ISO 8601.
+    at: string;
+    // True when the pull was good.
+    ok: boolean;
+    source: 'scheduled' | 'manual';
+    // The saved message of a failed pull, else null.
+    reason: string | null;
+};

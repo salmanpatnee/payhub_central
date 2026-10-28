@@ -18,10 +18,12 @@ import { formatMoney } from '@/lib/formatMoney';
 import { formatPercent } from '@/lib/formatPercent';
 import { formatWindowRange } from '@/lib/formatWindowRange';
 import { dashboard } from '@/routes';
-import type { DeploymentDetail, WindowKey } from '@/types';
+import type { DeploymentDetail, PullRow, WindowKey } from '@/types';
 
 const props = defineProps<{
     deployment: DeploymentDetail;
+    // Loaded once when the page opens. The poll does not reload it.
+    pulls: PullRow[];
 }>();
 
 const page = usePage();
@@ -138,6 +140,19 @@ watchEffect(() => {
 
 // Reload only the deployment, quietly, once a minute.
 usePoll(60000, { only: ['deployment'] });
+
+const sourceLabels: Record<PullRow['source'], string> = {
+    scheduled: 'Scheduled',
+    manual: 'Manual',
+};
+
+function reasonText(pull: PullRow): string {
+    if (pull.ok) {
+        return 'None';
+    }
+
+    return pull.reason ?? 'No reason saved';
+}
 
 const eyebrow =
     'text-[11px] font-semibold tracking-widest text-muted-foreground uppercase';
@@ -564,12 +579,73 @@ const compareLabel =
                     </div>
                 </section>
             </div>
-
-            <p class="text-xs text-muted-foreground">
-                A link made yesterday and paid today counts in yesterday's links
-                and in today's money, so the completed links and the payments of
-                a window can differ.
-            </p>
         </template>
+
+        <section
+            class="space-y-3 rounded-xl border border-border/70 bg-card p-4 shadow-sm"
+            aria-labelledby="pulls-title"
+        >
+            <h2 id="pulls-title" :class="eyebrow">Recent pulls</h2>
+            <p v-if="pulls.length === 0" class="text-sm text-muted-foreground">
+                No pulls yet.
+            </p>
+            <div v-else class="overflow-x-auto">
+                <Table>
+                    <TableCaption class="sr-only">
+                        The 10 most recent pulls, newest first.
+                    </TableCaption>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHead scope="col" class="px-3">Time</TableHead>
+                            <TableHead scope="col" class="px-3"
+                                >Result</TableHead
+                            >
+                            <TableHead scope="col" class="px-3">
+                                How it started
+                            </TableHead>
+                            <TableHead scope="col" class="px-3"
+                                >Reason</TableHead
+                            >
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        <TableRow v-for="pull in pulls" :key="pull.id">
+                            <TableCell
+                                class="px-3 py-2 text-sm whitespace-nowrap"
+                            >
+                                <RelativeTime
+                                    :at="pull.at"
+                                    :timezone="deployment.timezone"
+                                />
+                            </TableCell>
+                            <TableCell class="px-3 py-2">
+                                <Badge
+                                    :variant="pull.ok ? 'success' : 'danger'"
+                                >
+                                    {{ pull.ok ? 'Good' : 'Failed' }}
+                                </Badge>
+                            </TableCell>
+                            <TableCell class="px-3 py-2 text-sm">
+                                {{ sourceLabels[pull.source] }}
+                            </TableCell>
+                            <TableCell
+                                class="min-w-56 px-3 py-2 text-sm whitespace-normal"
+                            >
+                                {{ reasonText(pull) }}
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </div>
+        </section>
+
+        <p
+            v-if="deployment.windows && current"
+            class="text-xs text-muted-foreground"
+        >
+            A link made yesterday and paid today counts in yesterday's links and
+            in today's money, so the completed links and the payments of a
+            window can differ.
+        </p>
     </div>
 </template>
