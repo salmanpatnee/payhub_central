@@ -274,6 +274,7 @@ const compareLabel =
                     </p>
                     <p>
                         <span
+                            v-if="current.links.total > 0"
                             :class="[
                                 chipBase,
                                 'bg-success-soft text-success tabular-nums ring-success-border',
@@ -286,6 +287,15 @@ const compareLabel =
                                 )
                             }}
                             completed
+                        </span>
+                        <span
+                            v-else
+                            :class="[
+                                chipBase,
+                                'bg-muted text-muted-foreground ring-border',
+                            ]"
+                        >
+                            No links yet
                         </span>
                     </p>
                     <p class="text-xs text-muted-foreground">

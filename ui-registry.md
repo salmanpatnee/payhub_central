@@ -166,7 +166,75 @@ Last updated: 2026-10-28
 | Selected | `aria-pressed:bg-card aria-pressed:text-foreground aria-pressed:shadow-sm` |
 | Focus | `focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none` |
 
-**Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. Full width on phones, right aligned from `sm`. State lives in the page, not the URL.
+**Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. Full width on phones, right aligned from `sm`. State lives in the page, not the URL. The deployment page (`pages/deployments/Show.vue`) reuses it with four options: the track adds `max-w-full overflow-x-auto` and the buttons add `whitespace-nowrap`, so it scrolls inside itself on phones.
+
+### Summary card (deployment page)
+
+File: `resources/js/pages/deployments/Show.vue`
+Last updated: 2026-10-28
+
+| Property | Class |
+| --- | --- |
+| Background | `bg-card` |
+| Border | `border border-border/70` |
+| Border radius | `rounded-xl` |
+| Shadow | `shadow-sm` |
+| Spacing | `space-y-3 p-4`, row grid `grid gap-4 md:grid-cols-[1.5fr_1fr_1fr]` |
+| Label (`h2`) | `text-[11px] font-semibold tracking-widest text-muted-foreground uppercase` |
+| Big count | `text-4xl font-semibold tracking-tight tabular-nums` |
+| Money row | code `w-9 text-xs font-semibold tracking-wider uppercase`, amount `text-2xl font-semibold tracking-tight tabular-nums`, pending `text-xs text-muted-foreground`, rows `divide-y divide-border/50 py-2` |
+| Footnote | `text-xs text-muted-foreground` |
+| Hover state | none |
+| Accent usage | none, status chips only |
+
+**Pattern notes:** one period at a time. Three cards in a row: Money paid (widest), Links created, Needs attention. "All clear" replaces the count when nothing failed or is pending. Money text comes only from `formatMoney`, share text only from `formatPercent`.
+
+### Status chip (solid word chip)
+
+File: `resources/js/pages/deployments/Show.vue`
+Last updated: 2026-10-28
+
+| Property | Class |
+| --- | --- |
+| Shape | `inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset tabular-nums` |
+| success | `bg-success-soft text-success ring-success-border` |
+| warning | `bg-warning-soft text-warning ring-warning-border` |
+| danger | `bg-danger-soft text-danger ring-danger-border` |
+
+**Pattern notes:** always a number or words inside ("22 failed", "76% completed"). Slightly larger than the DeploymentCard warning chip (`px-2`, `font-medium`) because it is a headline element.
+
+### Link outcome bar and list
+
+File: `resources/js/pages/deployments/Show.vue`
+Last updated: 2026-10-28
+
+| Property | Class |
+| --- | --- |
+| Bar track | `flex h-2.5 gap-0.5 overflow-hidden rounded-full bg-muted` |
+| Segment | `block min-w-[3px]`, width is the share of links |
+| completed / pending / failed | `bg-success` / `bg-warning` / `bg-danger` |
+| cancelled / expired | `bg-muted-foreground/60` / `bg-muted-foreground/30` |
+| Legend swatch | `size-2 rounded-sm`, same colour as the segment |
+| List row | `grid grid-cols-[auto_1fr_auto_3.5rem] gap-3 py-2`, `divide-y divide-border/50` |
+| Count / share | count `text-base font-semibold tabular-nums`, share `text-right text-xs text-muted-foreground tabular-nums` |
+
+**Pattern notes:** the bar is `aria-hidden`, the list carries the same numbers in words. Zero segments are not drawn.
+
+### Compare table (selected period highlighted)
+
+File: `resources/js/pages/deployments/Show.vue`
+Last updated: 2026-10-28
+
+| Property | Class |
+| --- | --- |
+| Wrapper | `overflow-x-auto` inside the summary card style |
+| Head cell | `h-auto px-3 py-2 text-right` |
+| Row label | `px-3 py-2 text-sm font-normal tracking-normal text-muted-foreground normal-case` |
+| Number cell | `px-3 py-2 text-right text-sm tabular-nums` |
+| Selected column | `bg-primary/5` on cells, plus `text-primary` on the head |
+| Failed above zero | `font-semibold text-danger` |
+
+**Pattern notes:** the highlight follows the period switch. `text-primary` is the dark orange (4.8:1), fine for text; `--brand` still never is. Rows: links created, completed rate, failed, one Paid row per currency, payments.
 
 ## Tables
 
