@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Actions\Home;
 
+use App\Actions\Deployments\DeploymentStatus;
 use App\Enums\AmountKind;
-use App\Enums\PullStatus;
 use App\Enums\WindowName;
 use App\Models\Deployment;
 use App\Models\Pull;
@@ -24,10 +24,13 @@ class BuildDeploymentCards
         'last30Days' => WindowName::Last30Days,
     ];
 
+    public function __construct(private readonly DeploymentStatus $status) {}
+
     /**
      * @return list<array{
      *     id: int,
      *     name: string,
+     *     href: string,
      *     domain: string|null,
      *     state: string,
      *     reason: string|null,
@@ -48,7 +51,7 @@ class BuildDeploymentCards
         ];
 
         $deployments = Deployment::query()
-            ->select(['id', 'name', 'base_url', 'is_active'])
+            ->select(['id', 'name', 'slug', 'base_url', 'is_active'])
             ->with([
                 'latestPull' => fn ($query) => $query->select($pullColumns),
                 'latestGoodPull' => fn ($query) => $query->select($pullColumns)->with([
@@ -64,39 +67,21 @@ class BuildDeploymentCards
         return array_values($deployments->map(function (Deployment $deployment): array {
             $latest = $deployment->latestPull;
             $good = $deployment->latestGoodPull;
-            $state = $this->state($deployment, $latest);
+            $state = $this->status->state($deployment, $latest);
 
             return [
                 'id' => $deployment->id,
                 'name' => $deployment->name,
-                'domain' => $this->domain($deployment->base_url),
+                // The slug leaves PHP only here, as a ready made path (spec 0009).
+                'href' => route('deployments.show', $deployment->slug, false),
+                'domain' => $this->status->domain($deployment->base_url),
                 'state' => $state,
-                'reason' => $state === 'unavailable' ? $latest?->failure_message : null,
+                'reason' => $this->status->reason($state, $latest),
                 'updatedAt' => $good?->pulled_at->toIso8601String(),
                 'timezone' => $good?->timezone,
                 'periods' => $good ? $this->periods($good) : null,
             ];
         })->all());
-    }
-
-    private function state(Deployment $deployment, ?Pull $latest): string
-    {
-        return match (true) {
-            ! $deployment->is_active => 'paused',
-            $latest === null => 'new',
-            $latest->status === PullStatus::Failed => 'unavailable',
-            default => 'live',
-        };
-    }
-
-    /**
-     * Only the host leaves PHP: no scheme, port, path or query.
-     */
-    private function domain(string $baseUrl): ?string
-    {
-        $host = parse_url($baseUrl, PHP_URL_HOST);
-
-        return is_string($host) && $host !== '' ? strtolower($host) : null;
     }
 
     /**

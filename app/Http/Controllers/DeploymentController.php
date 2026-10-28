@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Actions\Deployments\BuildDeploymentDetail;
 use App\Http\Requests\StoreDeploymentRequest;
 use App\Models\Deployment;
 use Illuminate\Database\UniqueConstraintViolationException;
@@ -20,6 +21,16 @@ class DeploymentController extends Controller
     public function create(): Response
     {
         return Inertia::render('deployments/Create');
+    }
+
+    /**
+     * Show one deployment. Found by slug text, not model binding, so the token is never loaded.
+     */
+    public function show(string $deployment, BuildDeploymentDetail $detail): Response
+    {
+        return Inertia::render('deployments/Show', [
+            'deployment' => $detail->handle($deployment),
+        ]);
     }
 
     /**

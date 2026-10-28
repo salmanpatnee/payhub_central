@@ -8,7 +8,8 @@ Route::redirect('/', '/dashboard')->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', HomeController::class)->name('dashboard');
-    Route::resource('deployments', DeploymentController::class)->only(['create', 'store']);
+    Route::resource('deployments', DeploymentController::class)->only(['create', 'store', 'show'])
+        ->where(['deployment' => '[a-z0-9-]+']);
 });
 
 require __DIR__.'/settings.php';

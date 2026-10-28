@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3';
 import { TriangleAlert } from '@lucide/vue';
 import { computed } from 'vue';
 import RelativeTime from '@/components/RelativeTime.vue';
@@ -13,6 +14,7 @@ import {
     TableRow,
 } from '@/components/ui/table';
 import { cardWarnings } from '@/lib/cardWarnings';
+import { statusBadge, statusNotes } from '@/lib/deploymentStatus';
 import { formatMoney } from '@/lib/formatMoney';
 import { formatPercent } from '@/lib/formatPercent';
 import type { DeploymentCard, PeriodKey } from '@/types';
@@ -24,15 +26,7 @@ const props = defineProps<{
     emptyLine: string;
 }>();
 
-const badges = {
-    live: { variant: 'success', label: 'Live' },
-    unavailable: { variant: 'danger', label: 'Unavailable' },
-    paused: { variant: 'neutral', label: 'Paused' },
-} as const;
-
-const badge = computed(() =>
-    props.card.state === 'new' ? null : badges[props.card.state],
-);
+const badge = computed(() => statusBadge(props.card.state));
 
 // Only a card with a good pull has numbers; a missing value is never shown as zero.
 const stats = computed(() => props.card.periods?.[props.period] ?? null);
@@ -107,24 +101,9 @@ const paymentsText = computed(() => {
     return `${count} ${count === 1 ? 'payment' : 'payments'}`;
 });
 
-const notes = computed(() => {
-    const lines: string[] = [];
-
-    if (props.card.state === 'paused') {
-        lines.push('Not being pulled.');
-    } else if (props.card.state === 'new') {
-        lines.push('Waiting for the first pull.');
-    } else if (props.card.state === 'unavailable') {
-        if (stats.value) {
-            lines.push('Showing the last good numbers.');
-        }
-        if (props.card.reason) {
-            lines.push(props.card.reason);
-        }
-    }
-
-    return lines;
-});
+const notes = computed(() =>
+    statusNotes(props.card.state, props.card.reason, stats.value !== null),
+);
 </script>
 
 <template>
@@ -132,7 +111,12 @@ const notes = computed(() => {
         <div class="flex items-start justify-between gap-2 p-4 pb-3">
             <div class="min-w-0">
                 <h2 class="text-base font-semibold tracking-tight break-words">
-                    {{ card.name }}
+                    <Link
+                        :href="card.href"
+                        class="rounded-sm hover:underline focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none"
+                    >
+                        {{ card.name }}
+                    </Link>
                 </h2>
                 <p
                     v-if="card.domain"

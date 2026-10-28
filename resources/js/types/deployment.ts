@@ -19,16 +19,53 @@ export type PeriodStats = {
     pending: Money;
 };
 
+export type DeploymentState = 'live' | 'unavailable' | 'paused' | 'new';
+
 // Mirrors the array built by App\Actions\Home\BuildDeploymentCards.
 export type DeploymentCard = {
     id: number;
     name: string;
+    // Ready made path to the deployment page.
+    href: string;
     // Host of the base URL only.
     domain: string | null;
-    state: 'live' | 'unavailable' | 'paused' | 'new';
+    state: DeploymentState;
     reason: string | null;
     updatedAt: string | null;
     timezone: string | null;
     // Null when there is no good pull.
     periods: Record<PeriodKey, PeriodStats> | null;
+};
+
+export type WindowKey = 'allTime' | 'today' | 'thisMonth' | 'last30Days';
+
+export type WindowDetail = {
+    // starts_at and ends_at as received. Null for all time. The end is excluded.
+    from: string | null;
+    to: string | null;
+    links: {
+        total: number;
+        completed: number;
+        pending: number;
+        failed: number;
+        cancelled: number;
+        expired: number;
+    };
+    // Payments paid in the window, all currencies together.
+    paidCount: number;
+    completed: Money;
+    pending: Money;
+};
+
+// Mirrors the array built by App\Actions\Deployments\BuildDeploymentDetail.
+export type DeploymentDetail = {
+    name: string;
+    // Host of the base URL only.
+    domain: string | null;
+    state: DeploymentState;
+    reason: string | null;
+    updatedAt: string | null;
+    timezone: string | null;
+    // Null when there is no good pull.
+    windows: Record<WindowKey, WindowDetail> | null;
 };

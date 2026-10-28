@@ -19,7 +19,7 @@ class StoreDeploymentRequest extends FormRequest
     {
         return [
             // No withoutTrashed(): a removed deployment still reserves its key.
-            'slug' => ['required', 'string', 'regex:/^[a-z0-9-]{1,32}$/', 'unique:deployments,slug'],
+            'slug' => ['required', 'string', 'regex:/^[a-z0-9-]{1,32}$/', 'unique:deployments,slug', 'not_in:create'],
             'name' => ['required', 'string', 'max:255'],
             'base_url' => ['required', 'string', 'max:255', 'url', $this->httpsUrlRule(...)],
             'token' => ['required', 'string', 'size:64'],
@@ -42,6 +42,7 @@ class StoreDeploymentRequest extends FormRequest
     {
         return [
             'slug.unique' => self::KEY_TAKEN,
+            'slug.not_in' => 'That key is reserved. Pick another one.',
             'slug.regex' => 'The key can only use lowercase letters, numbers and hyphens, up to 32 characters.',
             'token.size' => 'The token must be exactly 64 characters.',
         ];
