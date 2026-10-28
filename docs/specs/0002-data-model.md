@@ -273,6 +273,6 @@ Approach is Tracer Bullet. This is a foundation feature, and the first thread (a
 - [ ] Token replacement without a gap (PayHub `current` and `next` slots) may need a second token column. It is deferred and this shape allows adding one.
 - [ ] When viewer roles or per deployment access come, link staff to deployments with a new table, not a change here.
 - [ ] Feature 7 maps each HTTP status and failure to a `PullFailureKind`, checks that link counts add up, caps `Retry-After`, and exits without saving when the deployment is removed.
-- [ ] Feature 11 decides whether pulls of removed deployments show on the history page.
+- [x] Feature 11 decided: pulls of removed deployments show nowhere (their page is a 404), see spec 0010.
 - [ ] Feature 12 wipes the token and soft deletes the deployment together.
 - [ ] Settle the stale time limits with the deferred "stale and failing badges" item.

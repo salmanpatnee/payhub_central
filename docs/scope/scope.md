@@ -31,7 +31,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 8 | Home page with a deployment card | Slice 1 | done |
 | 9 | Scheduled pulls | Slice 2 | done |
 | 10 | Deployment page | Slice 3 | done |
-| 11 | Recent pull history | Slice 3 | planned |
+| 11 | Recent pull history | Slice 3 | in-progress |
 | 12 | Edit, pause and remove deployments | Slice 3 | planned |
 | 13 | Manage staff logins | Slice 3 | planned |
 
@@ -176,7 +176,16 @@ Spec [0009](../specs/0009-deployment-page/index.md) · code in `app/Actions/Deplo
 ### 11. Recent pull history
 A list of recent pulls on the deployment page, good and failed, with time and reason, so problems can be seen.
 **Done when:** the latest pulls show with result, time and failure reason, and no token or reply secret appears.
+- [x] Design it (spec): `/architect recent pull history`
 - [ ] Build it: `/develop recent pull history`
+  - [ ] Thin thread: `BuildRecentPulls`, lazy `pulls` prop, plain list on the page (AC-1, AC-5)
+  - [ ] Safe fields, stable order and the one query (AC-6, AC-7)
+  - [ ] The table: caption, Good and Failed badges, Scheduled or Manual, reason rules (AC-2, AC-3)
+  - [ ] Placement in every state, "No pulls yet." and the closing note moved (AC-4)
+  - [ ] Poll check, phone and keyboard pass, page checks again (AC-3, AC-5, AC-8)
+- [ ] Verify it: `/check verify recent pull history`
+- [ ] Test it: `/test recent pull history`
+Spec [0010](../specs/0010-recent-pull-history.md)
 
 ### 12. Edit, pause and remove deployments
 An admin changes a deployment's name or URL, turns it on or off, or removes it. Pausing stops pulls. Removing keeps no usable token.
