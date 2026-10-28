@@ -252,6 +252,27 @@ Last updated: 2026-10-27
 
 **Pattern notes:** the page never scrolls sideways. Only the table wrapper does.
 
+### Recent pulls (collapsible ledger table)
+
+File: `resources/js/pages/deployments/Show.vue`
+Last updated: 2026-10-28
+
+| Property | Class |
+| --- | --- |
+| Wrapper | kit `Collapsible` as `section`, `overflow-hidden rounded-xl border border-border/70 bg-card shadow-sm`, closed by default |
+| Trigger | full width `button` inside the `h2`: `flex w-full items-center justify-between gap-4 px-4 py-3 hover:bg-muted/40 focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:ring-inset` |
+| Title | eyebrow style `text-[11px] font-semibold tracking-widest text-muted-foreground uppercase` |
+| Chevron | `ChevronDown size-4 text-muted-foreground`, `group-data-[state=open]:rotate-180` |
+| Table box | `overflow-x-auto border-t border-border/60`, header row `bg-muted/40 hover:bg-transparent`, cells `px-4 py-3` |
+| Time cell | `text-sm font-medium tabular-nums` with `RelativeTime` |
+| Result | `Badge` variant `success` (Good) or `danger` (Failed) |
+| Source chip | `rounded-md bg-muted px-2 py-0.5 text-xs font-semibold text-foreground` |
+| Reason cell | `min-w-64 text-sm whitespace-normal`, `text-muted-foreground` for "None", `text-foreground` when failed |
+| Failed row | `bg-danger-soft border-danger-border/60`, plus `shadow-[inset_3px_0_0_var(--color-danger)]` on the first cell |
+| Shadow | `shadow-sm` on the wrapper only |
+
+**Pattern notes:** use this for any "latest N events" log: collapsed by default, a ledger table inside, failed rows tinted. The tint and edge always come with a Failed word badge, never colour alone. No summary counts or strips in the header, by choice. An empty list shows plain muted text under the title and has nothing to open.
+
 ## Forms
 
 ### Login form (auth pages)

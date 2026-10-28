@@ -15,7 +15,7 @@ The Vue 3 and Inertia front end. It follows the Laravel Vue starter kit layout, 
 | `lib/formatRelative.ts` | The only place times become "5 min ago" and the exact time text |
 | `lib/deploymentStatus.ts` | The badge map and status notes, shared by the Home card and the Deployment page so they never disagree (spec 0009) |
 | `lib/formatWindowRange.ts` | The only place a window's `from` and `to` become "1 Oct to 31 Oct" (spec 0009) |
-| `pages/deployments/Show.vue` | The Deployment page, Focus view: period switch, three summary cards, link outcomes, an all periods table. The breadcrumb is set with `setLayoutProps` so a rename shows after a poll (spec 0009) |
+| `pages/deployments/Show.vue` | The Deployment page, Focus view: period switch, three summary cards, link outcomes, an all periods table, then a collapsible Recent pulls table (closed by default, from the lazy `pulls` prop, spec 0010). The breadcrumb is set with `setLayoutProps` so a rename shows after a poll (spec 0009) |
 | `composables/useNow.ts` | One shared clock (30 second tick) for every relative time |
 | `components/MoneyByCurrency.vue` | One row per currency. Never adds across currencies |
 | `components/DeploymentCard.vue` | The Home card (Balanced layout). Gets one period from the page, so switching makes no request |
@@ -53,5 +53,6 @@ npm run build        # also regenerates the Wayfinder routes
 - [0003 Design system and UI foundation](../../docs/specs/0003-design-system-ui-foundation.md)
 - [0007 Home page](../../docs/specs/0007-home-page/index.md)
 - [0009 Deployment page](../../docs/specs/0009-deployment-page/index.md)
+- [0010 Recent pull history](../../docs/specs/0010-recent-pull-history.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
