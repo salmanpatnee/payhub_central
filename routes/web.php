@@ -9,7 +9,7 @@ Route::redirect('/', '/dashboard')->name('home');
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', HomeController::class)->name('dashboard');
     Route::resource('deployments', DeploymentController::class)
-        ->only(['create', 'store', 'show', 'edit', 'update', 'destroy'])
+        ->only(['index', 'create', 'store', 'show', 'edit', 'update', 'destroy'])
         ->where(['deployment' => '[a-z0-9-]+']);
     Route::patch('deployments/{deployment}/active', [DeploymentController::class, 'active'])
         ->where('deployment', '[a-z0-9-]+')->name('deployments.active');

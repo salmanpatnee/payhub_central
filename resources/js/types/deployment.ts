@@ -81,3 +81,16 @@ export type PullRow = {
     // The saved message of a failed pull, else null.
     reason: string | null;
 };
+
+// Mirrors the array built by App\Actions\Deployments\BuildDeploymentList.
+export type DeploymentRow = {
+    id: number;
+    name: string;
+    // Host of the base URL only.
+    domain: string | null;
+    state: DeploymentState;
+    // Ready made paths. The Deployment page path is also where DELETE goes.
+    href: string;
+    editHref: string;
+    activeHref: string;
+};

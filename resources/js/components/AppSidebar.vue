@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { LayoutGrid, Plus } from '@lucide/vue';
+import { LayoutGrid, List } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -14,7 +14,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
-import { create } from '@/routes/deployments';
+import { index } from '@/routes/deployments';
 import type { NavItem } from '@/types';
 
 // Feature 12 adds Staff when that page exists.
@@ -25,9 +25,9 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Add deployment',
-        href: create(),
-        icon: Plus,
+        title: 'Deployments',
+        href: index(),
+        icon: List,
     },
 ];
 </script>

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Actions\Deployments\BuildDeploymentDetail;
+use App\Actions\Deployments\BuildDeploymentList;
 use App\Actions\Deployments\BuildRecentPulls;
 use App\Actions\Deployments\RemoveDeployment;
 use App\Actions\Deployments\UpdateDeployment;
@@ -20,6 +21,16 @@ use Inertia\Response;
 
 class DeploymentController extends Controller
 {
+    /**
+     * Show every deployment as a table row. Plain arrays, never models.
+     */
+    public function index(BuildDeploymentList $list): Response
+    {
+        return Inertia::render('deployments/Index', [
+            'deployments' => $list->handle(),
+        ]);
+    }
+
     /**
      * Show the add form. It gets no deployment data, so no token can reach the browser.
      */
@@ -57,7 +68,7 @@ class DeploymentController extends Controller
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Deployment added.')]);
 
-        return to_route('dashboard');
+        return to_route('deployments.index');
     }
 
     /**
@@ -102,7 +113,12 @@ class DeploymentController extends Controller
             'message' => $active ? __('Deployment resumed.') : __('Deployment paused.'),
         ]);
 
-        return to_route('deployments.show', $deployment);
+        // Back to the list when the click came from the list, else the Deployment page. Only these two targets.
+        $from = rtrim((string) parse_url((string) $request->headers->get('referer'), PHP_URL_PATH), '/');
+
+        return $from === route('deployments.index', absolute: false)
+            ? to_route('deployments.index')
+            : to_route('deployments.show', $deployment);
     }
 
     /**
@@ -114,6 +130,6 @@ class DeploymentController extends Controller
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Deployment removed.')]);
 
-        return to_route('dashboard');
+        return to_route('deployments.index');
     }
 }

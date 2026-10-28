@@ -9,13 +9,16 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
-import { create } from '@/routes/deployments';
+import { dashboard } from '@/routes';
+import { create, index } from '@/routes/deployments';
 
 const urlExample = 'https://payhub.example.com';
 
 defineOptions({
     layout: {
         breadcrumbs: [
+            { title: 'Home', href: dashboard() },
+            { title: 'Deployments', href: index() },
             {
                 title: 'Add deployment',
                 href: create(),

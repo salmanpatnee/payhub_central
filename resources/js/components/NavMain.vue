@@ -8,13 +8,21 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { useCurrentUrl } from '@/composables/useCurrentUrl';
+import { toUrl } from '@/lib/utils';
 import type { NavItem } from '@/types';
 
 defineProps<{
     items: NavItem[];
 }>();
 
-const { isCurrentUrl } = useCurrentUrl();
+const { currentUrl } = useCurrentUrl();
+
+// Active on the item's own page and on every page under it.
+function isActive(href: NavItem['href']): boolean {
+    const path = toUrl(href);
+
+    return currentUrl.value === path || currentUrl.value.startsWith(`${path}/`);
+}
 </script>
 
 <template>
@@ -24,7 +32,7 @@ const { isCurrentUrl } = useCurrentUrl();
             <SidebarMenuItem v-for="item in items" :key="item.title">
                 <SidebarMenuButton
                     as-child
-                    :is-active="isCurrentUrl(item.href)"
+                    :is-active="isActive(item.href)"
                     :tooltip="item.title"
                 >
                     <Link :href="item.href">

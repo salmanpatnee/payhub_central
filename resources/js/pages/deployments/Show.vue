@@ -33,6 +33,7 @@ import { formatMoney } from '@/lib/formatMoney';
 import { formatPercent } from '@/lib/formatPercent';
 import { formatWindowRange } from '@/lib/formatWindowRange';
 import { dashboard } from '@/routes';
+import { index } from '@/routes/deployments';
 import type { DeploymentDetail, PullRow, WindowKey } from '@/types';
 
 const props = defineProps<{
@@ -151,6 +152,7 @@ watchEffect(() => {
     setLayoutProps({
         breadcrumbs: [
             { title: 'Home', href: dashboard() },
+            { title: 'Deployments', href: index() },
             { title: props.deployment.name, href: page.url },
         ],
     });
@@ -161,7 +163,7 @@ usePoll(60000, {
     only: ['deployment'],
     onHttpException: (response) => {
         if (response.status === 404) {
-            router.visit(dashboard());
+            router.visit(index());
 
             return false;
         }

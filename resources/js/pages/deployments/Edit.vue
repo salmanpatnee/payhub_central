@@ -5,33 +5,25 @@ import DeploymentController from '@/actions/App/Http/Controllers/DeploymentContr
 import InputError from '@/components/InputError.vue';
 import PageHeader from '@/components/PageHeader.vue';
 import PasswordInput from '@/components/PasswordInput.vue';
+import RemoveDeploymentDialog from '@/components/RemoveDeploymentDialog.vue';
 import { Button } from '@/components/ui/button';
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import { dashboard } from '@/routes';
-import { show } from '@/routes/deployments';
+import { index, show } from '@/routes/deployments';
 
 const props = defineProps<{
     deployment: { key: string; name: string; baseUrl: string };
 }>();
 
-const removing = ref(false);
 const confirmOpen = ref(false);
 
 watchEffect(() => {
     setLayoutProps({
         breadcrumbs: [
             { title: 'Home', href: dashboard() },
+            { title: 'Deployments', href: index() },
             {
                 title: props.deployment.name,
                 href: show(props.deployment.key),
@@ -40,16 +32,6 @@ watchEffect(() => {
         ],
     });
 });
-
-function remove(): void {
-    router.delete(DeploymentController.destroy.url(props.deployment.key), {
-        onStart: () => (removing.value = true),
-        onFinish: () => {
-            removing.value = false;
-            confirmOpen.value = false;
-        },
-    });
-}
 </script>
 
 <template>
@@ -146,46 +128,16 @@ function remove(): void {
                 page. This cannot be undone.
             </p>
 
-            <Dialog v-model:open="confirmOpen">
-                <DialogTrigger as-child>
-                    <Button variant="destructive">Remove deployment</Button>
-                </DialogTrigger>
-                <DialogContent>
-                    <DialogHeader>
-                        <DialogTitle>Remove {{ deployment.name }}?</DialogTitle>
-                        <DialogDescription as="div">
-                            <ul class="list-disc space-y-1 pl-5">
-                                <li>
-                                    The token is wiped here and cannot be
-                                    recovered.
-                                </li>
-                                <li>The key can never be used again.</li>
-                                <li>
-                                    This does not revoke the token inside
-                                    PayHub. Revoke it there too.
-                                </li>
-                            </ul>
-                        </DialogDescription>
-                    </DialogHeader>
-                    <DialogFooter>
-                        <Button
-                            variant="outline"
-                            :disabled="removing"
-                            @click="confirmOpen = false"
-                        >
-                            Cancel
-                        </Button>
-                        <Button
-                            variant="destructive"
-                            :disabled="removing"
-                            @click="remove"
-                        >
-                            <Spinner v-if="removing" />
-                            Remove
-                        </Button>
-                    </DialogFooter>
-                </DialogContent>
-            </Dialog>
+            <Button variant="destructive" @click="confirmOpen = true">
+                Remove deployment
+            </Button>
+
+            <RemoveDeploymentDialog
+                v-model:open="confirmOpen"
+                :name="deployment.name"
+                :remove-href="show(deployment.key).url"
+                @missing="router.visit(index())"
+            />
         </section>
     </div>
 </template>
