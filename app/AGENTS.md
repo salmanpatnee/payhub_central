@@ -13,10 +13,13 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Models/PullWindow.php`, `Models/PullWindowAmount.php` | The four windows of a good pull and the money per kind and currency, in whole cents |
 | `Enums/` | `PullStatus`, `PullSource`, `PullFailureKind`, `WindowName`, `AmountKind`. Cast on the models, no free text in those columns |
 | `Actions/Pulls/SaveGoodPull.php` | The only place that writes a good pull, its four windows and its money rows, in one transaction |
-| `Actions/Pulls/PullDeployment.php` | One manual pull: refuses paused, waiting, locked or removed, reads the token, makes the call, maps the answer, saves a good or failed pull. Returns the `Pull` or throws `PullRefused` |
+| `Actions/Pulls/PullDeployment.php` | One pull, manual or scheduled (the `PullSource` is passed in): refuses paused, waiting, locked or removed, reads the token, makes the call, maps the answer, saves a good or failed pull. Returns the `Pull` or throws `PullRefused` |
 | `Actions/Pulls/FetchSummary.php`, `FetchedSummary.php` | The one HTTP call (10 seconds, no redirects, no retry) and what came back: an answer or a failure code |
 | `Actions/Pulls/CheckSummaryReply.php` | Required fields, text lengths and sums for a v1 reply. Pure, no database |
 | `Actions/Pulls/SaveFailedPull.php` | The only place that writes a failed pull. Fixed message per code, body cut to 2 KB for three codes |
+| `Actions/Pulls/DispatchDuePulls.php` | Every 5 minutes: queues one `PullDeploymentJob` for each active, present deployment that is not waiting, then writes the heartbeat as the last step (spec 0008) |
+| `Jobs/PullDeploymentJob.php` | One scheduled pull for one deployment id. Unique per deployment, 20 second limit, one try (the next run is the retry). Refused pulls only log a fixed line (spec 0008) |
+| `Actions/Scheduler/SchedulerHealth.php` | The heartbeat in the cache and `isStale()` (no beat for 10 minutes, an old waiting job, or a recent failed job). Feeds the `scheduler` prop that shows the banner (spec 0008) |
 | `Actions/Home/BuildDeploymentCards.php` | The Home page cards: one plain array per deployment (domain host only, state, reason, three periods). Selects only safe columns, so the token and raw reply never load. Fixed query count (spec 0007) |
 | `Http/Controllers/HomeController.php` | The Home page (the `dashboard` route). Passes the card arrays from `BuildDeploymentCards` to the Dashboard page, never a model (spec 0007) |
 | `Console/Commands/PullDeploymentCommand.php` | `php artisan pulls:run {key}`. Prints one line and exits 1 on a failed pull or refusal (spec 0006) |
@@ -54,6 +57,8 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - `PullDeployment` reads the token with `Crypt::decryptString` on the raw column (the model cast cannot be caught by PHPStan) and passes it only to `FetchSummary` as a `#[SensitiveParameter]`. Anything thrown while saving a reply is caught and saved as `invalid_reply`.
 - Set `do_not_pull_before` with `Deployment::whereKey($id)->update(...)`, not `save()`, so a removed deployment is not touched.
 - Guzzle 8 has no cURL error number on exceptions. A timeout is a `ConnectTimeoutException`, `NetworkTimeoutException` or `ResponseTimeoutException` (message `cURL error 28` is the fallback).
+- The schedule lives in `routes/console.php`: `pulls:dispatch` every 5 minutes, and `queue:work --stop-when-empty --max-time=50` every minute with `withoutOverlapping(2)` so a killed worker cannot block pulls for a day. Cron only needs `schedule:run` every minute.
+- `SchedulerHealth` reads the heartbeat and `jobs` / `failed_jobs` timestamps as Unix numbers, so the app timezone does not shift the banner. Guests get `scheduler: null`.
 - In tests, `Http::fake()` called twice keeps the first stub. Call `Http::swap(new Factory)` between replies.
 
 ## Related specs
@@ -63,5 +68,6 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - [0005 Add a deployment](../docs/specs/0005-add-a-deployment/index.md)
 - [0006 Pull a summary by hand](../docs/specs/0006-pull-a-summary-by-hand/index.md)
 - [0007 Home page](../docs/specs/0007-home-page/index.md)
+- [0008 Scheduled pulls](../docs/specs/0008-scheduled-pulls/index.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._

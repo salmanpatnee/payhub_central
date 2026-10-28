@@ -154,7 +154,7 @@ Pull every active deployment about every 5 minutes, one queued job per deploymen
   - [x] Heartbeat and the banner: `SchedulerHealth` and the shared `scheduler` prop, `schedule:work` for local dev (AC-8)
   - [x] Leak check: job payload, `failed_jobs`, logs, page data (AC-9)
 - [x] Verify it: `/check verify scheduled pulls`
-- [ ] Test it: `/test scheduled pulls`
+- [x] Test it: `/test scheduled pulls`
 Spec [0008](../specs/0008-scheduled-pulls/index.md) � code in `app/Actions/Pulls/DispatchDuePulls.php`, `app/Jobs/PullDeploymentJob.php`, `app/Actions/Scheduler/SchedulerHealth.php`, `routes/console.php`
 
 ## Slice 3: Deployment page and admin care
