@@ -29,7 +29,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 6 | Add a deployment | Slice 1 | done |
 | 7 | Pull a summary by hand | Slice 1 | done |
 | 8 | Home page with a deployment card | Slice 1 | done |
-| 9 | Scheduled pulls | Slice 2 | in-progress |
+| 9 | Scheduled pulls | Slice 2 | done |
 | 10 | Deployment page | Slice 3 | planned |
 | 11 | Recent pull history | Slice 3 | planned |
 | 12 | Edit, pause and remove deployments | Slice 3 | planned |
@@ -142,7 +142,7 @@ Spec [0007](../specs/0007-home-page/index.md) � code in `app/Actions/Home/BuildD
 
 ## Slice 2: Scheduled pulls
 
-### 9. Scheduled pulls · in-progress
+### 9. Scheduled pulls · done
 Pull every active deployment about every 5 minutes, one queued job per deployment so a slow one does not block the others. Short timeout, limited retries, and wait for `Retry-After` on 429.
 **Done when:** active deployments are pulled on the schedule without a click, paused ones are skipped, one slow or failing deployment does not delay the rest, and the call rate stays under 6 per minute per token.
 - [x] Design it (spec): `/architect scheduled pulls`
@@ -153,7 +153,7 @@ Pull every active deployment about every 5 minutes, one queued job per deploymen
   - [x] Cron started worker with the 2 minute overlap expiry (AC-7)
   - [x] Heartbeat and the banner: `SchedulerHealth` and the shared `scheduler` prop, `schedule:work` for local dev (AC-8)
   - [x] Leak check: job payload, `failed_jobs`, logs, page data (AC-9)
-- [ ] Verify it: `/check verify scheduled pulls`
+- [x] Verify it: `/check verify scheduled pulls`
 - [ ] Test it: `/test scheduled pulls`
 Spec [0008](../specs/0008-scheduled-pulls/index.md) � code in `app/Actions/Pulls/DispatchDuePulls.php`, `app/Jobs/PullDeploymentJob.php`, `app/Actions/Scheduler/SchedulerHealth.php`, `routes/console.php`
 
