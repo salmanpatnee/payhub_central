@@ -25,12 +25,13 @@ class SaveFailedPull
         ?int $httpStatus,
         string $body,
         CarbonInterface $pulledAt,
+        PullSource $source,
     ): Pull {
         return Pull::query()->create([
             'deployment_id' => $deployment->id,
             'pulled_at' => $pulledAt->copy()->utc(),
             'status' => PullStatus::Failed,
-            'source' => PullSource::Manual,
+            'source' => $source,
             'triggered_by' => null,
             'failure_kind' => $kind,
             'http_status' => $httpStatus,

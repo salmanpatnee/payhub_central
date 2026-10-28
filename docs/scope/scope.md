@@ -146,16 +146,16 @@ Spec [0007](../specs/0007-home-page/index.md) · code in `app/Actions/Home/BuildD
 Pull every active deployment about every 5 minutes, one queued job per deployment so a slow one does not block the others. Short timeout, limited retries, and wait for `Retry-After` on 429.
 **Done when:** active deployments are pulled on the schedule without a click, paused ones are skipped, one slow or failing deployment does not delay the rest, and the call rate stays under 6 per minute per token.
 - [x] Design it (spec): `/architect scheduled pulls`
-- [ ] Build it: `/develop scheduled pulls`
-  - [ ] Thin thread: pass the source through `PullDeployment`, the job, the dispatcher and its schedule entry, a scheduled pull saved (AC-1, AC-2)
-  - [ ] Due rules, one unique job per deployment, quiet ends for refused jobs (AC-1, AC-3, AC-6)
-  - [ ] Safe failures: no retry, 20 second limit, 1 hour unique backstop, fixed log lines (AC-3, AC-4, AC-5)
-  - [ ] Cron started worker with the 2 minute overlap expiry (AC-7)
-  - [ ] Heartbeat and the banner: `SchedulerHealth` and the shared `scheduler` prop, `schedule:work` for local dev (AC-8)
-  - [ ] Leak check: job payload, `failed_jobs`, logs, page data (AC-9)
+- [x] Build it: `/develop scheduled pulls`
+  - [x] Thin thread: pass the source through `PullDeployment`, the job, the dispatcher and its schedule entry, a scheduled pull saved (AC-1, AC-2)
+  - [x] Due rules, one unique job per deployment, quiet ends for refused jobs (AC-1, AC-3, AC-6)
+  - [x] Safe failures: no retry, 20 second limit, 1 hour unique backstop, fixed log lines (AC-3, AC-4, AC-5)
+  - [x] Cron started worker with the 2 minute overlap expiry (AC-7)
+  - [x] Heartbeat and the banner: `SchedulerHealth` and the shared `scheduler` prop, `schedule:work` for local dev (AC-8)
+  - [x] Leak check: job payload, `failed_jobs`, logs, page data (AC-9)
 - [ ] Verify it: `/check verify scheduled pulls`
 - [ ] Test it: `/test scheduled pulls`
-Spec [0008](../specs/0008-scheduled-pulls/index.md)
+Spec [0008](../specs/0008-scheduled-pulls/index.md) ï¿½ code in `app/Actions/Pulls/DispatchDuePulls.php`, `app/Jobs/PullDeploymentJob.php`, `app/Actions/Scheduler/SchedulerHealth.php`, `routes/console.php`
 
 ## Slice 3: Deployment page and admin care
 

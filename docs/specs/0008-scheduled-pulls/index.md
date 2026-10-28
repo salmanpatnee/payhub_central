@@ -1,7 +1,7 @@
 # 0008. Scheduled pulls
 
 **Date**: 2026-10-28
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
@@ -101,12 +101,12 @@ Add a small dispatcher that runs every 5 minutes and queues a `PullDeploymentJob
 
 Approach is Tracer Bullet: first one thin working thread (dispatcher, job, one scheduled pull saved), then thicken one strand at a time. No migration is needed. Every test step uses `Http::fake()`; nothing here calls a real PayHub.
 
-- [ ] 1. Pass the source through `PullDeployment` and `SaveFailedPull`, add `PullDeploymentJob` and `DispatchDuePulls`, and schedule the dispatcher, so running `schedule:run` and one worker saves a `scheduled` good pull for an active deployment, satisfies **AC-1**, **AC-2**
-- [ ] 2. Add the due rules (paused, removed, waiting), the unique job, and the quiet end for refused jobs, satisfies **AC-1**, **AC-3**, **AC-6**
-- [ ] 3. Make failures safe: no retry, 20 second limit, 1 hour unique backstop, fixed log lines for every quiet exit, and one job failing without stopping the next, satisfies **AC-3**, **AC-4**, **AC-5**
-- [ ] 4. Add the worker schedule entry after the dispatcher, with `--stop-when-empty --max-time=50` and the 2 minute overlap expiry, satisfies **AC-7**
-- [ ] 5. Add `SchedulerHealth` (heartbeat written by the dispatcher, the three stale checks) and the shared `scheduler` prop for logged in users, constructor injected into the middleware, so the banner works. Check `php artisan dev` and add `schedule:work` if missing, satisfies **AC-8**
-- [ ] 6. Check that nothing leaks (job payload, `failed_jobs`, the log lines this feature writes, page data), and note the cron line, satisfies **AC-9**
+- [x] 1. Pass the source through `PullDeployment` and `SaveFailedPull`, add `PullDeploymentJob` and `DispatchDuePulls`, and schedule the dispatcher, so running `schedule:run` and one worker saves a `scheduled` good pull for an active deployment, satisfies **AC-1**, **AC-2**
+- [x] 2. Add the due rules (paused, removed, waiting), the unique job, and the quiet end for refused jobs, satisfies **AC-1**, **AC-3**, **AC-6**
+- [x] 3. Make failures safe: no retry, 20 second limit, 1 hour unique backstop, fixed log lines for every quiet exit, and one job failing without stopping the next, satisfies **AC-3**, **AC-4**, **AC-5**
+- [x] 4. Add the worker schedule entry after the dispatcher, with `--stop-when-empty --max-time=50` and the 2 minute overlap expiry, satisfies **AC-7**
+- [x] 5. Add `SchedulerHealth` (heartbeat written by the dispatcher, the three stale checks) and the shared `scheduler` prop for logged in users, constructor injected into the middleware, so the banner works. Check `php artisan dev` and add `schedule:work` if missing, satisfies **AC-8**
+- [x] 6. Check that nothing leaks (job payload, `failed_jobs`, the log lines this feature writes, page data), and note the cron line, satisfies **AC-9**
 
 ## Consequences
 

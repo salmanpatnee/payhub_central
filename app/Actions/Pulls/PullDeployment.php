@@ -17,7 +17,7 @@ use JsonException;
 use Throwable;
 
 /**
- * One manual pull for one deployment: check the rules, make the call, check the reply, save a good or failed pull.
+ * One pull for one deployment (manual or scheduled): check the rules, make the call, check the reply, save a good or failed pull.
  * Messages are fixed text. Nothing from an exception or a response header is ever saved or shown.
  */
 class PullDeployment
@@ -38,7 +38,7 @@ class PullDeployment
     /**
      * @throws PullRefused when the pull is not started, or not saved because the deployment was removed
      */
-    public function handle(Deployment $deployment): Pull
+    public function handle(Deployment $deployment, PullSource $source = PullSource::Manual): Pull
     {
         $this->assertPullable($this->reload($deployment));
 
@@ -52,7 +52,7 @@ class PullDeployment
             $fresh = $this->reload($deployment);
             $this->assertPullable($fresh);
 
-            return $this->pull($fresh);
+            return $this->pull($fresh, $source);
         } finally {
             $lock->release();
         }
@@ -75,12 +75,12 @@ class PullDeployment
         }
     }
 
-    private function pull(Deployment $deployment): Pull
+    private function pull(Deployment $deployment, PullSource $source): Pull
     {
         $token = $this->readToken($deployment);
 
         if ($token === null || $token === '') {
-            return $this->saveFailed->handle($deployment, PullFailureKind::TokenUnreadable, null, '', now());
+            return $this->saveFailed->handle($deployment, PullFailureKind::TokenUnreadable, null, '', now(), $source);
         }
 
         try {
@@ -96,17 +96,17 @@ class PullDeployment
         }
 
         if ($fetched->failure !== null) {
-            return $this->saveFailed->handle($deployment, $fetched->failure, null, '', $pulledAt);
+            return $this->saveFailed->handle($deployment, $fetched->failure, null, '', $pulledAt, $source);
         }
 
         $status = (int) $fetched->status;
 
         if ($status === 200) {
             try {
-                return $this->saveReply($deployment, $fetched->body, $pulledAt);
+                return $this->saveReply($deployment, $fetched->body, $pulledAt, $source);
             } catch (Throwable) {
                 // Nothing from the error is kept: its text can carry the token or the URL.
-                return $this->saveFailed->handle($deployment, PullFailureKind::InvalidReply, 200, $fetched->body, $pulledAt);
+                return $this->saveFailed->handle($deployment, PullFailureKind::InvalidReply, 200, $fetched->body, $pulledAt, $source);
             }
         }
 
@@ -123,7 +123,7 @@ class PullDeployment
             $this->holdBack($deployment, $fetched->retryAfter);
         }
 
-        return $this->saveFailed->handle($deployment, $kind, $status, '', $pulledAt);
+        return $this->saveFailed->handle($deployment, $kind, $status, '', $pulledAt, $source);
     }
 
     private function readToken(Deployment $deployment): ?string
@@ -137,9 +137,9 @@ class PullDeployment
         }
     }
 
-    private function saveReply(Deployment $deployment, string $body, CarbonInterface $pulledAt): Pull
+    private function saveReply(Deployment $deployment, string $body, CarbonInterface $pulledAt, PullSource $source): Pull
     {
-        $invalid = fn (): Pull => $this->saveFailed->handle($deployment, PullFailureKind::InvalidReply, 200, $body, $pulledAt);
+        $invalid = fn (): Pull => $this->saveFailed->handle($deployment, PullFailureKind::InvalidReply, 200, $body, $pulledAt, $source);
 
         if (strlen($body) > self::MAX_BODY_BYTES) {
             return $invalid();
@@ -152,20 +152,20 @@ class PullDeployment
         }
 
         if (($reply['contract_version'] ?? null) !== 'v1') {
-            return $this->saveFailed->handle($deployment, PullFailureKind::BadVersion, 200, $body, $pulledAt);
+            return $this->saveFailed->handle($deployment, PullFailureKind::BadVersion, 200, $body, $pulledAt, $source);
         }
 
         $key = is_array($reply['deployment'] ?? null) ? ($reply['deployment']['key'] ?? null) : null;
 
         if ($key !== $deployment->slug) {
-            return $this->saveFailed->handle($deployment, PullFailureKind::KeyMismatch, 200, $body, $pulledAt);
+            return $this->saveFailed->handle($deployment, PullFailureKind::KeyMismatch, 200, $body, $pulledAt, $source);
         }
 
         if (! $this->check->passes($reply)) {
             return $invalid();
         }
 
-        return $this->saveGood->handle($deployment, PullSource::Manual, null, $reply, $body, $pulledAt);
+        return $this->saveGood->handle($deployment, $source, null, $reply, $body, $pulledAt);
     }
 
     /**
