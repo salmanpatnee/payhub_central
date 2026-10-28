@@ -66,7 +66,7 @@ Last updated: 2026-10-27
 | Shadow | `shadow-sm` (from `Card`) |
 | Accent usage | none |
 
-**Pattern notes:** the skeleton uses the same padding, label row and `min-h-24` value area, so nothing jumps on load. Grid for cards: `grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4`.
+**Pattern notes:** the skeleton uses the same padding, label row and `min-h-24` value area, so nothing jumps on load. Grid for stat cards: `grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4`. Deployment cards use 2 columns, see below.
 
 ### MoneyByCurrency
 
@@ -80,7 +80,7 @@ Last updated: 2026-10-27
 | Amount | `text-xl font-semibold tracking-tight tabular-nums` |
 | Empty text | `text-sm text-muted-foreground` ("No payments") |
 
-**Pattern notes:** one row per currency, never a total. Text comes only from `formatMoney`. Use `text-2xl` for headline cards.
+**Pattern notes:** one row per currency, never a total. Text comes only from `formatMoney`. Use `text-2xl` for headline cards. The Home card no longer uses it.
 
 ### RelativeTime
 
@@ -127,6 +127,46 @@ Last updated: 2026-10-27
 | Reason | `max-w-md text-sm text-muted-foreground` |
 
 **Pattern notes:** icon, title, short reason and at most one next step.
+
+### DeploymentCard (Balanced)
+
+File: `resources/js/components/DeploymentCard.vue`
+Last updated: 2026-10-28
+
+| Property | Class |
+| --- | --- |
+| Background | `bg-card` (kit `Card`) |
+| Border | `border-border/70`, inner dividers `border-t border-border/50` |
+| Border radius | `rounded-xl` |
+| Name (`h2`) | `text-base font-semibold tracking-tight break-words` |
+| Domain | `text-xs break-all text-muted-foreground` |
+| Number cell value | `text-xl font-semibold tracking-tight tabular-nums`, danger count adds `text-danger` |
+| Number cell label | `text-[11px] font-semibold tracking-widest text-muted-foreground uppercase` |
+| Number cell hint | `text-xs text-muted-foreground` |
+| Spacing | `gap-0 p-0` on the card, sections `p-4` (header `pb-3`, cells and footer `py-3`) |
+| Cell grid | `grid-cols-2 xl:grid-cols-4`, `border-r` / `border-b` dividers |
+| Currency table | kit `Table`, first head cell holds the period name, `pl-4` / `pr-4` edges, code `text-xs font-semibold tracking-wider uppercase`, paid `text-sm font-medium tabular-nums`, pending `text-sm tabular-nums` |
+| Footer | `space-y-2 border-t border-border/50 text-xs text-muted-foreground` |
+| Warning chip | `inline-flex items-center gap-1 rounded-full bg-warning-soft px-2 py-0.5 font-medium text-warning ring-1 ring-warning-border ring-inset`, `TriangleAlert size-3` icon |
+| Hover state | none (the card is not a link yet) |
+| Shadow | `shadow-sm` (from `Card`) |
+| Accent usage | status only: Live, Unavailable, Paused badge, red failed count, amber chip |
+
+**Pattern notes:** grid is `grid-cols-1 sm:grid-cols-2` (2 per row, not 3). Money uses the table and `formatMoney`, never `MoneyByCurrency` (that stays for other pages). Always a word with the colour. Numbers are never faded on Unavailable or Paused cards, a note carries the warning. Measured contrast: chip 6.84, neutral badge 5.27, danger 6.47.
+
+### Period switch (segmented control)
+
+File: `resources/js/pages/Dashboard.vue`
+Last updated: 2026-10-28
+
+| Property | Class |
+| --- | --- |
+| Track | `inline-flex w-full rounded-lg bg-muted p-1 sm:w-auto` |
+| Button | `flex-1 rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground sm:flex-none` |
+| Selected | `aria-pressed:bg-card aria-pressed:text-foreground aria-pressed:shadow-sm` |
+| Focus | `focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none` |
+
+**Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. Full width on phones, right aligned from `sm`. State lives in the page, not the URL.
 
 ## Tables
 

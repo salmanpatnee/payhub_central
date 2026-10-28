@@ -17,6 +17,7 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Actions/Pulls/FetchSummary.php`, `FetchedSummary.php` | The one HTTP call (10 seconds, no redirects, no retry) and what came back: an answer or a failure code |
 | `Actions/Pulls/CheckSummaryReply.php` | Required fields, text lengths and sums for a v1 reply. Pure, no database |
 | `Actions/Pulls/SaveFailedPull.php` | The only place that writes a failed pull. Fixed message per code, body cut to 2 KB for three codes |
+| `Actions/Home/BuildDeploymentCards.php` | The Home page cards: one plain array per deployment (domain host only, state, reason, three periods). Selects only safe columns, so the token and raw reply never load. Fixed query count (spec 0007) |
 | `Console/Commands/PullDeploymentCommand.php` | `php artisan pulls:run {key}`. Prints one line and exits 1 on a failed pull or refusal (spec 0006) |
 | `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005). The request holds all the rules; saving never calls PayHub |
 | `Concerns/` | Shared validation rules from the starter kit (password, profile) |
@@ -37,6 +38,7 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - Eloquent relation methods carry generic docblocks (`HasMany<Pull, $this>`) so PHPStan level 7 passes.
 - Pass a deployment id to jobs, never the token or the model with its token.
 - Pages get explicit arrays or resources, never a whole `Deployment` model.
+- Card money maps are cast `(object)` so an empty map is `{}` in JSON and a digit only currency code stays a key. Compare `$window->name` and `$amount->kind` as enum cases, not strings.
 
 ## Gotchas
 
@@ -59,5 +61,6 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - [0004 Invite only login](../docs/specs/0004-invite-only-login/index.md)
 - [0005 Add a deployment](../docs/specs/0005-add-a-deployment/index.md)
 - [0006 Pull a summary by hand](../docs/specs/0006-pull-a-summary-by-hand/index.md)
+- [0007 Home page](../docs/specs/0007-home-page/index.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._

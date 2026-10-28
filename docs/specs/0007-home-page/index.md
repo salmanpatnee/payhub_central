@@ -2,7 +2,7 @@
 
 **Date**: 2026-10-27
 **Updated**: 2026-10-28 (card redesigned to the Balanced layout)
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 
@@ -215,12 +215,12 @@ Approach is Tracer Bullet: first one thin thread that shows a real saved number 
 4. First card layout, the grid and the footnote (built, reworked by tasks 9 and 10)
 5. Add 60 second polling with `usePoll` limited to `deployments`, satisfies **AC-8** (built)
 6. First keyboard, 375px and contrast pass (built, repeated by task 12)
-7. Rework the builder: select `base_url`, load the third window `last_30_days`, return `domain` and `periods` (links, paid count, paid and pending money) in the new shape, and remove the old `today` and `thisMonth` fields, satisfies **AC-3**, **AC-9**, **AC-12**
-8. Update the `DeploymentCard` type, add `formatPercent` to `resources/js/lib`, and add `cardWarnings.ts` with the two limits and one function, satisfies **AC-3**, **AC-14**
-9. Rework `DeploymentCard.vue` to the Balanced layout: name, domain and badge; four number cells; the paid and pending currency table; the footer with freshness, payments count, warning chips and status notes, satisfies **AC-2**, **AC-3**, **AC-4**, **AC-5**, **AC-6**, **AC-7**, **AC-14**
-10. Rework `Dashboard.vue`: the period switch, the 2 column grid (1 on phones), the new footnote, and the period kept across polls, satisfies **AC-8**, **AC-10**, **AC-11**, **AC-13**
-11. Remove superseded code: the `size` prop on `MoneyByCurrency` and any unused field or import from the first design, and check nothing still references them, satisfies **AC-3**
-12. Keyboard, 375px and contrast pass in the browser. Check the neutral Paused badge and the warning chip first, satisfies **AC-11**
+7. Rework the builder: select `base_url`, load the third window `last_30_days`, return `domain` and `periods` (links, paid count, paid and pending money) in the new shape, and remove the old `today` and `thisMonth` fields, satisfies **AC-3**, **AC-9**, **AC-12** (built)
+8. Update the `DeploymentCard` type, add `formatPercent` to `resources/js/lib`, and add `cardWarnings.ts` with the two limits and one function, satisfies **AC-3**, **AC-14** (built)
+9. Rework `DeploymentCard.vue` to the Balanced layout: name, domain and badge; four number cells; the paid and pending currency table; the footer with freshness, payments count, warning chips and status notes, satisfies **AC-2**, **AC-3**, **AC-4**, **AC-5**, **AC-6**, **AC-7**, **AC-14** (built)
+10. Rework `Dashboard.vue`: the period switch, the 2 column grid (1 on phones), the new footnote, and the period kept across polls, satisfies **AC-8**, **AC-10**, **AC-11**, **AC-13** (built)
+11. Remove superseded code: the `size` prop on `MoneyByCurrency` and any unused field or import from the first design, and check nothing still references them, satisfies **AC-3** (built)
+12. Keyboard, 375px and contrast pass in the browser. Check the neutral Paused badge and the warning chip first, satisfies **AC-11** (built)
 
 ## Consequences
 

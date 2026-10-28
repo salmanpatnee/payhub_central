@@ -4,13 +4,9 @@ import { formatMoney } from '@/lib/formatMoney';
 
 // Whole cents by currency code. One row per currency; amounts are never added
 // together across currencies.
-const props = withDefaults(
-    defineProps<{
-        amounts: Record<string, number>;
-        size?: 'default' | 'small';
-    }>(),
-    { size: 'default' },
-);
+const props = defineProps<{
+    amounts: Record<string, number>;
+}>();
 
 const rows = computed(() =>
     Object.entries(props.amounts)
@@ -37,13 +33,7 @@ const rows = computed(() =>
             >
                 {{ row.code }}
             </dt>
-            <dd
-                :class="
-                    size === 'small'
-                        ? 'text-sm font-medium tabular-nums'
-                        : 'text-xl font-semibold tracking-tight tabular-nums'
-                "
-            >
+            <dd class="text-xl font-semibold tracking-tight tabular-nums">
                 {{ row.amount }}
             </dd>
         </div>
