@@ -1,7 +1,7 @@
 # 0011. Edit, pause and remove deployments
 
 **Date**: 2026-10-28
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 

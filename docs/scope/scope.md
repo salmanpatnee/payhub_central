@@ -192,14 +192,14 @@ An admin changes a deployment's name or URL, turns it on or off, or removes it. 
 **Done when:** edits save, a paused deployment is not pulled, a removed deployment disappears from the pages, and the token field never shows the old value.
 - [x] Design it (spec): `/architect edit, pause and remove deployments`
 - [ ] Build it: `/develop edit, pause and remove deployments`
-  - [ ] Thin thread: the pause route, controller method and Pause or Resume button (AC-5, AC-6, AC-10)
-  - [ ] Edit page for name and URL with the shared rules (AC-1, AC-2, AC-10)
-  - [ ] Optional token, wait clearing, no token in page data (AC-3, AC-4, AC-9)
-  - [ ] Remove with its confirm dialog (AC-7, AC-8, AC-10)
+  - [x] Thin thread: the pause route, controller method and Pause or Resume button (AC-5, AC-6, AC-10)
+  - [x] Edit page for name and URL with the shared rules (AC-1, AC-2, AC-10)
+  - [x] Optional token, wait clearing, no token in page data (AC-3, AC-4, AC-9)
+  - [x] Remove with its confirm dialog (AC-7, AC-8, AC-10)
   - [ ] Phone, keyboard and dialog pass, paused skip re check (AC-6, AC-11)
 - [ ] Verify it: `/check verify edit, pause and remove deployments`
 - [ ] Test it: `/test edit, pause and remove deployments`
-Spec [0011](../specs/0011-edit-pause-remove-deployments.md)
+Spec [0011](../specs/0011-edit-pause-remove-deployments.md) - code in `app/Http/Controllers/DeploymentController.php`, `app/Actions/Deployments/UpdateDeployment.php`, `RemoveDeployment.php`, `resources/js/pages/deployments/Edit.vue`
 
 ### 13. Manage staff logins
 An admin invites and removes staff accounts.

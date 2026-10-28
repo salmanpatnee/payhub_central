@@ -6,10 +6,14 @@ namespace App\Http\Controllers;
 
 use App\Actions\Deployments\BuildDeploymentDetail;
 use App\Actions\Deployments\BuildRecentPulls;
+use App\Actions\Deployments\RemoveDeployment;
+use App\Actions\Deployments\UpdateDeployment;
 use App\Http\Requests\StoreDeploymentRequest;
+use App\Http\Requests\UpdateDeploymentRequest;
 use App\Models\Deployment;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -33,6 +37,9 @@ class DeploymentController extends Controller
         return Inertia::render('deployments/Show', [
             'deployment' => $detail->handle($deployment),
             'pulls' => fn () => $recent->handle($deployment),
+            // Separate props, so the page poll (which asks only for `deployment`) keeps the slug out of its data.
+            'editHref' => route('deployments.edit', $deployment, false),
+            'activeHref' => route('deployments.active', $deployment, false),
         ]);
     }
 
@@ -49,6 +56,63 @@ class DeploymentController extends Controller
         }
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Deployment added.')]);
+
+        return to_route('dashboard');
+    }
+
+    /**
+     * Show the edit form. Only the key, name and URL are selected, so the token is never loaded.
+     */
+    public function edit(string $deployment): Response
+    {
+        $row = Deployment::query()->select(['slug', 'name', 'base_url'])->where('slug', $deployment)->firstOrFail();
+
+        return Inertia::render('deployments/Edit', [
+            'deployment' => ['key' => $row->slug, 'name' => $row->name, 'baseUrl' => $row->base_url],
+        ]);
+    }
+
+    /**
+     * Save an edit. This never calls PayHub and never queues a job.
+     */
+    public function update(UpdateDeploymentRequest $request, string $deployment, UpdateDeployment $update): RedirectResponse
+    {
+        /** @var array{name: string, base_url: string, token?: string|null} $data */
+        $data = $request->validated();
+        $update->handle($deployment, $data);
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => __('Deployment saved.')]);
+
+        return to_route('deployments.show', $deployment);
+    }
+
+    /**
+     * Pause or resume. The wanted state is sent, not flipped, so a double click changes nothing more.
+     */
+    public function active(Request $request, string $deployment): RedirectResponse
+    {
+        $request->validate(['is_active' => ['required', 'boolean']]);
+        $active = $request->boolean('is_active');
+
+        $id = Deployment::query()->select('id')->where('slug', $deployment)->firstOrFail()->id;
+        Deployment::query()->whereKey($id)->update(['is_active' => $active]);
+
+        Inertia::flash('toast', [
+            'type' => 'success',
+            'message' => $active ? __('Deployment resumed.') : __('Deployment paused.'),
+        ]);
+
+        return to_route('deployments.show', $deployment);
+    }
+
+    /**
+     * Remove: wipes the token and soft deletes the row. The saved pulls stay.
+     */
+    public function destroy(string $deployment, RemoveDeployment $remove): RedirectResponse
+    {
+        $remove->handle($deployment);
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => __('Deployment removed.')]);
 
         return to_route('dashboard');
     }

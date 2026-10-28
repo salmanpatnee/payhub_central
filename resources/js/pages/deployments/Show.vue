@@ -1,10 +1,18 @@
 <script setup lang="ts">
-import { Head, setLayoutProps, usePage, usePoll } from '@inertiajs/vue3';
+import {
+    Head,
+    Link,
+    router,
+    setLayoutProps,
+    usePage,
+    usePoll,
+} from '@inertiajs/vue3';
 import { ChevronDown } from '@lucide/vue';
 import { computed, ref, watchEffect } from 'vue';
 import PageHeader from '@/components/PageHeader.vue';
 import RelativeTime from '@/components/RelativeTime.vue';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
     Collapsible,
     CollapsibleContent,
@@ -19,6 +27,7 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
+import { Spinner } from '@/components/ui/spinner';
 import { statusBadge, statusNotes } from '@/lib/deploymentStatus';
 import { formatMoney } from '@/lib/formatMoney';
 import { formatPercent } from '@/lib/formatPercent';
@@ -30,6 +39,9 @@ const props = defineProps<{
     deployment: DeploymentDetail;
     // Loaded once when the page opens. The poll does not reload it.
     pulls: PullRow[];
+    // Built on the server, so the polled deployment data never carries the key.
+    editHref: string;
+    activeHref: string;
 }>();
 
 const page = usePage();
@@ -144,8 +156,33 @@ watchEffect(() => {
     });
 });
 
-// Reload only the deployment, quietly, once a minute.
-usePoll(60000, { only: ['deployment'] });
+// Reload only the deployment, quietly, once a minute. A 404 means it was removed elsewhere.
+usePoll(60000, {
+    only: ['deployment'],
+    onHttpException: (response) => {
+        if (response.status === 404) {
+            router.visit(dashboard());
+
+            return false;
+        }
+    },
+});
+
+const toggling = ref(false);
+
+// Sends the wanted state, not a flip, and stays on the page with its state and scroll.
+function toggleActive(): void {
+    router.patch(
+        props.activeHref,
+        { is_active: props.deployment.state === 'paused' },
+        {
+            preserveState: true,
+            preserveScroll: true,
+            onStart: () => (toggling.value = true),
+            onFinish: () => (toggling.value = false),
+        },
+    );
+}
 
 const sourceLabels: Record<PullRow['source'], string> = {
     scheduled: 'Scheduled',
@@ -186,6 +223,20 @@ const compareLabel =
                         }}</Badge>
                     </template>
                 </PageHeader>
+                <div class="flex flex-wrap items-center gap-2 pt-1">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        :disabled="toggling"
+                        @click="toggleActive"
+                    >
+                        <Spinner v-if="toggling" />
+                        {{ deployment.state === 'paused' ? 'Resume' : 'Pause' }}
+                    </Button>
+                    <Button variant="outline" size="sm" as-child>
+                        <Link :href="editHref">Edit</Link>
+                    </Button>
+                </div>
                 <p
                     v-for="note in notes"
                     :key="note"
