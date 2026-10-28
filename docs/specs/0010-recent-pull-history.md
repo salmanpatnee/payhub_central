@@ -1,7 +1,7 @@
 # 0010. Recent pull history on the Deployment page
 
 **Date**: 2026-10-28
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 
@@ -199,8 +199,8 @@ Approach is Tracer Bullet: first one thin thread that shows a real saved pull on
 - [x] 2. Safe fields and shape: fix the five column select list, the `PullRow` type and the stable order, and keep models and the other columns out of the page data, satisfies **AC-1**, **AC-6**, **AC-7**
 - [x] 3. The table: kit `Table` with caption and headings, `RelativeTime` with the page timezone, Good and Failed badges, Scheduled and Manual words, and the reason rules, satisfies **AC-2**, **AC-3**
 - [x] 4. Placement and states: end the numbers block after the Link outcomes and All periods row, render the section after it with no condition, move the closing note under its own condition so it stays last, add "No pulls yet.", satisfies **AC-4**
-- [ ] 5. Poll behaviour: check the poll skips the list and its query and does not reset the table, satisfies **AC-5**, **AC-7**
-- [ ] 6. Phone, keyboard and contrast pass, then run the page checks of spec 0009 again, satisfies **AC-3**, **AC-8**
+- [x] 5. Poll behaviour: check the poll skips the list and its query and does not reset the table, satisfies **AC-5**, **AC-7**
+- [x] 6. Phone, keyboard and contrast pass, then run the page checks of spec 0009 again, satisfies **AC-3**, **AC-8**
 
 ## Consequences
 
@@ -225,7 +225,7 @@ Approach is Tracer Bullet: first one thin thread that shows a real saved pull on
 
 - [ ] If staff find the list stale, move the rows into the polled `deployment` prop (Option 2) or add the "shown as of page open" note.
 - [ ] Pull history retention (scope Deferred) still needs a decision, since pulls grow by about 288 rows a day per deployment.
-- [ ] After the build, run `/imprint` to save the pull table pattern to `ui-registry.md`.
-- [ ] Spec 0009 follow up "Feature 11 (pull history)" is covered by this spec. Its words "below the Money table" are out of date after the focus view redesign, and this spec's placement wins. Tick it when the feature is built.
+- [x] After the build, run `/imprint` to save the pull table pattern to `ui-registry.md`.
+- [x] Spec 0009 follow up "Feature 11 (pull history)" is covered by this spec. Its words "below the Money table" are out of date after the focus view redesign, and this spec's placement wins. Tick it when the feature is built.
 - [ ] Run `EXPLAIN` on MySQL once to confirm the list query uses the `(deployment_id, pulled_at)` index.
 - [ ] A future `router.reload()` on this page without `only` would run the list query again. Keep reloads limited to `deployment`.

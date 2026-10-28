@@ -31,7 +31,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 8 | Home page with a deployment card | Slice 1 | done |
 | 9 | Scheduled pulls | Slice 2 | done |
 | 10 | Deployment page | Slice 3 | done |
-| 11 | Recent pull history | Slice 3 | in-progress |
+| 11 | Recent pull history | Slice 3 | done |
 | 12 | Edit, pause and remove deployments | Slice 3 | planned |
 | 13 | Manage staff logins | Slice 3 | planned |
 
@@ -177,12 +177,12 @@ Spec [0009](../specs/0009-deployment-page/index.md) · code in `app/Actions/Deplo
 A list of recent pulls on the deployment page, good and failed, with time and reason, so problems can be seen.
 **Done when:** the latest pulls show with result, time and failure reason, and no token or reply secret appears.
 - [x] Design it (spec): `/architect recent pull history`
-- [ ] Build it: `/develop recent pull history`
+- [x] Build it: `/develop recent pull history`
   - [x] Thin thread: `BuildRecentPulls`, lazy `pulls` prop, plain list on the page (AC-1, AC-5)
   - [x] Safe fields, stable order and the one query (AC-6, AC-7)
   - [x] The table: caption, Good and Failed badges, Scheduled or Manual, reason rules (AC-2, AC-3)
   - [x] Placement in every state, "No pulls yet." and the closing note moved (AC-4)
-  - [ ] Poll check, phone and keyboard pass, page checks again (AC-3, AC-5, AC-8)
+  - [x] Poll check, phone and keyboard pass, page checks again (AC-3, AC-5, AC-8)
 - [x] Verify it: `/check verify recent pull history`
 - [ ] Test it: `/test recent pull history`
 Spec [0010](../specs/0010-recent-pull-history.md) - code in `app/Actions/Deployments/BuildRecentPulls.php`, `resources/js/pages/deployments/Show.vue`
