@@ -23,7 +23,8 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Actions/Home/BuildDeploymentCards.php` | The Home page cards: one plain array per deployment (domain host only, state, reason, three periods). Selects only safe columns, so the token and raw reply never load. Fixed query count (spec 0007) |
 | `Http/Controllers/HomeController.php` | The Home page (the `dashboard` route). Passes the card arrays from `BuildDeploymentCards` to the Dashboard page, never a model (spec 0007) |
 | `Console/Commands/PullDeploymentCommand.php` | `php artisan pulls:run {key}`. Prints one line and exits 1 on a failed pull or refusal (spec 0006) |
-| `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005). The request holds all the rules; saving never calls PayHub |
+| `Actions/Deployments/BuildDeploymentDetail.php`, `DeploymentStatus.php` | The Deployment page: one safe array with all four windows (`windows` is null when there is no good pull), and the state, reason and domain rules that Home and the page share (spec 0009) |
+| `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005) and the `show` page (spec 0009). The request holds all the rules, including refusing the key `create`; saving never calls PayHub |
 | `Concerns/` | Shared validation rules from the starter kit (password, profile) |
 | `Http/Controllers/Settings/` | Profile and security pages from the starter kit, locked down for invite only login (spec 0004) |
 
@@ -59,6 +60,7 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - Guzzle 8 has no cURL error number on exceptions. A timeout is a `ConnectTimeoutException`, `NetworkTimeoutException` or `ResponseTimeoutException` (message `cURL error 28` is the fallback).
 - The schedule lives in `routes/console.php`: `pulls:dispatch` every 5 minutes, and `queue:work --stop-when-empty --max-time=50` every minute with `withoutOverlapping(2)` so a killed worker cannot block pulls for a day. Cron only needs `schedule:run` every minute.
 - `SchedulerHealth` reads the heartbeat and `jobs` / `failed_jobs` timestamps as Unix numbers, so the app timezone does not shift the banner. Guests get `scheduler: null`.
+- The `deployments.show` route takes the slug as plain text (pattern `[a-z0-9-]+`, so a capital letter is a 404) and does not use model binding. Binding would run `select *` and load the encrypted token. `BuildDeploymentDetail` selects safe columns only and never sends the slug in its data.
 - In tests, `Http::fake()` called twice keeps the first stub. Call `Http::swap(new Factory)` between replies.
 
 ## Related specs
@@ -69,5 +71,6 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - [0006 Pull a summary by hand](../docs/specs/0006-pull-a-summary-by-hand/index.md)
 - [0007 Home page](../docs/specs/0007-home-page/index.md)
 - [0008 Scheduled pulls](../docs/specs/0008-scheduled-pulls/index.md)
+- [0009 Deployment page](../docs/specs/0009-deployment-page/index.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._

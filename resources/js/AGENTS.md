@@ -13,6 +13,9 @@ The Vue 3 and Inertia front end. It follows the Laravel Vue starter kit layout, 
 | `lib/formatPercent.ts` | The only place a share becomes "74%" (one decimal under 10%, "–" for no links) |
 | `lib/cardWarnings.ts` | The warning limits for a deployment card (3 links, 5% failed, 25% expired) and the one function that applies them |
 | `lib/formatRelative.ts` | The only place times become "5 min ago" and the exact time text |
+| `lib/deploymentStatus.ts` | The badge map and status notes, shared by the Home card and the Deployment page so they never disagree (spec 0009) |
+| `lib/formatWindowRange.ts` | The only place a window's `from` and `to` become "1 Oct to 31 Oct" (spec 0009) |
+| `pages/deployments/Show.vue` | The Deployment page, Focus view: period switch, three summary cards, link outcomes, an all periods table. The breadcrumb is set with `setLayoutProps` so a rename shows after a poll (spec 0009) |
 | `composables/useNow.ts` | One shared clock (30 second tick) for every relative time |
 | `components/MoneyByCurrency.vue` | One row per currency. Never adds across currencies |
 | `components/DeploymentCard.vue` | The Home card (Balanced layout). Gets one period from the page, so switching makes no request |
@@ -36,7 +39,7 @@ npm run build        # also regenerates the Wayfinder routes
 - Every page has exactly one `h1`, through `PageHeader`. Exceptions: auth pages (the auth layout's title) and settings pages (an `sr-only` h1). Pages use `p-4 md:p-6` padding and `max-w-7xl`.
 - Icons come from `@lucide/vue` (not `lucide-vue-next`).
 - Money in the browser is whole cents. No float maths.
-- The Home page period switch lives in `pages/Dashboard.vue` state, not the URL, and `usePoll` reloads only `deployments` so the choice survives a poll.
+- The Home page period switch lives in `pages/Dashboard.vue` state, not the URL, and `usePoll` reloads only `deployments` so the choice survives a poll. The Deployment page keeps its own four option period switch in `Show.vue` state, and its `usePoll` reloads only `deployment`.
 
 ## Gotchas
 
@@ -49,5 +52,6 @@ npm run build        # also regenerates the Wayfinder routes
 
 - [0003 Design system and UI foundation](../../docs/specs/0003-design-system-ui-foundation.md)
 - [0007 Home page](../../docs/specs/0007-home-page/index.md)
+- [0009 Deployment page](../../docs/specs/0009-deployment-page/index.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
