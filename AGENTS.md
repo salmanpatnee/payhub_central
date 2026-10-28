@@ -9,7 +9,7 @@ A read only internal app. It pulls a payment summary from each PayHub deployment
 - **Key dependencies**: Fortify (invite only login, two factor optional), Tailwind CSS 4, shadcn-vue (Reka UI), MySQL, Pest 4
 - **Package manager**: composer and npm
 - **Runtime parts**: database queue, Laravel scheduler started by cron (`schedule:run` every minute), Hostinger hosting
-- Full decision and build rules: `docs/specs/0001-stack-and-architecture/index.md`. Scaffolded. Versions: Laravel 13.17, Inertia 3, Vue 3.5, Tailwind 4, Pest 4, Vite+ 1.4.
+- Full decision and build rules: `docs/specs/0001-stack-and-architecture/index.md`. Scaffolded. Versions: Laravel 13 (13.17 or newer), Inertia 3, Vue 3.5, Tailwind 4, Pest 4, Vite+ 1.4.
 
 ## Build approach
 
