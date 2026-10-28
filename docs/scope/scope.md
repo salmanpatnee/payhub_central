@@ -183,7 +183,7 @@ A list of recent pulls on the deployment page, good and failed, with time and re
   - [x] The table: caption, Good and Failed badges, Scheduled or Manual, reason rules (AC-2, AC-3)
   - [x] Placement in every state, "No pulls yet." and the closing note moved (AC-4)
   - [ ] Poll check, phone and keyboard pass, page checks again (AC-3, AC-5, AC-8)
-- [ ] Verify it: `/check verify recent pull history`
+- [x] Verify it: `/check verify recent pull history`
 - [ ] Test it: `/test recent pull history`
 Spec [0010](../specs/0010-recent-pull-history.md) - code in `app/Actions/Deployments/BuildRecentPulls.php`, `resources/js/pages/deployments/Show.vue`
 
