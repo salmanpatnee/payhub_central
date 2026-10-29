@@ -57,7 +57,7 @@ Stored in `docs/specs/`. Scope in `docs/scope/scope.md`.
 - Light only, no dark mode. Money and time are formatted only by the helpers in `resources/js/lib`.
 - Keep it simple. Do the smallest thing that solves the task, and do not over engineer. Example: a first admin seeder is one small `DatabaseSeeder`, not a config file plus a separate seeder class plus env settings. Add extra layers only when the user asks or the task clearly needs them.
 - Do not write tests (Pest or `vp test`) unless the user asks. Building a feature does not include writing its tests; they come later from `/test` or an explicit request. Running the existing suite to check nothing broke is fine.
-- Write tests as PHPUnit style classes (`class XTest extends TestCase`), not Pest `it()` closures: the pre-commit PHPStan run cannot read closures.
+- Write tests that use `$this` (HTTP calls, `actingAs`) as PHPUnit style classes (`class XTest extends TestCase`), not Pest `it()` closures: the pre-commit PHPStan run cannot see `$this` inside a closure. Closures that do not use `$this` are fine.
 - Conventional commit messages (`feat:`, `fix:`, and so on).
 
 ## Tooling

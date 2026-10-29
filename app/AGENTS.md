@@ -69,7 +69,6 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - Staff routes sit in their own group with `auth.session`, so a person whose password was changed is logged out even if a request was in flight. `edit` and `destroy` run `abort_if($user->is($request->user()), 403)`; the form requests refuse your own row in `authorize()`.
 - `RemoveStaff` locks the acting and target rows (ordered by id) and refuses with 403 if the acting admin is gone, 404 if the target is gone. Over HTTP the acting admin check is nearly unreachable (auth fails first), so test it by calling the action directly.
 - `StoreStaffRequest::EMAIL_TAKEN` lives on the request class, not the `StaffRules` trait, because PHPStan refuses constants accessed on a trait. A racing duplicate email (`UniqueConstraintViolationException`) is turned into the same message in the controller.
-- Write tests as PHPUnit style classes (`class XTest extends TestCase`), not Pest closures. The pre-commit hook runs PHPStan on staged test files and cannot read `it()` closures.
 - In tests, `Http::fake()` called twice keeps the first stub. Call `Http::swap(new Factory)` between replies.
 
 ## Related specs
