@@ -192,7 +192,7 @@ Spec [0010](../specs/0010-recent-pull-history.md) - code in `app/Actions/Deploym
 An admin changes a deployment's name or URL, turns it on or off, or removes it. Pausing stops pulls. Removing keeps no usable token.
 **Done when:** edits save, a paused deployment is not pulled, a removed deployment disappears from the pages, and the token field never shows the old value.
 - [x] Design it (spec): `/architect edit, pause and remove deployments`
-- [ ] Build it: `/develop edit, pause and remove deployments`
+- [x] Build it: `/develop edit, pause and remove deployments`
   - [x] Thin thread: the pause route, controller method and Pause or Resume button (AC-5, AC-6, AC-10)
   - [x] Edit page for name and URL with the shared rules (AC-1, AC-2, AC-10)
   - [x] Optional token, wait clearing, no token in page data (AC-3, AC-4, AC-9)
