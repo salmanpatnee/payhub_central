@@ -33,7 +33,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 10 | Deployment page | Slice 3 | done |
 | 11 | Recent pull history | Slice 3 | done |
 | 12 | Edit, pause and remove deployments | Slice 3 | in-progress |
-| 13 | Manage staff logins | Slice 3 | planned |
+| 13 | Manage staff logins | Slice 3 | in-progress |
 | 14 | Deployments list page | Slice 3 | done |
 
 ## Foundations
@@ -202,10 +202,19 @@ An admin changes a deployment's name or URL, turns it on or off, or removes it. 
 - [ ] Test it: `/test edit, pause and remove deployments`
 Spec [0011](../specs/0011-edit-pause-remove-deployments.md) - code in `app/Http/Controllers/DeploymentController.php`, `app/Actions/Deployments/UpdateDeployment.php`, `RemoveDeployment.php`, `resources/js/pages/deployments/Edit.vue`
 
-### 13. Manage staff logins
-An admin invites and removes staff accounts.
-**Done when:** an admin can invite a person and remove a login, and a removed person can no longer sign in.
+### 13. Manage staff logins · in-progress
+An admin adds staff logins with a password they type, edits a name or email, sets a new password, and removes a login.
+**Done when:** an admin can add a person and remove a login, and a removed person can no longer sign in.
+- [x] Design it (spec): `/architect manage staff logins`
 - [ ] Build it: `/develop manage staff logins`
+  - [ ] Thin thread: the Staff route, list page and sidebar item (AC-1)
+  - [ ] Add staff with the shared email and password rules (AC-2, AC-3, AC-8, AC-9)
+  - [ ] Edit name and email, set a new password with sessions ended (AC-4, AC-5)
+  - [ ] Remove with its dialog, own row guard, last admin safety and auth.session (AC-6, AC-7)
+  - [ ] Phone and keyboard pass (AC-10)
+- [ ] Verify it: `/check verify manage staff logins`
+- [ ] Test it: `/test manage staff logins`
+Spec [0013](../specs/0013-manage-staff-logins.md) - code in `app/Http/Controllers/StaffController.php`, `app/Actions/Staff/`, `resources/js/pages/staff/`
 
 ### 14. Deployments list page
 A Deployments page in the sidebar lists every deployment in a table with its status and the actions Edit, Pause or Resume and Remove. Add deployment moves to a button on that page.
