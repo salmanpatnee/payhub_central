@@ -33,7 +33,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 10 | Deployment page | Slice 3 | done |
 | 11 | Recent pull history | Slice 3 | done |
 | 12 | Edit, pause and remove deployments | Slice 3 | in-progress |
-| 13 | Manage staff logins | Slice 3 | in-progress |
+| 13 | Manage staff logins | Slice 3 | done |
 | 14 | Deployments list page | Slice 3 | done |
 
 ## Foundations
@@ -202,7 +202,7 @@ An admin changes a deployment's name or URL, turns it on or off, or removes it. 
 - [ ] Test it: `/test edit, pause and remove deployments`
 Spec [0011](../specs/0011-edit-pause-remove-deployments.md) - code in `app/Http/Controllers/DeploymentController.php`, `app/Actions/Deployments/UpdateDeployment.php`, `RemoveDeployment.php`, `resources/js/pages/deployments/Edit.vue`
 
-### 13. Manage staff logins · in-progress
+### 13. Manage staff logins · done
 An admin adds staff logins with a password they type, edits a name or email, sets a new password, and removes a login.
 **Done when:** an admin can add a person and remove a login, and a removed person can no longer sign in.
 - [x] Design it (spec): `/architect manage staff logins`

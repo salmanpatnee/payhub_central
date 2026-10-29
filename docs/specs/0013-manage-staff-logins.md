@@ -1,7 +1,7 @@
 # 0013. Manage staff logins
 
 **Date**: 2026-10-29
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 
