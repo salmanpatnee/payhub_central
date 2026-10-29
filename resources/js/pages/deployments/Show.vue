@@ -6,7 +6,7 @@ import {
     usePage,
     usePoll,
 } from '@inertiajs/vue3';
-import { ChevronDown } from '@lucide/vue';
+import { ChevronDown, CircleCheck } from '@lucide/vue';
 import { computed, ref, watchEffect } from 'vue';
 import PageHeader from '@/components/PageHeader.vue';
 import RelativeTime from '@/components/RelativeTime.vue';
@@ -376,19 +376,26 @@ const compareLabel =
                         </p>
                     </template>
                     <template v-else>
-                        <p class="text-4xl font-semibold tracking-tight">
-                            All clear
-                        </p>
-                        <p>
+                        <div class="flex items-center gap-3">
                             <span
-                                :class="[
-                                    chipBase,
-                                    'bg-success-soft text-success ring-success-border',
-                                ]"
+                                class="flex size-11 shrink-0 items-center justify-center rounded-full bg-success-soft ring-1 ring-success-border ring-inset"
                             >
-                                Nothing failed or waiting
+                                <CircleCheck
+                                    class="size-6 text-success"
+                                    aria-hidden="true"
+                                />
                             </span>
-                        </p>
+                            <div>
+                                <p
+                                    class="text-2xl leading-tight font-semibold tracking-tight text-success"
+                                >
+                                    All clear
+                                </p>
+                                <p class="text-sm text-muted-foreground">
+                                    Nothing failed or waiting
+                                </p>
+                            </div>
+                        </div>
                     </template>
                     <p class="text-xs text-muted-foreground">
                         Failed links and links still waiting for payment.
