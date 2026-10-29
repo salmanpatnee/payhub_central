@@ -48,9 +48,6 @@ class DeploymentController extends Controller
         return Inertia::render('deployments/Show', [
             'deployment' => $detail->handle($deployment),
             'pulls' => fn () => $recent->handle($deployment),
-            // Separate props, so the page poll (which asks only for `deployment`) keeps the slug out of its data.
-            'editHref' => route('deployments.edit', $deployment, false),
-            'activeHref' => route('deployments.active', $deployment, false),
         ]);
     }
 
