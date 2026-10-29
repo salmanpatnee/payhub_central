@@ -198,7 +198,7 @@ An admin changes a deployment's name or URL, turns it on or off, or removes it. 
   - [x] Optional token, wait clearing, no token in page data (AC-3, AC-4, AC-9)
   - [x] Remove with its confirm dialog (AC-7, AC-8, AC-10)
   - [ ] Phone, keyboard and dialog pass, paused skip re check (AC-6, AC-11)
-- [ ] Verify it: `/check verify edit, pause and remove deployments`
+- [x] Verify it: `/check verify edit, pause and remove deployments`
 - [ ] Test it: `/test edit, pause and remove deployments`
 Spec [0011](../specs/0011-edit-pause-remove-deployments.md) - code in `app/Http/Controllers/DeploymentController.php`, `app/Actions/Deployments/UpdateDeployment.php`, `RemoveDeployment.php`, `resources/js/pages/deployments/Edit.vue`
 
