@@ -227,7 +227,7 @@ A Deployments page in the sidebar lists every deployment in a table with its sta
   - [x] Empty state, Add button, breadcrumbs and the add and poll redirects (AC-6, AC-8, AC-12)
   - [x] Phone, keyboard and dialog focus pass (AC-11)
 - [x] Verify it: `/check verify deployments list page`
-- [ ] Test it: `/test deployments list page`
+- [x] Test it: `/test deployments list page`
 Spec [0012](../specs/0012-deployments-list-page/index.md) - code in `app/Actions/Deployments/BuildDeploymentList.php`, `resources/js/pages/deployments/Index.vue`, `resources/js/components/RemoveDeploymentDialog.vue`
 
 ## Deferred
