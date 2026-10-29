@@ -16,6 +16,8 @@ The Vue 3 and Inertia front end. It follows the Laravel Vue starter kit layout, 
 | `lib/deploymentStatus.ts` | The badge map and status notes, shared by the Home card and the Deployment page so they never disagree (spec 0009) |
 | `lib/formatWindowRange.ts` | The only place a window's `from` and `to` become "1 Oct to 31 Oct" (spec 0009) |
 | `pages/deployments/Show.vue` | The Deployment page, Focus view: period switch, three summary cards, link outcomes, an all periods table, then a collapsible Recent pulls table (closed by default, from the lazy `pulls` prop, spec 0010). The breadcrumb is set with `setLayoutProps` so a rename shows after a poll (spec 0009) |
+| `pages/deployments/Index.vue`, `Create.vue`, `Edit.vue`, `components/RemoveDeploymentDialog.vue` | The Deployments list (status plus Edit, Pause or Resume, Remove per row), the add form, the edit form and the remove dialog (specs 0011, 0012) |
+| `lib/flashToast.ts` | Turns the server's `Inertia::flash('toast', ...)` into a `vue-sonner` toast. The place to change toast behaviour |
 | `pages/staff/Index.vue`, `Create.vue`, `Edit.vue`, `components/RemoveStaffDialog.vue` | Staff logins (spec 0013). Your own row shows a "You" badge and no actions. Edit has two forms (details, and set new password) and sets its breadcrumb with `setLayoutProps` |
 | `composables/useNow.ts` | One shared clock (30 second tick) for every relative time |
 | `components/MoneyByCurrency.vue` | One row per currency. Never adds across currencies |

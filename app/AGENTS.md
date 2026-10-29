@@ -28,6 +28,7 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005) and the `show` page (spec 0009). The request holds all the rules, including refusing the key `create`; saving never calls PayHub |
 | `Http/Controllers/StaffController.php`, `Actions/Staff/` | Staff logins (spec 0013): list, add, edit, set password, remove. `BuildStaffList` returns plain arrays with `isYou`. `SetStaffPassword` and `RemoveStaff` delete the person's `sessions` rows in the same transaction |
 | `Http/Requests/Concerns/StaffRules.php`, `StoreStaffRequest.php`, `UpdateStaffRequest.php`, `SetStaffPasswordRequest.php` | The shared Staff rules: trimmed lowercase unique email, `Password::default()` with no `confirmed`, and `authorize()` refusing your own row with 403 (spec 0013) |
+| `Actions/Deployments/BuildDeploymentList.php`, `UpdateDeployment.php`, `RemoveDeployment.php`, `Http/Requests/UpdateDeploymentRequest.php` | The Deployments list, edit and remove. Remove wipes the token and soft deletes in one statement, so the pulls stay and the slug stays reserved. `DeploymentController@active` pauses or resumes by sending the wanted state, not a flip (specs 0011, 0012) |
 | `Concerns/` | Shared validation rules from the starter kit (password, profile) |
 | `Http/Controllers/Settings/` | Profile and security pages from the starter kit, locked down for invite only login (spec 0004) |
 
@@ -81,6 +82,8 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - [0008 Scheduled pulls](../docs/specs/0008-scheduled-pulls/index.md)
 - [0009 Deployment page](../docs/specs/0009-deployment-page/index.md)
 - [0010 Recent pull history](../docs/specs/0010-recent-pull-history.md)
+- [0011 Edit, pause and remove deployments](../docs/specs/0011-edit-pause-remove-deployments.md)
+- [0012 Deployments list page](../docs/specs/0012-deployments-list-page/index.md)
 - [0013 Manage staff logins](../docs/specs/0013-manage-staff-logins.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
