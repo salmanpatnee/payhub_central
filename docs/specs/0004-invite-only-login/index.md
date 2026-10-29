@@ -120,8 +120,8 @@ Tracer Bullet: the login thread already runs end to end in the kit, so the first
 
 ## Follow-up
 
-- [ ] Spec 0001 still says two factor for admins, the `app:create-admin` command, and an `is_admin` column. Update those lines to match this spec (the engineer's choices above).
-- [ ] Spec 0002 assumes a `users.is_admin` flag from this feature. Update that line.
+- [x] Spec 0001 still says two factor for admins, the `app:create-admin` command, and an `is_admin` column. Update those lines to match this spec (the engineer's choices above).
+- [x] Spec 0002 assumes a `users.is_admin` flag from this feature. Update that line.
 - [ ] After the first production seed, change the admin password and turn on two factor right away.
 - [ ] Spec 0001 builds invites on Fortify's password reset. Forgot password is now off, so feature 13 needs its own way to set a first password (for example a signed link) or an admin typed temporary password. Decide in `/architect manage staff logins`.
 - [ ] Reconsider forced two factor and removing "remember me" once more than one person has a login.

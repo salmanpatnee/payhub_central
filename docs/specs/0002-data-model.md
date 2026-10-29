@@ -15,7 +15,7 @@ Every pull must be kept, including failed ones with a reason, because the last g
 
 Spec 0001 already fixed: money is a whole cents integer, the token is an encrypted TEXT column hidden from serialization, times are stored in UTC, window edges are stored exactly as received, the raw reply is kept beside the parsed fields, and a 429 saves a "do not pull before" time on the deployment. At 288 pulls a day per deployment, a retention rule will be needed later (deferred in the scope), so the shape must allow pruning without a breaking change.
 
-Assumption without a spec: the users table and its `is_admin` flag come from the login feature (scope 5). This spec only links to `users` for the staff member who started a manual pull.
+Assumption without a spec: the users table comes from the login feature (scope 5). It has no `is_admin` flag, because every logged in user is an admin (spec 0004). This spec only links to `users` for the staff member who started a manual pull.
 
 ## Requirements
 
