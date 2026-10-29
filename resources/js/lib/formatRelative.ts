@@ -44,6 +44,23 @@ export function formatRelative(
 }
 
 /**
+ * A date with no time, for example `Oct 26, 2026`, in UTC so it does not
+ * move with the viewer's zone. A missing or invalid value shows the empty mark.
+ */
+export function formatDate(at: string | null | undefined): string {
+    const date = at ? new Date(at) : null;
+
+    if (!date || Number.isNaN(date.getTime())) {
+        return NO_VALUE;
+    }
+
+    return new Intl.DateTimeFormat('en-US', {
+        dateStyle: 'medium',
+        timeZone: 'UTC',
+    }).format(date);
+}
+
+/**
  * The exact time with the zone name, for example
  * `Oct 26, 2026, 2:05:09 PM (Asia/Karachi)`. A missing or invalid timezone
  * falls back to UTC.

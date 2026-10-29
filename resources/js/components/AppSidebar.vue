@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { LayoutGrid, List } from '@lucide/vue';
+import { LayoutGrid, List, Users } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -15,9 +15,9 @@ import {
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
 import { index } from '@/routes/deployments';
+import { index as staffIndex } from '@/routes/staff';
 import type { NavItem } from '@/types';
 
-// Feature 12 adds Staff when that page exists.
 const mainNavItems: NavItem[] = [
     {
         title: 'Home',
@@ -28,6 +28,11 @@ const mainNavItems: NavItem[] = [
         title: 'Deployments',
         href: index(),
         icon: List,
+    },
+    {
+        title: 'Staff',
+        href: staffIndex(),
+        icon: Users,
     },
 ];
 </script>

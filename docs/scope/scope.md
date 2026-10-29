@@ -206,14 +206,14 @@ Spec [0011](../specs/0011-edit-pause-remove-deployments.md) - code in `app/Http/
 An admin adds staff logins with a password they type, edits a name or email, sets a new password, and removes a login.
 **Done when:** an admin can add a person and remove a login, and a removed person can no longer sign in.
 - [x] Design it (spec): `/architect manage staff logins`
-- [ ] Build it: `/develop manage staff logins`
-  - [ ] Thin thread: the Staff route, list page and sidebar item (AC-1)
-  - [ ] Add staff with the shared email and password rules (AC-2, AC-3, AC-8, AC-9)
-  - [ ] Edit name and email, set a new password with sessions ended (AC-4, AC-5)
-  - [ ] Remove with its dialog, own row guard, last admin safety and auth.session (AC-6, AC-7)
-  - [ ] Phone and keyboard pass (AC-10)
-- [ ] Verify it: `/check verify manage staff logins`
-- [ ] Test it: `/test manage staff logins`
+- [x] Build it: `/develop manage staff logins`
+  - [x] Thin thread: the Staff route, list page and sidebar item (AC-1)
+  - [x] Add staff with the shared email and password rules (AC-2, AC-3, AC-8, AC-9)
+  - [x] Edit name and email, set a new password with sessions ended (AC-4, AC-5)
+  - [x] Remove with its dialog, own row guard, last admin safety and auth.session (AC-6, AC-7)
+  - [x] Phone and keyboard pass (AC-10)
+- [x] Verify it: `/check verify manage staff logins`
+- [x] Test it: `/test manage staff logins`
 Spec [0013](../specs/0013-manage-staff-logins.md) - code in `app/Http/Controllers/StaffController.php`, `app/Actions/Staff/`, `resources/js/pages/staff/`
 
 ### 14. Deployments list page
