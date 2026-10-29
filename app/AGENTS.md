@@ -26,6 +26,8 @@ The Laravel side of the dashboard: the models that hold deployments and saved pu
 | `Actions/Deployments/BuildDeploymentDetail.php`, `DeploymentStatus.php` | The Deployment page: one safe array with all four windows (`windows` is null when there is no good pull), and the state, reason and domain rules that Home and the page share (spec 0009) |
 | `Actions/Deployments/BuildRecentPulls.php` | The Recent pulls list on the Deployment page: the 10 newest pulls of one deployment (good and failed) in one query, five safe columns only, returned as plain arrays (spec 0010) |
 | `Http/Controllers/DeploymentController.php`, `Http/Requests/StoreDeploymentRequest.php` | The add a deployment form (spec 0005) and the `show` page (spec 0009). The request holds all the rules, including refusing the key `create`; saving never calls PayHub |
+| `Http/Controllers/StaffController.php`, `Actions/Staff/` | Staff logins (spec 0013): list, add, edit, set password, remove. `BuildStaffList` returns plain arrays with `isYou`. `SetStaffPassword` and `RemoveStaff` delete the person's `sessions` rows in the same transaction |
+| `Http/Requests/Concerns/StaffRules.php`, `StoreStaffRequest.php`, `UpdateStaffRequest.php`, `SetStaffPasswordRequest.php` | The shared Staff rules: trimmed lowercase unique email, `Password::default()` with no `confirmed`, and `authorize()` refusing your own row with 403 (spec 0013) |
 | `Concerns/` | Shared validation rules from the starter kit (password, profile) |
 | `Http/Controllers/Settings/` | Profile and security pages from the starter kit, locked down for invite only login (spec 0004) |
 
@@ -63,6 +65,10 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - `SchedulerHealth` reads the heartbeat and `jobs` / `failed_jobs` timestamps as Unix numbers, so the app timezone does not shift the banner. Guests get `scheduler: null`.
 - The `deployments.show` route takes the slug as plain text (pattern `[a-z0-9-]+`, so a capital letter is a 404) and does not use model binding. Binding would run `select *` and load the encrypted token. `BuildDeploymentDetail` selects safe columns only and never sends the slug in its data.
 - The `pulls` prop on the Deployment page is a closure, and the page poll asks only for `deployment`, so the list query never runs on a poll. A future `router.reload()` on that page without `only` would run it again (spec 0010).
+- Staff routes sit in their own group with `auth.session`, so a person whose password was changed is logged out even if a request was in flight. `edit` and `destroy` run `abort_if($user->is($request->user()), 403)`; the form requests refuse your own row in `authorize()`.
+- `RemoveStaff` locks the acting and target rows (ordered by id) and refuses with 403 if the acting admin is gone, 404 if the target is gone. Over HTTP the acting admin check is nearly unreachable (auth fails first), so test it by calling the action directly.
+- `StoreStaffRequest::EMAIL_TAKEN` lives on the request class, not the `StaffRules` trait, because PHPStan refuses constants accessed on a trait. A racing duplicate email (`UniqueConstraintViolationException`) is turned into the same message in the controller.
+- Write tests as PHPUnit style classes (`class XTest extends TestCase`), not Pest closures. The pre-commit hook runs PHPStan on staged test files and cannot read `it()` closures.
 - In tests, `Http::fake()` called twice keeps the first stub. Call `Http::swap(new Factory)` between replies.
 
 ## Related specs
@@ -75,5 +81,6 @@ php artisan pulls:run payhub1   # Pull one deployment's summary by hand (needs t
 - [0008 Scheduled pulls](../docs/specs/0008-scheduled-pulls/index.md)
 - [0009 Deployment page](../docs/specs/0009-deployment-page/index.md)
 - [0010 Recent pull history](../docs/specs/0010-recent-pull-history.md)
+- [0013 Manage staff logins](../docs/specs/0013-manage-staff-logins.md)
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._
