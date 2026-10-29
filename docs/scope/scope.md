@@ -32,7 +32,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 9 | Scheduled pulls | Slice 2 | done |
 | 10 | Deployment page | Slice 3 | done |
 | 11 | Recent pull history | Slice 3 | done |
-| 12 | Edit, pause and remove deployments | Slice 3 | in-progress |
+| 12 | Edit, pause and remove deployments | Slice 3 | done |
 | 13 | Manage staff logins | Slice 3 | done |
 | 14 | Deployments list page | Slice 3 | done |
 
@@ -188,7 +188,7 @@ A list of recent pulls on the deployment page, good and failed, with time and re
 - [ ] Test it: `/test recent pull history`
 Spec [0010](../specs/0010-recent-pull-history.md) - code in `app/Actions/Deployments/BuildRecentPulls.php`, `resources/js/pages/deployments/Show.vue`
 
-### 12. Edit, pause and remove deployments · in-progress
+### 12. Edit, pause and remove deployments · done
 An admin changes a deployment's name or URL, turns it on or off, or removes it. Pausing stops pulls. Removing keeps no usable token.
 **Done when:** edits save, a paused deployment is not pulled, a removed deployment disappears from the pages, and the token field never shows the old value.
 - [x] Design it (spec): `/architect edit, pause and remove deployments`
