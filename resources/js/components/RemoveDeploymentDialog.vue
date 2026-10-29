@@ -12,11 +12,17 @@ import {
 } from '@/components/ui/dialog';
 import { Spinner } from '@/components/ui/spinner';
 
-const props = defineProps<{
-    name: string;
-    // The Deployment page path. DELETE to it removes the deployment.
-    removeHref: string;
-}>();
+const props = withDefaults(
+    defineProps<{
+        name: string;
+        // The Deployment page path. DELETE to it removes the deployment.
+        removeHref: string;
+        // Inertia keeps the page state on a DELETE, which also skips the layout props reset. A page that sets
+        // breadcrumbs with setLayoutProps and is left by the removal passes false, or its crumbs follow it.
+        preserveState?: boolean;
+    }>(),
+    { preserveState: true },
+);
 
 const emit = defineEmits<{
     // The delete got a 404: it was already removed somewhere else.
@@ -32,6 +38,7 @@ const done = ref(false);
 
 function remove(): void {
     router.delete(props.removeHref, {
+        preserveState: props.preserveState,
         onStart: () => (removing.value = true),
         onSuccess: () => (done.value = true),
         onHttpException: (response) => {

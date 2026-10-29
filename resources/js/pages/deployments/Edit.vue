@@ -136,6 +136,7 @@ watchEffect(() => {
                 v-model:open="confirmOpen"
                 :name="deployment.name"
                 :remove-href="show(deployment.key).url"
+                :preserve-state="false"
                 @missing="router.visit(index())"
             />
         </section>

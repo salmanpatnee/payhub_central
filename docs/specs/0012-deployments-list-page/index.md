@@ -1,7 +1,7 @@
 # 0012. Deployments list page
 
 **Date**: 2026-10-28
-**Status**: In Progress
+**Status**: Accepted
 
 ## Summary
 
