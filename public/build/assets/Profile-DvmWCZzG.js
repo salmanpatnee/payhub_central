@@ -17,8 +17,8 @@ import {
     tn as h,
 } from './wayfinder-DOENF6-v.js';
 import { t as g } from './Label-SQSUbFPK.js';
-import { n as _, t as v } from './InputError-NcKxWgl1.js';
-import { n as y, u as b } from './app-DCCfXFlv.js';
+import { n as _, t as v } from './InputError-BZLNDWJz.js';
+import { n as y, u as b } from './app-D8hkYQeO.js';
 var x = (e) => ({ url: x.url(e), method: `get` });
 ((x.definition = { methods: [`get`, `head`], url: `/settings/profile` }),
     (x.url = (e) => x.definition.url + l(e)),

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Form, Head } from '@inertiajs/vue3';
+import { LogIn } from '@lucide/vue';
 import InputError from '@/components/InputError.vue';
 import PasswordInput from '@/components/PasswordInput.vue';
 import { Button } from '@/components/ui/button';
@@ -48,6 +49,7 @@ defineProps<{
                     v-focus
                     :tabindex="1"
                     autocomplete="email"
+                    class="bg-auth-field"
                     placeholder="email@example.com"
                 />
                 <InputError :message="errors.email" />
@@ -61,6 +63,7 @@ defineProps<{
                     required
                     :tabindex="2"
                     autocomplete="current-password"
+                    class="bg-auth-field"
                     placeholder="Password"
                 />
                 <InputError :message="errors.password" />
@@ -81,6 +84,7 @@ defineProps<{
                 data-test="login-button"
             >
                 <Spinner v-if="processing" />
+                <LogIn v-else />
                 Log in
             </Button>
         </div>

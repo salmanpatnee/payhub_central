@@ -6,7 +6,7 @@ import {
     tn as i,
     vr as a,
 } from './wayfinder-DOENF6-v.js';
-import { S as o } from './app-DCCfXFlv.js';
+import { S as o } from './app-D8hkYQeO.js';
 var s = t({
     __name: `Spinner`,
     props: { class: { type: [Boolean, null, String, Object, Array] } },

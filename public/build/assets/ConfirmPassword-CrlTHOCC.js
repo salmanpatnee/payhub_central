@@ -17,9 +17,9 @@ import {
     tn as h,
 } from './wayfinder-DOENF6-v.js';
 import { t as g } from './Label-SQSUbFPK.js';
-import { t as _ } from './PasswordInput-D0pNVU_V.js';
-import { t as v } from './InputError-NcKxWgl1.js';
-import { t as y } from './Spinner-CE_plhl7.js';
+import { t as _ } from './PasswordInput-CUpQjno6.js';
+import { t as v } from './InputError-BZLNDWJz.js';
+import { t as y } from './Spinner-BB18Wf_j.js';
 var b = (e) => ({ url: b.url(e), method: `post` });
 ((b.definition = { methods: [`post`], url: `/user/confirm-password` }),
     (b.url = (e) => b.definition.url + l(e)),
