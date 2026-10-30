@@ -6,9 +6,8 @@ import {
     usePage,
     usePoll,
 } from '@inertiajs/vue3';
-import { ChevronDown, CircleCheck } from '@lucide/vue';
+import { ChevronDown, CircleCheck, ExternalLink } from '@lucide/vue';
 import { computed, ref, watchEffect } from 'vue';
-import PageHeader from '@/components/PageHeader.vue';
 import RelativeTime from '@/components/RelativeTime.vue';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -127,14 +126,6 @@ const compareCodes = computed(() => {
         .sort();
 });
 
-function range(key: WindowKey): string {
-    const window = props.deployment.windows?.[key];
-
-    return key === 'allTime' || !window
-        ? 'Since the first link'
-        : (formatWindowRange(window.from, window.to) ?? '');
-}
-
 function barWidth(count: number): string {
     const total = current.value?.links.total ?? 0;
 
@@ -191,37 +182,78 @@ const compareLabel =
     <Head :title="deployment.name" />
 
     <div class="mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6">
-        <div class="flex flex-wrap items-start justify-between gap-4">
-            <div class="space-y-1">
-                <PageHeader
-                    :title="deployment.name"
-                    :description="deployment.domain ?? undefined"
+        <header class="space-y-2.5">
+            <div
+                class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3"
+            >
+                <div class="flex min-w-0 flex-wrap items-center gap-3">
+                    <h1
+                        class="text-3xl leading-tight font-bold tracking-tight break-words"
+                    >
+                        {{ deployment.name }}
+                    </h1>
+                    <Badge v-if="badge" :variant="badge.variant">{{
+                        badge.label
+                    }}</Badge>
+                </div>
+                <div
+                    v-if="deployment.windows && current"
+                    role="group"
+                    aria-label="Period"
+                    class="inline-flex w-full max-w-full gap-0.5 overflow-x-auto rounded-xl border border-border bg-card p-1 shadow-sm sm:w-auto"
                 >
-                    <template v-if="badge" #actions>
-                        <Badge :variant="badge.variant">{{
-                            badge.label
-                        }}</Badge>
-                    </template>
-                </PageHeader>
-                <p
-                    v-for="note in notes"
-                    :key="note"
-                    class="text-sm text-muted-foreground"
+                    <button
+                        v-for="column in columns"
+                        :key="column.key"
+                        type="button"
+                        :aria-pressed="period === column.key"
+                        class="flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-linear-to-br aria-pressed:from-brand-from aria-pressed:to-brand-to aria-pressed:text-white aria-pressed:shadow-sm sm:flex-none"
+                        @click="period = column.key"
+                    >
+                        {{ column.label }}
+                    </button>
+                </div>
+            </div>
+            <div
+                class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground"
+            >
+                <a
+                    v-if="deployment.domain"
+                    :href="`https://${deployment.domain}`"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    :aria-label="`Open ${deployment.domain} in a new tab`"
+                    class="group/link inline-flex items-center gap-1.5 rounded-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none"
                 >
-                    {{ note }}
-                </p>
+                    {{ deployment.domain }}
+                    <ExternalLink
+                        class="size-3.5 opacity-80 transition-transform group-hover/link:translate-x-px group-hover/link:-translate-y-px motion-reduce:transition-none"
+                        aria-hidden="true"
+                    />
+                </a>
+                <template v-if="deployment.updatedAt">
+                    <span
+                        v-if="deployment.domain"
+                        class="size-1 rounded-full bg-border"
+                        aria-hidden="true"
+                    ></span>
+                    <p>
+                        Last updated
+                        <RelativeTime
+                            :at="deployment.updatedAt"
+                            :timezone="deployment.timezone"
+                        />
+                    </p>
+                </template>
             </div>
             <p
-                v-if="deployment.updatedAt"
-                class="text-sm text-muted-foreground sm:text-right"
+                v-for="note in notes"
+                :key="note"
+                class="text-sm text-muted-foreground"
             >
-                Last updated
-                <RelativeTime
-                    :at="deployment.updatedAt"
-                    :timezone="deployment.timezone"
-                />
+                {{ note }}
             </p>
-        </div>
+        </header>
 
         <p
             v-if="!deployment.windows || !current"
@@ -231,28 +263,6 @@ const compareLabel =
         </p>
 
         <template v-else>
-            <div class="flex flex-wrap items-center justify-between gap-3">
-                <div
-                    role="group"
-                    aria-label="Period"
-                    class="inline-flex w-full max-w-full overflow-x-auto rounded-lg bg-muted p-1 sm:w-auto"
-                >
-                    <button
-                        v-for="column in columns"
-                        :key="column.key"
-                        type="button"
-                        :aria-pressed="period === column.key"
-                        class="flex-1 rounded-md px-3 py-1.5 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-card aria-pressed:text-foreground aria-pressed:shadow-sm sm:flex-none"
-                        @click="period = column.key"
-                    >
-                        {{ column.label }}
-                    </button>
-                </div>
-                <p class="text-sm text-muted-foreground tabular-nums">
-                    {{ range(period) }}
-                </p>
-            </div>
-
             <div class="grid gap-4 md:grid-cols-[1.5fr_1fr_1fr]">
                 <section
                     class="space-y-3 rounded-xl border border-border/70 bg-card p-4 shadow-sm"

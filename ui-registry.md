@@ -197,7 +197,7 @@ Last updated: 2026-10-30
 | Selected | `aria-pressed:bg-linear-to-br aria-pressed:from-brand-from aria-pressed:to-brand-to aria-pressed:text-white aria-pressed:shadow-sm` (the favicon gradient) |
 | Focus | `focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none` |
 
-**Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. It sits in the `PageHeader` actions slot, so it is full width on phones and right aligned from `sm`. State lives in the page, not the URL. The deployment page (`pages/deployments/Show.vue`) still uses the older grey track (`bg-muted`, selected `bg-card`) with four options; align it when that page is restyled.
+**Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. It sits in the `PageHeader` actions slot, so it is full width on phones and right aligned from `sm`. State lives in the page, not the URL. The deployment page (`pages/deployments/Show.vue`) uses the same switch with four options (Today, This month, Last 30 days, All time), in its header: the track adds `max-w-full overflow-x-auto` and the buttons add `whitespace-nowrap`, so it scrolls inside itself on phones.
 
 ### Summary card (deployment page)
 
@@ -386,3 +386,19 @@ Last updated: 2026-10-30
 | Labels | `title` for the hover tooltip and `aria-label` with the row name ("Edit Acme Pay") |
 
 **Pattern notes:** every icon button needs both `title` and an `aria-label` that names the row. Page level actions ("Add deployment", "Add staff") keep text.
+
+### Deployment page header (Split Toolbar)
+
+File: `resources/js/pages/deployments/Show.vue`
+Last updated: 2026-10-30
+
+| Property | Class |
+| --- | --- |
+| Wrapper | `header` with `space-y-2.5` |
+| Row 1 | `flex flex-wrap items-center justify-between gap-x-4 gap-y-3`: title and badge on the left, period switch on the right |
+| Title (`h1`) | `text-3xl leading-tight font-bold tracking-tight break-words`, in a `flex flex-wrap items-center gap-3` group with the badge so both share one centre line |
+| Meta line | `flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground` |
+| Domain link | real `<a href="https://{domain}" target="_blank" rel="noopener noreferrer">`: `font-medium text-primary underline-offset-4 hover:underline`, `ExternalLink size-3.5` icon that nudges on hover, `aria-label` "Open {domain} in a new tab" |
+| Separator | `size-1 rounded-full bg-border` between the link and "Last updated" |
+
+**Pattern notes:** no date range text next to the tabs. "Last updated" keeps its hover for the exact time. Status notes sit under the meta line.
