@@ -6,7 +6,7 @@ import {
     mr as i,
     o as a,
 } from './wayfinder-BZPu7hPl.js';
-import { C as o } from './app-BodD7Qwi.js';
+import { C as o } from './app-B62nLDgs.js';
 var s = n({
     __name: `Spinner`,
     props: { class: { type: [Boolean, null, String, Object, Array] } },

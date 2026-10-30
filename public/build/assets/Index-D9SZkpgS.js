@@ -20,38 +20,39 @@ import {
     xn as v,
     zt as y,
 } from './wayfinder-BZPu7hPl.js';
+import { n as b, t as x } from './trash-CScu_PuQ.js';
 import {
-    a as b,
-    d as x,
-    i as S,
-    o as C,
-    p as w,
-    r as T,
-    x as E,
-} from './app-BodD7Qwi.js';
-import { t as D } from './formatRelative-D-S37FvD.js';
+    a as S,
+    d as C,
+    i as w,
+    o as T,
+    p as E,
+    r as D,
+    x as O,
+} from './app-B62nLDgs.js';
+import { t as k } from './formatRelative-D-S37FvD.js';
 import {
-    a as O,
-    i as k,
-    n as A,
-    o as j,
-    r as M,
-    s as N,
-    t as P,
-} from './TableRow-C0myH0NN.js';
-import { t as F } from './TableCaption-M4KzGuv1.js';
-import { t as I } from './EmptyState-s-EDe2hW.js';
-import { t as L } from './PageHeader-D9oPzwwI.js';
-import { t as R } from './Spinner-B65Ey6Ws.js';
+    a as A,
+    i as j,
+    n as M,
+    o as N,
+    r as P,
+    s as F,
+    t as I,
+} from './TableRow-IBlTE7rH.js';
+import { t as L } from './TableCaption-M4KzGuv1.js';
+import { t as R } from './EmptyState-s-EDe2hW.js';
+import { t as z } from './PageHeader-D9oPzwwI.js';
+import { t as B } from './Spinner-DrEYD93f.js';
 import {
-    a as z,
-    i as B,
-    n as V,
-    o as H,
-    r as U,
-    t as W,
-} from './dialog-CrsaE3vj.js';
-var G = u({
+    a as V,
+    i as H,
+    n as U,
+    o as W,
+    r as G,
+    t as K,
+} from './dialog-w1EAzTkW.js';
+var q = u({
         __name: `RemoveStaffDialog`,
         props: y(
             { name: {}, removeHref: {} },
@@ -83,7 +84,7 @@ var G = u({
             return (n, r) => (
                 s(),
                 f(
-                    p(H),
+                    p(W),
                     {
                         open: u.value,
                         'onUpdate:open': (r[1] ||= (e) => (u.value = e)),
@@ -91,13 +92,13 @@ var G = u({
                     {
                         default: t(() => [
                             g(
-                                p(z),
+                                p(V),
                                 { onCloseAutoFocus: b },
                                 {
                                     default: t(() => [
-                                        g(p(V), null, {
+                                        g(p(U), null, {
                                             default: t(() => [
-                                                g(p(W), null, {
+                                                g(p(K), null, {
                                                     default: t(() => [
                                                         l(
                                                             `Remove ` +
@@ -109,7 +110,7 @@ var G = u({
                                                     _: 1,
                                                 }),
                                                 g(
-                                                    p(B),
+                                                    p(H),
                                                     { as: `div` },
                                                     {
                                                         default: t(() => [
@@ -141,10 +142,10 @@ var G = u({
                                             ]),
                                             _: 1,
                                         }),
-                                        g(p(U), null, {
+                                        g(p(G), null, {
                                             default: t(() => [
                                                 g(
-                                                    p(w),
+                                                    p(E),
                                                     {
                                                         variant: `outline`,
                                                         disabled: m.value,
@@ -167,7 +168,7 @@ var G = u({
                                                     [`disabled`],
                                                 ),
                                                 g(
-                                                    p(w),
+                                                    p(E),
                                                     {
                                                         variant: `destructive`,
                                                         disabled: m.value,
@@ -177,7 +178,7 @@ var G = u({
                                                         default: t(() => [
                                                             m.value
                                                                 ? (s(),
-                                                                  f(p(R), {
+                                                                  f(p(B), {
                                                                       key: 0,
                                                                   }))
                                                                 : i(``, !0),
@@ -207,18 +208,18 @@ var G = u({
             );
         },
     }),
-    K = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
-    q = {
+    J = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
+    Y = {
         key: 1,
-        class: `overflow-hidden rounded-xl border border-border/70 bg-card shadow-sm`,
+        class: `overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm`,
     },
-    J = { class: `overflow-x-auto` },
-    Y = { key: 0, class: `flex items-center justify-end gap-2` },
-    X = u({
+    X = { class: `overflow-x-auto` },
+    Z = { key: 0, class: `flex items-center justify-end gap-2` },
+    Q = u({
         layout: {
             breadcrumbs: [
-                { title: `Dashboard`, href: x() },
-                { title: `Staff`, href: C() },
+                { title: `Dashboard`, href: C() },
+                { title: `Staff`, href: T() },
             ],
         },
         __name: `Index`,
@@ -226,13 +227,13 @@ var G = u({
         setup(u) {
             let v = d(null),
                 y = d(!1);
-            function x(e) {
+            function C(e) {
                 ((v.value = e), (y.value = !0));
             }
-            function C() {
+            function T() {
                 n.reload({ only: [`staff`] });
             }
-            function R() {
+            function B() {
                 r(() => {
                     let e = document.querySelector(`h1`);
                     (e?.setAttribute(`tabindex`, `-1`), e?.focus());
@@ -245,9 +246,9 @@ var G = u({
                     null,
                     [
                         g(p(o), { title: `Staff` }),
-                        _(`div`, K, [
+                        _(`div`, J, [
                             g(
-                                L,
+                                z,
                                 {
                                     title: `Staff`,
                                     description: `Everyone who can sign in to this dashboard.`,
@@ -255,13 +256,13 @@ var G = u({
                                 {
                                     actions: t(() => [
                                         g(
-                                            p(w),
+                                            p(E),
                                             { 'as-child': `` },
                                             {
                                                 default: t(() => [
                                                     g(
                                                         p(c),
-                                                        { href: p(T)() },
+                                                        { href: p(D)() },
                                                         {
                                                             default: t(() => [
                                                                 ...(r[1] ||= [
@@ -287,10 +288,10 @@ var G = u({
                             u.staff.length === 0
                                 ? (s(),
                                   f(
-                                      I,
+                                      R,
                                       {
                                           key: 0,
-                                          icon: p(E),
+                                          icon: p(O),
                                           title: `No staff yet.`,
                                           description: `Add a login for a colleague.`,
                                       },
@@ -299,12 +300,12 @@ var G = u({
                                       [`icon`],
                                   ))
                                 : (s(),
-                                  h(`section`, q, [
-                                      _(`div`, J, [
-                                          g(p(j), null, {
+                                  h(`section`, Y, [
+                                      _(`div`, X, [
+                                          g(p(N), null, {
                                               default: t(() => [
                                                   g(
-                                                      p(F),
+                                                      p(L),
                                                       { class: `sr-only` },
                                                       {
                                                           default: t(() => [
@@ -318,126 +319,121 @@ var G = u({
                                                           _: 1,
                                                       },
                                                   ),
-                                                  g(
-                                                      p(A),
-                                                      { class: `bg-muted/40` },
-                                                      {
-                                                          default: t(() => [
-                                                              g(
-                                                                  p(P),
-                                                                  {
-                                                                      class: `hover:bg-transparent`,
-                                                                  },
-                                                                  {
-                                                                      default:
-                                                                          t(
-                                                                              () => [
-                                                                                  g(
-                                                                                      p(
-                                                                                          M,
+                                                  g(p(M), null, {
+                                                      default: t(() => [
+                                                          g(
+                                                              p(I),
+                                                              {
+                                                                  class: `hover:bg-transparent`,
+                                                              },
+                                                              {
+                                                                  default: t(
+                                                                      () => [
+                                                                          g(
+                                                                              p(
+                                                                                  P,
+                                                                              ),
+                                                                              {
+                                                                                  scope: `col`,
+                                                                                  class: `px-4`,
+                                                                              },
+                                                                              {
+                                                                                  default:
+                                                                                      t(
+                                                                                          () => [
+                                                                                              ...(r[3] ||=
+                                                                                                  [
+                                                                                                      l(
+                                                                                                          `Name`,
+                                                                                                          -1,
+                                                                                                      ),
+                                                                                                  ]),
+                                                                                          ],
                                                                                       ),
-                                                                                      {
-                                                                                          scope: `col`,
-                                                                                          class: `px-4`,
-                                                                                      },
-                                                                                      {
-                                                                                          default:
-                                                                                              t(
-                                                                                                  () => [
-                                                                                                      ...(r[3] ||=
-                                                                                                          [
-                                                                                                              l(
-                                                                                                                  `Name`,
-                                                                                                                  -1,
-                                                                                                              ),
-                                                                                                          ]),
-                                                                                                  ],
-                                                                                              ),
-                                                                                          _: 1,
-                                                                                      },
-                                                                                  ),
-                                                                                  g(
-                                                                                      p(
-                                                                                          M,
-                                                                                      ),
-                                                                                      {
-                                                                                          scope: `col`,
-                                                                                          class: `px-4`,
-                                                                                      },
-                                                                                      {
-                                                                                          default:
-                                                                                              t(
-                                                                                                  () => [
-                                                                                                      ...(r[4] ||=
-                                                                                                          [
-                                                                                                              l(
-                                                                                                                  ` Email `,
-                                                                                                                  -1,
-                                                                                                              ),
-                                                                                                          ]),
-                                                                                                  ],
-                                                                                              ),
-                                                                                          _: 1,
-                                                                                      },
-                                                                                  ),
-                                                                                  g(
-                                                                                      p(
-                                                                                          M,
-                                                                                      ),
-                                                                                      {
-                                                                                          scope: `col`,
-                                                                                          class: `px-4`,
-                                                                                      },
-                                                                                      {
-                                                                                          default:
-                                                                                              t(
-                                                                                                  () => [
-                                                                                                      ...(r[5] ||=
-                                                                                                          [
-                                                                                                              l(
-                                                                                                                  `Added`,
-                                                                                                                  -1,
-                                                                                                              ),
-                                                                                                          ]),
-                                                                                                  ],
-                                                                                              ),
-                                                                                          _: 1,
-                                                                                      },
-                                                                                  ),
-                                                                                  g(
-                                                                                      p(
-                                                                                          M,
-                                                                                      ),
-                                                                                      {
-                                                                                          scope: `col`,
-                                                                                          class: `px-4 text-right`,
-                                                                                      },
-                                                                                      {
-                                                                                          default:
-                                                                                              t(
-                                                                                                  () => [
-                                                                                                      ...(r[6] ||=
-                                                                                                          [
-                                                                                                              l(
-                                                                                                                  ` Actions `,
-                                                                                                                  -1,
-                                                                                                              ),
-                                                                                                          ]),
-                                                                                                  ],
-                                                                                              ),
-                                                                                          _: 1,
-                                                                                      },
-                                                                                  ),
-                                                                              ],
+                                                                                  _: 1,
+                                                                              },
                                                                           ),
-                                                                      _: 1,
-                                                                  },
-                                                              ),
-                                                          ]),
-                                                          _: 1,
-                                                      },
-                                                  ),
-                                                  g(p(O), null, {
+                                                                          g(
+                                                                              p(
+                                                                                  P,
+                                                                              ),
+                                                                              {
+                                                                                  scope: `col`,
+                                                                                  class: `px-4`,
+                                                                              },
+                                                                              {
+                                                                                  default:
+                                                                                      t(
+                                                                                          () => [
+                                                                                              ...(r[4] ||=
+                                                                                                  [
+                                                                                                      l(
+                                                                                                          ` Email `,
+                                                                                                          -1,
+                                                                                                      ),
+                                                                                                  ]),
+                                                                                          ],
+                                                                                      ),
+                                                                                  _: 1,
+                                                                              },
+                                                                          ),
+                                                                          g(
+                                                                              p(
+                                                                                  P,
+                                                                              ),
+                                                                              {
+                                                                                  scope: `col`,
+                                                                                  class: `px-4`,
+                                                                              },
+                                                                              {
+                                                                                  default:
+                                                                                      t(
+                                                                                          () => [
+                                                                                              ...(r[5] ||=
+                                                                                                  [
+                                                                                                      l(
+                                                                                                          `Added`,
+                                                                                                          -1,
+                                                                                                      ),
+                                                                                                  ]),
+                                                                                          ],
+                                                                                      ),
+                                                                                  _: 1,
+                                                                              },
+                                                                          ),
+                                                                          g(
+                                                                              p(
+                                                                                  P,
+                                                                              ),
+                                                                              {
+                                                                                  scope: `col`,
+                                                                                  class: `px-4 text-right`,
+                                                                              },
+                                                                              {
+                                                                                  default:
+                                                                                      t(
+                                                                                          () => [
+                                                                                              ...(r[6] ||=
+                                                                                                  [
+                                                                                                      l(
+                                                                                                          ` Actions `,
+                                                                                                          -1,
+                                                                                                      ),
+                                                                                                  ]),
+                                                                                          ],
+                                                                                      ),
+                                                                                  _: 1,
+                                                                              },
+                                                                          ),
+                                                                      ],
+                                                                  ),
+                                                                  _: 1,
+                                                              },
+                                                          ),
+                                                      ]),
+                                                      _: 1,
+                                                  }),
+                                                  g(p(A), null, {
                                                       default: t(() => [
                                                           (s(!0),
                                                           h(
@@ -448,7 +444,7 @@ var G = u({
                                                                   (e) => (
                                                                       s(),
                                                                       f(
-                                                                          p(P),
+                                                                          p(I),
                                                                           {
                                                                               key: e.id,
                                                                               class: `border-border/50`,
@@ -459,7 +455,7 @@ var G = u({
                                                                                       () => [
                                                                                           g(
                                                                                               p(
-                                                                                                  k,
+                                                                                                  j,
                                                                                               ),
                                                                                               {
                                                                                                   class: `px-4 py-3 text-sm font-medium`,
@@ -479,7 +475,7 @@ var G = u({
                                                                                                                   ? (s(),
                                                                                                                     f(
                                                                                                                         p(
-                                                                                                                            N,
+                                                                                                                            F,
                                                                                                                         ),
                                                                                                                         {
                                                                                                                             key: 0,
@@ -513,7 +509,7 @@ var G = u({
                                                                                           ),
                                                                                           g(
                                                                                               p(
-                                                                                                  k,
+                                                                                                  j,
                                                                                               ),
                                                                                               {
                                                                                                   class: `px-4 py-3 text-sm`,
@@ -536,7 +532,7 @@ var G = u({
                                                                                           ),
                                                                                           g(
                                                                                               p(
-                                                                                                  k,
+                                                                                                  j,
                                                                                               ),
                                                                                               {
                                                                                                   class: `px-4 py-3 text-sm`,
@@ -548,7 +544,7 @@ var G = u({
                                                                                                               l(
                                                                                                                   a(
                                                                                                                       p(
-                                                                                                                          D,
+                                                                                                                          k,
                                                                                                                       )(
                                                                                                                           e.createdAt,
                                                                                                                       ),
@@ -563,7 +559,7 @@ var G = u({
                                                                                           ),
                                                                                           g(
                                                                                               p(
-                                                                                                  k,
+                                                                                                  j,
                                                                                               ),
                                                                                               {
                                                                                                   class: `px-4 py-3`,
@@ -580,15 +576,15 @@ var G = u({
                                                                                                                   : (s(),
                                                                                                                     h(
                                                                                                                         `div`,
-                                                                                                                        Y,
+                                                                                                                        Z,
                                                                                                                         [
                                                                                                                             g(
                                                                                                                                 p(
-                                                                                                                                    w,
+                                                                                                                                    E,
                                                                                                                                 ),
                                                                                                                                 {
                                                                                                                                     variant: `outline`,
-                                                                                                                                    size: `sm`,
+                                                                                                                                    size: `icon-sm`,
                                                                                                                                     'as-child': ``,
                                                                                                                                 },
                                                                                                                                 {
@@ -601,23 +597,22 @@ var G = u({
                                                                                                                                                     ),
                                                                                                                                                     {
                                                                                                                                                         href: p(
-                                                                                                                                                            b,
+                                                                                                                                                            S,
                                                                                                                                                         )(
                                                                                                                                                             e.id,
                                                                                                                                                         ),
                                                                                                                                                         'aria-label': `Edit ${e.name}`,
+                                                                                                                                                        title: `Edit`,
                                                                                                                                                     },
                                                                                                                                                     {
                                                                                                                                                         default:
                                                                                                                                                             t(
                                                                                                                                                                 () => [
-                                                                                                                                                                    ...(r[8] ||=
-                                                                                                                                                                        [
-                                                                                                                                                                            l(
-                                                                                                                                                                                ` Edit `,
-                                                                                                                                                                                -1,
-                                                                                                                                                                            ),
-                                                                                                                                                                        ]),
+                                                                                                                                                                    g(
+                                                                                                                                                                        p(
+                                                                                                                                                                            b,
+                                                                                                                                                                        ),
+                                                                                                                                                                    ),
                                                                                                                                                                 ],
                                                                                                                                                             ),
                                                                                                                                                         _: 1,
@@ -636,18 +631,19 @@ var G = u({
                                                                                                                             ),
                                                                                                                             g(
                                                                                                                                 p(
-                                                                                                                                    w,
+                                                                                                                                    E,
                                                                                                                                 ),
                                                                                                                                 {
                                                                                                                                     variant: `outline`,
-                                                                                                                                    size: `sm`,
+                                                                                                                                    size: `icon-sm`,
                                                                                                                                     class: `text-danger hover:text-danger`,
                                                                                                                                     'aria-label': `Remove ${e.name}`,
+                                                                                                                                    title: `Remove`,
                                                                                                                                     onClick:
                                                                                                                                         (
                                                                                                                                             t,
                                                                                                                                         ) =>
-                                                                                                                                            x(
+                                                                                                                                            C(
                                                                                                                                                 e,
                                                                                                                                             ),
                                                                                                                                 },
@@ -655,13 +651,11 @@ var G = u({
                                                                                                                                     default:
                                                                                                                                         t(
                                                                                                                                             () => [
-                                                                                                                                                ...(r[9] ||=
-                                                                                                                                                    [
-                                                                                                                                                        l(
-                                                                                                                                                            ` Remove `,
-                                                                                                                                                            -1,
-                                                                                                                                                        ),
-                                                                                                                                                    ]),
+                                                                                                                                                g(
+                                                                                                                                                    p(
+                                                                                                                                                        x,
+                                                                                                                                                    ),
+                                                                                                                                                ),
                                                                                                                                             ],
                                                                                                                                         ),
                                                                                                                                     _: 1,
@@ -701,16 +695,16 @@ var G = u({
                             v.value
                                 ? (s(),
                                   f(
-                                      G,
+                                      q,
                                       {
                                           key: 2,
                                           open: y.value,
                                           'onUpdate:open': (r[0] ||= (e) =>
                                               (y.value = e)),
                                           name: v.value.name,
-                                          'remove-href': p(S)(v.value.id).url,
-                                          onMissing: C,
-                                          onRemoved: R,
+                                          'remove-href': p(w)(v.value.id).url,
+                                          onMissing: T,
+                                          onRemoved: B,
                                       },
                                       null,
                                       8,
@@ -724,4 +718,4 @@ var G = u({
             );
         },
     });
-export { X as default };
+export { Q as default };

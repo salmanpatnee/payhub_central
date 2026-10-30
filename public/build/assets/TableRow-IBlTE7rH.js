@@ -49,7 +49,7 @@ var m = a({
         {
             variants: {
                 variant: {
-                    default: `border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90`,
+                    default: `border-transparent bg-linear-to-br from-brand-from to-brand-to text-white [a&]:hover:brightness-95`,
                     secondary: `border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90`,
                     destructive: `border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60`,
                     outline: `text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground`,
@@ -145,7 +145,7 @@ var m = a({
                         'data-slot': `table-head`,
                         class: n(
                             s(c)(
-                                `text-muted-foreground h-10 px-2 text-left align-middle text-[11px] font-semibold tracking-widest whitespace-nowrap uppercase [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]`,
+                                `text-table-head-foreground h-10 px-2 text-left align-middle text-[11px] font-semibold tracking-widest whitespace-nowrap uppercase [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]`,
                                 t.class,
                             ),
                         ),
@@ -167,7 +167,9 @@ var m = a({
                     `thead`,
                     {
                         'data-slot': `table-header`,
-                        class: n(s(c)(`[&_tr]:border-b`, t.class)),
+                        class: n(
+                            s(c)(`bg-table-head [&_tr]:border-b`, t.class),
+                        ),
                     },
                     [f(e.$slots, `default`)],
                     2,

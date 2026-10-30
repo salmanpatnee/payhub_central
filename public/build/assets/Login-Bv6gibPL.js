@@ -18,13 +18,13 @@ import {
     rt as g,
     u as _,
 } from './wayfinder-BZPu7hPl.js';
-import { t as v } from './Checkbox-EBoc1aa6.js';
+import { t as v } from './Checkbox-t7IX1yK-.js';
 import { t as y } from './Label-DoYAx_a7.js';
 import { t as b } from './createLucideIcon-B933959x.js';
-import { t as x } from './PasswordInput-BxRi6qF1.js';
-import { n as S, t as C } from './InputError-COuguPsA.js';
-import { p as w } from './app-BodD7Qwi.js';
-import { t as T } from './Spinner-B65Ey6Ws.js';
+import { t as x } from './PasswordInput-Cu8e63-6.js';
+import { n as S, t as C } from './InputError-uoSIkkZA.js';
+import { p as w } from './app-B62nLDgs.js';
+import { t as T } from './Spinner-DrEYD93f.js';
 var E = b({
         name: `log-in`,
         size: 24,
@@ -48,10 +48,7 @@ var O = (e) => ({ action: D.url(e), method: `post` });
 ((O.post = (e) => ({ action: D.url(e), method: `post` })),
     (D.form = O),
     Object.assign(D, D));
-var k = {
-        key: 0,
-        class: `mb-4 text-center text-sm font-medium text-green-600`,
-    },
+var k = { key: 0, class: `mb-4 text-center text-sm font-medium text-success` },
     A = { class: `grid gap-6` },
     j = { class: `grid gap-2` },
     M = { class: `grid gap-2` },
@@ -112,7 +109,7 @@ var k = {
                                                                 required: ``,
                                                                 tabindex: 1,
                                                                 autocomplete: `email`,
-                                                                class: `bg-auth-field`,
+                                                                class: `h-11 rounded-xl bg-auth-field`,
                                                                 placeholder: `email@example.com`,
                                                             },
                                                             null,
@@ -150,7 +147,7 @@ var k = {
                                                         required: ``,
                                                         tabindex: 2,
                                                         autocomplete: `current-password`,
-                                                        class: `bg-auth-field`,
+                                                        class: `h-11 rounded-xl bg-auth-field`,
                                                         placeholder: `Password`,
                                                     }),
                                                     h(
@@ -190,7 +187,7 @@ var k = {
                                                     f(w),
                                                     {
                                                         type: `submit`,
-                                                        class: `mt-4 w-full`,
+                                                        class: `mt-4 h-11 w-full rounded-xl text-base font-semibold`,
                                                         tabindex: 4,
                                                         disabled: n,
                                                         'data-test': `login-button`,

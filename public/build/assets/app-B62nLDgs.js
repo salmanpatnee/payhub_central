@@ -3,9 +3,9 @@ const __vite__mapDeps = (
     m = __vite__mapDeps,
     d = m.f ||
         (m.f = [
-            'assets/Dashboard-CZXePjt1.js',
+            'assets/Dashboard-BG0FaNDv.js',
             'assets/wayfinder-BZPu7hPl.js',
-            'assets/formatPercent-DUBB0xoz.js',
+            'assets/formatPercent-BBRBXX0x.js',
             'assets/Presence-CKGYlb9k.js',
             'assets/useForwardExpose-B78G7oXS.js',
             'assets/Teleport-fCOREVeW.js',
@@ -14,36 +14,37 @@ const __vite__mapDeps = (
             'assets/formatRelative-D-S37FvD.js',
             'assets/createLucideIcon-B933959x.js',
             'assets/inbox-DWr_PkQC.js',
-            'assets/TableRow-C0myH0NN.js',
+            'assets/TableRow-IBlTE7rH.js',
             'assets/Card-G-5AElBS.js',
             'assets/deploymentStatus-DAZueO0e.js',
             'assets/EmptyState-s-EDe2hW.js',
             'assets/PageHeader-D9oPzwwI.js',
-            'assets/ConfirmPassword-BkubroWv.js',
+            'assets/ConfirmPassword-CYWDLJyr.js',
             'assets/Label-DoYAx_a7.js',
-            'assets/PasswordInput-BxRi6qF1.js',
-            'assets/InputError-COuguPsA.js',
-            'assets/Spinner-B65Ey6Ws.js',
-            'assets/Login-BJzzYJmJ.js',
-            'assets/Checkbox-EBoc1aa6.js',
+            'assets/PasswordInput-Cu8e63-6.js',
+            'assets/InputError-uoSIkkZA.js',
+            'assets/Spinner-DrEYD93f.js',
+            'assets/Login-Bv6gibPL.js',
+            'assets/Checkbox-t7IX1yK-.js',
             'assets/check-GUSC4Bfv.js',
-            'assets/TwoFactorChallenge-BVdhp7Go.js',
-            'assets/login-DVGlHG5F.js',
-            'assets/VerifyEmail-DLfCGZ2F.js',
-            'assets/Create-sGpTMIzV.js',
+            'assets/TwoFactorChallenge-BzSIZNk0.js',
+            'assets/login-DwT14Fep.js',
+            'assets/VerifyEmail-ItXf-PRq.js',
+            'assets/Create-DxfzVVSh.js',
             'assets/DeploymentController-11eEqESw.js',
-            'assets/Edit-BjsyNguq.js',
-            'assets/RemoveDeploymentDialog-CHOiABBU.js',
-            'assets/dialog-CrsaE3vj.js',
-            'assets/Index-guKI-Xqm.js',
+            'assets/Edit-D3Ez2LhB.js',
+            'assets/RemoveDeploymentDialog-DWlWhT0S.js',
+            'assets/dialog-w1EAzTkW.js',
+            'assets/Index-Oy6BfHyS.js',
+            'assets/trash-CScu_PuQ.js',
             'assets/TableCaption-M4KzGuv1.js',
-            'assets/Show-SsGEsDGR.js',
-            'assets/Profile-D5XpFjn7.js',
-            'assets/Security-BB85-kAl.js',
-            'assets/Create-VnXS4z5P.js',
+            'assets/Show-CJ9cRF8-.js',
+            'assets/Profile-BE2rMce8.js',
+            'assets/Security-CHqFjryv.js',
+            'assets/Create-BqieCpzj.js',
             'assets/StaffController-C09qeu_l.js',
-            'assets/Edit-BpDkqCj4.js',
-            'assets/Index-B_YrSL3d.js',
+            'assets/Edit-Bvgy6kAx.js',
+            'assets/Index-D9SZkpgS.js',
         ]),
 ) => i.map((i) => d[i]);
 import { a as e, i as t, n, t as r } from './Presence-CKGYlb9k.js';
@@ -5462,25 +5463,6 @@ var Li = Le(Ii),
         aliases: [`check-circle-2`],
     }),
     Ma = q({
-        name: `credit-card`,
-        size: 24,
-        node: [
-            [
-                `rect`,
-                {
-                    width: `20`,
-                    height: `14`,
-                    x: `2`,
-                    y: `5`,
-                    rx: `2`,
-                    key: `ynyp8z`,
-                },
-            ],
-            [`line`, { x1: `2`, x2: `22`, y1: `10`, y2: `10`, key: `1b3vmo` }],
-            [`path`, { d: `M6 14h2`, key: `mk7k0u` }],
-        ],
-    }),
-    Na = q({
         name: `info`,
         size: 24,
         node: [
@@ -5489,7 +5471,7 @@ var Li = Le(Ii),
             [`path`, { d: `M12 8h.01`, key: `e9boi3` }],
         ],
     }),
-    Pa = q({
+    Na = q({
         name: `layout-grid`,
         size: 24,
         node: [
@@ -5539,13 +5521,13 @@ var Li = Le(Ii),
             ],
         ],
     }),
-    Fa = q({
+    Pa = q({
         name: `loader-circle`,
         size: 24,
         node: [[`path`, { d: `M21 12a9 9 0 1 1-6.219-8.56`, key: `13zald` }]],
         aliases: [`loader-2`],
     }),
-    Ia = q({
+    Fa = q({
         name: `list`,
         size: 24,
         node: [
@@ -5557,7 +5539,7 @@ var Li = Le(Ii),
             [`path`, { d: `M8 19h13`, key: `m83p4d` }],
         ],
     }),
-    La = q({
+    Ia = q({
         name: `log-out`,
         size: 24,
         node: [
@@ -5569,7 +5551,7 @@ var Li = Le(Ii),
             ],
         ],
     }),
-    Ra = q({
+    La = q({
         name: `octagon-x`,
         size: 24,
         node: [
@@ -5585,7 +5567,7 @@ var Li = Le(Ii),
         ],
         aliases: [`x-octagon`],
     }),
-    za = q({
+    Ra = q({
         name: `panel-left-close`,
         size: 24,
         node: [
@@ -5605,7 +5587,7 @@ var Li = Le(Ii),
         ],
         aliases: [`sidebar-close`],
     }),
-    Ba = q({
+    za = q({
         name: `panel-left-open`,
         size: 24,
         node: [
@@ -5625,7 +5607,7 @@ var Li = Le(Ii),
         ],
         aliases: [`sidebar-open`],
     }),
-    Va = q({
+    Ba = q({
         name: `settings`,
         size: 24,
         node: [
@@ -5639,7 +5621,7 @@ var Li = Le(Ii),
             [`circle`, { cx: `12`, cy: `12`, r: `3`, key: `1v7zrd` }],
         ],
     }),
-    Ha = q({
+    Va = q({
         name: `triangle-alert`,
         size: 24,
         node: [
@@ -5655,7 +5637,7 @@ var Li = Le(Ii),
         ],
         aliases: [`alert-triangle`],
     }),
-    Ua = q({
+    Ha = q({
         name: `users`,
         size: 24,
         node: [
@@ -5671,7 +5653,7 @@ var Li = Le(Ii),
             [`circle`, { cx: `9`, cy: `7`, r: `4`, key: `nufk8` }],
         ],
     }),
-    Wa = q({
+    Ua = q({
         name: `x`,
         size: 24,
         node: [
@@ -5679,15 +5661,15 @@ var Li = Le(Ii),
             [`path`, { d: `m6 6 12 12`, key: `d8bk6v` }],
         ],
     }),
-    Ga = Xe ? window : void 0,
-    Ka = Xe ? window.document : void 0,
-    qa = Xe ? window.navigator : void 0;
+    Wa = Xe ? window : void 0,
+    Ga = Xe ? window.document : void 0,
+    Ka = Xe ? window.navigator : void 0;
 Xe && window.location;
-function Ja(e) {
+function qa(e) {
     let t = j(e);
     return t?.$el ?? t;
 }
-function Ya(...e) {
+function Ja(...e) {
     let t = [],
         n = () => {
             (t.forEach((e) => e()), (t.length = 0));
@@ -5702,7 +5684,7 @@ function Ya(...e) {
         }),
         a = Ge(
             () => [
-                i.value?.map((e) => Ja(e)) ?? [Ga].filter((e) => e != null),
+                i.value?.map((e) => qa(e)) ?? [Wa].filter((e) => e != null),
                 Ue(j(i.value ? e[1] : e[0])),
                 Ue(I(i.value ? e[2] : e[1])),
                 j(i.value ? e[3] : e[2]),
@@ -5725,7 +5707,7 @@ function Ya(...e) {
         }
     );
 }
-function Xa() {
+function Ya() {
     let e = _e(!1),
         t = c();
     return (
@@ -5736,18 +5718,18 @@ function Xa() {
         e
     );
 }
-function Za(e) {
-    let t = Xa();
+function Xa(e) {
+    let t = Ya();
     return R(() => (t.value, !!e()));
 }
-var Qa = Symbol(`vueuse-ssr-width`);
-function $a() {
-    let e = v() ? Je(Qa, null) : null;
+var Za = Symbol(`vueuse-ssr-width`);
+function Qa() {
+    let e = v() ? Je(Za, null) : null;
     return typeof e == `number` ? e : void 0;
 }
-function eo(e, t = {}) {
-    let { window: n = Ga, ssrWidth: r = $a() } = t,
-        i = Za(
+function $a(e, t = {}) {
+    let { window: n = Wa, ssrWidth: r = Qa() } = t,
+        i = Xa(
             () => n && `matchMedia` in n && typeof n.matchMedia == `function`,
         ),
         a = _e(typeof r == `number`),
@@ -5778,7 +5760,7 @@ function eo(e, t = {}) {
                     ((o.value = n.matchMedia(j(e))),
                     (s.value = o.value.matches));
         }),
-        Ya(
+        Ja(
             o,
             `change`,
             (e) => {
@@ -5789,16 +5771,16 @@ function eo(e, t = {}) {
         R(() => s.value)
     );
 }
-function to(e, t = {}) {
-    let { controls: n = !1, navigator: r = qa } = t,
-        i = Za(() => r && `permissions` in r),
+function eo(e, t = {}) {
+    let { controls: n = !1, navigator: r = Ka } = t,
+        i = Xa(() => r && `permissions` in r),
         a = _e(),
         o = typeof e == `string` ? { name: e } : e,
         s = _e(),
         c = () => {
             s.value = a.value?.state ?? `prompt`;
         };
-    Ya(a, `change`, c, { passive: !0 });
+    Ja(a, `change`, c, { passive: !0 });
     let l = Qe(async () => {
         if (i.value) {
             if (!a.value)
@@ -5814,17 +5796,17 @@ function to(e, t = {}) {
     });
     return (l(), n ? { state: s, isSupported: i, query: l } : s);
 }
-function no(e = {}) {
+function to(e = {}) {
     let {
-            navigator: t = qa,
+            navigator: t = Ka,
             read: n = !1,
             source: r,
             copiedDuring: i = 1500,
             legacy: a = !1,
         } = e,
-        o = Za(() => t && `clipboard` in t),
-        s = to(`clipboard-read`),
-        c = to(`clipboard-write`),
+        o = Xa(() => t && `clipboard` in t),
+        s = eo(`clipboard-read`),
+        c = eo(`clipboard-write`),
         l = R(() => o.value || a),
         u = _e(``),
         d = _e(!1),
@@ -5839,7 +5821,7 @@ function no(e = {}) {
             }
         e && (u.value = g());
     }
-    l.value && n && Ya([`copy`, `cut`], p, { passive: !0 });
+    l.value && n && Ja([`copy`, `cut`], p, { passive: !0 });
     async function m(e = j(r)) {
         if (l.value && e != null) {
             let n = !(o.value && _(c.value));
@@ -5874,10 +5856,10 @@ function no(e = {}) {
     }
     return { isSupported: l, text: u, copied: d, copy: m };
 }
-function ro(e) {
+function no(e) {
     return JSON.parse(JSON.stringify(e));
 }
-function io(e, t) {
+function ro(e, t) {
     let n = _e(t);
     return (
         _(
@@ -5890,7 +5872,7 @@ function io(e, t) {
         he(n)
     );
 }
-function ao(e, t, n, r = {}) {
+function io(e, t, n, r = {}) {
     let {
             clone: i = !1,
             passive: a = !1,
@@ -5907,7 +5889,7 @@ function ao(e, t, n, r = {}) {
             d?.proxy?.$emit?.bind(d?.proxy),
         p = o;
     ((t ||= `modelValue`), (p ||= `update:${t.toString()}`));
-    let m = (e) => (i ? (typeof i == `function` ? i(e) : ro(e)) : e),
+    let m = (e) => (i ? (typeof i == `function` ? i(e) : no(e)) : e),
         h = () => (Ke(e[t]) ? m(e[t]) : l),
         g = (e) => {
             u ? u(e) && f(p, e) : f(p, e);
@@ -5942,7 +5924,7 @@ function ao(e, t, n, r = {}) {
         },
     });
 }
-var oo = M({
+var ao = M({
         __name: `SheetOverlay`,
         props: {
             forceMount: { type: Boolean },
@@ -5974,7 +5956,7 @@ var oo = M({
             );
         },
     }),
-    so = M({
+    oo = M({
         inheritAttrs: !1,
         __name: `SheetContent`,
         props: {
@@ -6002,7 +5984,7 @@ var oo = M({
                 A(),
                 P(I(Kt), null, {
                     default: g(() => [
-                        V(oo),
+                        V(ao),
                         V(
                             I(Ht),
                             s(
@@ -6033,7 +6015,7 @@ var oo = M({
                                         },
                                         {
                                             default: g(() => [
-                                                V(I(Wa), { class: `size-4` }),
+                                                V(I(Ua), { class: `size-4` }),
                                                 (r[0] ||= U(
                                                     `span`,
                                                     { class: `sr-only` },
@@ -6056,7 +6038,7 @@ var oo = M({
             );
         },
     }),
-    co = M({
+    so = M({
         __name: `SheetDescription`,
         props: {
             asChild: { type: Boolean },
@@ -6087,7 +6069,7 @@ var oo = M({
             );
         },
     }),
-    lo = M({
+    co = M({
         __name: `SheetHeader`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6106,7 +6088,7 @@ var oo = M({
             );
         },
     }),
-    uo = M({
+    lo = M({
         __name: `SheetTitle`,
         props: {
             asChild: { type: Boolean },
@@ -6137,19 +6119,19 @@ var oo = M({
             );
         },
     }),
-    fo = `sidebar_state`,
-    po = 604800,
-    mo = `16rem`,
-    ho = `18rem`,
-    go = `3rem`,
-    [_o, vo] = e(`Sidebar`),
-    yo = { class: `flex h-full w-full flex-col` },
-    bo = [`data-state`, `data-collapsible`, `data-variant`, `data-side`],
-    xo = {
+    uo = `sidebar_state`,
+    fo = 604800,
+    po = `16rem`,
+    mo = `18rem`,
+    ho = `3rem`,
+    [go, _o] = e(`Sidebar`),
+    vo = { class: `flex h-full w-full flex-col` },
+    yo = [`data-state`, `data-collapsible`, `data-variant`, `data-side`],
+    bo = {
         'data-sidebar': `sidebar`,
         class: `bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm`,
     },
-    So = M({
+    xo = M({
         inheritAttrs: !1,
         __name: `Sidebar`,
         props: {
@@ -6165,7 +6147,7 @@ var oo = M({
                     state: r,
                     openMobile: i,
                     setOpenMobile: a,
-                } = _o();
+                } = go();
             return (o, c) =>
                 e.collapsible === `none`
                     ? (A(),
@@ -6195,7 +6177,7 @@ var oo = M({
                             {
                                 default: g(() => [
                                     V(
-                                        I(so),
+                                        I(oo),
                                         {
                                             'data-sidebar': `sidebar`,
                                             'data-slot': `sidebar`,
@@ -6203,17 +6185,17 @@ var oo = M({
                                             side: e.side,
                                             class: `bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden`,
                                             style: xe({
-                                                '--sidebar-width': I(ho),
+                                                '--sidebar-width': I(mo),
                                             }),
                                         },
                                         {
                                             default: g(() => [
                                                 V(
-                                                    lo,
+                                                    co,
                                                     { class: `sr-only` },
                                                     {
                                                         default: g(() => [
-                                                            V(uo, null, {
+                                                            V(lo, null, {
                                                                 default: g(
                                                                     () => [
                                                                         ...(c[0] ||=
@@ -6227,7 +6209,7 @@ var oo = M({
                                                                 ),
                                                                 _: 1,
                                                             }),
-                                                            V(co, null, {
+                                                            V(so, null, {
                                                                 default: g(
                                                                     () => [
                                                                         ...(c[1] ||=
@@ -6245,7 +6227,7 @@ var oo = M({
                                                         _: 1,
                                                     },
                                                 ),
-                                                U(`div`, yo, [
+                                                U(`div`, vo, [
                                                     W(o.$slots, `default`),
                                                 ]),
                                             ]),
@@ -6310,16 +6292,16 @@ var oo = M({
                                         },
                                         o.$attrs,
                                     ),
-                                    [U(`div`, xo, [W(o.$slots, `default`)])],
+                                    [U(`div`, bo, [W(o.$slots, `default`)])],
                                     16,
                                 ),
                             ],
                             8,
-                            bo,
+                            yo,
                         ));
         },
     }),
-    Co = M({
+    So = M({
         __name: `SidebarContent`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6344,7 +6326,7 @@ var oo = M({
             );
         },
     }),
-    wo = M({
+    Co = M({
         __name: `SidebarFooter`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6364,7 +6346,7 @@ var oo = M({
             );
         },
     }),
-    To = M({
+    wo = M({
         __name: `SidebarGroup`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6389,7 +6371,7 @@ var oo = M({
             );
         },
     }),
-    Eo = M({
+    To = M({
         __name: `SidebarHeader`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6409,7 +6391,7 @@ var oo = M({
             );
         },
     }),
-    Do = M({
+    Eo = M({
         __name: `SidebarInset`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6434,7 +6416,7 @@ var oo = M({
             );
         },
     }),
-    Oo = M({
+    Do = M({
         __name: `SidebarMenu`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6456,7 +6438,7 @@ var oo = M({
             );
         },
     }),
-    ko = M({
+    Oo = M({
         __name: `Tooltip`,
         props: {
             defaultOpen: { type: Boolean },
@@ -6484,7 +6466,7 @@ var oo = M({
             );
         },
     }),
-    Ao = M({
+    ko = M({
         inheritAttrs: !1,
         __name: `TooltipContent`,
         props: {
@@ -6546,7 +6528,7 @@ var oo = M({
             );
         },
     }),
-    jo = M({
+    Ao = M({
         __name: `TooltipTrigger`,
         props: { reference: {}, asChild: { type: Boolean }, as: {} },
         setup(e) {
@@ -6562,7 +6544,7 @@ var oo = M({
             );
         },
     }),
-    Mo = M({
+    jo = M({
         __name: `SidebarMenuButtonChild`,
         props: {
             variant: { default: `default` },
@@ -6585,7 +6567,7 @@ var oo = M({
                             'data-size': e.size,
                             'data-active': e.isActive,
                             class: I(z)(
-                                I(Bo)({ variant: e.variant, size: e.size }),
+                                I(zo)({ variant: e.variant, size: e.size }),
                                 t.class,
                             ),
                             as: e.as,
@@ -6600,7 +6582,7 @@ var oo = M({
             );
         },
     }),
-    No = M({
+    Mo = M({
         inheritAttrs: !1,
         __name: `SidebarMenuButton`,
         props: {
@@ -6614,23 +6596,23 @@ var oo = M({
         },
         setup(e) {
             let t = e,
-                { isMobile: n, state: r } = _o(),
+                { isMobile: n, state: r } = go(),
                 i = Ze(t, `tooltip`);
             return (t, a) =>
                 e.tooltip
                     ? (A(),
                       P(
-                          I(ko),
+                          I(Oo),
                           { key: 1 },
                           {
                               default: g(() => [
                                   V(
-                                      I(jo),
+                                      I(Ao),
                                       { 'as-child': `` },
                                       {
                                           default: g(() => [
                                               V(
-                                                  Mo,
+                                                  jo,
                                                   G(
                                                       T({
                                                           ...I(i),
@@ -6653,7 +6635,7 @@ var oo = M({
                                       },
                                   ),
                                   V(
-                                      I(Ao),
+                                      I(ko),
                                       {
                                           side: `right`,
                                           align: `center`,
@@ -6685,14 +6667,14 @@ var oo = M({
                       ))
                     : (A(),
                       P(
-                          Mo,
+                          jo,
                           G(s({ key: 0 }, { ...I(i), ...t.$attrs })),
                           { default: g(() => [W(t.$slots, `default`)]), _: 3 },
                           16,
                       ));
         },
     }),
-    Po = M({
+    No = M({
         __name: `SidebarMenuItem`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -6712,12 +6694,12 @@ var oo = M({
             );
         },
     }),
-    Fo = M({
+    Po = M({
         __name: `SidebarProvider`,
         props: {
             defaultOpen: {
                 type: Boolean,
-                default: !Ka?.cookie.includes(`${fo}=false`),
+                default: !Ga?.cookie.includes(`${uo}=false`),
             },
             open: { type: Boolean, default: void 0 },
             class: { type: [Boolean, null, String, Object, Array] },
@@ -6726,15 +6708,15 @@ var oo = M({
         setup(e, { emit: t }) {
             let n = e,
                 r = t,
-                i = eo(`(max-width: 768px)`),
+                i = $a(`(max-width: 768px)`),
                 a = N(!1),
-                o = ao(n, `open`, r, {
+                o = io(n, `open`, r, {
                     defaultValue: n.defaultOpen ?? !1,
                     passive: n.open === void 0,
                 });
             function c(e) {
                 ((o.value = e),
-                    (document.cookie = `${fo}=${o.value}; path=/; max-age=${po}`));
+                    (document.cookie = `${uo}=${o.value}; path=/; max-age=${fo}`));
             }
             function l(e) {
                 a.value = e;
@@ -6743,12 +6725,12 @@ var oo = M({
                 return i.value ? l(!a.value) : c(!o.value);
             }
             return (
-                Ya(`keydown`, (e) => {
+                Ja(`keydown`, (e) => {
                     e.key === `b` &&
                         (e.metaKey || e.ctrlKey) &&
                         (e.preventDefault(), u());
                 }),
-                vo({
+                _o({
                     state: R(() => (o.value ? `expanded` : `collapsed`)),
                     open: o,
                     setOpen: c,
@@ -6770,8 +6752,8 @@ var oo = M({
                                         {
                                             'data-slot': `sidebar-wrapper`,
                                             style: {
-                                                '--sidebar-width': I(mo),
-                                                '--sidebar-width-icon': I(go),
+                                                '--sidebar-width': I(po),
+                                                '--sidebar-width-icon': I(ho),
                                             },
                                             class: I(z)(
                                                 `group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full`,
@@ -6791,7 +6773,7 @@ var oo = M({
             );
         },
     }),
-    Io = M({
+    Fo = M({
         __name: `Separator`,
         props: {
             orientation: { default: `horizontal` },
@@ -6820,7 +6802,7 @@ var oo = M({
             );
         },
     }),
-    Lo = M({
+    Io = M({
         __name: `Button`,
         props: {
             variant: {},
@@ -6843,7 +6825,7 @@ var oo = M({
                         'as-child': e.asChild,
                         class: D(
                             I(z)(
-                                I(Ro)({ variant: e.variant, size: e.size }),
+                                I(Lo)({ variant: e.variant, size: e.size }),
                                 t.class,
                             ),
                         ),
@@ -6855,12 +6837,12 @@ var oo = M({
             );
         },
     }),
-    Ro = re(
+    Lo = re(
         `inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive`,
         {
             variants: {
                 variant: {
-                    default: `bg-primary text-primary-foreground hover:bg-primary/90`,
+                    default: `bg-linear-to-br from-brand-from to-brand-to text-white shadow-xs hover:brightness-95`,
                     destructive: `bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60`,
                     outline: `border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50`,
                     secondary: `bg-secondary text-secondary-foreground hover:bg-secondary/80`,
@@ -6879,16 +6861,16 @@ var oo = M({
             defaultVariants: { variant: `default`, size: `default` },
         },
     ),
-    zo = M({
+    Ro = M({
         __name: `SidebarTrigger`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
             let t = e,
-                { isMobile: n, state: r, toggleSidebar: i } = _o();
+                { isMobile: n, state: r, toggleSidebar: i } = go();
             return (e, a) => (
                 A(),
                 P(
-                    I(Lo),
+                    I(Io),
                     {
                         'data-sidebar': `trigger`,
                         'data-slot': `sidebar-trigger`,
@@ -6900,8 +6882,8 @@ var oo = M({
                     {
                         default: g(() => [
                             I(n) || I(r) === `collapsed`
-                                ? (A(), P(I(Ba), { key: 0 }))
-                                : (A(), P(I(za), { key: 1 })),
+                                ? (A(), P(I(za), { key: 0 }))
+                                : (A(), P(I(Ra), { key: 1 })),
                             (a[0] ||= U(
                                 `span`,
                                 { class: `sr-only` },
@@ -6917,7 +6899,7 @@ var oo = M({
             );
         },
     }),
-    Bo = re(
+    zo = re(
         `peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-hidden ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0`,
         {
             variants: {
@@ -6934,13 +6916,13 @@ var oo = M({
             defaultVariants: { variant: `default`, size: `default` },
         },
     ),
-    Vo = M({
+    Bo = M({
         __name: `AppContent`,
         setup(e) {
             return (e, t) => (
                 A(),
                 P(
-                    I(Do),
+                    I(Eo),
                     {
                         id: `main-content`,
                         tabindex: `-1`,
@@ -6951,14 +6933,14 @@ var oo = M({
             );
         },
     }),
-    Ho = M({
+    Vo = M({
         __name: `AppShell`,
         setup(e) {
             let t = ce().props.sidebarOpen;
             return (e, n) => (
                 A(),
                 P(
-                    I(Fo),
+                    I(Po),
                     { 'default-open': I(t), class: `page-glow` },
                     { default: g(() => [W(e.$slots, `default`)]), _: 3 },
                     8,
@@ -6967,40 +6949,40 @@ var oo = M({
             );
         },
     }),
-    Uo = (e, t) => {
+    Ho = (e, t) => {
         let n = e.__vccOpts || e;
         for (let [e, r] of t) n[e] = r;
         return n;
     },
-    Wo = {},
-    Go = { class: `flex items-center gap-2` };
-function Ko(e, t) {
+    Uo = {},
+    Wo = { class: `flex items-center gap-2` };
+function Go(e, t) {
     return (
         A(),
-        B(`div`, Go, [
+        B(`div`, Wo, [
             ...(t[0] ||= [
                 ae(
-                    `<span class="hidden size-7 shrink-0 place-items-center rounded-[10px] bg-linear-to-br from-brand to-primary shadow-sm group-data-[collapsible=icon]:grid" aria-hidden="true"><span class="size-2.5 rounded-full bg-white"></span></span><span class="text-lg font-semibold tracking-tight group-data-[collapsible=icon]:hidden"><span class="text-foreground">Pay</span><span class="font-light text-muted-foreground">Hub</span><span class="ml-1 font-light text-muted-foreground">Central</span></span>`,
+                    `<img src="/favicon.svg" alt="" class="size-7 shrink-0"><span class="text-lg font-semibold tracking-tight group-data-[collapsible=icon]:hidden"><span class="text-foreground">Pay</span><span class="font-light text-muted-foreground">Hub</span><span class="ml-1 font-light text-muted-foreground">Central</span></span>`,
                     2,
                 ),
             ]),
         ])
     );
 }
-var qo = Uo(Wo, [[`render`, Ko]]),
-    Jo = ce(),
-    Yo = R(
+var Ko = Ho(Uo, [[`render`, Go]]),
+    qo = ce(),
+    Jo = R(
         () =>
             new URL(
-                Jo.url,
+                qo.url,
                 typeof window < `u`
                     ? window.location.origin
                     : `http://localhost`,
             ).pathname,
     );
-function Xo() {
+function Yo() {
     function e(e, t, n = !1) {
-        let r = t ?? Yo.value,
+        let r = t ?? Jo.value,
             i = ge(e),
             a = (e) => (n ? r.startsWith(e) : e === r);
         if (!i.startsWith(`http`)) return a(i);
@@ -7017,17 +6999,17 @@ function Xo() {
         return e(t) ? n : r;
     }
     return {
-        currentUrl: he(Yo),
+        currentUrl: he(Jo),
         isCurrentUrl: e,
         isCurrentOrParentUrl: t,
         whenCurrentUrl: n,
     };
 }
-var Zo = M({
+var Xo = M({
         __name: `NavMain`,
         props: { items: {} },
         setup(e) {
-            let { currentUrl: t } = Xo();
+            let { currentUrl: t } = Yo();
             function n(e) {
                 let n = ge(e);
                 return t.value === n || t.value.startsWith(`${n}/`);
@@ -7035,11 +7017,11 @@ var Zo = M({
             return (t, r) => (
                 A(),
                 P(
-                    I(To),
+                    I(wo),
                     { class: `px-2 py-0` },
                     {
                         default: g(() => [
-                            V(I(Oo), null, {
+                            V(I(Do), null, {
                                 default: g(() => [
                                     (A(!0),
                                     B(
@@ -7050,12 +7032,12 @@ var Zo = M({
                                             (e) => (
                                                 A(),
                                                 P(
-                                                    I(Po),
+                                                    I(No),
                                                     { key: e.title },
                                                     {
                                                         default: g(() => [
                                                             V(
-                                                                I(No),
+                                                                I(Mo),
                                                                 {
                                                                     'as-child': ``,
                                                                     'is-active':
@@ -7064,7 +7046,7 @@ var Zo = M({
                                                                         ),
                                                                     tooltip:
                                                                         e.title,
-                                                                    class: `rounded-xl hover:bg-muted data-[active=true]:font-semibold data-[active=true]:hover:bg-sidebar-accent`,
+                                                                    class: `rounded-xl hover:bg-muted data-[active=true]:bg-linear-to-br data-[active=true]:from-brand-from data-[active=true]:to-brand-to data-[active=true]:font-semibold data-[active=true]:text-white data-[active=true]:shadow-sm data-[active=true]:hover:text-white data-[active=true]:hover:brightness-95`,
                                                                 },
                                                                 {
                                                                     default: g(
@@ -7132,7 +7114,7 @@ var Zo = M({
             );
         },
     }),
-    Qo = M({
+    Zo = M({
         __name: `DropdownMenu`,
         props: {
             defaultOpen: { type: Boolean },
@@ -7157,7 +7139,7 @@ var Zo = M({
             );
         },
     }),
-    $o = M({
+    Qo = M({
         inheritAttrs: !1,
         __name: `DropdownMenuContent`,
         props: {
@@ -7228,7 +7210,7 @@ var Zo = M({
             );
         },
     }),
-    es = M({
+    $o = M({
         __name: `DropdownMenuGroup`,
         props: { asChild: { type: Boolean }, as: {} },
         setup(e) {
@@ -7244,7 +7226,7 @@ var Zo = M({
             );
         },
     }),
-    ts = M({
+    es = M({
         __name: `DropdownMenuItem`,
         props: {
             disabled: { type: Boolean },
@@ -7284,7 +7266,7 @@ var Zo = M({
             );
         },
     }),
-    ns = M({
+    ts = M({
         __name: `DropdownMenuLabel`,
         props: {
             asChild: { type: Boolean },
@@ -7320,7 +7302,7 @@ var Zo = M({
             );
         },
     }),
-    rs = M({
+    ns = M({
         __name: `DropdownMenuSeparator`,
         props: {
             asChild: { type: Boolean },
@@ -7344,7 +7326,7 @@ var Zo = M({
             );
         },
     }),
-    is = M({
+    rs = M({
         __name: `DropdownMenuTrigger`,
         props: {
             disabled: { type: Boolean },
@@ -7364,7 +7346,7 @@ var Zo = M({
             );
         },
     }),
-    as = M({
+    is = M({
         __name: `Avatar`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -7389,7 +7371,7 @@ var Zo = M({
             );
         },
     }),
-    os = M({
+    as = M({
         __name: `AvatarFallback`,
         props: {
             delayMs: {},
@@ -7417,7 +7399,7 @@ var Zo = M({
             );
         },
     }),
-    ss = M({
+    os = M({
         __name: `AvatarImage`,
         props: {
             src: {},
@@ -7441,30 +7423,30 @@ var Zo = M({
             );
         },
     });
-function cs(e) {
+function ss(e) {
     return Array.from(e)[0] ?? ``;
 }
-function ls(e) {
+function cs(e) {
     if (!e) return ``;
     let t = e.trim().split(/\s+/u).filter(Boolean);
     return t.length === 0
         ? ``
         : t.length === 1
-          ? cs(t[0]).toUpperCase()
-          : `${cs(t[0])}${cs(t[t.length - 1])}`.toUpperCase();
+          ? ss(t[0]).toUpperCase()
+          : `${ss(t[0])}${ss(t[t.length - 1])}`.toUpperCase();
 }
-function us() {
-    return { getInitials: ls };
+function ls() {
+    return { getInitials: cs };
 }
-var ds = { class: `grid flex-1 text-left text-sm leading-tight` },
-    fs = { class: `truncate font-medium` },
-    ps = { key: 0, class: `truncate text-xs text-muted-foreground` },
-    ms = M({
+var us = { class: `grid flex-1 text-left text-sm leading-tight` },
+    ds = { class: `truncate font-medium` },
+    fs = { key: 0, class: `truncate text-xs text-muted-foreground` },
+    ps = M({
         __name: `UserInfo`,
         props: { user: {}, showEmail: { type: Boolean, default: !1 } },
         setup(e) {
             let t = e,
-                { getInitials: n } = us(),
+                { getInitials: n } = ls(),
                 r = R(() => t.user.avatar && t.user.avatar !== ``);
             return (t, i) => (
                 A(),
@@ -7473,14 +7455,14 @@ var ds = { class: `grid flex-1 text-left text-sm leading-tight` },
                     null,
                     [
                         V(
-                            I(as),
+                            I(is),
                             { class: `h-8 w-8 overflow-hidden rounded-lg` },
                             {
                                 default: g(() => [
                                     r.value
                                         ? (A(),
                                           P(
-                                              I(ss),
+                                              I(os),
                                               {
                                                   key: 0,
                                                   src: e.user.avatar,
@@ -7492,7 +7474,7 @@ var ds = { class: `grid flex-1 text-left text-sm leading-tight` },
                                           ))
                                         : O(``, !0),
                                     V(
-                                        I(os),
+                                        I(as),
                                         {
                                             class: `rounded-lg text-black dark:text-white`,
                                         },
@@ -7507,10 +7489,10 @@ var ds = { class: `grid flex-1 text-left text-sm leading-tight` },
                                 _: 1,
                             },
                         ),
-                        U(`div`, ds, [
-                            U(`span`, fs, k(e.user.name), 1),
+                        U(`div`, us, [
+                            U(`span`, ds, k(e.user.name), 1),
                             e.showEmail
-                                ? (A(), B(`span`, ps, k(e.user.email), 1))
+                                ? (A(), B(`span`, fs, k(e.user.email), 1))
                                 : O(``, !0),
                         ]),
                     ],
@@ -7519,15 +7501,15 @@ var ds = { class: `grid flex-1 text-left text-sm leading-tight` },
             );
         },
     }),
-    hs = (e) => ({ url: hs.url(e), method: `get` });
-((hs.definition = { methods: [`get`, `head`], url: `/login` }),
-    (hs.url = (e) => hs.definition.url + L(e)),
-    (hs.get = (e) => ({ url: hs.url(e), method: `get` })),
-    (hs.head = (e) => ({ url: hs.url(e), method: `head` })));
-var gs = (e) => ({ action: hs.url(e), method: `get` });
-((gs.get = (e) => ({ action: hs.url(e), method: `get` })),
-    (gs.head = (e) => ({
-        action: hs.url({
+    ms = (e) => ({ url: ms.url(e), method: `get` });
+((ms.definition = { methods: [`get`, `head`], url: `/login` }),
+    (ms.url = (e) => ms.definition.url + L(e)),
+    (ms.get = (e) => ({ url: ms.url(e), method: `get` })),
+    (ms.head = (e) => ({ url: ms.url(e), method: `head` })));
+var hs = (e) => ({ action: ms.url(e), method: `get` });
+((hs.get = (e) => ({ action: ms.url(e), method: `get` })),
+    (hs.head = (e) => ({
+        action: ms.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
                 ...(e?.query ?? e?.mergeQuery ?? {}),
@@ -7535,13 +7517,13 @@ var gs = (e) => ({ action: hs.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (hs.form = gs));
-var _s = (e) => ({ url: _s.url(e), method: `post` });
-((_s.definition = { methods: [`post`], url: `/logout` }),
-    (_s.url = (e) => _s.definition.url + L(e)),
-    (_s.post = (e) => ({ url: _s.url(e), method: `post` })));
-var vs = (e) => ({ action: _s.url(e), method: `post` });
-((vs.post = (e) => ({ action: _s.url(e), method: `post` })), (_s.form = vs));
+    (ms.form = hs));
+var gs = (e) => ({ url: gs.url(e), method: `post` });
+((gs.definition = { methods: [`post`], url: `/logout` }),
+    (gs.url = (e) => gs.definition.url + L(e)),
+    (gs.post = (e) => ({ url: gs.url(e), method: `post` })));
+var _s = (e) => ({ action: gs.url(e), method: `post` });
+((_s.post = (e) => ({ action: gs.url(e), method: `post` })), (gs.form = _s));
 var J = (e) => ({ url: J.url(e), method: `get` });
 ((J.definition = {
     methods: [
@@ -7565,9 +7547,9 @@ var J = (e) => ({ url: J.url(e), method: `get` });
     (J.delete = (e) => ({ url: J.url(e), method: `delete` })),
     (J.options = (e) => ({ url: J.url(e), method: `options` })),
     (J.query = (e) => ({ url: J.url(e), method: `query` })));
-var ys = (e) => ({ action: J.url(e), method: `get` });
-((ys.get = (e) => ({ action: J.url(e), method: `get` })),
-    (ys.head = (e) => ({
+var vs = (e) => ({ action: J.url(e), method: `get` });
+((vs.get = (e) => ({ action: J.url(e), method: `get` })),
+    (vs.head = (e) => ({
         action: J.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
@@ -7576,8 +7558,8 @@ var ys = (e) => ({ action: J.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (ys.post = (e) => ({ action: J.url(e), method: `post` })),
-    (ys.put = (e) => ({
+    (vs.post = (e) => ({ action: J.url(e), method: `post` })),
+    (vs.put = (e) => ({
         action: J.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `PUT`,
@@ -7586,7 +7568,7 @@ var ys = (e) => ({ action: J.url(e), method: `get` });
         }),
         method: `post`,
     })),
-    (ys.patch = (e) => ({
+    (vs.patch = (e) => ({
         action: J.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `PATCH`,
@@ -7595,7 +7577,7 @@ var ys = (e) => ({ action: J.url(e), method: `get` });
         }),
         method: `post`,
     })),
-    (ys.delete = (e) => ({
+    (vs.delete = (e) => ({
         action: J.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `DELETE`,
@@ -7604,7 +7586,7 @@ var ys = (e) => ({ action: J.url(e), method: `get` });
         }),
         method: `post`,
     })),
-    (ys.options = (e) => ({
+    (vs.options = (e) => ({
         action: J.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `OPTIONS`,
@@ -7613,7 +7595,7 @@ var ys = (e) => ({ action: J.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (ys.query = (e) => ({
+    (vs.query = (e) => ({
         action: J.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `QUERY`,
@@ -7622,16 +7604,16 @@ var ys = (e) => ({ action: J.url(e), method: `get` });
         }),
         method: `post`,
     })),
-    (J.form = ys));
-var bs = (e) => ({ url: bs.url(e), method: `get` });
-((bs.definition = { methods: [`get`, `head`], url: `/dashboard` }),
-    (bs.url = (e) => bs.definition.url + L(e)),
-    (bs.get = (e) => ({ url: bs.url(e), method: `get` })),
-    (bs.head = (e) => ({ url: bs.url(e), method: `head` })));
-var xs = (e) => ({ action: bs.url(e), method: `get` });
-((xs.get = (e) => ({ action: bs.url(e), method: `get` })),
-    (xs.head = (e) => ({
-        action: bs.url({
+    (J.form = vs));
+var ys = (e) => ({ url: ys.url(e), method: `get` });
+((ys.definition = { methods: [`get`, `head`], url: `/dashboard` }),
+    (ys.url = (e) => ys.definition.url + L(e)),
+    (ys.get = (e) => ({ url: ys.url(e), method: `get` })),
+    (ys.head = (e) => ({ url: ys.url(e), method: `head` })));
+var bs = (e) => ({ action: ys.url(e), method: `get` });
+((bs.get = (e) => ({ action: ys.url(e), method: `get` })),
+    (bs.head = (e) => ({
+        action: ys.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
                 ...(e?.query ?? e?.mergeQuery ?? {}),
@@ -7639,15 +7621,15 @@ var xs = (e) => ({ action: bs.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (bs.form = xs));
+    (ys.form = bs));
 var Y = (e) => ({ url: Y.url(e), method: `get` });
 ((Y.definition = { methods: [`get`, `head`], url: `/settings/profile` }),
     (Y.url = (e) => Y.definition.url + L(e)),
     (Y.get = (e) => ({ url: Y.url(e), method: `get` })),
     (Y.head = (e) => ({ url: Y.url(e), method: `head` })));
-var Ss = (e) => ({ action: Y.url(e), method: `get` });
-((Ss.get = (e) => ({ action: Y.url(e), method: `get` })),
-    (Ss.head = (e) => ({
+var xs = (e) => ({ action: Y.url(e), method: `get` });
+((xs.get = (e) => ({ action: Y.url(e), method: `get` })),
+    (xs.head = (e) => ({
         action: Y.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
@@ -7656,13 +7638,13 @@ var Ss = (e) => ({ action: Y.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (Y.form = Ss));
-var Cs = (e) => ({ url: Cs.url(e), method: `patch` });
-((Cs.definition = { methods: [`patch`], url: `/settings/profile` }),
-    (Cs.url = (e) => Cs.definition.url + L(e)),
-    (Cs.patch = (e) => ({ url: Cs.url(e), method: `patch` })));
-var ws = (e) => ({
-    action: Cs.url({
+    (Y.form = xs));
+var Ss = (e) => ({ url: Ss.url(e), method: `patch` });
+((Ss.definition = { methods: [`patch`], url: `/settings/profile` }),
+    (Ss.url = (e) => Ss.definition.url + L(e)),
+    (Ss.patch = (e) => ({ url: Ss.url(e), method: `patch` })));
+var Cs = (e) => ({
+    action: Ss.url({
         [e?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PATCH`,
             ...(e?.query ?? e?.mergeQuery ?? {}),
@@ -7670,8 +7652,8 @@ var ws = (e) => ({
     }),
     method: `post`,
 });
-((ws.patch = (e) => ({
-    action: Cs.url({
+((Cs.patch = (e) => ({
+    action: Ss.url({
         [e?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PATCH`,
             ...(e?.query ?? e?.mergeQuery ?? {}),
@@ -7679,11 +7661,11 @@ var ws = (e) => ({
     }),
     method: `post`,
 })),
-    (Cs.form = ws),
+    (Ss.form = Cs),
     Object.assign(Y, Y),
-    Object.assign(Cs, Cs));
-var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
-    Es = M({
+    Object.assign(Ss, Ss));
+var ws = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
+    Ts = M({
         __name: `UserMenuContent`,
         props: { user: {} },
         setup(e) {
@@ -7697,13 +7679,13 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                     null,
                     [
                         V(
-                            I(ns),
+                            I(ts),
                             { class: `p-0 font-normal` },
                             {
                                 default: g(() => [
-                                    U(`div`, Ts, [
+                                    U(`div`, ws, [
                                         V(
-                                            ms,
+                                            ps,
                                             { user: e.user, 'show-email': !0 },
                                             null,
                                             8,
@@ -7714,11 +7696,11 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                                 _: 1,
                             },
                         ),
-                        V(I(rs)),
-                        V(I(es), null, {
+                        V(I(ns)),
+                        V(I($o), null, {
                             default: g(() => [
                                 V(
-                                    I(ts),
+                                    I(es),
                                     { 'as-child': !0 },
                                     {
                                         default: g(() => [
@@ -7731,7 +7713,7 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                                                 },
                                                 {
                                                     default: g(() => [
-                                                        V(I(Va), {
+                                                        V(I(Ba), {
                                                             class: `mr-2 h-4 w-4`,
                                                         }),
                                                         (r[0] ||= se(
@@ -7751,9 +7733,9 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                             ]),
                             _: 1,
                         }),
-                        V(I(rs)),
+                        V(I(ns)),
                         V(
-                            I(ts),
+                            I(es),
                             { 'as-child': !0 },
                             {
                                 default: g(() => [
@@ -7761,14 +7743,14 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                                         I(oe),
                                         {
                                             class: `block w-full cursor-pointer`,
-                                            href: I(_s)(),
+                                            href: I(gs)(),
                                             onClick: t,
                                             as: `button`,
                                             'data-test': `logout-button`,
                                         },
                                         {
                                             default: g(() => [
-                                                V(I(La), {
+                                                V(I(Ia), {
                                                     class: `mr-2 h-4 w-4`,
                                                 }),
                                                 (r[1] ||= se(` Log out `, -1)),
@@ -7788,27 +7770,27 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
             );
         },
     }),
-    Ds = M({
+    Es = M({
         __name: `NavUser`,
         setup(e) {
             let t = ce(),
                 n = R(() => t.props.auth.user),
-                { isMobile: r, state: i } = _o();
+                { isMobile: r, state: i } = go();
             return (e, t) => (
                 A(),
-                P(I(Oo), null, {
+                P(I(Do), null, {
                     default: g(() => [
-                        V(I(Po), null, {
+                        V(I(No), null, {
                             default: g(() => [
-                                V(I(Qo), null, {
+                                V(I(Zo), null, {
                                     default: g(() => [
                                         V(
-                                            I(is),
+                                            I(rs),
                                             { 'as-child': `` },
                                             {
                                                 default: g(() => [
                                                     V(
-                                                        I(No),
+                                                        I(Mo),
                                                         {
                                                             size: `lg`,
                                                             class: `rounded-2xl border border-sidebar-border bg-muted/60 hover:bg-muted data-[state=open]:bg-muted`,
@@ -7817,7 +7799,7 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                                                         {
                                                             default: g(() => [
                                                                 V(
-                                                                    ms,
+                                                                    ps,
                                                                     {
                                                                         user: n.value,
                                                                     },
@@ -7837,7 +7819,7 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                                             },
                                         ),
                                         V(
-                                            I($o),
+                                            I(Qo),
                                             {
                                                 class: `w-(--reka-dropdown-menu-trigger-width) min-w-56 rounded-lg`,
                                                 side: I(r)
@@ -7851,7 +7833,7 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
                                             {
                                                 default: g(() => [
                                                     V(
-                                                        Es,
+                                                        Ts,
                                                         { user: n.value },
                                                         null,
                                                         8,
@@ -7880,9 +7862,9 @@ var Ts = { class: `flex items-center gap-2 px-1 py-1.5 text-left text-sm` },
     (X.url = (e) => X.definition.url + L(e)),
     (X.get = (e) => ({ url: X.url(e), method: `get` })),
     (X.head = (e) => ({ url: X.url(e), method: `head` })));
-var Os = (e) => ({ action: X.url(e), method: `get` });
-((Os.get = (e) => ({ action: X.url(e), method: `get` })),
-    (Os.head = (e) => ({
+var Ds = (e) => ({ action: X.url(e), method: `get` });
+((Ds.get = (e) => ({ action: X.url(e), method: `get` })),
+    (Ds.head = (e) => ({
         action: X.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
@@ -7891,16 +7873,16 @@ var Os = (e) => ({ action: X.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (X.form = Os));
-var ks = (e) => ({ url: ks.url(e), method: `get` });
-((ks.definition = { methods: [`get`, `head`], url: `/deployments/create` }),
-    (ks.url = (e) => ks.definition.url + L(e)),
-    (ks.get = (e) => ({ url: ks.url(e), method: `get` })),
-    (ks.head = (e) => ({ url: ks.url(e), method: `head` })));
-var As = (e) => ({ action: ks.url(e), method: `get` });
-((As.get = (e) => ({ action: ks.url(e), method: `get` })),
-    (As.head = (e) => ({
-        action: ks.url({
+    (X.form = Ds));
+var Os = (e) => ({ url: Os.url(e), method: `get` });
+((Os.definition = { methods: [`get`, `head`], url: `/deployments/create` }),
+    (Os.url = (e) => Os.definition.url + L(e)),
+    (Os.get = (e) => ({ url: Os.url(e), method: `get` })),
+    (Os.head = (e) => ({ url: Os.url(e), method: `head` })));
+var ks = (e) => ({ action: Os.url(e), method: `get` });
+((ks.get = (e) => ({ action: Os.url(e), method: `get` })),
+    (ks.head = (e) => ({
+        action: Os.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
                 ...(e?.query ?? e?.mergeQuery ?? {}),
@@ -7908,13 +7890,13 @@ var As = (e) => ({ action: ks.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (ks.form = As));
-var js = (e) => ({ url: js.url(e), method: `post` });
-((js.definition = { methods: [`post`], url: `/deployments` }),
-    (js.url = (e) => js.definition.url + L(e)),
-    (js.post = (e) => ({ url: js.url(e), method: `post` })));
-var Ms = (e) => ({ action: js.url(e), method: `post` });
-((Ms.post = (e) => ({ action: js.url(e), method: `post` })), (js.form = Ms));
+    (Os.form = ks));
+var As = (e) => ({ url: As.url(e), method: `post` });
+((As.definition = { methods: [`post`], url: `/deployments` }),
+    (As.url = (e) => As.definition.url + L(e)),
+    (As.post = (e) => ({ url: As.url(e), method: `post` })));
+var js = (e) => ({ action: As.url(e), method: `post` });
+((js.post = (e) => ({ action: As.url(e), method: `post` })), (As.form = js));
 var Z = (e, t) => ({ url: Z.url(e, t), method: `get` });
 ((Z.definition = {
     methods: [`get`, `head`],
@@ -7934,9 +7916,9 @@ var Z = (e, t) => ({ url: Z.url(e, t), method: `get` });
     }),
     (Z.get = (e, t) => ({ url: Z.url(e, t), method: `get` })),
     (Z.head = (e, t) => ({ url: Z.url(e, t), method: `head` })));
-var Ns = (e, t) => ({ action: Z.url(e, t), method: `get` });
-((Ns.get = (e, t) => ({ action: Z.url(e, t), method: `get` })),
-    (Ns.head = (e, t) => ({
+var Ms = (e, t) => ({ action: Z.url(e, t), method: `get` });
+((Ms.get = (e, t) => ({ action: Z.url(e, t), method: `get` })),
+    (Ms.head = (e, t) => ({
         action: Z.url(e, {
             [t?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
@@ -7945,30 +7927,30 @@ var Ns = (e, t) => ({ action: Z.url(e, t), method: `get` });
         }),
         method: `get`,
     })),
-    (Z.form = Ns));
-var Ps = (e, t) => ({ url: Ps.url(e, t), method: `get` });
-((Ps.definition = {
+    (Z.form = Ms));
+var Ns = (e, t) => ({ url: Ns.url(e, t), method: `get` });
+((Ns.definition = {
     methods: [`get`, `head`],
     url: `/deployments/{deployment}/edit`,
 }),
-    (Ps.url = (e, t) => {
+    (Ns.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) &&
             (e = { deployment: e }),
             Array.isArray(e) && (e = { deployment: e[0] }),
             (e = ve(e)));
         let n = { deployment: e.deployment };
         return (
-            Ps.definition.url
+            Ns.definition.url
                 .replace(`{deployment}`, n.deployment.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    (Ps.get = (e, t) => ({ url: Ps.url(e, t), method: `get` })),
-    (Ps.head = (e, t) => ({ url: Ps.url(e, t), method: `head` })));
-var Fs = (e, t) => ({ action: Ps.url(e, t), method: `get` });
-((Fs.get = (e, t) => ({ action: Ps.url(e, t), method: `get` })),
-    (Fs.head = (e, t) => ({
-        action: Ps.url(e, {
+    (Ns.get = (e, t) => ({ url: Ns.url(e, t), method: `get` })),
+    (Ns.head = (e, t) => ({ url: Ns.url(e, t), method: `head` })));
+var Ps = (e, t) => ({ action: Ns.url(e, t), method: `get` });
+((Ps.get = (e, t) => ({ action: Ns.url(e, t), method: `get` })),
+    (Ps.head = (e, t) => ({
+        action: Ns.url(e, {
             [t?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
                 ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -7976,28 +7958,28 @@ var Fs = (e, t) => ({ action: Ps.url(e, t), method: `get` });
         }),
         method: `get`,
     })),
-    (Ps.form = Fs));
-var Is = (e, t) => ({ url: Is.url(e, t), method: `put` });
-((Is.definition = {
+    (Ns.form = Ps));
+var Fs = (e, t) => ({ url: Fs.url(e, t), method: `put` });
+((Fs.definition = {
     methods: [`put`, `patch`],
     url: `/deployments/{deployment}`,
 }),
-    (Is.url = (e, t) => {
+    (Fs.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) &&
             (e = { deployment: e }),
             Array.isArray(e) && (e = { deployment: e[0] }),
             (e = ve(e)));
         let n = { deployment: e.deployment };
         return (
-            Is.definition.url
+            Fs.definition.url
                 .replace(`{deployment}`, n.deployment.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    (Is.put = (e, t) => ({ url: Is.url(e, t), method: `put` })),
-    (Is.patch = (e, t) => ({ url: Is.url(e, t), method: `patch` })));
-var Ls = (e, t) => ({
-    action: Is.url(e, {
+    (Fs.put = (e, t) => ({ url: Fs.url(e, t), method: `put` })),
+    (Fs.patch = (e, t) => ({ url: Fs.url(e, t), method: `patch` })));
+var Is = (e, t) => ({
+    action: Fs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PUT`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8005,8 +7987,8 @@ var Ls = (e, t) => ({
     }),
     method: `post`,
 });
-((Ls.put = (e, t) => ({
-    action: Is.url(e, {
+((Is.put = (e, t) => ({
+    action: Fs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PUT`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8014,8 +7996,8 @@ var Ls = (e, t) => ({
     }),
     method: `post`,
 })),
-    (Ls.patch = (e, t) => ({
-        action: Is.url(e, {
+    (Is.patch = (e, t) => ({
+        action: Fs.url(e, {
             [t?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `PATCH`,
                 ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8023,24 +8005,24 @@ var Ls = (e, t) => ({
         }),
         method: `post`,
     })),
-    (Is.form = Ls));
-var Rs = (e, t) => ({ url: Rs.url(e, t), method: `delete` });
-((Rs.definition = { methods: [`delete`], url: `/deployments/{deployment}` }),
-    (Rs.url = (e, t) => {
+    (Fs.form = Is));
+var Ls = (e, t) => ({ url: Ls.url(e, t), method: `delete` });
+((Ls.definition = { methods: [`delete`], url: `/deployments/{deployment}` }),
+    (Ls.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) &&
             (e = { deployment: e }),
             Array.isArray(e) && (e = { deployment: e[0] }),
             (e = ve(e)));
         let n = { deployment: e.deployment };
         return (
-            Rs.definition.url
+            Ls.definition.url
                 .replace(`{deployment}`, n.deployment.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    (Rs.delete = (e, t) => ({ url: Rs.url(e, t), method: `delete` })));
-var zs = (e, t) => ({
-    action: Rs.url(e, {
+    (Ls.delete = (e, t) => ({ url: Ls.url(e, t), method: `delete` })));
+var Rs = (e, t) => ({
+    action: Ls.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `DELETE`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8048,8 +8030,8 @@ var zs = (e, t) => ({
     }),
     method: `post`,
 });
-((zs.delete = (e, t) => ({
-    action: Rs.url(e, {
+((Rs.delete = (e, t) => ({
+    action: Ls.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `DELETE`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8057,27 +8039,27 @@ var zs = (e, t) => ({
     }),
     method: `post`,
 })),
-    (Rs.form = zs));
-var Bs = (e, t) => ({ url: Bs.url(e, t), method: `patch` });
-((Bs.definition = {
+    (Ls.form = Rs));
+var zs = (e, t) => ({ url: zs.url(e, t), method: `patch` });
+((zs.definition = {
     methods: [`patch`],
     url: `/deployments/{deployment}/active`,
 }),
-    (Bs.url = (e, t) => {
+    (zs.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) &&
             (e = { deployment: e }),
             Array.isArray(e) && (e = { deployment: e[0] }),
             (e = ve(e)));
         let n = { deployment: e.deployment };
         return (
-            Bs.definition.url
+            zs.definition.url
                 .replace(`{deployment}`, n.deployment.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    (Bs.patch = (e, t) => ({ url: Bs.url(e, t), method: `patch` })));
-var Vs = (e, t) => ({
-    action: Bs.url(e, {
+    (zs.patch = (e, t) => ({ url: zs.url(e, t), method: `patch` })));
+var Bs = (e, t) => ({
+    action: zs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PATCH`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8085,8 +8067,8 @@ var Vs = (e, t) => ({
     }),
     method: `post`,
 });
-((Vs.patch = (e, t) => ({
-    action: Bs.url(e, {
+((Bs.patch = (e, t) => ({
+    action: zs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PATCH`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8094,23 +8076,23 @@ var Vs = (e, t) => ({
     }),
     method: `post`,
 })),
-    (Bs.form = Vs),
+    (zs.form = Bs),
     Object.assign(X, X),
-    Object.assign(ks, ks),
-    Object.assign(js, js),
+    Object.assign(Os, Os),
+    Object.assign(As, As),
     Object.assign(Z, Z),
-    Object.assign(Ps, Ps),
-    Object.assign(Is, Is),
-    Object.assign(Rs, Rs),
-    Object.assign(Bs, Bs));
+    Object.assign(Ns, Ns),
+    Object.assign(Fs, Fs),
+    Object.assign(Ls, Ls),
+    Object.assign(zs, zs));
 var Q = (e) => ({ url: Q.url(e), method: `get` });
 ((Q.definition = { methods: [`get`, `head`], url: `/staff` }),
     (Q.url = (e) => Q.definition.url + L(e)),
     (Q.get = (e) => ({ url: Q.url(e), method: `get` })),
     (Q.head = (e) => ({ url: Q.url(e), method: `head` })));
-var Hs = (e) => ({ action: Q.url(e), method: `get` });
-((Hs.get = (e) => ({ action: Q.url(e), method: `get` })),
-    (Hs.head = (e) => ({
+var Vs = (e) => ({ action: Q.url(e), method: `get` });
+((Vs.get = (e) => ({ action: Q.url(e), method: `get` })),
+    (Vs.head = (e) => ({
         action: Q.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
@@ -8119,16 +8101,16 @@ var Hs = (e) => ({ action: Q.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (Q.form = Hs));
-var Us = (e) => ({ url: Us.url(e), method: `get` });
-((Us.definition = { methods: [`get`, `head`], url: `/staff/create` }),
-    (Us.url = (e) => Us.definition.url + L(e)),
-    (Us.get = (e) => ({ url: Us.url(e), method: `get` })),
-    (Us.head = (e) => ({ url: Us.url(e), method: `head` })));
-var Ws = (e) => ({ action: Us.url(e), method: `get` });
-((Ws.get = (e) => ({ action: Us.url(e), method: `get` })),
-    (Ws.head = (e) => ({
-        action: Us.url({
+    (Q.form = Vs));
+var Hs = (e) => ({ url: Hs.url(e), method: `get` });
+((Hs.definition = { methods: [`get`, `head`], url: `/staff/create` }),
+    (Hs.url = (e) => Hs.definition.url + L(e)),
+    (Hs.get = (e) => ({ url: Hs.url(e), method: `get` })),
+    (Hs.head = (e) => ({ url: Hs.url(e), method: `head` })));
+var Us = (e) => ({ action: Hs.url(e), method: `get` });
+((Us.get = (e) => ({ action: Hs.url(e), method: `get` })),
+    (Us.head = (e) => ({
+        action: Hs.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
                 ...(e?.query ?? e?.mergeQuery ?? {}),
@@ -8136,16 +8118,16 @@ var Ws = (e) => ({ action: Us.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    (Us.form = Ws));
-var Gs = (e) => ({ url: Gs.url(e), method: `post` });
-((Gs.definition = { methods: [`post`], url: `/staff` }),
-    (Gs.url = (e) => Gs.definition.url + L(e)),
-    (Gs.post = (e) => ({ url: Gs.url(e), method: `post` })));
-var Ks = (e) => ({ action: Gs.url(e), method: `post` });
-((Ks.post = (e) => ({ action: Gs.url(e), method: `post` })), (Gs.form = Ks));
-var qs = (e, t) => ({ url: qs.url(e, t), method: `get` });
-((qs.definition = { methods: [`get`, `head`], url: `/staff/{user}/edit` }),
-    (qs.url = (e, t) => {
+    (Hs.form = Us));
+var Ws = (e) => ({ url: Ws.url(e), method: `post` });
+((Ws.definition = { methods: [`post`], url: `/staff` }),
+    (Ws.url = (e) => Ws.definition.url + L(e)),
+    (Ws.post = (e) => ({ url: Ws.url(e), method: `post` })));
+var Gs = (e) => ({ action: Ws.url(e), method: `post` });
+((Gs.post = (e) => ({ action: Ws.url(e), method: `post` })), (Ws.form = Gs));
+var Ks = (e, t) => ({ url: Ks.url(e, t), method: `get` });
+((Ks.definition = { methods: [`get`, `head`], url: `/staff/{user}/edit` }),
+    (Ks.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) && (e = { user: e }),
             typeof e == `object` &&
                 !Array.isArray(e) &&
@@ -8155,17 +8137,17 @@ var qs = (e, t) => ({ url: qs.url(e, t), method: `get` });
             (e = ve(e)));
         let n = { user: typeof e.user == `object` ? e.user.id : e.user };
         return (
-            qs.definition.url
+            Ks.definition.url
                 .replace(`{user}`, n.user.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    (qs.get = (e, t) => ({ url: qs.url(e, t), method: `get` })),
-    (qs.head = (e, t) => ({ url: qs.url(e, t), method: `head` })));
-var Js = (e, t) => ({ action: qs.url(e, t), method: `get` });
-((Js.get = (e, t) => ({ action: qs.url(e, t), method: `get` })),
-    (Js.head = (e, t) => ({
-        action: qs.url(e, {
+    (Ks.get = (e, t) => ({ url: Ks.url(e, t), method: `get` })),
+    (Ks.head = (e, t) => ({ url: Ks.url(e, t), method: `head` })));
+var qs = (e, t) => ({ action: Ks.url(e, t), method: `get` });
+((qs.get = (e, t) => ({ action: Ks.url(e, t), method: `get` })),
+    (qs.head = (e, t) => ({
+        action: Ks.url(e, {
             [t?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
                 ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8173,10 +8155,10 @@ var Js = (e, t) => ({ action: qs.url(e, t), method: `get` });
         }),
         method: `get`,
     })),
-    (qs.form = Js));
-var Ys = (e, t) => ({ url: Ys.url(e, t), method: `put` });
-((Ys.definition = { methods: [`put`, `patch`], url: `/staff/{user}` }),
-    (Ys.url = (e, t) => {
+    (Ks.form = qs));
+var Js = (e, t) => ({ url: Js.url(e, t), method: `put` });
+((Js.definition = { methods: [`put`, `patch`], url: `/staff/{user}` }),
+    (Js.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) && (e = { user: e }),
             typeof e == `object` &&
                 !Array.isArray(e) &&
@@ -8186,15 +8168,15 @@ var Ys = (e, t) => ({ url: Ys.url(e, t), method: `put` });
             (e = ve(e)));
         let n = { user: typeof e.user == `object` ? e.user.id : e.user };
         return (
-            Ys.definition.url
+            Js.definition.url
                 .replace(`{user}`, n.user.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    (Ys.put = (e, t) => ({ url: Ys.url(e, t), method: `put` })),
-    (Ys.patch = (e, t) => ({ url: Ys.url(e, t), method: `patch` })));
-var Xs = (e, t) => ({
-    action: Ys.url(e, {
+    (Js.put = (e, t) => ({ url: Js.url(e, t), method: `put` })),
+    (Js.patch = (e, t) => ({ url: Js.url(e, t), method: `patch` })));
+var Ys = (e, t) => ({
+    action: Js.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PUT`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8202,8 +8184,8 @@ var Xs = (e, t) => ({
     }),
     method: `post`,
 });
-((Xs.put = (e, t) => ({
-    action: Ys.url(e, {
+((Ys.put = (e, t) => ({
+    action: Js.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PUT`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8211,8 +8193,8 @@ var Xs = (e, t) => ({
     }),
     method: `post`,
 })),
-    (Xs.patch = (e, t) => ({
-        action: Ys.url(e, {
+    (Ys.patch = (e, t) => ({
+        action: Js.url(e, {
             [t?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `PATCH`,
                 ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8220,10 +8202,10 @@ var Xs = (e, t) => ({
         }),
         method: `post`,
     })),
-    (Ys.form = Xs));
-var Zs = (e, t) => ({ url: Zs.url(e, t), method: `delete` });
-((Zs.definition = { methods: [`delete`], url: `/staff/{user}` }),
-    (Zs.url = (e, t) => {
+    (Js.form = Ys));
+var Xs = (e, t) => ({ url: Xs.url(e, t), method: `delete` });
+((Xs.definition = { methods: [`delete`], url: `/staff/{user}` }),
+    (Xs.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) && (e = { user: e }),
             typeof e == `object` &&
                 !Array.isArray(e) &&
@@ -8233,14 +8215,14 @@ var Zs = (e, t) => ({ url: Zs.url(e, t), method: `delete` });
             (e = ve(e)));
         let n = { user: typeof e.user == `object` ? e.user.id : e.user };
         return (
-            Zs.definition.url
+            Xs.definition.url
                 .replace(`{user}`, n.user.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    (Zs.delete = (e, t) => ({ url: Zs.url(e, t), method: `delete` })));
-var Qs = (e, t) => ({
-    action: Zs.url(e, {
+    (Xs.delete = (e, t) => ({ url: Xs.url(e, t), method: `delete` })));
+var Zs = (e, t) => ({
+    action: Xs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `DELETE`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8248,8 +8230,8 @@ var Qs = (e, t) => ({
     }),
     method: `post`,
 });
-((Qs.delete = (e, t) => ({
-    action: Zs.url(e, {
+((Zs.delete = (e, t) => ({
+    action: Xs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `DELETE`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8257,10 +8239,10 @@ var Qs = (e, t) => ({
     }),
     method: `post`,
 })),
-    (Zs.form = Qs));
-var $s = (e, t) => ({ url: $s.url(e, t), method: `put` });
-(($s.definition = { methods: [`put`], url: `/staff/{user}/password` }),
-    ($s.url = (e, t) => {
+    (Xs.form = Zs));
+var Qs = (e, t) => ({ url: Qs.url(e, t), method: `put` });
+((Qs.definition = { methods: [`put`], url: `/staff/{user}/password` }),
+    (Qs.url = (e, t) => {
         ((typeof e == `string` || typeof e == `number`) && (e = { user: e }),
             typeof e == `object` &&
                 !Array.isArray(e) &&
@@ -8270,14 +8252,14 @@ var $s = (e, t) => ({ url: $s.url(e, t), method: `put` });
             (e = ve(e)));
         let n = { user: typeof e.user == `object` ? e.user.id : e.user };
         return (
-            $s.definition.url
+            Qs.definition.url
                 .replace(`{user}`, n.user.toString())
                 .replace(/\/+$/, ``) + L(t)
         );
     }),
-    ($s.put = (e, t) => ({ url: $s.url(e, t), method: `put` })));
-var ec = (e, t) => ({
-    action: $s.url(e, {
+    (Qs.put = (e, t) => ({ url: Qs.url(e, t), method: `put` })));
+var $s = (e, t) => ({
+    action: Qs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PUT`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8285,8 +8267,8 @@ var ec = (e, t) => ({
     }),
     method: `post`,
 });
-((ec.put = (e, t) => ({
-    action: $s.url(e, {
+(($s.put = (e, t) => ({
+    action: Qs.url(e, {
         [t?.mergeQuery ? `mergeQuery` : `query`]: {
             _method: `PUT`,
             ...(t?.query ?? t?.mergeQuery ?? {}),
@@ -8294,21 +8276,21 @@ var ec = (e, t) => ({
     }),
     method: `post`,
 })),
-    ($s.form = ec),
+    (Qs.form = $s),
     Object.assign(Q, Q),
-    Object.assign(Us, Us),
-    Object.assign(Gs, Gs),
-    Object.assign(qs, qs),
-    Object.assign(Ys, Ys),
-    Object.assign(Zs, Zs),
-    Object.assign($s, $s));
-var tc = M({
+    Object.assign(Hs, Hs),
+    Object.assign(Ws, Ws),
+    Object.assign(Ks, Ks),
+    Object.assign(Js, Js),
+    Object.assign(Xs, Xs),
+    Object.assign(Qs, Qs));
+var ec = M({
         __name: `AppSidebar`,
         setup(e) {
             let t = [
-                { title: `Dashboard`, href: bs(), icon: Pa },
-                { title: `Deployments`, href: X(), icon: Ia },
-                { title: `Staff`, href: Q(), icon: Ua },
+                { title: `Dashboard`, href: ys(), icon: Na },
+                { title: `Deployments`, href: X(), icon: Fa },
+                { title: `Staff`, href: Q(), icon: Ha },
             ];
             return (e, n) => (
                 A(),
@@ -8317,18 +8299,18 @@ var tc = M({
                     null,
                     [
                         V(
-                            I(So),
+                            I(xo),
                             { collapsible: `icon`, variant: `floating` },
                             {
                                 default: g(() => [
-                                    V(I(Eo), null, {
+                                    V(I(To), null, {
                                         default: g(() => [
-                                            V(I(Oo), null, {
+                                            V(I(Do), null, {
                                                 default: g(() => [
-                                                    V(I(Po), null, {
+                                                    V(I(No), null, {
                                                         default: g(() => [
                                                             V(
-                                                                I(No),
+                                                                I(Mo),
                                                                 {
                                                                     size: `lg`,
                                                                     'as-child': ``,
@@ -8342,7 +8324,7 @@ var tc = M({
                                                                                 ),
                                                                                 {
                                                                                     href: I(
-                                                                                        bs,
+                                                                                        ys,
                                                                                     )(),
                                                                                     'aria-label': `PayHub Central home`,
                                                                                 },
@@ -8351,7 +8333,7 @@ var tc = M({
                                                                                         g(
                                                                                             () => [
                                                                                                 V(
-                                                                                                    qo,
+                                                                                                    Ko,
                                                                                                 ),
                                                                                             ],
                                                                                         ),
@@ -8376,12 +8358,12 @@ var tc = M({
                                         ]),
                                         _: 1,
                                     }),
-                                    V(I(Co), null, {
-                                        default: g(() => [V(Zo, { items: t })]),
+                                    V(I(So), null, {
+                                        default: g(() => [V(Xo, { items: t })]),
                                         _: 1,
                                     }),
-                                    V(I(wo), null, {
-                                        default: g(() => [V(Ds)]),
+                                    V(I(Co), null, {
+                                        default: g(() => [V(Es)]),
                                         _: 1,
                                     }),
                                 ]),
@@ -8395,7 +8377,7 @@ var tc = M({
             );
         },
     }),
-    nc = M({
+    tc = M({
         __name: `Breadcrumb`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -8415,7 +8397,7 @@ var tc = M({
             );
         },
     }),
-    rc = M({
+    nc = M({
         __name: `BreadcrumbItem`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -8436,7 +8418,7 @@ var tc = M({
             );
         },
     }),
-    ic = M({
+    rc = M({
         __name: `BreadcrumbLink`,
         props: {
             asChild: { type: Boolean },
@@ -8467,7 +8449,7 @@ var tc = M({
             );
         },
     }),
-    ac = M({
+    ic = M({
         __name: `BreadcrumbList`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -8491,7 +8473,7 @@ var tc = M({
             );
         },
     }),
-    oc = M({
+    ac = M({
         __name: `BreadcrumbPage`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -8513,7 +8495,7 @@ var tc = M({
             );
         },
     }),
-    sc = M({
+    oc = M({
         __name: `BreadcrumbSeparator`,
         props: { class: { type: [Boolean, null, String, Object, Array] } },
         setup(e) {
@@ -8534,15 +8516,15 @@ var tc = M({
             );
         },
     }),
-    cc = M({
+    sc = M({
         __name: `Breadcrumbs`,
         props: { breadcrumbs: {} },
         setup(e) {
             return (t, n) => (
                 A(),
-                P(I(nc), null, {
+                P(I(tc), null, {
                     default: g(() => [
-                        V(I(ac), null, {
+                        V(I(ic), null, {
                             default: g(() => [
                                 (A(!0),
                                 B(
@@ -8557,7 +8539,7 @@ var tc = M({
                                                 { key: n },
                                                 [
                                                     V(
-                                                        I(rc),
+                                                        I(nc),
                                                         null,
                                                         {
                                                             default: g(() => [
@@ -8567,7 +8549,7 @@ var tc = M({
                                                                     1
                                                                     ? (A(),
                                                                       P(
-                                                                          I(oc),
+                                                                          I(ac),
                                                                           {
                                                                               key: 0,
                                                                           },
@@ -8589,7 +8571,7 @@ var tc = M({
                                                                       ))
                                                                     : (A(),
                                                                       P(
-                                                                          I(ic),
+                                                                          I(rc),
                                                                           {
                                                                               key: 1,
                                                                               'as-child': ``,
@@ -8639,7 +8621,7 @@ var tc = M({
                                                     e.breadcrumbs.length - 1
                                                         ? O(``, !0)
                                                         : (A(),
-                                                          P(I(sc), { key: 0 })),
+                                                          P(I(oc), { key: 0 })),
                                                 ],
                                                 64,
                                             )
@@ -8656,23 +8638,23 @@ var tc = M({
             );
         },
     }),
-    lc = {
+    cc = {
         class: `flex h-16 shrink-0 items-center gap-2 border-b border-sidebar-border/70 px-6 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 md:px-4`,
     },
-    uc = { class: `flex items-center gap-2` },
-    dc = M({
+    lc = { class: `flex items-center gap-2` },
+    uc = M({
         __name: `AppSidebarHeader`,
         props: { breadcrumbs: { default: () => [] } },
         setup(e) {
             return (t, n) => (
                 A(),
-                B(`header`, lc, [
-                    U(`div`, uc, [
-                        V(I(zo), { class: `-ml-1` }),
+                B(`header`, cc, [
+                    U(`div`, lc, [
+                        V(I(Ro), { class: `-ml-1` }),
                         e.breadcrumbs && e.breadcrumbs.length > 0
                             ? (A(),
                               P(
-                                  cc,
+                                  sc,
                                   { key: 0, breadcrumbs: e.breadcrumbs },
                                   null,
                                   8,
@@ -8684,12 +8666,12 @@ var tc = M({
             );
         },
     }),
-    fc = {
+    dc = {
         key: 0,
         role: `status`,
         class: `flex items-start gap-2 border-b border-warning-border bg-warning-soft px-4 py-2 text-sm font-medium text-warning md:px-6`,
     },
-    pc = M({
+    fc = M({
         __name: `SchedulerBanner`,
         setup(e) {
             let t = ce(),
@@ -8697,8 +8679,8 @@ var tc = M({
             return (e, t) =>
                 n.value
                     ? (A(),
-                      B(`div`, fc, [
-                          V(I(Ha), {
+                      B(`div`, dc, [
+                          V(I(Va), {
                               class: `mt-0.5 size-4 shrink-0`,
                               'aria-hidden': `true`,
                           }),
@@ -8712,8 +8694,8 @@ var tc = M({
                     : O(``, !0);
         },
     }),
-    mc = 1,
-    hc = new (class {
+    pc = 1,
+    mc = new (class {
         subscribers;
         toasts;
         dismissedToasts;
@@ -8740,7 +8722,7 @@ var tc = M({
                 r =
                     typeof e.id == `number` || (e.id && e.id?.length > 0)
                         ? e.id
-                        : mc++,
+                        : pc++,
                 i = this.toasts.find((e) => e.id === r),
                 a = e.dismissible === void 0 || e.dismissible;
             return (
@@ -8803,7 +8785,7 @@ var tc = M({
                                     type: `default`,
                                     message: e,
                                 }));
-                        else if (_c(e) && !e.ok) {
+                        else if (gc(e) && !e.ok) {
                             i = !1;
                             let r =
                                     typeof t.error == `function`
@@ -8906,7 +8888,7 @@ var tc = M({
                 : Object.assign(n, { unwrap: s });
         };
         custom = (e, t) => {
-            let n = t?.id || mc++,
+            let n = t?.id || pc++,
                 r = this.toasts.find((e) => e.id === n),
                 i = t?.dismissible === void 0 || t.dismissible;
             return (
@@ -8942,44 +8924,44 @@ var tc = M({
         getActiveToasts = () =>
             this.toasts.filter((e) => !this.dismissedToasts.has(e.id));
     })();
-function gc(e, t) {
-    let n = t?.id || mc++;
-    return (hc.create({ message: e, id: n, type: `default`, ...t }), n);
+function hc(e, t) {
+    let n = t?.id || pc++;
+    return (mc.create({ message: e, id: n, type: `default`, ...t }), n);
 }
-var _c = (e) =>
+var gc = (e) =>
         e &&
         typeof e == `object` &&
         `ok` in e &&
         typeof e.ok == `boolean` &&
         `status` in e &&
         typeof e.status == `number`,
-    vc = Object.assign(
-        gc,
+    _c = Object.assign(
+        hc,
         {
-            success: hc.success,
-            info: hc.info,
-            warning: hc.warning,
-            error: hc.error,
-            custom: hc.custom,
-            message: hc.message,
-            promise: hc.promise,
-            dismiss: hc.dismiss,
-            loading: hc.loading,
+            success: mc.success,
+            info: mc.info,
+            warning: mc.warning,
+            error: mc.error,
+            custom: mc.custom,
+            message: mc.message,
+            promise: mc.promise,
+            dismiss: mc.dismiss,
+            loading: mc.loading,
         },
-        { getHistory: () => hc.toasts, getToasts: () => hc.getActiveToasts() },
+        { getHistory: () => mc.toasts, getToasts: () => mc.getActiveToasts() },
     );
-function yc(e) {
+function vc(e) {
     return e.label !== void 0;
 }
-var bc = 3,
-    xc = `24px`,
-    Sc = `16px`,
-    Cc = 4e3,
-    wc = 356,
-    Tc = 14,
-    Ec = 45,
-    Dc = 200;
-function Oc() {
+var yc = 3,
+    bc = `24px`,
+    xc = `16px`,
+    Sc = 4e3,
+    Cc = 356,
+    wc = 14,
+    Tc = 45,
+    Ec = 200;
+function Dc() {
     let e = N(!1);
     return (
         F(() => {
@@ -8994,21 +8976,21 @@ function Oc() {
         { isDocumentHidden: e }
     );
 }
-function kc(...e) {
+function Oc(...e) {
     return e.filter(Boolean).join(` `);
 }
-function Ac(e) {
+function kc(e) {
     let [t, n] = e.split(`-`),
         r = [];
     return (t && r.push(t), n && r.push(n), r);
 }
-function jc(e, t) {
+function Ac(e, t) {
     let n = {};
     return (
         [e, t].forEach((e, t) => {
             let r = t === 1,
                 i = r ? `--mobile-offset` : `--offset`,
-                a = r ? Sc : xc;
+                a = r ? xc : bc;
             function o(e) {
                 [`top`, `right`, `bottom`, `left`].forEach((t) => {
                     n[`${i}-${t}`] = typeof e == `number` ? `${e}px` : e;
@@ -9028,7 +9010,7 @@ function jc(e, t) {
         n
     );
 }
-var Mc = [
+var jc = [
         `data-rich-colors`,
         `data-styled`,
         `data-mounted`,
@@ -9049,8 +9031,8 @@ var Mc = [
         `data-expanded`,
         `data-testid`,
     ],
-    Nc = [`aria-label`, `data-disabled`, `data-close-button-position`],
-    Pc = M({
+    Mc = [`aria-label`, `data-disabled`, `data-close-button-position`],
+    Nc = M({
         __name: `Toast`,
         props: {
             toast: {},
@@ -9093,7 +9075,7 @@ var Mc = [
                 d = N(!1),
                 f = N(0),
                 h = N(0),
-                g = N(n.toast.duration || n.duration || Cc),
+                g = N(n.toast.duration || n.duration || Sc),
                 v = N(null),
                 y = N(null),
                 b = R(() => n.index === 0),
@@ -9120,7 +9102,7 @@ var Mc = [
                 }),
                 re = R(() => te.value * n.gap + ne.value || 0),
                 ie = R(() => n.toast.closeButton ?? n.closeButton),
-                ae = R(() => n.toast.duration || n.duration || Cc),
+                ae = R(() => n.toast.duration || n.duration || Sc),
                 oe = N(0),
                 j = N(0),
                 ce = N(null),
@@ -9129,7 +9111,7 @@ var Mc = [
                 ue = R(() => M.value[1]),
                 de = R(() => typeof n.toast.title != `string`),
                 L = R(() => typeof n.toast.description != `string`),
-                { isDocumentHidden: fe } = Oc(),
+                { isDocumentHidden: fe } = Dc(),
                 z = R(() => S.value && S.value === `loading`);
             (p(() => {
                 ((o.value = !0), (g.value = ae.value));
@@ -9154,7 +9136,7 @@ var Mc = [
                     (f.value = re.value),
                     setTimeout(() => {
                         r(`removeToast`, n.toast);
-                    }, Dc));
+                    }, Ec));
             }
             function me() {
                 if (z.value || !C.value) return {};
@@ -9187,7 +9169,7 @@ var Mc = [
                     r = new Date().getTime() - (v.value?.getTime() || 0),
                     o = i.value === `x` ? e : t,
                     s = Math.abs(o) / r;
-                Math.abs(o) >= Ec || s > 0.11
+                Math.abs(o) >= Tc || s > 0.11
                     ? ((f.value = re.value),
                       n.toast.onDismiss?.(n.toast),
                       i.value === `x`
@@ -9210,7 +9192,7 @@ var Mc = [
                     return;
                 let t = e.clientY - ce.value.y,
                     r = e.clientX - ce.value.x,
-                    a = n.swipeDirections ?? Ac(n.position);
+                    a = n.swipeDirections ?? kc(n.position);
                 !i.value &&
                     (Math.abs(r) > 1 || Math.abs(t) > 1) &&
                     (i.value = Math.abs(r) > Math.abs(t) ? `x` : `y`);
@@ -9309,7 +9291,7 @@ var Mc = [
                         ref_key: `toastRef`,
                         ref: y,
                         class: D(
-                            I(kc)(
+                            I(Oc)(
                                 n.class,
                                 w.value,
                                 e.classes?.toast,
@@ -9377,7 +9359,7 @@ var Mc = [
                                       'data-close-button-position':
                                           e.closeButtonPosition,
                                       class: D(
-                                          I(kc)(
+                                          I(Oc)(
                                               e.classes?.closeButton,
                                               e.toast?.classes?.closeButton,
                                           ),
@@ -9393,7 +9375,7 @@ var Mc = [
                                             }),
                                   ],
                                   10,
-                                  Nc,
+                                  Mc,
                               ))
                             : O(`v-if`, !0),
                         e.toast.component
@@ -9426,7 +9408,7 @@ var Mc = [
                                                     key: 0,
                                                     'data-icon': ``,
                                                     class: D(
-                                                        I(kc)(
+                                                        I(Oc)(
                                                             e.classes?.icon,
                                                             e.toast?.classes
                                                                 ?.icon,
@@ -9505,7 +9487,7 @@ var Mc = [
                                           {
                                               'data-content': ``,
                                               class: D(
-                                                  I(kc)(
+                                                  I(Oc)(
                                                       e.classes?.content,
                                                       e.toast?.classes?.content,
                                                   ),
@@ -9517,7 +9499,7 @@ var Mc = [
                                                   {
                                                       'data-title': ``,
                                                       class: D(
-                                                          I(kc)(
+                                                          I(Oc)(
                                                               e.classes?.title,
                                                               e.toast.classes
                                                                   ?.title,
@@ -9571,7 +9553,7 @@ var Mc = [
                                                             key: 0,
                                                             'data-description': ``,
                                                             class: D(
-                                                                I(kc)(
+                                                                I(Oc)(
                                                                     e.descriptionClass,
                                                                     T.value,
                                                                     e.classes
@@ -9641,7 +9623,7 @@ var Mc = [
                                                             e.cancelButtonStyle,
                                                     ),
                                                     class: D(
-                                                        I(kc)(
+                                                        I(Oc)(
                                                             e.classes
                                                                 ?.cancelButton,
                                                             e.toast.classes
@@ -9651,7 +9633,7 @@ var Mc = [
                                                     'data-button': ``,
                                                     'data-cancel': ``,
                                                     onClick: (t[0] ||= (t) => {
-                                                        I(yc)(e.toast.cancel) &&
+                                                        I(vc)(e.toast.cancel) &&
                                                             C.value &&
                                                             (e.toast.cancel.onClick?.(
                                                                 t,
@@ -9660,7 +9642,7 @@ var Mc = [
                                                     }),
                                                 },
                                                 k(
-                                                    I(yc)(e.toast.cancel)
+                                                    I(vc)(e.toast.cancel)
                                                         ? e.toast.cancel?.label
                                                         : e.toast.cancel,
                                                 ),
@@ -9679,7 +9661,7 @@ var Mc = [
                                                             e.actionButtonStyle,
                                                     ),
                                                     class: D(
-                                                        I(kc)(
+                                                        I(Oc)(
                                                             e.classes
                                                                 ?.actionButton,
                                                             e.toast.classes
@@ -9689,7 +9671,7 @@ var Mc = [
                                                     'data-button': ``,
                                                     'data-action': ``,
                                                     onClick: (t[1] ||= (t) => {
-                                                        I(yc)(e.toast.action) &&
+                                                        I(vc)(e.toast.action) &&
                                                             (e.toast.action.onClick?.(
                                                                 t,
                                                             ),
@@ -9698,7 +9680,7 @@ var Mc = [
                                                     }),
                                                 },
                                                 k(
-                                                    I(yc)(e.toast.action)
+                                                    I(vc)(e.toast.action)
                                                         ? e.toast.action?.label
                                                         : e.toast.action,
                                                 ),
@@ -9710,18 +9692,18 @@ var Mc = [
                               )),
                     ],
                     46,
-                    Mc,
+                    jc,
                 )
             );
         },
     }),
-    Fc = (e, t) => {
+    Pc = (e, t) => {
         let n = e.__vccOpts || e;
         for (let [e, r] of t) n[e] = r;
         return n;
     },
-    Ic = {},
-    Lc = {
+    Fc = {},
+    Ic = {
         xmlns: `http://www.w3.org/2000/svg`,
         width: `12`,
         height: `12`,
@@ -9732,12 +9714,12 @@ var Mc = [
         'stroke-linecap': `round`,
         'stroke-linejoin': `round`,
     };
-function Rc(e, t) {
+function Lc(e, t) {
     return (
         A(),
         B(
             `svg`,
-            Lc,
+            Ic,
             (t[0] ||= [
                 U(`line`, { x1: `18`, y1: `6`, x2: `6`, y2: `18` }, null, -1),
                 U(`line`, { x1: `6`, y1: `6`, x2: `18`, y2: `18` }, null, -1),
@@ -9745,10 +9727,10 @@ function Rc(e, t) {
         )
     );
 }
-var zc = Fc(Ic, [[`render`, Rc]]),
-    Bc = [`data-visible`],
-    Vc = { class: `sonner-spinner` },
-    Hc = M({
+var Rc = Pc(Fc, [[`render`, Lc]]),
+    zc = [`data-visible`],
+    Bc = { class: `sonner-spinner` },
+    Vc = M({
         __name: `Loader`,
         props: { visible: { type: Boolean } },
         setup(e) {
@@ -9762,7 +9744,7 @@ var zc = Fc(Ic, [[`render`, Rc]]),
                         'data-visible': e.visible,
                     },
                     [
-                        U(`div`, Vc, [
+                        U(`div`, Bc, [
                             (A(!0),
                             B(
                                 m,
@@ -9782,25 +9764,25 @@ var zc = Fc(Ic, [[`render`, Rc]]),
                         ]),
                     ],
                     8,
-                    Bc,
+                    zc,
                 )
             );
         },
     }),
-    Uc = {},
-    Wc = {
+    Hc = {},
+    Uc = {
         xmlns: `http://www.w3.org/2000/svg`,
         viewBox: `0 0 20 20`,
         fill: `currentColor`,
         height: `20`,
         width: `20`,
     };
-function Gc(e, t) {
+function Wc(e, t) {
     return (
         A(),
         B(
             `svg`,
-            Wc,
+            Uc,
             (t[0] ||= [
                 U(
                     `path`,
@@ -9816,21 +9798,21 @@ function Gc(e, t) {
         )
     );
 }
-var Kc = Fc(Uc, [[`render`, Gc]]),
-    qc = {},
-    Jc = {
+var Gc = Pc(Hc, [[`render`, Wc]]),
+    Kc = {},
+    qc = {
         xmlns: `http://www.w3.org/2000/svg`,
         viewBox: `0 0 20 20`,
         fill: `currentColor`,
         height: `20`,
         width: `20`,
     };
-function Yc(e, t) {
+function Jc(e, t) {
     return (
         A(),
         B(
             `svg`,
-            Jc,
+            qc,
             (t[0] ||= [
                 U(
                     `path`,
@@ -9846,21 +9828,21 @@ function Yc(e, t) {
         )
     );
 }
-var Xc = Fc(qc, [[`render`, Yc]]),
-    Zc = {},
-    Qc = {
+var Yc = Pc(Kc, [[`render`, Jc]]),
+    Xc = {},
+    Zc = {
         xmlns: `http://www.w3.org/2000/svg`,
         viewBox: `0 0 24 24`,
         fill: `currentColor`,
         height: `20`,
         width: `20`,
     };
-function $c(e, t) {
+function Qc(e, t) {
     return (
         A(),
         B(
             `svg`,
-            Qc,
+            Zc,
             (t[0] ||= [
                 U(
                     `path`,
@@ -9876,21 +9858,21 @@ function $c(e, t) {
         )
     );
 }
-var el = Fc(Zc, [[`render`, $c]]),
-    tl = {},
-    nl = {
+var $c = Pc(Xc, [[`render`, Qc]]),
+    el = {},
+    tl = {
         xmlns: `http://www.w3.org/2000/svg`,
         viewBox: `0 0 20 20`,
         fill: `currentColor`,
         height: `20`,
         width: `20`,
     };
-function rl(e, t) {
+function nl(e, t) {
     return (
         A(),
         B(
             `svg`,
-            nl,
+            tl,
             (t[0] ||= [
                 U(
                     `path`,
@@ -9906,9 +9888,9 @@ function rl(e, t) {
         )
     );
 }
-var il = Fc(tl, [[`render`, rl]]),
-    al = [`aria-label`],
-    ol = [
+var rl = Pc(el, [[`render`, nl]]),
+    il = [`aria-label`],
+    al = [
         `data-sonner-theme`,
         `dir`,
         `data-theme`,
@@ -9916,15 +9898,15 @@ var il = Fc(tl, [[`render`, rl]]),
         `data-y-position`,
         `data-x-position`,
     ],
-    sl = typeof window < `u` && typeof document < `u`;
-function cl() {
+    ol = typeof window < `u` && typeof document < `u`;
+function sl() {
     if (typeof window > `u` || typeof document > `u`) return `ltr`;
     let e = document.documentElement.getAttribute(`dir`);
     return e === `auto` || !e
         ? window.getComputedStyle(document.documentElement).direction
         : e;
 }
-var ll = M({
+var cl = M({
         name: `Toaster`,
         inheritAttrs: !1,
         __name: `Toaster`,
@@ -9938,14 +9920,14 @@ var ll = M({
             richColors: { type: Boolean, default: !1 },
             expand: { type: Boolean, default: !1 },
             duration: {},
-            gap: { default: Tc },
-            visibleToasts: { default: bc },
+            gap: { default: wc },
+            visibleToasts: { default: yc },
             closeButton: { type: Boolean, default: !1 },
             toastOptions: { default: () => ({}) },
             class: { default: `` },
             style: {},
-            offset: { default: xc },
-            mobileOffset: { default: Sc },
+            offset: { default: bc },
+            mobileOffset: { default: xc },
             dir: { default: `auto` },
             swipeDirections: {},
             icons: {},
@@ -10008,7 +9990,7 @@ var ll = M({
                     .replace(/Key/g, ``)
                     .replace(/Digit/g, ``);
             function y(e) {
-                (r.value.find((t) => t.id === e.id)?.delete || hc.dismiss(e.id),
+                (r.value.find((t) => t.id === e.id)?.delete || mc.dismiss(e.id),
                     (r.value = r.value.filter(({ id: t }) => t !== e.id)),
                     setTimeout(() => {
                         r.value.find((t) => t.id === e.id) ||
@@ -10037,7 +10019,7 @@ var ll = M({
             }
             (F((e) => {
                 e(
-                    hc.subscribe((e) => {
+                    mc.subscribe((e) => {
                         e.dismiss
                             ? requestAnimationFrame(() => {
                                   r.value = r.value.map((t) =>
@@ -10117,7 +10099,7 @@ var ll = M({
                                 u.value[e] = !1;
                             });
                     }
-                    sl &&
+                    ol &&
                         (document.addEventListener(`keydown`, n),
                         e(() => {
                             document.removeEventListener(`keydown`, n);
@@ -10201,7 +10183,7 @@ var ll = M({
                                                         class: t.class,
                                                         dir:
                                                             e.dir === `auto`
-                                                                ? cl()
+                                                                ? sl()
                                                                 : e.dir,
                                                         tabIndex: -1,
                                                         'data-theme': e.theme,
@@ -10213,11 +10195,11 @@ var ll = M({
                                                             r.split(`-`)[1],
                                                         style: {
                                                             '--front-toast-height': `${l.value[0]?.height || 0}px`,
-                                                            '--width': `${I(wc)}px`,
+                                                            '--width': `${I(Cc)}px`,
                                                             '--gap': `${e.gap}px`,
                                                             ...e.style,
                                                             ...I(n).style,
-                                                            ...I(jc)(
+                                                            ...I(Ac)(
                                                                 e.offset,
                                                                 e.mobileOffset,
                                                             ),
@@ -10246,7 +10228,7 @@ var ll = M({
                                                             (n, i) => (
                                                                 A(),
                                                                 P(
-                                                                    Pc,
+                                                                    Nc,
                                                                     {
                                                                         key: n.id,
                                                                         heights:
@@ -10345,7 +10327,7 @@ var ll = M({
                                                                                         {},
                                                                                         () => [
                                                                                             V(
-                                                                                                zc,
+                                                                                                Rc,
                                                                                             ),
                                                                                         ],
                                                                                     ),
@@ -10360,7 +10342,7 @@ var ll = M({
                                                                                         {},
                                                                                         () => [
                                                                                             V(
-                                                                                                Hc,
+                                                                                                Vc,
                                                                                                 {
                                                                                                     visible:
                                                                                                         n.type ===
@@ -10385,7 +10367,7 @@ var ll = M({
                                                                                         {},
                                                                                         () => [
                                                                                             V(
-                                                                                                Kc,
+                                                                                                Gc,
                                                                                             ),
                                                                                         ],
                                                                                     ),
@@ -10400,7 +10382,7 @@ var ll = M({
                                                                                         {},
                                                                                         () => [
                                                                                             V(
-                                                                                                il,
+                                                                                                rl,
                                                                                             ),
                                                                                         ],
                                                                                     ),
@@ -10415,7 +10397,7 @@ var ll = M({
                                                                                         {},
                                                                                         () => [
                                                                                             V(
-                                                                                                el,
+                                                                                                $c,
                                                                                             ),
                                                                                         ],
                                                                                     ),
@@ -10430,7 +10412,7 @@ var ll = M({
                                                                                         {},
                                                                                         () => [
                                                                                             V(
-                                                                                                Xc,
+                                                                                                Yc,
                                                                                             ),
                                                                                         ],
                                                                                     ),
@@ -10473,7 +10455,7 @@ var ll = M({
                                                     )),
                                                 ],
                                                 16,
-                                                ol,
+                                                al,
                                             )
                                         ),
                                     ),
@@ -10481,7 +10463,7 @@ var ll = M({
                                 )),
                             ],
                             8,
-                            al,
+                            il,
                         ),
                     ],
                     2112,
@@ -10489,7 +10471,7 @@ var ll = M({
             );
         },
     }),
-    ul = M({
+    ll = M({
         __name: `Sonner`,
         props: {
             id: {},
@@ -10519,7 +10501,7 @@ var ll = M({
             return (e, n) => (
                 A(),
                 P(
-                    I(ll),
+                    I(cl),
                     s(
                         {
                             class: I(z)(`toaster group`, t.class),
@@ -10536,17 +10518,17 @@ var ll = M({
                         'success-icon': g(() => [
                             V(I(ja), { class: `size-4` }),
                         ]),
-                        'info-icon': g(() => [V(I(Na), { class: `size-4` })]),
+                        'info-icon': g(() => [V(I(Ma), { class: `size-4` })]),
                         'warning-icon': g(() => [
-                            V(I(Ha), { class: `size-4` }),
+                            V(I(Va), { class: `size-4` }),
                         ]),
-                        'error-icon': g(() => [V(I(Ra), { class: `size-4` })]),
+                        'error-icon': g(() => [V(I(La), { class: `size-4` })]),
                         'loading-icon': g(() => [
                             U(`div`, null, [
-                                V(I(Fa), { class: `size-4 animate-spin` }),
+                                V(I(Pa), { class: `size-4 animate-spin` }),
                             ]),
                         ]),
-                        'close-icon': g(() => [V(I(Wa), { class: `size-4` })]),
+                        'close-icon': g(() => [V(I(Ua), { class: `size-4` })]),
                         _: 1,
                     },
                     16,
@@ -10555,7 +10537,7 @@ var ll = M({
             );
         },
     }),
-    dl = M({
+    ul = M({
         __name: `AppSidebarLayout`,
         props: { breadcrumbs: { default: () => [] } },
         setup(e) {
@@ -10574,30 +10556,30 @@ var ll = M({
                             ` Skip to main content `,
                             -1,
                         )),
-                        V(Ho, null, {
+                        V(Vo, null, {
                             default: g(() => [
-                                V(tc),
+                                V(ec),
                                 V(
-                                    Vo,
+                                    Bo,
                                     {
                                         class: `min-w-0 overflow-x-clip bg-transparent`,
                                     },
                                     {
                                         default: g(() => [
                                             V(
-                                                dc,
+                                                uc,
                                                 { breadcrumbs: e.breadcrumbs },
                                                 null,
                                                 8,
                                                 [`breadcrumbs`],
                                             ),
-                                            V(pc),
+                                            V(fc),
                                             W(t.$slots, `default`),
                                         ]),
                                         _: 3,
                                     },
                                 ),
-                                V(I(ul)),
+                                V(I(ll)),
                             ]),
                             _: 3,
                         }),
@@ -10607,14 +10589,14 @@ var ll = M({
             );
         },
     }),
-    fl = M({
+    dl = M({
         __name: `AppLayout`,
         props: { breadcrumbs: { default: () => [] } },
         setup(e) {
             return (t, n) => (
                 A(),
                 P(
-                    dl,
+                    ul,
                     { breadcrumbs: e.breadcrumbs },
                     { default: g(() => [W(t.$slots, `default`)]), _: 3 },
                     8,
@@ -10623,61 +10605,70 @@ var ll = M({
             );
         },
     }),
-    pl = {
-        class: `flex min-h-svh flex-col items-center justify-center gap-6 bg-auth-bg bg-[radial-gradient(var(--auth-dot)_1px,transparent_1px)] bg-[length:20px_20px] p-6 md:p-10`,
+    fl = {
+        class: `page-glow flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10`,
     },
-    ml = { class: `w-full max-w-sm` },
-    hl = { class: `flex flex-col gap-6` },
-    gl = { class: `rounded-2xl bg-card p-6 shadow-lg` },
-    _l = { class: `mb-6 space-y-1` },
-    vl = { class: `text-lg font-semibold` },
-    yl = { class: `text-sm text-muted-foreground` },
-    bl = M({
+    pl = { class: `w-full max-w-sm` },
+    ml = { class: `flex flex-col gap-8` },
+    hl = { class: `rounded-3xl border border-border bg-card p-8 shadow-xl` },
+    gl = { class: `mb-6 space-y-1` },
+    _l = { class: `text-xl font-semibold tracking-tight` },
+    vl = { class: `text-sm text-muted-foreground` },
+    yl = M({
         __name: `AuthSimpleLayout`,
         props: { title: {}, description: {} },
         setup(e) {
             return (t, n) => (
                 A(),
-                B(`div`, pl, [
-                    U(`div`, ml, [
-                        U(`div`, hl, [
+                B(`div`, fl, [
+                    U(`div`, pl, [
+                        U(`div`, ml, [
                             V(
                                 I(oe),
                                 {
                                     href: I(J)(),
-                                    class: `flex items-center justify-center gap-2 text-2xl font-bold`,
+                                    class: `flex flex-col items-center gap-3 rounded-lg text-2xl font-bold tracking-tight`,
                                 },
                                 {
                                     default: g(() => [
-                                        V(I(Ma), {
-                                            class: `size-7 text-brand`,
-                                        }),
-                                        (n[0] ||= U(
-                                            `span`,
-                                            null,
-                                            [
-                                                se(`Pay`),
-                                                U(
-                                                    `span`,
-                                                    {
-                                                        class: `text-muted-foreground`,
-                                                    },
-                                                    `Hub`,
-                                                ),
-                                                se(` Central`),
-                                            ],
-                                            -1,
-                                        )),
+                                        ...(n[0] ||= [
+                                            U(
+                                                `img`,
+                                                {
+                                                    src: `/favicon.svg`,
+                                                    alt: ``,
+                                                    class: `size-12 rounded-2xl shadow-lg`,
+                                                },
+                                                null,
+                                                -1,
+                                            ),
+                                            U(
+                                                `span`,
+                                                null,
+                                                [
+                                                    se(`Pay`),
+                                                    U(
+                                                        `span`,
+                                                        {
+                                                            class: `font-light text-muted-foreground`,
+                                                        },
+                                                        `Hub`,
+                                                    ),
+                                                    se(` Central`),
+                                                ],
+                                                -1,
+                                            ),
+                                        ]),
                                     ]),
                                     _: 1,
                                 },
                                 8,
                                 [`href`],
                             ),
-                            U(`div`, gl, [
-                                U(`div`, _l, [
-                                    U(`h1`, vl, k(e.title), 1),
-                                    U(`p`, yl, k(e.description), 1),
+                            U(`div`, hl, [
+                                U(`div`, gl, [
+                                    U(`h1`, _l, k(e.title), 1),
+                                    U(`p`, vl, k(e.description), 1),
                                 ]),
                                 W(t.$slots, `default`),
                             ]),
@@ -10687,14 +10678,14 @@ var ll = M({
             );
         },
     }),
-    xl = M({
+    bl = M({
         __name: `AuthLayout`,
         props: { title: { default: `` }, description: { default: `` } },
         setup(e) {
             return (t, n) => (
                 A(),
                 P(
-                    bl,
+                    yl,
                     { title: e.title, description: e.description },
                     { default: g(() => [W(t.$slots, `default`)]), _: 3 },
                     8,
@@ -10703,8 +10694,8 @@ var ll = M({
             );
         },
     }),
-    Sl = { key: 0, class: `text-sm text-muted-foreground` },
-    Cl = M({
+    xl = { key: 0, class: `text-sm text-muted-foreground` },
+    Sl = M({
         __name: `Heading`,
         props: { title: {}, description: {}, variant: { default: `default` } },
         setup(e) {
@@ -10731,7 +10722,7 @@ var ll = M({
                             3,
                         ),
                         e.description
-                            ? (A(), B(`p`, Sl, k(e.description), 1))
+                            ? (A(), B(`p`, xl, k(e.description), 1))
                             : O(``, !0),
                     ],
                     2,
@@ -10744,9 +10735,9 @@ var ll = M({
     ($.url = (e) => $.definition.url + L(e)),
     ($.get = (e) => ({ url: $.url(e), method: `get` })),
     ($.head = (e) => ({ url: $.url(e), method: `head` })));
-var wl = (e) => ({ action: $.url(e), method: `get` });
-((wl.get = (e) => ({ action: $.url(e), method: `get` })),
-    (wl.head = (e) => ({
+var Cl = (e) => ({ action: $.url(e), method: `get` });
+((Cl.get = (e) => ({ action: $.url(e), method: `get` })),
+    (Cl.head = (e) => ({
         action: $.url({
             [e?.mergeQuery ? `mergeQuery` : `query`]: {
                 _method: `HEAD`,
@@ -10755,42 +10746,42 @@ var wl = (e) => ({ action: $.url(e), method: `get` });
         }),
         method: `get`,
     })),
-    ($.form = wl),
+    ($.form = Cl),
     Object.assign($, $));
-var Tl = { class: `px-4 py-6` },
-    El = { class: `flex flex-col lg:flex-row lg:space-x-12` },
-    Dl = { class: `w-full max-w-xl lg:w-48` },
-    Ol = {
+var wl = { class: `px-4 py-6` },
+    Tl = { class: `flex flex-col lg:flex-row lg:space-x-12` },
+    El = { class: `w-full max-w-xl lg:w-48` },
+    Dl = {
         class: `flex flex-col space-y-1 space-x-0`,
         'aria-label': `Settings`,
     },
-    kl = { class: `flex-1 md:max-w-2xl` },
-    Al = { class: `max-w-xl space-y-12` },
-    jl = M({
+    Ol = { class: `flex-1 md:max-w-2xl` },
+    kl = { class: `max-w-xl space-y-12` },
+    Al = M({
         __name: `Layout`,
         setup(e) {
             let t = [
                     { title: `Profile`, href: Y() },
                     { title: `Security`, href: $() },
                 ],
-                { isCurrentOrParentUrl: n } = Xo();
+                { isCurrentOrParentUrl: n } = Yo();
             return (e, r) => (
                 A(),
-                B(`div`, Tl, [
-                    V(Cl, {
+                B(`div`, wl, [
+                    V(Sl, {
                         title: `Settings`,
                         description: `Manage your profile and account settings`,
                     }),
-                    U(`div`, El, [
-                        U(`aside`, Dl, [
-                            U(`nav`, Ol, [
+                    U(`div`, Tl, [
+                        U(`aside`, El, [
+                            U(`nav`, Dl, [
                                 (A(),
                                 B(
                                     m,
                                     null,
                                     pe(t, (e) =>
                                         V(
-                                            I(Lo),
+                                            I(Io),
                                             {
                                                 key: I(ge)(e.href),
                                                 variant: `ghost`,
@@ -10839,28 +10830,28 @@ var Tl = { class: `px-4 py-6` },
                                 )),
                             ]),
                         ]),
-                        V(I(Io), { class: `my-6 lg:hidden` }),
-                        U(`div`, kl, [
-                            U(`section`, Al, [W(e.$slots, `default`)]),
+                        V(I(Fo), { class: `my-6 lg:hidden` }),
+                        U(`div`, Ol, [
+                            U(`section`, kl, [W(e.$slots, `default`)]),
                         ]),
                     ]),
                 ])
             );
         },
     });
-function Ml() {
+function jl() {
     w.on(`flash`, (e) => {
         let t = e.detail?.flash?.toast;
-        t && vc[t.type](t.message);
+        t && _c[t.type](t.message);
     });
 }
-var Nl = `PayHub Central`;
+var Ml = `PayHub Central`;
 (ue({
     resolve: async (e, t) => {
         let n = Object.assign({
                 './pages/Dashboard.vue': () =>
                     at(
-                        () => import(`./Dashboard-CZXePjt1.js`),
+                        () => import(`./Dashboard-BG0FaNDv.js`),
                         __vite__mapDeps([
                             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
                             15,
@@ -10868,29 +10859,29 @@ var Nl = `PayHub Central`;
                     ),
                 './pages/auth/ConfirmPassword.vue': () =>
                     at(
-                        () => import(`./ConfirmPassword-BkubroWv.js`),
+                        () => import(`./ConfirmPassword-CYWDLJyr.js`),
                         __vite__mapDeps([16, 1, 17, 4, 7, 18, 9, 19, 20]),
                     ),
                 './pages/auth/Login.vue': () =>
                     at(
-                        () => import(`./Login-BJzzYJmJ.js`),
+                        () => import(`./Login-Bv6gibPL.js`),
                         __vite__mapDeps([
                             21, 1, 22, 3, 4, 6, 23, 9, 7, 17, 18, 19, 20,
                         ]),
                     ),
                 './pages/auth/TwoFactorChallenge.vue': () =>
                     at(
-                        () => import(`./TwoFactorChallenge-BVdhp7Go.js`),
+                        () => import(`./TwoFactorChallenge-BzSIZNk0.js`),
                         __vite__mapDeps([24, 1, 19, 25, 6, 7]),
                     ),
                 './pages/auth/VerifyEmail.vue': () =>
                     at(
-                        () => import(`./VerifyEmail-DLfCGZ2F.js`),
+                        () => import(`./VerifyEmail-ItXf-PRq.js`),
                         __vite__mapDeps([26, 1, 20]),
                     ),
                 './pages/deployments/Create.vue': () =>
                     at(
-                        () => import(`./Create-sGpTMIzV.js`),
+                        () => import(`./Create-DxfzVVSh.js`),
                         __vite__mapDeps([
                             27, 1, 22, 3, 4, 6, 23, 9, 7, 17, 18, 19, 15, 20,
                             28,
@@ -10898,56 +10889,57 @@ var Nl = `PayHub Central`;
                     ),
                 './pages/deployments/Edit.vue': () =>
                     at(
-                        () => import(`./Edit-BjsyNguq.js`),
+                        () => import(`./Edit-D3Ez2LhB.js`),
                         __vite__mapDeps([
                             29, 1, 17, 4, 7, 18, 9, 19, 15, 20, 28, 30, 31, 6,
                         ]),
                     ),
                 './pages/deployments/Index.vue': () =>
                     at(
-                        () => import(`./Index-guKI-Xqm.js`),
+                        () => import(`./Index-Oy6BfHyS.js`),
                         __vite__mapDeps([
-                            32, 1, 10, 9, 11, 7, 33, 13, 14, 15, 20, 30, 31, 6,
+                            32, 1, 9, 10, 33, 11, 7, 34, 13, 14, 15, 20, 30, 31,
+                            6,
                         ]),
                     ),
                 './pages/deployments/Show.vue': () =>
                     at(
-                        () => import(`./Show-SsGEsDGR.js`),
+                        () => import(`./Show-CJ9cRF8-.js`),
                         __vite__mapDeps([
-                            34, 3, 1, 4, 6, 2, 5, 7, 8, 9, 11, 33, 13, 15,
+                            35, 3, 1, 4, 6, 2, 5, 7, 8, 9, 11, 34, 13, 15,
                         ]),
                     ),
                 './pages/settings/Profile.vue': () =>
                     at(
-                        () => import(`./Profile-D5XpFjn7.js`),
-                        __vite__mapDeps([35, 1, 17, 4, 7, 19]),
+                        () => import(`./Profile-BE2rMce8.js`),
+                        __vite__mapDeps([36, 1, 17, 4, 7, 19]),
                     ),
                 './pages/settings/Security.vue': () =>
                     at(
-                        () => import(`./Security-BB85-kAl.js`),
+                        () => import(`./Security-CHqFjryv.js`),
                         __vite__mapDeps([
-                            36, 1, 17, 4, 7, 9, 23, 18, 19, 12, 20, 25, 6, 31,
+                            37, 1, 17, 4, 7, 9, 23, 18, 19, 12, 20, 25, 6, 31,
                         ]),
                     ),
                 './pages/staff/Create.vue': () =>
                     at(
-                        () => import(`./Create-VnXS4z5P.js`),
+                        () => import(`./Create-BqieCpzj.js`),
                         __vite__mapDeps([
-                            37, 1, 17, 4, 7, 18, 9, 19, 15, 20, 38,
+                            38, 1, 17, 4, 7, 18, 9, 19, 15, 20, 39,
                         ]),
                     ),
                 './pages/staff/Edit.vue': () =>
                     at(
-                        () => import(`./Edit-BpDkqCj4.js`),
+                        () => import(`./Edit-Bvgy6kAx.js`),
                         __vite__mapDeps([
-                            39, 1, 17, 4, 7, 18, 9, 19, 15, 20, 38,
+                            40, 1, 17, 4, 7, 18, 9, 19, 15, 20, 39,
                         ]),
                     ),
                 './pages/staff/Index.vue': () =>
                     at(
-                        () => import(`./Index-B_YrSL3d.js`),
+                        () => import(`./Index-D9SZkpgS.js`),
                         __vite__mapDeps([
-                            40, 1, 8, 11, 7, 33, 14, 15, 20, 31, 6,
+                            41, 1, 33, 9, 8, 11, 7, 34, 14, 15, 20, 31, 6,
                         ]),
                     ),
             }),
@@ -10955,15 +10947,15 @@ var Nl = `PayHub Central`;
         if (!r) throw Error(`Page not found: ${e}`);
         return r.default ?? r;
     },
-    title: (e) => (e ? `${e} - ${Nl}` : Nl),
+    title: (e) => (e ? `${e} - ${Ml}` : Ml),
     layout: (e) => {
         switch (!0) {
             case e.startsWith(`auth/`):
-                return xl;
+                return bl;
             case e.startsWith(`settings/`):
-                return [fl, jl];
+                return [dl, Al];
             default:
-                return fl;
+                return dl;
         }
     },
     withApp: (e) => {
@@ -10973,13 +10965,13 @@ var Nl = `PayHub Central`;
             },
         });
     },
-    progress: { color: `#C24E00` },
+    progress: { color: `var(--brand)` },
 }),
-    Ml());
+    jl());
 export {
     tn as A,
     Et as B,
-    Fa as C,
+    Pa as C,
     cn as D,
     Si as E,
     Kt as F,
@@ -10991,32 +10983,32 @@ export {
     sn as O,
     qt as P,
     Ht as R,
-    Ha as S,
+    Va as S,
     Mi as T,
     Ct as V,
-    Ya as _,
-    qs as a,
-    Wa as b,
+    Ja as _,
+    Ks as a,
+    Ua as b,
     X as c,
-    bs as d,
-    _s as f,
-    no as g,
-    Ga as h,
-    Zs as i,
+    ys as d,
+    gs as f,
+    to as g,
+    Wa as h,
+    Xs as i,
     rn as j,
     nn as k,
     Z as l,
-    Ka as m,
-    Cl as n,
+    Ga as m,
+    Sl as n,
     Q as o,
-    Lo as p,
-    Us as r,
-    ks as s,
+    Io as p,
+    Hs as r,
+    Os as s,
     $ as t,
     Y as u,
-    io as v,
+    ro as v,
     ja as w,
-    Ua as x,
-    ao as y,
+    Ha as x,
+    io as y,
     Dt as z,
 };

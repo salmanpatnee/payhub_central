@@ -20,10 +20,10 @@ import {
     rt as v,
     ut as y,
 } from './wayfinder-BZPu7hPl.js';
-import { n as b, t as x } from './formatPercent-DUBB0xoz.js';
+import { n as b, t as x } from './formatPercent-BBRBXX0x.js';
 import { t as S } from './createLucideIcon-B933959x.js';
 import { t as C } from './inbox-DWr_PkQC.js';
-import { S as w, d as T, p as E, s as ee } from './app-BodD7Qwi.js';
+import { S as w, d as T, p as E, s as ee } from './app-B62nLDgs.js';
 import { i as D } from './formatRelative-D-S37FvD.js';
 import {
     a as O,
@@ -33,7 +33,7 @@ import {
     r as M,
     s as N,
     t as P,
-} from './TableRow-C0myH0NN.js';
+} from './TableRow-IBlTE7rH.js';
 import { t as F } from './Card-G-5AElBS.js';
 import { n as I, t as L } from './deploymentStatus-DAZueO0e.js';
 import { t as R } from './EmptyState-s-EDe2hW.js';
@@ -291,101 +291,95 @@ var H = { class: `flex items-center gap-3` },
                                                 g(`div`, Z, [
                                                     _(p(j), null, {
                                                         default: t(() => [
-                                                            _(
-                                                                p(A),
-                                                                {
-                                                                    class: `bg-muted/60`,
-                                                                },
-                                                                {
-                                                                    default: t(
-                                                                        () => [
-                                                                            _(
-                                                                                p(
-                                                                                    P,
-                                                                                ),
-                                                                                null,
-                                                                                {
-                                                                                    default:
-                                                                                        t(
-                                                                                            () => [
-                                                                                                _(
-                                                                                                    p(
-                                                                                                        M,
-                                                                                                    ),
-                                                                                                    {
-                                                                                                        class: `pl-4`,
-                                                                                                    },
-                                                                                                    {
-                                                                                                        default:
-                                                                                                            t(
-                                                                                                                () => [
-                                                                                                                    c(
-                                                                                                                        i(
-                                                                                                                            a.periodLabel,
-                                                                                                                        ),
-                                                                                                                        1,
-                                                                                                                    ),
-                                                                                                                ],
-                                                                                                            ),
-                                                                                                        _: 1,
-                                                                                                    },
-                                                                                                ),
-                                                                                                _(
-                                                                                                    p(
-                                                                                                        M,
-                                                                                                    ),
-                                                                                                    {
-                                                                                                        class: `text-right`,
-                                                                                                    },
-                                                                                                    {
-                                                                                                        default:
-                                                                                                            t(
-                                                                                                                () => [
-                                                                                                                    ...(m[1] ||=
-                                                                                                                        [
-                                                                                                                            c(
-                                                                                                                                `Paid`,
-                                                                                                                                -1,
-                                                                                                                            ),
-                                                                                                                        ]),
-                                                                                                                ],
-                                                                                                            ),
-                                                                                                        _: 1,
-                                                                                                    },
-                                                                                                ),
-                                                                                                _(
-                                                                                                    p(
-                                                                                                        M,
-                                                                                                    ),
-                                                                                                    {
-                                                                                                        class: `pr-4 text-right`,
-                                                                                                    },
-                                                                                                    {
-                                                                                                        default:
-                                                                                                            t(
-                                                                                                                () => [
-                                                                                                                    ...(m[2] ||=
-                                                                                                                        [
-                                                                                                                            c(
-                                                                                                                                ` Pending `,
-                                                                                                                                -1,
-                                                                                                                            ),
-                                                                                                                        ]),
-                                                                                                                ],
-                                                                                                            ),
-                                                                                                        _: 1,
-                                                                                                    },
-                                                                                                ),
-                                                                                            ],
-                                                                                        ),
-                                                                                    _: 1,
-                                                                                },
+                                                            _(p(A), null, {
+                                                                default: t(
+                                                                    () => [
+                                                                        _(
+                                                                            p(
+                                                                                P,
                                                                             ),
-                                                                        ],
-                                                                    ),
-                                                                    _: 1,
-                                                                },
-                                                            ),
+                                                                            null,
+                                                                            {
+                                                                                default:
+                                                                                    t(
+                                                                                        () => [
+                                                                                            _(
+                                                                                                p(
+                                                                                                    M,
+                                                                                                ),
+                                                                                                {
+                                                                                                    class: `pl-4`,
+                                                                                                },
+                                                                                                {
+                                                                                                    default:
+                                                                                                        t(
+                                                                                                            () => [
+                                                                                                                c(
+                                                                                                                    i(
+                                                                                                                        a.periodLabel,
+                                                                                                                    ),
+                                                                                                                    1,
+                                                                                                                ),
+                                                                                                            ],
+                                                                                                        ),
+                                                                                                    _: 1,
+                                                                                                },
+                                                                                            ),
+                                                                                            _(
+                                                                                                p(
+                                                                                                    M,
+                                                                                                ),
+                                                                                                {
+                                                                                                    class: `text-right`,
+                                                                                                },
+                                                                                                {
+                                                                                                    default:
+                                                                                                        t(
+                                                                                                            () => [
+                                                                                                                ...(m[1] ||=
+                                                                                                                    [
+                                                                                                                        c(
+                                                                                                                            `Paid`,
+                                                                                                                            -1,
+                                                                                                                        ),
+                                                                                                                    ]),
+                                                                                                            ],
+                                                                                                        ),
+                                                                                                    _: 1,
+                                                                                                },
+                                                                                            ),
+                                                                                            _(
+                                                                                                p(
+                                                                                                    M,
+                                                                                                ),
+                                                                                                {
+                                                                                                    class: `pr-4 text-right`,
+                                                                                                },
+                                                                                                {
+                                                                                                    default:
+                                                                                                        t(
+                                                                                                            () => [
+                                                                                                                ...(m[2] ||=
+                                                                                                                    [
+                                                                                                                        c(
+                                                                                                                            ` Pending `,
+                                                                                                                            -1,
+                                                                                                                        ),
+                                                                                                                    ]),
+                                                                                                            ],
+                                                                                                        ),
+                                                                                                    _: 1,
+                                                                                                },
+                                                                                            ),
+                                                                                        ],
+                                                                                    ),
+                                                                                _: 1,
+                                                                            },
+                                                                        ),
+                                                                    ],
+                                                                ),
+                                                                _: 1,
+                                                            }),
                                                             _(p(O), null, {
                                                                 default: t(
                                                                     () => [
@@ -695,7 +689,7 @@ var H = { class: `flex items-center gap-3` },
                                                                           'aria-pressed':
                                                                               b.value ===
                                                                               e.key,
-                                                                          class: `flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-foreground aria-pressed:text-background sm:flex-none`,
+                                                                          class: `flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-linear-to-br aria-pressed:from-brand-from aria-pressed:to-brand-to aria-pressed:text-white aria-pressed:shadow-sm sm:flex-none`,
                                                                           onClick:
                                                                               (
                                                                                   t,
