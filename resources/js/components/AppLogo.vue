@@ -1,11 +1,6 @@
 <template>
     <div class="flex items-center gap-2">
-        <span
-            class="hidden size-7 shrink-0 place-items-center rounded-[10px] bg-linear-to-br from-brand to-primary shadow-sm group-data-[collapsible=icon]:grid"
-            aria-hidden="true"
-        >
-            <span class="size-2.5 rounded-full bg-white"></span>
-        </span>
+        <img src="/favicon.svg" alt="" class="size-7 shrink-0" />
         <span
             class="text-lg font-semibold tracking-tight group-data-[collapsible=icon]:hidden"
         >

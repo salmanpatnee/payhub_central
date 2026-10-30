@@ -27,7 +27,7 @@ defineProps<{
 
     <div
         v-if="status"
-        class="mb-4 text-center text-sm font-medium text-green-600"
+        class="mb-4 text-center text-sm font-medium text-success"
     >
         {{ status }}
     </div>
@@ -49,7 +49,7 @@ defineProps<{
                     v-focus
                     :tabindex="1"
                     autocomplete="email"
-                    class="bg-auth-field"
+                    class="h-11 rounded-xl bg-auth-field"
                     placeholder="email@example.com"
                 />
                 <InputError :message="errors.email" />
@@ -63,7 +63,7 @@ defineProps<{
                     required
                     :tabindex="2"
                     autocomplete="current-password"
-                    class="bg-auth-field"
+                    class="h-11 rounded-xl bg-auth-field"
                     placeholder="Password"
                 />
                 <InputError :message="errors.password" />
@@ -78,7 +78,7 @@ defineProps<{
 
             <Button
                 type="submit"
-                class="mt-4 w-full"
+                class="mt-4 h-11 w-full rounded-xl text-base font-semibold"
                 :tabindex="4"
                 :disabled="processing"
                 data-test="login-button"

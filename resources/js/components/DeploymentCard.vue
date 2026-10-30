@@ -175,7 +175,7 @@ const notes = computed(() =>
             </p>
             <div v-else class="overflow-hidden rounded-xl border border-border">
                 <Table>
-                    <TableHeader class="bg-muted/60">
+                    <TableHeader>
                         <TableRow>
                             <TableHead class="pl-4">
                                 {{ periodLabel }}

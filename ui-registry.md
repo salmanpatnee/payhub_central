@@ -41,12 +41,12 @@ Last updated: 2026-10-30
 
 | Property | Class |
 | --- | --- |
-| Mark | `hidden size-7 rounded-[10px] bg-linear-to-br from-brand to-primary shadow-sm group-data-[collapsible=icon]:grid`, white dot `size-2.5 rounded-full` |
+| Mark | `<img src="/favicon.svg" class="size-7 shrink-0">`, always visible, also when the sidebar is collapsed |
 | "Pay" | `text-foreground`, semibold |
 | "Hub", "Central" | `font-light text-muted-foreground` |
 | Text size | `text-lg font-semibold tracking-tight`, hidden when the sidebar is collapsed |
 
-**Pattern notes:** the mark shows only when the sidebar is collapsed to icons; expanded, the wordmark stands alone (also on the login page). The brand orange is for the mark and large shapes only. It fails contrast for text.
+**Pattern notes:** the mark is the favicon image, shown left of the wordmark and alone when the sidebar is collapsed. The login page uses the same image above the wordmark. The brand orange is for the mark and large shapes only. It fails contrast for text.
 
 ### Sidebar (floating)
 
@@ -58,11 +58,11 @@ Last updated: 2026-10-30
 | Variant | `variant="floating"` `collapsible="icon"` |
 | Panel | `[data-variant='floating'] [data-sidebar='sidebar']` in `app.css`: white at 85% with blur, `rounded-[1.375rem]`, soft blue shadow |
 | Tokens | `--sidebar-foreground` blue grey, `--sidebar-border` `hsl(225 30% 91%)`, `--sidebar-accent` soft orange, `--sidebar-accent-foreground` deep orange |
-| Nav item | `rounded-xl hover:bg-muted`, active `data-[active=true]:bg-sidebar-accent font-semibold`, active keeps its tint on hover |
+| Nav item | `rounded-xl hover:bg-muted`, active is the favicon gradient: `data-[active=true]:bg-linear-to-br from-brand-from to-brand-to font-semibold text-white shadow-sm`, `hover:brightness-95` |
 | User button | `rounded-2xl border border-sidebar-border bg-muted/60 hover:bg-muted data-[state=open]:bg-muted` |
 | Page behind | `SidebarProvider` carries `page-glow`; `AppContent` is `bg-transparent` |
 
-**Pattern notes:** the sidebar floats over the glow, content sits straight on it (no white inset card). Orange appears only on the active item. No count badges.
+**Pattern notes:** the sidebar floats over the glow, content sits straight on it (no white inset card). Orange appears on the active item (gradient) and the logo mark. No count badges.
 
 ## Cards and numbers
 
@@ -116,7 +116,7 @@ Last updated: 2026-10-27
 ### Badge status variants
 
 File: `resources/js/components/ui/badge/index.ts`
-Last updated: 2026-10-27
+Last updated: 2026-10-30
 
 | Property | Class |
 | --- | --- |
@@ -127,6 +127,7 @@ Last updated: 2026-10-27
 | warning | `bg-warning-soft text-warning ring-warning-border` |
 | danger | `bg-danger-soft text-danger ring-danger-border` |
 | neutral | `bg-muted text-muted-foreground ring-border` |
+| default (the "You" tag) | `border-transparent bg-linear-to-br from-brand-from to-brand-to text-white`, not a status |
 
 **Pattern notes:** green, amber and red mean status and nothing else. A badge always carries a word.
 
@@ -193,7 +194,7 @@ Last updated: 2026-10-30
 | --- | --- |
 | Track | `inline-flex w-full gap-0.5 rounded-xl border border-border bg-card p-1 shadow-sm sm:w-auto` |
 | Button | `flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold text-muted-foreground hover:text-foreground sm:flex-none` |
-| Selected | `aria-pressed:bg-foreground aria-pressed:text-background` |
+| Selected | `aria-pressed:bg-linear-to-br aria-pressed:from-brand-from aria-pressed:to-brand-to aria-pressed:text-white aria-pressed:shadow-sm` (the favicon gradient) |
 | Focus | `focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none` |
 
 **Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. It sits in the `PageHeader` actions slot, so it is full width on phones and right aligned from `sm`. State lives in the page, not the URL. The deployment page (`pages/deployments/Show.vue`) still uses the older grey track (`bg-muted`, selected `bg-card`) with four options; align it when that page is restyled.
@@ -276,7 +277,8 @@ Last updated: 2026-10-27
 | Property | Class |
 | --- | --- |
 | Wrapper | `relative w-full overflow-x-auto` (scrolls sideways inside itself) |
-| Head cell | `h-10 px-2 text-[11px] font-semibold tracking-widest uppercase text-muted-foreground` |
+| Head row | `TableHeader` is `bg-table-head` (clear blue grey, `hsl(224 45% 90%)`) with `border-b`. Pages do not override it |
+| Head cell | `h-10 px-2 text-[11px] font-semibold tracking-widest uppercase text-table-head-foreground` (dark blue grey) |
 | Body cell | `p-2 align-middle whitespace-nowrap` |
 | Row | `border-b hover:bg-muted/50` |
 
@@ -308,20 +310,22 @@ Last updated: 2026-10-28
 ### Login form (auth pages)
 
 File: `resources/js/pages/auth/Login.vue`, `resources/js/layouts/auth/AuthSimpleLayout.vue`
-Last updated: 2026-10-27
+Last updated: 2026-10-30
 
 | Property | Class |
 | --- | --- |
-| Page background | `bg-background`, centred with `flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10` |
+| Page background | `page-glow`, centred with `flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10` |
+| Logo | `<img src="/favicon.svg" class="size-12 rounded-2xl shadow-lg">` above the wordmark `text-2xl font-bold tracking-tight` ("Hub" `font-light text-muted-foreground`) |
+| Card | `rounded-3xl border border-border bg-card p-8 shadow-xl`, `max-w-sm` |
 | Form layout | `flex flex-col gap-6`, fields `grid gap-6`, one field `grid gap-2` (Label, then Input, then `InputError`) |
-| Title | `text-xl font-medium` (the layout's only `h1`) |
+| Title | `text-xl font-semibold tracking-tight` (the layout's only `h1`) |
 | Description | `text-sm text-muted-foreground` |
-| Submit | kit `Button` (primary), `mt-4 w-full`, `Spinner` while `processing` |
+| Inputs | kit `Input` with `h-11 rounded-xl bg-auth-field` |
+| Submit | kit `Button` (default, favicon gradient): `mt-4 h-11 w-full rounded-xl text-base font-semibold`, `Spinner` while `processing` |
 | Remember me | kit `Checkbox` inside a `Label` with `flex items-center space-x-3` |
-| Status message | `mb-4 text-center text-sm font-medium text-green-600` |
-| Shadow / border | none (no card around the form) |
+| Status message | `mb-4 text-center text-sm font-medium text-success` |
 
-**Pattern notes:** no "forgot password" or sign up links (invite only, spec 0004). Every auth page uses the same field stack, so new auth forms (such as the two factor code) should match it.
+**Pattern notes:** no "forgot password" or sign up links (invite only, spec 0004). Every auth page uses the same layout and field stack, so new auth forms (such as the two factor code) should match it.
 
 ### Read only field (profile email)
 
@@ -349,7 +353,7 @@ Last updated: 2026-10-27
 | Hint | `text-sm text-muted-foreground` |
 | Secret field | `PasswordInput`, `autocomplete="off"`, `data-1p-ignore="true"`, `data-lpignore="true"`, `aria-label`, cleared with `reset-on-error` |
 | On or off switch | kit `Checkbox` inside a `Label` with `flex items-center space-x-3`, same as Remember me |
-| Submit | kit `Button` (primary) with `Spinner` while `processing`, not full width |
+| Submit | kit `Button` (default, favicon gradient) with `Spinner` while `processing`, not full width |
 | Shadow / border | none |
 
 **Pattern notes:** use this for every admin form (edit deployment in feature 12, staff in feature 13). Errors sit directly under their field. Never refill a secret field after an error. Put text containing `//` in a script constant, not in a template attribute.
@@ -358,10 +362,27 @@ Last updated: 2026-10-27
 
 | Property | Rule |
 | --- | --- |
-| Focus | One rule: `2px solid var(--ring)` outline, offset 2px. Kit parts use `focus-visible:ring-[3px] ring-ring` at full strength, never `ring-ring/50` |
-| Primary action | `bg-primary text-primary-foreground` (dark orange, 4.8:1) |
+| Focus | One rule: `2px solid var(--ring)` outline, offset 2px. `--ring` is `var(--brand)` (`#ff5a00`, the favicon orange). Kit parts use `focus-visible:ring-[3px] ring-ring` at full strength, never `ring-ring/50` |
+| Primary action | kit `Button` default: `bg-linear-to-br from-brand-from to-brand-to text-white` (the favicon gradient, about 3.1:1 at the dark end). `--primary` (dark orange, 4.8:1) is still for links and tinted chips |
 | Muted text | `text-muted-foreground` (5.7:1 on white) |
 | Form field border | `--input` (55% grey, 3:1) |
 | Radius | controls `rounded-md`, cards `rounded-xl` |
 | Numbers | `tabular-nums` on money, tables and counts |
-| Colours | tokens only, no hex or raw palette classes in components |
+| Colours | tokens only, no hex or raw palette classes in components. The brand gradient is `from-brand-from to-brand-to` |
+| Loading bar | Inertia `progress.color` is `var(--brand)` in `app.ts` |
+
+### Row action icon buttons (lists)
+
+File: `resources/js/pages/deployments/Index.vue`, `resources/js/pages/staff/Index.vue`
+Last updated: 2026-10-30
+
+| Property | Class |
+| --- | --- |
+| Button | kit `Button` `variant="outline" size="icon-sm"` (`size-8`) |
+| Edit | `Pencil` icon, inside a `Link` (`as-child`) |
+| Pause / Resume | `Pause` icon, `Play` when paused, `Spinner` while saving |
+| Remove | `Trash2` icon, `class="text-danger hover:text-danger"` |
+| Wrapper | `flex items-center justify-end gap-2` |
+| Labels | `title` for the hover tooltip and `aria-label` with the row name ("Edit Acme Pay") |
+
+**Pattern notes:** every icon button needs both `title` and an `aria-label` that names the row. Page level actions ("Add deployment", "Add staff") keep text.

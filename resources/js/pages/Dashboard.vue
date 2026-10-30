@@ -90,7 +90,7 @@ defineOptions({
                         :key="option.key"
                         type="button"
                         :aria-pressed="period === option.key"
-                        class="flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-foreground aria-pressed:text-background sm:flex-none"
+                        class="flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-linear-to-br aria-pressed:from-brand-from aria-pressed:to-brand-to aria-pressed:text-white aria-pressed:shadow-sm sm:flex-none"
                         @click="period = option.key"
                     >
                         {{ option.label }}

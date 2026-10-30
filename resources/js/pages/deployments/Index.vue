@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Head, Link, router } from '@inertiajs/vue3';
-import { Inbox } from '@lucide/vue';
+import { Inbox, Pause, Pencil, Play, Trash2 } from '@lucide/vue';
 import { nextTick, ref } from 'vue';
 import EmptyState from '@/components/EmptyState.vue';
 import PageHeader from '@/components/PageHeader.vue';
@@ -111,14 +111,14 @@ function focusTitle(): void {
 
         <section
             v-else
-            class="overflow-hidden rounded-xl border border-border/70 bg-card shadow-sm"
+            class="overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm"
         >
             <div class="overflow-x-auto">
                 <Table>
                     <TableCaption class="sr-only">
                         Every deployment, by name.
                     </TableCaption>
-                    <TableHeader class="bg-muted/40">
+                    <TableHeader>
                         <TableRow class="hover:bg-transparent">
                             <TableHead scope="col" class="px-4">Name</TableHead>
                             <TableHead scope="col" class="px-4">
@@ -166,38 +166,44 @@ function focusTitle(): void {
                                 >
                                     <Button
                                         variant="outline"
-                                        size="sm"
+                                        size="icon-sm"
                                         as-child
                                     >
                                         <Link
                                             :href="row.editHref"
                                             :aria-label="`Edit ${row.name}`"
+                                            title="Edit"
                                         >
-                                            Edit
+                                            <Pencil />
                                         </Link>
                                     </Button>
                                     <Button
                                         variant="outline"
-                                        size="sm"
+                                        size="icon-sm"
                                         :disabled="togglingId === row.id"
                                         :aria-label="`${row.state === 'paused' ? 'Resume' : 'Pause'} ${row.name}`"
-                                        @click="toggleActive(row)"
-                                    >
-                                        <Spinner v-if="togglingId === row.id" />
-                                        {{
+                                        :title="
                                             row.state === 'paused'
                                                 ? 'Resume'
                                                 : 'Pause'
-                                        }}
+                                        "
+                                        @click="toggleActive(row)"
+                                    >
+                                        <Spinner v-if="togglingId === row.id" />
+                                        <Play
+                                            v-else-if="row.state === 'paused'"
+                                        />
+                                        <Pause v-else />
                                     </Button>
                                     <Button
                                         variant="outline"
-                                        size="sm"
+                                        size="icon-sm"
                                         class="text-danger hover:text-danger"
                                         :aria-label="`Remove ${row.name}`"
+                                        title="Remove"
                                         @click="askRemove(row)"
                                     >
-                                        Remove
+                                        <Trash2 />
                                     </Button>
                                 </div>
                             </TableCell>

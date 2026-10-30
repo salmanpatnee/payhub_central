@@ -28,7 +28,7 @@ void createInertiaApp({
         });
     },
     progress: {
-        color: '#C24E00',
+        color: 'var(--brand)',
     },
 });
 

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { CreditCard } from '@lucide/vue';
 import { home } from '@/routes';
 
 defineProps<{
@@ -11,23 +10,33 @@ defineProps<{
 
 <template>
     <div
-        class="flex min-h-svh flex-col items-center justify-center gap-6 bg-auth-bg bg-[radial-gradient(var(--auth-dot)_1px,transparent_1px)] bg-[length:20px_20px] p-6 md:p-10"
+        class="page-glow flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10"
     >
         <div class="w-full max-w-sm">
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-8">
                 <Link
                     :href="home()"
-                    class="flex items-center justify-center gap-2 text-2xl font-bold"
+                    class="flex flex-col items-center gap-3 rounded-lg text-2xl font-bold tracking-tight"
                 >
-                    <CreditCard class="size-7 text-brand" />
+                    <img
+                        src="/favicon.svg"
+                        alt=""
+                        class="size-12 rounded-2xl shadow-lg"
+                    />
                     <span
-                        >Pay<span class="text-muted-foreground">Hub</span>
+                        >Pay<span class="font-light text-muted-foreground"
+                            >Hub</span
+                        >
                         Central</span
                     >
                 </Link>
-                <div class="rounded-2xl bg-card p-6 shadow-lg">
+                <div
+                    class="rounded-3xl border border-border bg-card p-8 shadow-xl"
+                >
                     <div class="mb-6 space-y-1">
-                        <h1 class="text-lg font-semibold">{{ title }}</h1>
+                        <h1 class="text-xl font-semibold tracking-tight">
+                            {{ title }}
+                        </h1>
                         <p class="text-sm text-muted-foreground">
                             {{ description }}
                         </p>

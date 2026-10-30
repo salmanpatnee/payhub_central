@@ -19,7 +19,7 @@ import { formatDate } from '@/lib/formatRelative';
 import { dashboard } from '@/routes';
 import { create, destroy, edit, index } from '@/routes/staff';
 import type { StaffRow } from '@/types';
-import { Users } from '@lucide/vue';
+import { Pencil, Trash2, Users } from '@lucide/vue';
 
 defineProps<{
     staff: StaffRow[];
@@ -82,14 +82,14 @@ function focusTitle(): void {
 
         <section
             v-else
-            class="overflow-hidden rounded-xl border border-border/70 bg-card shadow-sm"
+            class="overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm"
         >
             <div class="overflow-x-auto">
                 <Table>
                     <TableCaption class="sr-only">
                         Every login, by name.
                     </TableCaption>
-                    <TableHeader class="bg-muted/40">
+                    <TableHeader>
                         <TableRow class="hover:bg-transparent">
                             <TableHead scope="col" class="px-4">Name</TableHead>
                             <TableHead scope="col" class="px-4">
@@ -126,24 +126,26 @@ function focusTitle(): void {
                                 >
                                     <Button
                                         variant="outline"
-                                        size="sm"
+                                        size="icon-sm"
                                         as-child
                                     >
                                         <Link
                                             :href="edit(row.id)"
                                             :aria-label="`Edit ${row.name}`"
+                                            title="Edit"
                                         >
-                                            Edit
+                                            <Pencil />
                                         </Link>
                                     </Button>
                                     <Button
                                         variant="outline"
-                                        size="sm"
+                                        size="icon-sm"
                                         class="text-danger hover:text-danger"
                                         :aria-label="`Remove ${row.name}`"
+                                        title="Remove"
                                         @click="askRemove(row)"
                                     >
-                                        Remove
+                                        <Trash2 />
                                     </Button>
                                 </div>
                             </TableCell>
