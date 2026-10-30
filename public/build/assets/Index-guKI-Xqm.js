@@ -19,7 +19,7 @@ import {
     rt as _,
 } from './wayfinder-BZPu7hPl.js';
 import { t as v } from './inbox-DWr_PkQC.js';
-import { c as y, d as b, p as x, s as S } from './app-CPSAOrcH.js';
+import { c as y, d as b, p as x, s as S } from './app-BodD7Qwi.js';
 import {
     a as C,
     i as w,
@@ -33,8 +33,8 @@ import { t as A } from './TableCaption-M4KzGuv1.js';
 import { t as j } from './deploymentStatus-DAZueO0e.js';
 import { t as M } from './EmptyState-s-EDe2hW.js';
 import { t as N } from './PageHeader-D9oPzwwI.js';
-import { t as P } from './Spinner-HKBXW4sQ.js';
-import { t as F } from './RemoveDeploymentDialog-ZkrYP0UL.js';
+import { t as P } from './Spinner-B65Ey6Ws.js';
+import { t as F } from './RemoveDeploymentDialog-CHOiABBU.js';
 var I = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
     L = {
         key: 1,
@@ -47,7 +47,7 @@ var I = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
     H = u({
         layout: {
             breadcrumbs: [
-                { title: `Home`, href: b() },
+                { title: `Dashboard`, href: b() },
                 { title: `Deployments`, href: y() },
             ],
         },

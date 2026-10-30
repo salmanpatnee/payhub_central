@@ -28,7 +28,7 @@ import {
     p as w,
     r as T,
     x as E,
-} from './app-CPSAOrcH.js';
+} from './app-BodD7Qwi.js';
 import { t as D } from './formatRelative-D-S37FvD.js';
 import {
     a as O,
@@ -42,7 +42,7 @@ import {
 import { t as F } from './TableCaption-M4KzGuv1.js';
 import { t as I } from './EmptyState-s-EDe2hW.js';
 import { t as L } from './PageHeader-D9oPzwwI.js';
-import { t as R } from './Spinner-HKBXW4sQ.js';
+import { t as R } from './Spinner-B65Ey6Ws.js';
 import {
     a as z,
     i as B,
@@ -50,7 +50,7 @@ import {
     o as H,
     r as U,
     t as W,
-} from './dialog-BJUVjlBY.js';
+} from './dialog-CrsaE3vj.js';
 var G = u({
         __name: `RemoveStaffDialog`,
         props: y(
@@ -217,7 +217,7 @@ var G = u({
     X = u({
         layout: {
             breadcrumbs: [
-                { title: `Home`, href: x() },
+                { title: `Dashboard`, href: x() },
                 { title: `Staff`, href: C() },
             ],
         },

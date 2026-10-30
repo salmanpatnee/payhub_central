@@ -19,11 +19,11 @@ import {
     u as _,
 } from './wayfinder-BZPu7hPl.js';
 import { t as v } from './Label-DoYAx_a7.js';
-import { t as y } from './PasswordInput-f5h6RjSk.js';
-import { n as b, t as x } from './InputError-195jRyWD.js';
-import { d as S, o as C, p as w } from './app-CPSAOrcH.js';
+import { t as y } from './PasswordInput-BxRi6qF1.js';
+import { n as b, t as x } from './InputError-COuguPsA.js';
+import { d as S, o as C, p as w } from './app-BodD7Qwi.js';
 import { t as T } from './PageHeader-D9oPzwwI.js';
-import { t as E } from './Spinner-HKBXW4sQ.js';
+import { t as E } from './Spinner-B65Ey6Ws.js';
 import { t as D } from './StaffController-C09qeu_l.js';
 var O = { class: `mx-auto w-full max-w-7xl space-y-8 p-4 md:p-6` },
     k = { class: `grid gap-2` },
@@ -41,7 +41,7 @@ var O = { class: `mx-auto w-full max-w-7xl space-y-8 p-4 md:p-6` },
                 d(() => {
                     m({
                         breadcrumbs: [
-                            { title: `Home`, href: S() },
+                            { title: `Dashboard`, href: S() },
                             { title: `Staff`, href: C() },
                             { title: F.person.name, href: `#` },
                         ],

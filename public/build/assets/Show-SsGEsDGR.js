@@ -36,9 +36,9 @@ import {
 } from './wayfinder-BZPu7hPl.js';
 import { a as M, s as N, t as P } from './useForwardExpose-B78G7oXS.js';
 import { t as F } from './useForwardPropsEmits-CqoMAl8h.js';
-import { n as I, t as L } from './formatPercent-C2UIZrJR.js';
+import { n as I, t as L } from './formatPercent-DUBB0xoz.js';
 import { t as ie } from './createLucideIcon-B933959x.js';
-import { c as R, d as ae, w as oe } from './app-CPSAOrcH.js';
+import { c as R, d as ae, w as oe } from './app-BodD7Qwi.js';
 import { i as z } from './formatRelative-D-S37FvD.js';
 import {
     a as B,
@@ -560,7 +560,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
             (S(() => {
                 te({
                     breadcrumbs: [
-                        { title: `Home`, href: ae() },
+                        { title: `Dashboard`, href: ae() },
                         { title: `Deployments`, href: R() },
                         { title: t.deployment.name, href: n.url },
                     ],

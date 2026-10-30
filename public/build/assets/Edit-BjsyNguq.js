@@ -21,13 +21,13 @@ import {
     u as y,
 } from './wayfinder-BZPu7hPl.js';
 import { t as b } from './Label-DoYAx_a7.js';
-import { t as x } from './PasswordInput-f5h6RjSk.js';
-import { n as S, t as C } from './InputError-195jRyWD.js';
-import { c as w, d as T, l as E, p as D } from './app-CPSAOrcH.js';
+import { t as x } from './PasswordInput-BxRi6qF1.js';
+import { n as S, t as C } from './InputError-COuguPsA.js';
+import { c as w, d as T, l as E, p as D } from './app-BodD7Qwi.js';
 import { t as O } from './PageHeader-D9oPzwwI.js';
-import { t as k } from './Spinner-HKBXW4sQ.js';
+import { t as k } from './Spinner-B65Ey6Ws.js';
 import { t as A } from './DeploymentController-11eEqESw.js';
-import { t as j } from './RemoveDeploymentDialog-ZkrYP0UL.js';
+import { t as j } from './RemoveDeploymentDialog-CHOiABBU.js';
 var M = { class: `mx-auto w-full max-w-7xl space-y-8 p-4 md:p-6` },
     N = { class: `grid gap-2` },
     P = { class: `text-sm font-medium` },
@@ -49,7 +49,7 @@ var M = { class: `mx-auto w-full max-w-7xl space-y-8 p-4 md:p-6` },
                 p(() => {
                     g({
                         breadcrumbs: [
-                            { title: `Home`, href: T() },
+                            { title: `Dashboard`, href: T() },
                             { title: `Deployments`, href: w() },
                             {
                                 title: B.deployment.name,

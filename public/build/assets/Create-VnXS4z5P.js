@@ -16,11 +16,11 @@ import {
     u as m,
 } from './wayfinder-BZPu7hPl.js';
 import { t as h } from './Label-DoYAx_a7.js';
-import { t as g } from './PasswordInput-f5h6RjSk.js';
-import { n as _, t as v } from './InputError-195jRyWD.js';
-import { d as y, o as b, p as x, r as S } from './app-CPSAOrcH.js';
+import { t as g } from './PasswordInput-BxRi6qF1.js';
+import { n as _, t as v } from './InputError-COuguPsA.js';
+import { d as y, o as b, p as x, r as S } from './app-BodD7Qwi.js';
 import { t as C } from './PageHeader-D9oPzwwI.js';
-import { t as w } from './Spinner-HKBXW4sQ.js';
+import { t as w } from './Spinner-B65Ey6Ws.js';
 import { t as T } from './StaffController-C09qeu_l.js';
 var E = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
     D = { class: `grid gap-2` },
@@ -30,7 +30,7 @@ var E = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
     j = c({
         layout: {
             breadcrumbs: [
-                { title: `Home`, href: y() },
+                { title: `Dashboard`, href: y() },
                 { title: `Staff`, href: b() },
                 { title: `Add staff`, href: S() },
             ],
