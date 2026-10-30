@@ -5,55 +5,53 @@ import {
     K as a,
     Nn as o,
     On as s,
-    Sr as ee,
-    Tt as c,
-    Vt as l,
-    _r as u,
-    at as d,
-    br as f,
-    d as p,
-    dr as m,
-    en as h,
-    ft as g,
-    g as _,
-    h as v,
-    ht as y,
-    ir as b,
-    it as x,
-    kn as S,
-    mr as C,
-    nt as w,
-    on as T,
-    ot as E,
-    p as te,
-    pt as D,
-    r as O,
-    rt as k,
-    sn as A,
-    ut as ne,
-    vr as j,
-    yr as re,
+    Sr as c,
+    Tt as l,
+    Vt as u,
+    _r as d,
+    at as f,
+    br as p,
+    d as m,
+    dr as h,
+    en as g,
+    ft as _,
+    g as v,
+    h as y,
+    ht as b,
+    ir as x,
+    it as S,
+    kn as C,
+    mr as w,
+    nt as T,
+    on as E,
+    ot as D,
+    p as ee,
+    pt as O,
+    r as k,
+    rt as A,
+    sn as j,
+    vr as M,
+    yr as te,
 } from './wayfinder-BZPu7hPl.js';
-import { a as M, s as N, t as P } from './useForwardExpose-B78G7oXS.js';
-import { t as F } from './useForwardPropsEmits-CqoMAl8h.js';
-import { n as I, t as L } from './formatPercent-BBRBXX0x.js';
-import { t as ie } from './createLucideIcon-B933959x.js';
-import { c as R, d as ae, w as oe } from './app-B62nLDgs.js';
-import { i as z } from './formatRelative-D-S37FvD.js';
+import { a as N, s as P, t as F } from './useForwardExpose-B78G7oXS.js';
+import { t as ne } from './useForwardPropsEmits-CqoMAl8h.js';
+import { n as I, t as L } from './formatPercent-DS8JK34D.js';
+import { t as R } from './createLucideIcon-B933959x.js';
+import { c as z, d as re, w as ie } from './app-DTu1UyN-.js';
+import { i as B } from './formatRelative-D-S37FvD.js';
 import {
-    a as B,
-    i as V,
-    n as H,
-    o as U,
-    r as W,
-    s as G,
-    t as K,
+    a as V,
+    i as H,
+    n as U,
+    o as W,
+    r as G,
+    s as K,
+    t as q,
 } from './TableRow-IBlTE7rH.js';
-import { t as q } from './TableCaption-M4KzGuv1.js';
-import { n as se, t as ce } from './deploymentStatus-DAZueO0e.js';
-import { t as le } from './PageHeader-D9oPzwwI.js';
-var [J, ue] = e(`CollapsibleRoot`),
-    de = y({
+import { t as J } from './TableCaption-M4KzGuv1.js';
+import { n as ae, t as oe } from './deploymentStatus-DAZueO0e.js';
+var [Y, se] = e(`CollapsibleRoot`),
+    ce = b({
         __name: `CollapsibleRoot`,
         props: {
             defaultOpen: { type: Boolean, required: !1, default: !1 },
@@ -66,13 +64,13 @@ var [J, ue] = e(`CollapsibleRoot`),
         emits: [`update:open`],
         setup(e, { expose: t, emit: n }) {
             let r = e,
-                i = N(r, `open`, n, {
+                i = P(r, `open`, n, {
                     defaultValue: r.defaultOpen,
                     passive: r.open === void 0,
                 }),
-                { disabled: a, unmountOnHide: s } = m(r);
+                { disabled: a, unmountOnHide: s } = h(r);
             return (
-                ue({
+                se({
                     contentId: ``,
                     disabled: a,
                     open: i,
@@ -82,20 +80,20 @@ var [J, ue] = e(`CollapsibleRoot`),
                     },
                 }),
                 t({ open: i }),
-                P(),
+                F(),
                 (t, n) => (
-                    h(),
-                    x(
-                        C(O),
+                    g(),
+                    S(
+                        w(k),
                         {
                             as: e.as,
                             'as-child': r.asChild,
-                            'data-state': C(i) ? `open` : `closed`,
-                            'data-disabled': C(a) ? `` : void 0,
+                            'data-state': w(i) ? `open` : `closed`,
+                            'data-disabled': w(a) ? `` : void 0,
                         },
                         {
                             default: o(() => [
-                                A(t.$slots, `default`, { open: C(i) }),
+                                j(t.$slots, `default`, { open: w(i) }),
                             ]),
                             _: 3,
                         },
@@ -106,7 +104,7 @@ var [J, ue] = e(`CollapsibleRoot`),
             );
         },
     }),
-    fe = y({
+    le = b({
         inheritAttrs: !1,
         __name: `CollapsibleContent`,
         props: {
@@ -116,92 +114,92 @@ var [J, ue] = e(`CollapsibleRoot`),
         },
         emits: [`contentFound`],
         setup(e, { emit: a }) {
-            let ee = e,
-                c = a,
-                u = J();
-            u.contentId ||= t(void 0, `reka-collapsible-content`);
-            let f = b(),
-                { forwardRef: p, currentElement: m } = P(),
-                g = b(0),
-                _ = b(0),
-                v = w(() => u.open.value),
-                y = b(v.value),
-                S = b();
+            let c = e,
+                l = a,
+                d = Y();
+            d.contentId ||= t(void 0, `reka-collapsible-content`);
+            let p = x(),
+                { forwardRef: m, currentElement: h } = F(),
+                _ = x(0),
+                v = x(0),
+                y = T(() => d.open.value),
+                b = x(y.value),
+                C = x();
             s(
-                () => [v.value, f.value?.present],
+                () => [y.value, p.value?.present],
                 async () => {
-                    await l();
-                    let e = m.value;
+                    await u();
+                    let e = h.value;
                     if (!e) return;
-                    ((S.value = S.value || {
+                    ((C.value = C.value || {
                         transitionDuration: e.style.transitionDuration,
                         animationName: e.style.animationName,
                     }),
                         (e.style.transitionDuration = `0s`),
                         (e.style.animationName = `none`));
                     let t = e.getBoundingClientRect();
-                    ((_.value = t.height),
-                        (g.value = t.width),
-                        y.value ||
+                    ((v.value = t.height),
+                        (_.value = t.width),
+                        b.value ||
                             ((e.style.transitionDuration =
-                                S.value.transitionDuration),
-                            (e.style.animationName = S.value.animationName)));
+                                C.value.transitionDuration),
+                            (e.style.animationName = C.value.animationName)));
                 },
                 { immediate: !0 },
             );
-            let T = w(() => y.value && u.open.value);
+            let E = T(() => b.value && d.open.value);
             return (
                 i(() => {
                     requestAnimationFrame(() => {
-                        y.value = !1;
+                        b.value = !1;
                     });
                 }),
-                M(m, `beforematch`, (e) => {
+                N(h, `beforematch`, (e) => {
                     requestAnimationFrame(() => {
-                        (u.onOpenToggle(), c(`contentFound`));
+                        (d.onOpenToggle(), l(`contentFound`));
                     });
                 }),
                 (t, i) => (
-                    h(),
-                    x(
-                        C(n),
+                    g(),
+                    S(
+                        w(n),
                         {
                             ref_key: `presentRef`,
-                            ref: f,
-                            present: e.forceMount || C(u).open.value,
+                            ref: p,
+                            present: e.forceMount || w(d).open.value,
                             'force-mount': !0,
                         },
                         {
                             default: o(({ present: n }) => [
-                                D(
-                                    C(O),
+                                O(
+                                    w(k),
                                     r(t.$attrs, {
-                                        id: C(u).contentId,
-                                        ref: C(p),
-                                        'as-child': ee.asChild,
+                                        id: w(d).contentId,
+                                        ref: w(m),
+                                        'as-child': c.asChild,
                                         as: e.as,
                                         hidden: n
                                             ? void 0
-                                            : C(u).unmountOnHide.value
+                                            : w(d).unmountOnHide.value
                                               ? ``
                                               : `until-found`,
-                                        'data-state': T.value
+                                        'data-state': E.value
                                             ? void 0
-                                            : C(u).open.value
+                                            : w(d).open.value
                                               ? `open`
                                               : `closed`,
-                                        'data-disabled': C(u).disabled?.value
+                                        'data-disabled': w(d).disabled?.value
                                             ? ``
                                             : void 0,
                                         style: {
-                                            '--reka-collapsible-content-height': `${_.value}px`,
-                                            '--reka-collapsible-content-width': `${g.value}px`,
+                                            '--reka-collapsible-content-height': `${v.value}px`,
+                                            '--reka-collapsible-content-width': `${_.value}px`,
                                         },
                                     }),
                                     {
                                         default: o(() => [
-                                            !C(u).unmountOnHide.value || n
-                                                ? A(
+                                            !w(d).unmountOnHide.value || n
+                                                ? j(
                                                       t.$slots,
                                                       `default`,
                                                       {},
@@ -209,7 +207,7 @@ var [J, ue] = e(`CollapsibleRoot`),
                                                       void 0,
                                                       0,
                                                   )
-                                                : d(`v-if`, !0),
+                                                : f(`v-if`, !0),
                                         ]),
                                         _: 2,
                                     },
@@ -234,7 +232,7 @@ var [J, ue] = e(`CollapsibleRoot`),
             );
         },
     }),
-    pe = y({
+    ue = b({
         __name: `CollapsibleTrigger`,
         props: {
             asChild: { type: Boolean, required: !1 },
@@ -242,24 +240,24 @@ var [J, ue] = e(`CollapsibleRoot`),
         },
         setup(e) {
             let t = e;
-            P();
-            let n = J();
+            F();
+            let n = Y();
             return (r, i) => (
-                h(),
-                x(
-                    C(O),
+                g(),
+                S(
+                    w(k),
                     {
                         type: e.as === `button` ? `button` : void 0,
                         as: e.as,
                         'as-child': t.asChild,
-                        'aria-controls': C(n).contentId,
-                        'aria-expanded': C(n).open.value,
-                        'data-state': C(n).open.value ? `open` : `closed`,
-                        'data-disabled': C(n).disabled?.value ? `` : void 0,
-                        disabled: C(n).disabled?.value,
-                        onClick: C(n).onOpenToggle,
+                        'aria-controls': w(n).contentId,
+                        'aria-expanded': w(n).open.value,
+                        'data-state': w(n).open.value ? `open` : `closed`,
+                        'data-disabled': w(n).disabled?.value ? `` : void 0,
+                        disabled: w(n).disabled?.value,
+                        onClick: w(n).onOpenToggle,
                     },
-                    { default: o(() => [A(r.$slots, `default`)]), _: 3 },
+                    { default: o(() => [j(r.$slots, `default`)]), _: 3 },
                     8,
                     [
                         `type`,
@@ -276,12 +274,27 @@ var [J, ue] = e(`CollapsibleRoot`),
             );
         },
     }),
-    me = ie({
+    de = R({
         name: `chevron-down`,
         size: 24,
         node: [[`path`, { d: `m6 9 6 6 6-6`, key: `qrunsl` }]],
     }),
-    he = y({
+    fe = R({
+        name: `external-link`,
+        size: 24,
+        node: [
+            [`path`, { d: `M15 3h6v6`, key: `1q9fwt` }],
+            [`path`, { d: `M10 14 21 3`, key: `gplh6r` }],
+            [
+                `path`,
+                {
+                    d: `M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6`,
+                    key: `a6xqqp`,
+                },
+            ],
+        ],
+    }),
+    pe = b({
         __name: `Collapsible`,
         props: {
             defaultOpen: { type: Boolean },
@@ -293,14 +306,14 @@ var [J, ue] = e(`CollapsibleRoot`),
         },
         emits: [`update:open`],
         setup(e, { emit: t }) {
-            let n = F(e, t);
+            let n = ne(e, t);
             return (e, t) => (
-                h(),
-                x(
-                    C(de),
-                    r({ 'data-slot': `collapsible` }, C(n)),
+                g(),
+                S(
+                    w(ce),
+                    r({ 'data-slot': `collapsible` }, w(n)),
                     {
-                        default: o((t) => [A(e.$slots, `default`, j(c(t)))]),
+                        default: o((t) => [j(e.$slots, `default`, M(l(t)))]),
                         _: 3,
                     },
                     16,
@@ -308,7 +321,7 @@ var [J, ue] = e(`CollapsibleRoot`),
             );
         },
     }),
-    ge = y({
+    me = b({
         __name: `CollapsibleContent`,
         props: {
             forceMount: { type: Boolean },
@@ -318,167 +331,131 @@ var [J, ue] = e(`CollapsibleRoot`),
         setup(e) {
             let t = e;
             return (e, n) => (
-                h(),
-                x(
-                    C(fe),
+                g(),
+                S(
+                    w(le),
                     r({ 'data-slot': `collapsible-content` }, t),
-                    { default: o(() => [A(e.$slots, `default`)]), _: 3 },
+                    { default: o(() => [j(e.$slots, `default`)]), _: 3 },
                     16,
                 )
             );
         },
     }),
-    _e = y({
+    he = b({
         __name: `CollapsibleTrigger`,
         props: { asChild: { type: Boolean }, as: {} },
         setup(e) {
             let t = e;
             return (e, n) => (
-                h(),
-                x(
-                    C(pe),
+                g(),
+                S(
+                    w(ue),
                     r({ 'data-slot': `collapsible-trigger` }, t),
-                    { default: o(() => [A(e.$slots, `default`)]), _: 3 },
+                    { default: o(() => [j(e.$slots, `default`)]), _: 3 },
                     16,
                 )
             );
         },
     }),
-    ve = [
-        `Jan`,
-        `Feb`,
-        `Mar`,
-        `Apr`,
-        `May`,
-        `Jun`,
-        `Jul`,
-        `Aug`,
-        `Sep`,
-        `Oct`,
-        `Nov`,
-        `Dec`,
-    ],
-    ye = 864e5;
-function be(e) {
-    let t = e?.match(
-        /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}):(\d{2}))?/,
-    );
-    if (!t) return null;
-    let [n, r, i] = [t[1], t[2], t[3]].map(Number),
-        a = Date.UTC(n, r - 1, i),
-        o = new Date(a);
-    return o.getUTCFullYear() !== n ||
-        o.getUTCMonth() !== r - 1 ||
-        o.getUTCDate() !== i
-        ? null
-        : {
-              at: a,
-              midnight:
-                  t[4] === void 0 ||
-                  (t[4] === `00` && t[5] === `00` && t[6] === `00`),
-          };
-}
-function Y(e, t) {
-    let n = new Date(e),
-        r = `${n.getUTCDate()} ${ve[n.getUTCMonth()]}`;
-    return t ? `${r} ${n.getUTCFullYear()}` : r;
-}
-function xe(e, t) {
-    let n = be(e),
-        r = be(t);
-    if (!n || !r) return null;
-    let i = r.midnight ? r.at - ye : r.at;
-    if (i < n.at) return null;
-    if (i === n.at) return Y(n.at, !1);
-    let a = new Date(n.at).getUTCFullYear() !== new Date(i).getUTCFullYear();
-    return `${Y(n.at, a)} to ${Y(i, a)}`;
-}
-var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
-    Ce = { class: `flex flex-wrap items-start justify-between gap-4` },
-    we = { class: `space-y-1` },
-    Te = { key: 0, class: `text-sm text-muted-foreground sm:text-right` },
+    ge = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
+    _e = { class: `space-y-2.5` },
+    ve = {
+        class: `flex flex-wrap items-center justify-between gap-x-4 gap-y-3`,
+    },
+    ye = { class: `flex min-w-0 flex-wrap items-center gap-3` },
+    be = {
+        class: `text-3xl leading-tight font-bold tracking-tight break-words`,
+    },
+    xe = {
+        key: 0,
+        role: `group`,
+        'aria-label': `Period`,
+        class: `inline-flex w-full max-w-full gap-0.5 overflow-x-auto rounded-xl border border-border bg-card p-1 shadow-sm sm:w-auto`,
+    },
+    Se = [`aria-pressed`, `onClick`],
+    Ce = {
+        class: `flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground`,
+    },
+    we = [`href`, `aria-label`],
+    Te = {
+        key: 0,
+        class: `size-1 rounded-full bg-border`,
+        'aria-hidden': `true`,
+    },
     Ee = {
         key: 0,
         class: `rounded-xl border border-dashed border-border p-6 text-sm text-muted-foreground`,
     },
-    De = { class: `flex flex-wrap items-center justify-between gap-3` },
+    De = { class: `grid gap-4 md:grid-cols-[1.5fr_1fr_1fr]` },
     Oe = {
-        role: `group`,
-        'aria-label': `Period`,
-        class: `inline-flex w-full max-w-full overflow-x-auto rounded-lg bg-muted p-1 sm:w-auto`,
-    },
-    ke = [`aria-pressed`, `onClick`],
-    Ae = { class: `text-sm text-muted-foreground tabular-nums` },
-    je = { class: `grid gap-4 md:grid-cols-[1.5fr_1fr_1fr]` },
-    Me = {
         class: `space-y-3 rounded-xl border border-border/70 bg-card p-4 shadow-sm`,
         'aria-labelledby': `paid-title`,
     },
-    Ne = { key: 0, class: `text-sm text-muted-foreground` },
-    Pe = { key: 1, class: `divide-y divide-border/50` },
-    Fe = {
+    ke = { key: 0, class: `text-sm text-muted-foreground` },
+    Ae = { key: 1, class: `divide-y divide-border/50` },
+    je = {
         class: `w-9 shrink-0 text-xs font-semibold tracking-wider text-muted-foreground uppercase`,
     },
-    Ie = {
+    Me = {
         class: `mr-auto text-2xl font-semibold tracking-tight tabular-nums`,
     },
-    Le = { class: `text-xs text-muted-foreground tabular-nums` },
-    Re = {
+    Ne = { class: `text-xs text-muted-foreground tabular-nums` },
+    Pe = {
         class: `space-y-3 rounded-xl border border-border/70 bg-card p-4 shadow-sm`,
         'aria-labelledby': `links-title`,
     },
-    ze = { class: `text-4xl font-semibold tracking-tight tabular-nums` },
-    Be = {
+    Fe = { class: `text-4xl font-semibold tracking-tight tabular-nums` },
+    Ie = {
         class: `space-y-3 rounded-xl border border-border/70 bg-card p-4 shadow-sm`,
         'aria-labelledby': `attention-title`,
     },
-    Ve = { class: `text-4xl font-semibold tracking-tight tabular-nums` },
-    He = { class: `flex flex-wrap gap-2` },
-    Ue = { key: 1, class: `flex items-center gap-3` },
-    We = {
+    Le = { class: `text-4xl font-semibold tracking-tight tabular-nums` },
+    Re = { class: `flex flex-wrap gap-2` },
+    ze = { key: 1, class: `flex items-center gap-3` },
+    Be = {
         class: `flex size-11 shrink-0 items-center justify-center rounded-full bg-success-soft ring-1 ring-success-border ring-inset`,
     },
-    Ge = { class: `grid gap-4 lg:grid-cols-[1fr_1.25fr]` },
-    Ke = {
+    Ve = { class: `grid gap-4 lg:grid-cols-[1fr_1.25fr]` },
+    He = {
         class: `space-y-4 rounded-xl border border-border/70 bg-card p-4 shadow-sm`,
         'aria-labelledby': `outcomes-title`,
     },
-    qe = {
+    Ue = {
         class: `flex h-2.5 gap-0.5 overflow-hidden rounded-full bg-muted`,
         'aria-hidden': `true`,
     },
-    Je = { class: `divide-y divide-border/50` },
-    Ye = { class: `text-sm` },
-    Xe = { class: `text-base font-semibold tabular-nums` },
-    Ze = { class: `text-right text-xs text-muted-foreground tabular-nums` },
-    Qe = {
+    We = { class: `divide-y divide-border/50` },
+    Ge = { class: `text-sm` },
+    Ke = { class: `text-base font-semibold tabular-nums` },
+    qe = { class: `text-right text-xs text-muted-foreground tabular-nums` },
+    Je = {
         class: `space-y-3 rounded-xl border border-border/70 bg-card p-4 shadow-sm`,
         'aria-labelledby': `compare-title`,
     },
-    $e = { class: `overflow-x-auto` },
-    et = { id: `pulls-title`, class: `m-0` },
-    tt = {
+    Ye = { class: `overflow-x-auto` },
+    Xe = { id: `pulls-title`, class: `m-0` },
+    Ze = {
         type: `button`,
         class: `group flex w-full items-center justify-between gap-4 px-4 py-3 text-left outline-none hover:bg-muted/40 focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:ring-inset`,
     },
-    nt = { class: `space-y-0.5` },
-    rt = { key: 0, class: `block text-sm font-normal text-muted-foreground` },
-    it = { class: `overflow-x-auto border-t border-border/60` },
-    at = {
+    Qe = { class: `space-y-0.5` },
+    $e = { key: 0, class: `block text-sm font-normal text-muted-foreground` },
+    et = { class: `overflow-x-auto border-t border-border/60` },
+    tt = {
         class: `inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs font-semibold text-foreground`,
     },
-    ot = { key: 2, class: `text-xs text-muted-foreground` },
+    nt = { key: 2, class: `text-xs text-muted-foreground` },
     X = `text-[11px] font-semibold tracking-widest text-muted-foreground uppercase`,
     Z = `inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset`,
-    st = `h-auto px-3 py-2 text-right`,
+    rt = `h-auto px-3 py-2 text-right`,
     Q = `px-3 py-2 text-right text-sm tabular-nums`,
     $ = `px-3 py-2 text-sm font-normal tracking-normal text-muted-foreground normal-case`,
-    ct = y({
+    it = b({
         __name: `Show`,
         props: { deployment: {}, pulls: {} },
         setup(e) {
             let t = e,
-                n = v(),
+                n = y(),
                 r = [
                     { key: `today`, label: `Today` },
                     { key: `thisMonth`, label: `This month` },
@@ -500,19 +477,19 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                         bar: `bg-muted-foreground/30`,
                     },
                 ],
-                s = b(`today`),
-                c = w(() => ce(t.deployment.state)),
-                l = w(() =>
-                    se(
+                s = x(`today`),
+                l = T(() => oe(t.deployment.state)),
+                u = T(() =>
+                    ae(
                         t.deployment.state,
                         t.deployment.reason,
                         t.deployment.windows !== null,
                     ),
                 ),
-                m = w(() => t.deployment.windows?.[s.value]),
-                y = w(() => r.find((e) => e.key === s.value)?.label ?? ``),
-                O = w(() => {
-                    let e = m.value;
+                h = T(() => t.deployment.windows?.[s.value]),
+                b = T(() => r.find((e) => e.key === s.value)?.label ?? ``),
+                k = T(() => {
+                    let e = h.value;
                     return e
                         ? [
                               ...new Set([
@@ -528,16 +505,16 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                               .sort()
                               .map((t) => ({
                                   code: t.toUpperCase(),
-                                  paid: z(e.completed[t] ?? 0, t).amount,
+                                  paid: B(e.completed[t] ?? 0, t).amount,
                                   pending: e.pending[t] ?? 0,
-                                  pendingText: z(e.pending[t] ?? 0, t).amount,
+                                  pendingText: B(e.pending[t] ?? 0, t).amount,
                               }))
                         : [];
                 }),
-                A = w(() =>
-                    m.value ? m.value.links.failed + m.value.links.pending : 0,
+                j = T(() =>
+                    h.value ? h.value.links.failed + h.value.links.pending : 0,
                 ),
-                j = w(() => {
+                M = T(() => {
                     let e = t.deployment.windows;
                     if (!e) return [];
                     let n = r.map((t) => e[t.key]);
@@ -547,29 +524,23 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                         .filter((e) => n.some((t) => (t.completed[e] ?? 0) > 0))
                         .sort();
                 });
-            function M(e) {
-                let n = t.deployment.windows?.[e];
-                return e === `allTime` || !n
-                    ? `Since the first link`
-                    : (xe(n.from, n.to) ?? ``);
-            }
             function N(e) {
-                let t = m.value?.links.total ?? 0;
+                let t = h.value?.links.total ?? 0;
                 return t > 0 ? `${(e / t) * 100}%` : `0%`;
             }
-            (S(() => {
-                te({
+            (C(() => {
+                ee({
                     breadcrumbs: [
-                        { title: `Dashboard`, href: ae() },
-                        { title: `Deployments`, href: R() },
+                        { title: `Dashboard`, href: re() },
+                        { title: `Deployments`, href: z() },
                         { title: t.deployment.name, href: n.url },
                     ],
                 });
             }),
-                _(6e4, {
+                v(6e4, {
                     only: [`deployment`],
                     onHttpException: (e) => {
-                        if (e.status === 404) return (ee.visit(R()), !1);
+                        if (e.status === 404) return (c.visit(z()), !1);
                     },
                 }));
             let P = { scheduled: `Scheduled`, manual: `Manual` };
@@ -577,197 +548,218 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                 return e.ok ? `None` : (e.reason ?? `No reason saved`);
             }
             return (t, n) => (
-                h(),
-                E(
+                g(),
+                D(
                     a,
                     null,
                     [
-                        D(C(p), { title: e.deployment.name }, null, 8, [
+                        O(w(m), { title: e.deployment.name }, null, 8, [
                             `title`,
                         ]),
-                        k(`div`, Se, [
-                            k(`div`, Ce, [
-                                k(`div`, we, [
-                                    D(
-                                        le,
-                                        {
-                                            title: e.deployment.name,
-                                            description:
-                                                e.deployment.domain ?? void 0,
-                                        },
-                                        ne({ _: 2 }, [
-                                            c.value
-                                                ? {
-                                                      name: `actions`,
-                                                      fn: o(() => [
-                                                          D(
-                                                              C(G),
-                                                              {
-                                                                  variant:
-                                                                      c.value
-                                                                          .variant,
-                                                              },
-                                                              {
-                                                                  default: o(
-                                                                      () => [
-                                                                          g(
-                                                                              f(
-                                                                                  c
-                                                                                      .value
-                                                                                      .label,
-                                                                              ),
-                                                                              1,
-                                                                          ),
-                                                                      ],
-                                                                  ),
-                                                                  _: 1,
-                                                              },
-                                                              8,
-                                                              [`variant`],
+                        A(`div`, ge, [
+                            A(`header`, _e, [
+                                A(`div`, ve, [
+                                    A(`div`, ye, [
+                                        A(`h1`, be, p(e.deployment.name), 1),
+                                        l.value
+                                            ? (g(),
+                                              S(
+                                                  w(K),
+                                                  {
+                                                      key: 0,
+                                                      variant: l.value.variant,
+                                                  },
+                                                  {
+                                                      default: o(() => [
+                                                          _(
+                                                              p(l.value.label),
+                                                              1,
                                                           ),
                                                       ]),
-                                                      key: `0`,
-                                                  }
-                                                : void 0,
-                                        ]),
-                                        1032,
-                                        [`title`, `description`],
-                                    ),
-                                    (h(!0),
-                                    E(
-                                        a,
-                                        null,
-                                        T(
-                                            l.value,
-                                            (e) => (
-                                                h(),
-                                                E(
-                                                    `p`,
-                                                    {
-                                                        key: e,
-                                                        class: `text-sm text-muted-foreground`,
-                                                    },
-                                                    f(e),
-                                                    1,
-                                                )
-                                            ),
-                                        ),
-                                        128,
-                                    )),
+                                                      _: 1,
+                                                  },
+                                                  8,
+                                                  [`variant`],
+                                              ))
+                                            : f(``, !0),
+                                    ]),
+                                    e.deployment.windows && h.value
+                                        ? (g(),
+                                          D(`div`, xe, [
+                                              (g(),
+                                              D(
+                                                  a,
+                                                  null,
+                                                  E(r, (e) =>
+                                                      A(
+                                                          `button`,
+                                                          {
+                                                              key: e.key,
+                                                              type: `button`,
+                                                              'aria-pressed':
+                                                                  s.value ===
+                                                                  e.key,
+                                                              class: `flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-linear-to-br aria-pressed:from-brand-from aria-pressed:to-brand-to aria-pressed:text-white aria-pressed:shadow-sm sm:flex-none`,
+                                                              onClick: (t) =>
+                                                                  (s.value =
+                                                                      e.key),
+                                                          },
+                                                          p(e.label),
+                                                          9,
+                                                          Se,
+                                                      ),
+                                                  ),
+                                                  64,
+                                              )),
+                                          ]))
+                                        : f(``, !0),
                                 ]),
-                                e.deployment.updatedAt
-                                    ? (h(),
-                                      E(`p`, Te, [
-                                          (n[0] ||= g(` Last updated `, -1)),
+                                A(`div`, Ce, [
+                                    e.deployment.domain
+                                        ? (g(),
                                           D(
-                                              I,
+                                              `a`,
                                               {
-                                                  at: e.deployment.updatedAt,
-                                                  timezone:
-                                                      e.deployment.timezone,
+                                                  key: 0,
+                                                  href: `https://${e.deployment.domain}`,
+                                                  target: `_blank`,
+                                                  rel: `noopener noreferrer`,
+                                                  'aria-label': `Open ${e.deployment.domain} in a new tab`,
+                                                  class: `group/link inline-flex items-center gap-1.5 rounded-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none`,
                                               },
-                                              null,
+                                              [
+                                                  _(
+                                                      p(e.deployment.domain) +
+                                                          ` `,
+                                                      1,
+                                                  ),
+                                                  O(w(fe), {
+                                                      class: `size-3.5 opacity-80 transition-transform group-hover/link:translate-x-px group-hover/link:-translate-y-px motion-reduce:transition-none`,
+                                                      'aria-hidden': `true`,
+                                                  }),
+                                              ],
                                               8,
-                                              [`at`, `timezone`],
-                                          ),
-                                      ]))
-                                    : d(``, !0),
+                                              we,
+                                          ))
+                                        : f(``, !0),
+                                    e.deployment.updatedAt
+                                        ? (g(),
+                                          D(
+                                              a,
+                                              { key: 1 },
+                                              [
+                                                  e.deployment.domain
+                                                      ? (g(), D(`span`, Te))
+                                                      : f(``, !0),
+                                                  A(`p`, null, [
+                                                      (n[0] ||= _(
+                                                          ` Last updated `,
+                                                          -1,
+                                                      )),
+                                                      O(
+                                                          I,
+                                                          {
+                                                              at: e.deployment
+                                                                  .updatedAt,
+                                                              timezone:
+                                                                  e.deployment
+                                                                      .timezone,
+                                                          },
+                                                          null,
+                                                          8,
+                                                          [`at`, `timezone`],
+                                                      ),
+                                                  ]),
+                                              ],
+                                              64,
+                                          ))
+                                        : f(``, !0),
+                                ]),
+                                (g(!0),
+                                D(
+                                    a,
+                                    null,
+                                    E(
+                                        u.value,
+                                        (e) => (
+                                            g(),
+                                            D(
+                                                `p`,
+                                                {
+                                                    key: e,
+                                                    class: `text-sm text-muted-foreground`,
+                                                },
+                                                p(e),
+                                                1,
+                                            )
+                                        ),
+                                    ),
+                                    128,
+                                )),
                             ]),
-                            !e.deployment.windows || !m.value
-                                ? (h(), E(`p`, Ee, ` No data yet `))
-                                : (h(),
-                                  E(
+                            !e.deployment.windows || !h.value
+                                ? (g(), D(`p`, Ee, ` No data yet `))
+                                : (g(),
+                                  D(
                                       a,
                                       { key: 1 },
                                       [
-                                          k(`div`, De, [
-                                              k(`div`, Oe, [
-                                                  (h(),
-                                                  E(
-                                                      a,
-                                                      null,
-                                                      T(r, (e) =>
-                                                          k(
-                                                              `button`,
-                                                              {
-                                                                  key: e.key,
-                                                                  type: `button`,
-                                                                  'aria-pressed':
-                                                                      s.value ===
-                                                                      e.key,
-                                                                  class: `flex-1 rounded-md px-3 py-1.5 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none aria-pressed:bg-card aria-pressed:text-foreground aria-pressed:shadow-sm sm:flex-none`,
-                                                                  onClick: (
-                                                                      t,
-                                                                  ) =>
-                                                                      (s.value =
-                                                                          e.key),
-                                                              },
-                                                              f(e.label),
-                                                              9,
-                                                              ke,
-                                                          ),
-                                                      ),
-                                                      64,
-                                                  )),
-                                              ]),
-                                              k(`p`, Ae, f(M(s.value)), 1),
-                                          ]),
-                                          k(`div`, je, [
-                                              k(`section`, Me, [
-                                                  k(
+                                          A(`div`, De, [
+                                              A(`section`, Oe, [
+                                                  A(
                                                       `h2`,
                                                       {
                                                           id: `paid-title`,
-                                                          class: u(X),
+                                                          class: d(X),
                                                       },
                                                       ` Money paid · ` +
-                                                          f(y.value),
+                                                          p(b.value),
                                                       1,
                                                   ),
-                                                  O.value.length === 0
-                                                      ? (h(),
-                                                        E(
+                                                  k.value.length === 0
+                                                      ? (g(),
+                                                        D(
                                                             `p`,
-                                                            Ne,
+                                                            ke,
                                                             ` No payments `,
                                                         ))
-                                                      : (h(),
-                                                        E(`ul`, Pe, [
-                                                            (h(!0),
-                                                            E(
+                                                      : (g(),
+                                                        D(`ul`, Ae, [
+                                                            (g(!0),
+                                                            D(
                                                                 a,
                                                                 null,
-                                                                T(
-                                                                    O.value,
+                                                                E(
+                                                                    k.value,
                                                                     (e) => (
-                                                                        h(),
-                                                                        E(
+                                                                        g(),
+                                                                        D(
                                                                             `li`,
                                                                             {
                                                                                 key: e.code,
                                                                                 class: `flex items-baseline justify-between gap-3 py-2 first:pt-0 last:pb-0`,
                                                                             },
                                                                             [
-                                                                                k(
+                                                                                A(
                                                                                     `span`,
-                                                                                    Fe,
-                                                                                    f(
+                                                                                    je,
+                                                                                    p(
                                                                                         e.code,
                                                                                     ),
                                                                                     1,
                                                                                 ),
-                                                                                k(
+                                                                                A(
                                                                                     `span`,
-                                                                                    Ie,
-                                                                                    f(
+                                                                                    Me,
+                                                                                    p(
                                                                                         e.paid,
                                                                                     ),
                                                                                     1,
                                                                                 ),
-                                                                                k(
+                                                                                A(
                                                                                     `span`,
-                                                                                    Le,
-                                                                                    f(
+                                                                                    Ne,
+                                                                                    p(
                                                                                         e.pending >
                                                                                             0
                                                                                             ? `${e.pendingText} pending`
@@ -782,7 +774,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                 128,
                                                             )),
                                                         ])),
-                                                  (n[1] ||= k(
+                                                  (n[1] ||= A(
                                                       `p`,
                                                       {
                                                           class: `text-xs text-muted-foreground`,
@@ -791,39 +783,39 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                       -1,
                                                   )),
                                               ]),
-                                              k(`section`, Re, [
-                                                  k(
+                                              A(`section`, Pe, [
+                                                  A(
                                                       `h2`,
                                                       {
                                                           id: `links-title`,
-                                                          class: u(X),
+                                                          class: d(X),
                                                       },
                                                       `Links created`,
                                                   ),
-                                                  k(
+                                                  A(
                                                       `p`,
-                                                      ze,
-                                                      f(m.value.links.total),
+                                                      Fe,
+                                                      p(h.value.links.total),
                                                       1,
                                                   ),
-                                                  k(`p`, null, [
-                                                      m.value.links.total > 0
-                                                          ? (h(),
-                                                            E(
+                                                  A(`p`, null, [
+                                                      h.value.links.total > 0
+                                                          ? (g(),
+                                                            D(
                                                                 `span`,
                                                                 {
                                                                     key: 0,
-                                                                    class: u([
+                                                                    class: d([
                                                                         Z,
                                                                         `bg-success-soft text-success tabular-nums ring-success-border`,
                                                                     ]),
                                                                 },
-                                                                f(
-                                                                    C(L)(
-                                                                        m.value
+                                                                p(
+                                                                    w(L)(
+                                                                        h.value
                                                                             .links
                                                                             .completed,
-                                                                        m.value
+                                                                        h.value
                                                                             .links
                                                                             .total,
                                                                     ),
@@ -831,12 +823,12 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                     ` completed `,
                                                                 3,
                                                             ))
-                                                          : (h(),
-                                                            E(
+                                                          : (g(),
+                                                            D(
                                                                 `span`,
                                                                 {
                                                                     key: 1,
-                                                                    class: u([
+                                                                    class: d([
                                                                         Z,
                                                                         `bg-muted text-muted-foreground ring-border`,
                                                                     ]),
@@ -845,7 +837,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                 2,
                                                             )),
                                                   ]),
-                                                  (n[2] ||= k(
+                                                  (n[2] ||= A(
                                                       `p`,
                                                       {
                                                           class: `text-xs text-muted-foreground`,
@@ -854,46 +846,46 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                       -1,
                                                   )),
                                               ]),
-                                              k(`section`, Be, [
-                                                  k(
+                                              A(`section`, Ie, [
+                                                  A(
                                                       `h2`,
                                                       {
                                                           id: `attention-title`,
-                                                          class: u(X),
+                                                          class: d(X),
                                                       },
                                                       ` Needs attention `,
                                                   ),
-                                                  A.value > 0
-                                                      ? (h(),
-                                                        E(
+                                                  j.value > 0
+                                                      ? (g(),
+                                                        D(
                                                             a,
                                                             { key: 0 },
                                                             [
-                                                                k(
+                                                                A(
                                                                     `p`,
-                                                                    Ve,
-                                                                    f(A.value),
+                                                                    Le,
+                                                                    p(j.value),
                                                                     1,
                                                                 ),
-                                                                k(`p`, He, [
-                                                                    m.value
+                                                                A(`p`, Re, [
+                                                                    h.value
                                                                         .links
                                                                         .failed >
                                                                     0
-                                                                        ? (h(),
-                                                                          E(
+                                                                        ? (g(),
+                                                                          D(
                                                                               `span`,
                                                                               {
                                                                                   key: 0,
-                                                                                  class: u(
+                                                                                  class: d(
                                                                                       [
                                                                                           Z,
                                                                                           `bg-danger-soft text-danger tabular-nums ring-danger-border`,
                                                                                       ],
                                                                                   ),
                                                                               },
-                                                                              f(
-                                                                                  m
+                                                                              p(
+                                                                                  h
                                                                                       .value
                                                                                       .links
                                                                                       .failed,
@@ -901,28 +893,28 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   ` failed `,
                                                                               3,
                                                                           ))
-                                                                        : d(
+                                                                        : f(
                                                                               ``,
                                                                               !0,
                                                                           ),
-                                                                    m.value
+                                                                    h.value
                                                                         .links
                                                                         .pending >
                                                                     0
-                                                                        ? (h(),
-                                                                          E(
+                                                                        ? (g(),
+                                                                          D(
                                                                               `span`,
                                                                               {
                                                                                   key: 1,
-                                                                                  class: u(
+                                                                                  class: d(
                                                                                       [
                                                                                           Z,
                                                                                           `bg-warning-soft text-warning tabular-nums ring-warning-border`,
                                                                                       ],
                                                                                   ),
                                                                               },
-                                                                              f(
-                                                                                  m
+                                                                              p(
+                                                                                  h
                                                                                       .value
                                                                                       .links
                                                                                       .pending,
@@ -930,7 +922,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   ` pending `,
                                                                               3,
                                                                           ))
-                                                                        : d(
+                                                                        : f(
                                                                               ``,
                                                                               !0,
                                                                           ),
@@ -938,26 +930,26 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                             ],
                                                             64,
                                                         ))
-                                                      : (h(),
-                                                        E(`div`, Ue, [
-                                                            k(`span`, We, [
-                                                                D(C(oe), {
+                                                      : (g(),
+                                                        D(`div`, ze, [
+                                                            A(`span`, Be, [
+                                                                O(w(ie), {
                                                                     class: `size-6 text-success`,
                                                                     'aria-hidden': `true`,
                                                                 }),
                                                             ]),
-                                                            (n[3] ||= k(
+                                                            (n[3] ||= A(
                                                                 `div`,
                                                                 null,
                                                                 [
-                                                                    k(
+                                                                    A(
                                                                         `p`,
                                                                         {
                                                                             class: `text-2xl leading-tight font-semibold tracking-tight text-success`,
                                                                         },
                                                                         ` All clear `,
                                                                     ),
-                                                                    k(
+                                                                    A(
                                                                         `p`,
                                                                         {
                                                                             class: `text-sm text-muted-foreground`,
@@ -968,7 +960,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                 -1,
                                                             )),
                                                         ])),
-                                                  (n[4] ||= k(
+                                                  (n[4] ||= A(
                                                       `p`,
                                                       {
                                                           class: `text-xs text-muted-foreground`,
@@ -978,52 +970,52 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                   )),
                                               ]),
                                           ]),
-                                          k(`div`, Ge, [
-                                              k(`section`, Ke, [
-                                                  k(
+                                          A(`div`, Ve, [
+                                              A(`section`, He, [
+                                                  A(
                                                       `h2`,
                                                       {
                                                           id: `outcomes-title`,
-                                                          class: u(X),
+                                                          class: d(X),
                                                       },
                                                       `Link outcomes`,
                                                   ),
-                                                  k(`div`, qe, [
-                                                      (h(),
-                                                      E(
+                                                  A(`div`, Ue, [
+                                                      (g(),
+                                                      D(
                                                           a,
                                                           null,
-                                                          T(
+                                                          E(
                                                               i,
                                                               (e) => (
-                                                                  h(),
-                                                                  E(
+                                                                  g(),
+                                                                  D(
                                                                       a,
                                                                       {
                                                                           key: e.key,
                                                                       },
                                                                       [
-                                                                          m
+                                                                          h
                                                                               .value
                                                                               .links[
                                                                               e
                                                                                   .key
                                                                           ] > 0
-                                                                              ? (h(),
-                                                                                E(
+                                                                              ? (g(),
+                                                                                D(
                                                                                     `span`,
                                                                                     {
                                                                                         key: 0,
-                                                                                        class: u(
+                                                                                        class: d(
                                                                                             [
                                                                                                 `block min-w-[3px]`,
                                                                                                 e.bar,
                                                                                             ],
                                                                                         ),
-                                                                                        style: re(
+                                                                                        style: te(
                                                                                             {
                                                                                                 width: N(
-                                                                                                    m
+                                                                                                    h
                                                                                                         .value
                                                                                                         .links[
                                                                                                         e
@@ -1036,7 +1028,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                     null,
                                                                                     6,
                                                                                 ))
-                                                                              : d(
+                                                                              : f(
                                                                                     ``,
                                                                                     !0,
                                                                                 ),
@@ -1048,23 +1040,23 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                           64,
                                                       )),
                                                   ]),
-                                                  k(`ul`, Je, [
-                                                      (h(),
-                                                      E(
+                                                  A(`ul`, We, [
+                                                      (g(),
+                                                      D(
                                                           a,
                                                           null,
-                                                          T(i, (e) =>
-                                                              k(
+                                                          E(i, (e) =>
+                                                              A(
                                                                   `li`,
                                                                   {
                                                                       key: e.key,
                                                                       class: `grid grid-cols-[auto_1fr_auto_3.5rem] items-center gap-3 py-2 first:pt-0 last:pb-0`,
                                                                   },
                                                                   [
-                                                                      k(
+                                                                      A(
                                                                           `span`,
                                                                           {
-                                                                              class: u(
+                                                                              class: d(
                                                                                   [
                                                                                       `size-2 rounded-sm`,
                                                                                       e.bar,
@@ -1075,19 +1067,19 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                           null,
                                                                           2,
                                                                       ),
-                                                                      k(
+                                                                      A(
                                                                           `span`,
-                                                                          Ye,
-                                                                          f(
+                                                                          Ge,
+                                                                          p(
                                                                               e.label,
                                                                           ),
                                                                           1,
                                                                       ),
-                                                                      k(
+                                                                      A(
                                                                           `span`,
-                                                                          Xe,
-                                                                          f(
-                                                                              m
+                                                                          Ke,
+                                                                          p(
+                                                                              h
                                                                                   .value
                                                                                   .links[
                                                                                   e
@@ -1096,20 +1088,20 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                           ),
                                                                           1,
                                                                       ),
-                                                                      k(
+                                                                      A(
                                                                           `span`,
-                                                                          Ze,
-                                                                          f(
-                                                                              C(
+                                                                          qe,
+                                                                          p(
+                                                                              w(
                                                                                   L,
                                                                               )(
-                                                                                  m
+                                                                                  h
                                                                                       .value
                                                                                       .links[
                                                                                       e
                                                                                           .key
                                                                                   ],
-                                                                                  m
+                                                                                  h
                                                                                       .value
                                                                                       .links
                                                                                       .total,
@@ -1124,20 +1116,20 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                       )),
                                                   ]),
                                               ]),
-                                              k(`section`, Qe, [
-                                                  k(
+                                              A(`section`, Je, [
+                                                  A(
                                                       `h2`,
                                                       {
                                                           id: `compare-title`,
-                                                          class: u(X),
+                                                          class: d(X),
                                                       },
                                                       `All periods`,
                                                   ),
-                                                  k(`div`, $e, [
-                                                      D(C(U), null, {
+                                                  A(`div`, Ye, [
+                                                      O(w(W), null, {
                                                           default: o(() => [
-                                                              D(
-                                                                  C(q),
+                                                              O(
+                                                                  w(J),
                                                                   {
                                                                       class: `sr-only`,
                                                                   },
@@ -1147,7 +1139,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                               () => [
                                                                                   ...(n[5] ||=
                                                                                       [
-                                                                                          g(
+                                                                                          _(
                                                                                               ` Links and money for every period `,
                                                                                               -1,
                                                                                           ),
@@ -1157,21 +1149,21 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                       _: 1,
                                                                   },
                                                               ),
-                                                              D(C(H), null, {
+                                                              O(w(U), null, {
                                                                   default: o(
                                                                       () => [
-                                                                          D(
-                                                                              C(
-                                                                                  K,
+                                                                          O(
+                                                                              w(
+                                                                                  q,
                                                                               ),
                                                                               null,
                                                                               {
                                                                                   default:
                                                                                       o(
                                                                                           () => [
-                                                                                              D(
-                                                                                                  C(
-                                                                                                      W,
+                                                                                              O(
+                                                                                                  w(
+                                                                                                      G,
                                                                                                   ),
                                                                                                   {
                                                                                                       scope: `col`,
@@ -1183,7 +1175,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                               () => [
                                                                                                                   ...(n[6] ||=
                                                                                                                       [
-                                                                                                                          k(
+                                                                                                                          A(
                                                                                                                               `span`,
                                                                                                                               {
                                                                                                                                   class: `sr-only`,
@@ -1197,25 +1189,25 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                       _: 1,
                                                                                                   },
                                                                                               ),
-                                                                                              (h(),
-                                                                                              E(
+                                                                                              (g(),
+                                                                                              D(
                                                                                                   a,
                                                                                                   null,
-                                                                                                  T(
+                                                                                                  E(
                                                                                                       r,
                                                                                                       (
                                                                                                           e,
                                                                                                       ) =>
-                                                                                                          D(
-                                                                                                              C(
-                                                                                                                  W,
+                                                                                                          O(
+                                                                                                              w(
+                                                                                                                  G,
                                                                                                               ),
                                                                                                               {
                                                                                                                   key: e.key,
                                                                                                                   scope: `col`,
-                                                                                                                  class: u(
+                                                                                                                  class: d(
                                                                                                                       [
-                                                                                                                          st,
+                                                                                                                          rt,
                                                                                                                           s.value ===
                                                                                                                               e.key &&
                                                                                                                               `bg-primary/5 text-primary`,
@@ -1226,8 +1218,8 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                   default:
                                                                                                                       o(
                                                                                                                           () => [
-                                                                                                                              g(
-                                                                                                                                  f(
+                                                                                                                              _(
+                                                                                                                                  p(
                                                                                                                                       e.label,
                                                                                                                                   ),
                                                                                                                                   1,
@@ -1253,25 +1245,25 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                   ),
                                                                   _: 1,
                                                               }),
-                                                              D(C(B), null, {
+                                                              O(w(V), null, {
                                                                   default: o(
                                                                       () => [
-                                                                          D(
-                                                                              C(
-                                                                                  K,
+                                                                          O(
+                                                                              w(
+                                                                                  q,
                                                                               ),
                                                                               null,
                                                                               {
                                                                                   default:
                                                                                       o(
                                                                                           () => [
-                                                                                              D(
-                                                                                                  C(
-                                                                                                      W,
+                                                                                              O(
+                                                                                                  w(
+                                                                                                      G,
                                                                                                   ),
                                                                                                   {
                                                                                                       scope: `row`,
-                                                                                                      class: u(
+                                                                                                      class: d(
                                                                                                           $,
                                                                                                       ),
                                                                                                   },
@@ -1281,7 +1273,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                               () => [
                                                                                                                   ...(n[7] ||=
                                                                                                                       [
-                                                                                                                          g(
+                                                                                                                          _(
                                                                                                                               ` Links created `,
                                                                                                                               -1,
                                                                                                                           ),
@@ -1291,22 +1283,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                       _: 1,
                                                                                                   },
                                                                                               ),
-                                                                                              (h(),
-                                                                                              E(
+                                                                                              (g(),
+                                                                                              D(
                                                                                                   a,
                                                                                                   null,
-                                                                                                  T(
+                                                                                                  E(
                                                                                                       r,
                                                                                                       (
                                                                                                           t,
                                                                                                       ) =>
-                                                                                                          D(
-                                                                                                              C(
-                                                                                                                  V,
+                                                                                                          O(
+                                                                                                              w(
+                                                                                                                  H,
                                                                                                               ),
                                                                                                               {
                                                                                                                   key: t.key,
-                                                                                                                  class: u(
+                                                                                                                  class: d(
                                                                                                                       [
                                                                                                                           Q,
                                                                                                                           s.value ===
@@ -1319,8 +1311,8 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                   default:
                                                                                                                       o(
                                                                                                                           () => [
-                                                                                                                              g(
-                                                                                                                                  f(
+                                                                                                                              _(
+                                                                                                                                  p(
                                                                                                                                       e
                                                                                                                                           .deployment
                                                                                                                                           .windows[
@@ -1349,22 +1341,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   _: 1,
                                                                               },
                                                                           ),
-                                                                          D(
-                                                                              C(
-                                                                                  K,
+                                                                          O(
+                                                                              w(
+                                                                                  q,
                                                                               ),
                                                                               null,
                                                                               {
                                                                                   default:
                                                                                       o(
                                                                                           () => [
-                                                                                              D(
-                                                                                                  C(
-                                                                                                      W,
+                                                                                              O(
+                                                                                                  w(
+                                                                                                      G,
                                                                                                   ),
                                                                                                   {
                                                                                                       scope: `row`,
-                                                                                                      class: u(
+                                                                                                      class: d(
                                                                                                           $,
                                                                                                       ),
                                                                                                   },
@@ -1374,7 +1366,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                               () => [
                                                                                                                   ...(n[8] ||=
                                                                                                                       [
-                                                                                                                          g(
+                                                                                                                          _(
                                                                                                                               ` Completed rate `,
                                                                                                                               -1,
                                                                                                                           ),
@@ -1384,22 +1376,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                       _: 1,
                                                                                                   },
                                                                                               ),
-                                                                                              (h(),
-                                                                                              E(
+                                                                                              (g(),
+                                                                                              D(
                                                                                                   a,
                                                                                                   null,
-                                                                                                  T(
+                                                                                                  E(
                                                                                                       r,
                                                                                                       (
                                                                                                           t,
                                                                                                       ) =>
-                                                                                                          D(
-                                                                                                              C(
-                                                                                                                  V,
+                                                                                                          O(
+                                                                                                              w(
+                                                                                                                  H,
                                                                                                               ),
                                                                                                               {
                                                                                                                   key: t.key,
-                                                                                                                  class: u(
+                                                                                                                  class: d(
                                                                                                                       [
                                                                                                                           Q,
                                                                                                                           s.value ===
@@ -1412,9 +1404,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                   default:
                                                                                                                       o(
                                                                                                                           () => [
-                                                                                                                              g(
-                                                                                                                                  f(
-                                                                                                                                      C(
+                                                                                                                              _(
+                                                                                                                                  p(
+                                                                                                                                      w(
                                                                                                                                           L,
                                                                                                                                       )(
                                                                                                                                           e
@@ -1454,22 +1446,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   _: 1,
                                                                               },
                                                                           ),
-                                                                          D(
-                                                                              C(
-                                                                                  K,
+                                                                          O(
+                                                                              w(
+                                                                                  q,
                                                                               ),
                                                                               null,
                                                                               {
                                                                                   default:
                                                                                       o(
                                                                                           () => [
-                                                                                              D(
-                                                                                                  C(
-                                                                                                      W,
+                                                                                              O(
+                                                                                                  w(
+                                                                                                      G,
                                                                                                   ),
                                                                                                   {
                                                                                                       scope: `row`,
-                                                                                                      class: u(
+                                                                                                      class: d(
                                                                                                           $,
                                                                                                       ),
                                                                                                   },
@@ -1479,7 +1471,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                               () => [
                                                                                                                   ...(n[9] ||=
                                                                                                                       [
-                                                                                                                          g(
+                                                                                                                          _(
                                                                                                                               ` Failed `,
                                                                                                                               -1,
                                                                                                                           ),
@@ -1489,22 +1481,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                       _: 1,
                                                                                                   },
                                                                                               ),
-                                                                                              (h(),
-                                                                                              E(
+                                                                                              (g(),
+                                                                                              D(
                                                                                                   a,
                                                                                                   null,
-                                                                                                  T(
+                                                                                                  E(
                                                                                                       r,
                                                                                                       (
                                                                                                           t,
                                                                                                       ) =>
-                                                                                                          D(
-                                                                                                              C(
-                                                                                                                  V,
+                                                                                                          O(
+                                                                                                              w(
+                                                                                                                  H,
                                                                                                               ),
                                                                                                               {
                                                                                                                   key: t.key,
-                                                                                                                  class: u(
+                                                                                                                  class: d(
                                                                                                                       [
                                                                                                                           Q,
                                                                                                                           s.value ===
@@ -1527,8 +1519,8 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                   default:
                                                                                                                       o(
                                                                                                                           () => [
-                                                                                                                              g(
-                                                                                                                                  f(
+                                                                                                                              _(
+                                                                                                                                  p(
                                                                                                                                       e
                                                                                                                                           .deployment
                                                                                                                                           .windows[
@@ -1557,21 +1549,21 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   _: 1,
                                                                               },
                                                                           ),
-                                                                          (h(
+                                                                          (g(
                                                                               !0,
                                                                           ),
-                                                                          E(
+                                                                          D(
                                                                               a,
                                                                               null,
-                                                                              T(
-                                                                                  j.value,
+                                                                              E(
+                                                                                  M.value,
                                                                                   (
                                                                                       t,
                                                                                   ) => (
-                                                                                      h(),
-                                                                                      x(
-                                                                                          C(
-                                                                                              K,
+                                                                                      g(),
+                                                                                      S(
+                                                                                          w(
+                                                                                              q,
                                                                                           ),
                                                                                           {
                                                                                               key: t,
@@ -1580,13 +1572,13 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                               default:
                                                                                                   o(
                                                                                                       () => [
-                                                                                                          D(
-                                                                                                              C(
-                                                                                                                  W,
+                                                                                                          O(
+                                                                                                              w(
+                                                                                                                  G,
                                                                                                               ),
                                                                                                               {
                                                                                                                   scope: `row`,
-                                                                                                                  class: u(
+                                                                                                                  class: d(
                                                                                                                       $,
                                                                                                                   ),
                                                                                                               },
@@ -1594,9 +1586,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                   default:
                                                                                                                       o(
                                                                                                                           () => [
-                                                                                                                              g(
+                                                                                                                              _(
                                                                                                                                   ` Paid ` +
-                                                                                                                                      f(
+                                                                                                                                      p(
                                                                                                                                           t.toUpperCase(),
                                                                                                                                       ),
                                                                                                                                   1,
@@ -1607,22 +1599,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                               },
                                                                                                               1024,
                                                                                                           ),
-                                                                                                          (h(),
-                                                                                                          E(
+                                                                                                          (g(),
+                                                                                                          D(
                                                                                                               a,
                                                                                                               null,
-                                                                                                              T(
+                                                                                                              E(
                                                                                                                   r,
                                                                                                                   (
                                                                                                                       n,
                                                                                                                   ) =>
-                                                                                                                      D(
-                                                                                                                          C(
-                                                                                                                              V,
+                                                                                                                      O(
+                                                                                                                          w(
+                                                                                                                              H,
                                                                                                                           ),
                                                                                                                           {
                                                                                                                               key: n.key,
-                                                                                                                              class: u(
+                                                                                                                              class: d(
                                                                                                                                   [
                                                                                                                                       Q,
                                                                                                                                       s.value ===
@@ -1635,10 +1627,10 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                               default:
                                                                                                                                   o(
                                                                                                                                       () => [
-                                                                                                                                          g(
-                                                                                                                                              f(
-                                                                                                                                                  C(
-                                                                                                                                                      z,
+                                                                                                                                          _(
+                                                                                                                                              p(
+                                                                                                                                                  w(
+                                                                                                                                                      B,
                                                                                                                                                   )(
                                                                                                                                                       e
                                                                                                                                                           .deployment
@@ -1678,22 +1670,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                               ),
                                                                               128,
                                                                           )),
-                                                                          D(
-                                                                              C(
-                                                                                  K,
+                                                                          O(
+                                                                              w(
+                                                                                  q,
                                                                               ),
                                                                               null,
                                                                               {
                                                                                   default:
                                                                                       o(
                                                                                           () => [
-                                                                                              D(
-                                                                                                  C(
-                                                                                                      W,
+                                                                                              O(
+                                                                                                  w(
+                                                                                                      G,
                                                                                                   ),
                                                                                                   {
                                                                                                       scope: `row`,
-                                                                                                      class: u(
+                                                                                                      class: d(
                                                                                                           $,
                                                                                                       ),
                                                                                                   },
@@ -1703,7 +1695,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                               () => [
                                                                                                                   ...(n[10] ||=
                                                                                                                       [
-                                                                                                                          g(
+                                                                                                                          _(
                                                                                                                               ` Payments `,
                                                                                                                               -1,
                                                                                                                           ),
@@ -1713,22 +1705,22 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                       _: 1,
                                                                                                   },
                                                                                               ),
-                                                                                              (h(),
-                                                                                              E(
+                                                                                              (g(),
+                                                                                              D(
                                                                                                   a,
                                                                                                   null,
-                                                                                                  T(
+                                                                                                  E(
                                                                                                       r,
                                                                                                       (
                                                                                                           t,
                                                                                                       ) =>
-                                                                                                          D(
-                                                                                                              C(
-                                                                                                                  V,
+                                                                                                          O(
+                                                                                                              w(
+                                                                                                                  H,
                                                                                                               ),
                                                                                                               {
                                                                                                                   key: t.key,
-                                                                                                                  class: u(
+                                                                                                                  class: d(
                                                                                                                       [
                                                                                                                           Q,
                                                                                                                           s.value ===
@@ -1741,8 +1733,8 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                   default:
                                                                                                                       o(
                                                                                                                           () => [
-                                                                                                                              g(
-                                                                                                                                  f(
+                                                                                                                              _(
+                                                                                                                                  p(
                                                                                                                                       e
                                                                                                                                           .deployment
                                                                                                                                           .windows[
@@ -1783,8 +1775,8 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                       ],
                                       64,
                                   )),
-                            D(
-                                C(he),
+                            O(
+                                w(pe),
                                 {
                                     as: `section`,
                                     class: `overflow-hidden rounded-xl border border-border/70 bg-card shadow-sm`,
@@ -1792,18 +1784,18 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                 },
                                 {
                                     default: o(() => [
-                                        k(`h2`, et, [
-                                            D(
-                                                C(_e),
+                                        A(`h2`, Xe, [
+                                            O(
+                                                w(he),
                                                 { 'as-child': `` },
                                                 {
                                                     default: o(() => [
-                                                        k(`button`, tt, [
-                                                            k(`span`, nt, [
-                                                                k(
+                                                        A(`button`, Ze, [
+                                                            A(`span`, Qe, [
+                                                                A(
                                                                     `span`,
                                                                     {
-                                                                        class: u(
+                                                                        class: d(
                                                                             [
                                                                                 X,
                                                                                 `block`,
@@ -1816,15 +1808,15 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                 e.pulls
                                                                     .length ===
                                                                 0
-                                                                    ? (h(),
-                                                                      E(
+                                                                    ? (g(),
+                                                                      D(
                                                                           `span`,
-                                                                          rt,
+                                                                          $e,
                                                                           ` No pulls yet. `,
                                                                       ))
-                                                                    : d(``, !0),
+                                                                    : f(``, !0),
                                                             ]),
-                                                            D(C(me), {
+                                                            O(w(de), {
                                                                 class: `size-4 shrink-0 text-muted-foreground transition-transform group-data-[state=open]:rotate-180`,
                                                                 'aria-hidden': `true`,
                                                             }),
@@ -1835,19 +1827,19 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                             ),
                                         ]),
                                         e.pulls.length > 0
-                                            ? (h(),
-                                              x(
-                                                  C(ge),
+                                            ? (g(),
+                                              S(
+                                                  w(me),
                                                   { key: 0 },
                                                   {
                                                       default: o(() => [
-                                                          k(`div`, it, [
-                                                              D(C(U), null, {
+                                                          A(`div`, et, [
+                                                              O(w(W), null, {
                                                                   default: o(
                                                                       () => [
-                                                                          D(
-                                                                              C(
-                                                                                  q,
+                                                                          O(
+                                                                              w(
+                                                                                  J,
                                                                               ),
                                                                               {
                                                                                   class: `sr-only`,
@@ -1858,7 +1850,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                           () => [
                                                                                               ...(n[11] ||=
                                                                                                   [
-                                                                                                      g(
+                                                                                                      _(
                                                                                                           ` The 10 most recent pulls, newest first. `,
                                                                                                           -1,
                                                                                                       ),
@@ -1868,9 +1860,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   _: 1,
                                                                               },
                                                                           ),
-                                                                          D(
-                                                                              C(
-                                                                                  H,
+                                                                          O(
+                                                                              w(
+                                                                                  U,
                                                                               ),
                                                                               {
                                                                                   class: `bg-muted/40`,
@@ -1879,9 +1871,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   default:
                                                                                       o(
                                                                                           () => [
-                                                                                              D(
-                                                                                                  C(
-                                                                                                      K,
+                                                                                              O(
+                                                                                                  w(
+                                                                                                      q,
                                                                                                   ),
                                                                                                   {
                                                                                                       class: `hover:bg-transparent`,
@@ -1890,9 +1882,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                       default:
                                                                                                           o(
                                                                                                               () => [
-                                                                                                                  D(
-                                                                                                                      C(
-                                                                                                                          W,
+                                                                                                                  O(
+                                                                                                                      w(
+                                                                                                                          G,
                                                                                                                       ),
                                                                                                                       {
                                                                                                                           scope: `col`,
@@ -1904,7 +1896,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                   () => [
                                                                                                                                       ...(n[12] ||=
                                                                                                                                           [
-                                                                                                                                              g(
+                                                                                                                                              _(
                                                                                                                                                   `Time`,
                                                                                                                                                   -1,
                                                                                                                                               ),
@@ -1914,9 +1906,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                           _: 1,
                                                                                                                       },
                                                                                                                   ),
-                                                                                                                  D(
-                                                                                                                      C(
-                                                                                                                          W,
+                                                                                                                  O(
+                                                                                                                      w(
+                                                                                                                          G,
                                                                                                                       ),
                                                                                                                       {
                                                                                                                           scope: `col`,
@@ -1928,7 +1920,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                   () => [
                                                                                                                                       ...(n[13] ||=
                                                                                                                                           [
-                                                                                                                                              g(
+                                                                                                                                              _(
                                                                                                                                                   `Result`,
                                                                                                                                                   -1,
                                                                                                                                               ),
@@ -1938,9 +1930,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                           _: 1,
                                                                                                                       },
                                                                                                                   ),
-                                                                                                                  D(
-                                                                                                                      C(
-                                                                                                                          W,
+                                                                                                                  O(
+                                                                                                                      w(
+                                                                                                                          G,
                                                                                                                       ),
                                                                                                                       {
                                                                                                                           scope: `col`,
@@ -1952,7 +1944,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                   () => [
                                                                                                                                       ...(n[14] ||=
                                                                                                                                           [
-                                                                                                                                              g(
+                                                                                                                                              _(
                                                                                                                                                   ` How it started `,
                                                                                                                                                   -1,
                                                                                                                                               ),
@@ -1962,9 +1954,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                           _: 1,
                                                                                                                       },
                                                                                                                   ),
-                                                                                                                  D(
-                                                                                                                      C(
-                                                                                                                          W,
+                                                                                                                  O(
+                                                                                                                      w(
+                                                                                                                          G,
                                                                                                                       ),
                                                                                                                       {
                                                                                                                           scope: `col`,
@@ -1976,7 +1968,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                   () => [
                                                                                                                                       ...(n[15] ||=
                                                                                                                                           [
-                                                                                                                                              g(
+                                                                                                                                              _(
                                                                                                                                                   `Reason`,
                                                                                                                                                   -1,
                                                                                                                                               ),
@@ -1996,34 +1988,34 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                   _: 1,
                                                                               },
                                                                           ),
-                                                                          D(
-                                                                              C(
-                                                                                  B,
+                                                                          O(
+                                                                              w(
+                                                                                  V,
                                                                               ),
                                                                               null,
                                                                               {
                                                                                   default:
                                                                                       o(
                                                                                           () => [
-                                                                                              (h(
+                                                                                              (g(
                                                                                                   !0,
                                                                                               ),
-                                                                                              E(
+                                                                                              D(
                                                                                                   a,
                                                                                                   null,
-                                                                                                  T(
+                                                                                                  E(
                                                                                                       e.pulls,
                                                                                                       (
                                                                                                           t,
                                                                                                       ) => (
-                                                                                                          h(),
-                                                                                                          x(
-                                                                                                              C(
-                                                                                                                  K,
+                                                                                                          g(),
+                                                                                                          S(
+                                                                                                              w(
+                                                                                                                  q,
                                                                                                               ),
                                                                                                               {
                                                                                                                   key: t.id,
-                                                                                                                  class: u(
+                                                                                                                  class: d(
                                                                                                                       t.ok
                                                                                                                           ? `border-border/50`
                                                                                                                           : `border-danger-border/60 bg-danger-soft hover:bg-danger-soft`,
@@ -2033,12 +2025,12 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                   default:
                                                                                                                       o(
                                                                                                                           () => [
-                                                                                                                              D(
-                                                                                                                                  C(
-                                                                                                                                      V,
+                                                                                                                              O(
+                                                                                                                                  w(
+                                                                                                                                      H,
                                                                                                                                   ),
                                                                                                                                   {
-                                                                                                                                      class: u(
+                                                                                                                                      class: d(
                                                                                                                                           [
                                                                                                                                               `px-4 py-3 text-sm font-medium tabular-nums`,
                                                                                                                                               !t.ok &&
@@ -2050,7 +2042,7 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                       default:
                                                                                                                                           o(
                                                                                                                                               () => [
-                                                                                                                                                  D(
+                                                                                                                                                  O(
                                                                                                                                                       I,
                                                                                                                                                       {
                                                                                                                                                           at: t.at,
@@ -2075,9 +2067,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                       `class`,
                                                                                                                                   ],
                                                                                                                               ),
-                                                                                                                              D(
-                                                                                                                                  C(
-                                                                                                                                      V,
+                                                                                                                              O(
+                                                                                                                                  w(
+                                                                                                                                      H,
                                                                                                                                   ),
                                                                                                                                   {
                                                                                                                                       class: `px-4 py-3`,
@@ -2086,9 +2078,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                       default:
                                                                                                                                           o(
                                                                                                                                               () => [
-                                                                                                                                                  D(
-                                                                                                                                                      C(
-                                                                                                                                                          G,
+                                                                                                                                                  O(
+                                                                                                                                                      w(
+                                                                                                                                                          K,
                                                                                                                                                       ),
                                                                                                                                                       {
                                                                                                                                                           variant:
@@ -2100,8 +2092,8 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                                           default:
                                                                                                                                                               o(
                                                                                                                                                                   () => [
-                                                                                                                                                                      g(
-                                                                                                                                                                          f(
+                                                                                                                                                                      _(
+                                                                                                                                                                          p(
                                                                                                                                                                               t.ok
                                                                                                                                                                                   ? `Good`
                                                                                                                                                                                   : `Failed`,
@@ -2123,9 +2115,9 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                   },
                                                                                                                                   1024,
                                                                                                                               ),
-                                                                                                                              D(
-                                                                                                                                  C(
-                                                                                                                                      V,
+                                                                                                                              O(
+                                                                                                                                  w(
+                                                                                                                                      H,
                                                                                                                                   ),
                                                                                                                                   {
                                                                                                                                       class: `px-4 py-3 text-sm`,
@@ -2134,10 +2126,10 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                       default:
                                                                                                                                           o(
                                                                                                                                               () => [
-                                                                                                                                                  k(
+                                                                                                                                                  A(
                                                                                                                                                       `span`,
-                                                                                                                                                      at,
-                                                                                                                                                      f(
+                                                                                                                                                      tt,
+                                                                                                                                                      p(
                                                                                                                                                           P[
                                                                                                                                                               t
                                                                                                                                                                   .source
@@ -2151,12 +2143,12 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                   },
                                                                                                                                   1024,
                                                                                                                               ),
-                                                                                                                              D(
-                                                                                                                                  C(
-                                                                                                                                      V,
+                                                                                                                              O(
+                                                                                                                                  w(
+                                                                                                                                      H,
                                                                                                                                   ),
                                                                                                                                   {
-                                                                                                                                      class: u(
+                                                                                                                                      class: d(
                                                                                                                                           [
                                                                                                                                               `min-w-64 px-4 py-3 text-sm whitespace-normal`,
                                                                                                                                               t.ok
@@ -2169,8 +2161,8 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                                                                                                       default:
                                                                                                                                           o(
                                                                                                                                               () => [
-                                                                                                                                                  g(
-                                                                                                                                                      f(
+                                                                                                                                                  _(
+                                                                                                                                                      p(
                                                                                                                                                           F(
                                                                                                                                                               t,
                                                                                                                                                           ),
@@ -2213,19 +2205,19 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
                                                       _: 1,
                                                   },
                                               ))
-                                            : d(``, !0),
+                                            : f(``, !0),
                                     ]),
                                     _: 1,
                                 },
                             ),
-                            e.deployment.windows && m.value
-                                ? (h(),
-                                  E(
+                            e.deployment.windows && h.value
+                                ? (g(),
+                                  D(
                                       `p`,
-                                      ot,
+                                      nt,
                                       ` A link made yesterday and paid today counts in yesterday's links and in today's money, so the completed links and the payments of a window can differ. `,
                                   ))
-                                : d(``, !0),
+                                : f(``, !0),
                         ]),
                     ],
                     64,
@@ -2233,4 +2225,4 @@ var Se = { class: `mx-auto w-full max-w-7xl space-y-6 p-4 md:p-6` },
             );
         },
     });
-export { ct as default };
+export { it as default };

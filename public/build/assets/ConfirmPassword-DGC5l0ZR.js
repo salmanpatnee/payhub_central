@@ -16,10 +16,10 @@ import {
     u as m,
 } from './wayfinder-BZPu7hPl.js';
 import { t as h } from './Label-DoYAx_a7.js';
-import { t as g } from './PasswordInput-Cu8e63-6.js';
-import { t as _ } from './InputError-uoSIkkZA.js';
-import { p as v } from './app-B62nLDgs.js';
-import { t as y } from './Spinner-DrEYD93f.js';
+import { t as g } from './PasswordInput-b6r2X-8c.js';
+import { t as _ } from './InputError-Ctqc1R_X.js';
+import { p as v } from './app-DTu1UyN-.js';
+import { t as y } from './Spinner-Dkf-B2--.js';
 var b = (e) => ({ url: b.url(e), method: `post` });
 ((b.definition = { methods: [`post`], url: `/user/confirm-password` }),
     (b.url = (e) => b.definition.url + u(e)),

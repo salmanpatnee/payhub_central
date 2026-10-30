@@ -16,8 +16,8 @@ import {
     u as m,
 } from './wayfinder-BZPu7hPl.js';
 import { t as h } from './Label-DoYAx_a7.js';
-import { n as g, t as _ } from './InputError-uoSIkkZA.js';
-import { n as v, p as y, u as b } from './app-B62nLDgs.js';
+import { n as g, t as _ } from './InputError-Ctqc1R_X.js';
+import { n as v, p as y, u as b } from './app-DTu1UyN-.js';
 var x = (e) => ({ url: x.url(e), method: `get` });
 ((x.definition = { methods: [`get`, `head`], url: `/settings/profile` }),
     (x.url = (e) => x.definition.url + l(e)),

@@ -3,9 +3,9 @@ const __vite__mapDeps = (
     m = __vite__mapDeps,
     d = m.f ||
         (m.f = [
-            'assets/Dashboard-BG0FaNDv.js',
+            'assets/Dashboard-V6kesklW.js',
             'assets/wayfinder-BZPu7hPl.js',
-            'assets/formatPercent-BBRBXX0x.js',
+            'assets/formatPercent-DS8JK34D.js',
             'assets/Presence-CKGYlb9k.js',
             'assets/useForwardExpose-B78G7oXS.js',
             'assets/Teleport-fCOREVeW.js',
@@ -19,32 +19,32 @@ const __vite__mapDeps = (
             'assets/deploymentStatus-DAZueO0e.js',
             'assets/EmptyState-s-EDe2hW.js',
             'assets/PageHeader-D9oPzwwI.js',
-            'assets/ConfirmPassword-CYWDLJyr.js',
+            'assets/ConfirmPassword-DGC5l0ZR.js',
             'assets/Label-DoYAx_a7.js',
-            'assets/PasswordInput-Cu8e63-6.js',
-            'assets/InputError-uoSIkkZA.js',
-            'assets/Spinner-DrEYD93f.js',
-            'assets/Login-Bv6gibPL.js',
-            'assets/Checkbox-t7IX1yK-.js',
+            'assets/PasswordInput-b6r2X-8c.js',
+            'assets/InputError-Ctqc1R_X.js',
+            'assets/Spinner-Dkf-B2--.js',
+            'assets/Login-CmsTvCgj.js',
+            'assets/Checkbox-DywbYGUJ.js',
             'assets/check-GUSC4Bfv.js',
-            'assets/TwoFactorChallenge-BzSIZNk0.js',
-            'assets/login-DwT14Fep.js',
-            'assets/VerifyEmail-ItXf-PRq.js',
-            'assets/Create-DxfzVVSh.js',
+            'assets/TwoFactorChallenge-BDvJMZVX.js',
+            'assets/login-Dvq_-_y_.js',
+            'assets/VerifyEmail-DaWU1-FA.js',
+            'assets/Create-CRcZ0IpV.js',
             'assets/DeploymentController-11eEqESw.js',
-            'assets/Edit-D3Ez2LhB.js',
-            'assets/RemoveDeploymentDialog-DWlWhT0S.js',
-            'assets/dialog-w1EAzTkW.js',
-            'assets/Index-Oy6BfHyS.js',
+            'assets/Edit-CMBilDvM.js',
+            'assets/RemoveDeploymentDialog-krjyviiT.js',
+            'assets/dialog-D2--eof4.js',
+            'assets/Index-CDOhGDQQ.js',
             'assets/trash-CScu_PuQ.js',
             'assets/TableCaption-M4KzGuv1.js',
-            'assets/Show-CJ9cRF8-.js',
-            'assets/Profile-BE2rMce8.js',
-            'assets/Security-CHqFjryv.js',
-            'assets/Create-BqieCpzj.js',
+            'assets/Show-CLVzfwlg.js',
+            'assets/Profile-Qv4w7x83.js',
+            'assets/Security-DAzwjs9P.js',
+            'assets/Create-_XoQ4lF6.js',
             'assets/StaffController-C09qeu_l.js',
-            'assets/Edit-Bvgy6kAx.js',
-            'assets/Index-D9SZkpgS.js',
+            'assets/Edit-MmRLS-an.js',
+            'assets/Index-CE8SVRO1.js',
         ]),
 ) => i.map((i) => d[i]);
 import { a as e, i as t, n, t as r } from './Presence-CKGYlb9k.js';
@@ -10851,7 +10851,7 @@ var Ml = `PayHub Central`;
         let n = Object.assign({
                 './pages/Dashboard.vue': () =>
                     at(
-                        () => import(`./Dashboard-BG0FaNDv.js`),
+                        () => import(`./Dashboard-V6kesklW.js`),
                         __vite__mapDeps([
                             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
                             15,
@@ -10859,29 +10859,29 @@ var Ml = `PayHub Central`;
                     ),
                 './pages/auth/ConfirmPassword.vue': () =>
                     at(
-                        () => import(`./ConfirmPassword-CYWDLJyr.js`),
+                        () => import(`./ConfirmPassword-DGC5l0ZR.js`),
                         __vite__mapDeps([16, 1, 17, 4, 7, 18, 9, 19, 20]),
                     ),
                 './pages/auth/Login.vue': () =>
                     at(
-                        () => import(`./Login-Bv6gibPL.js`),
+                        () => import(`./Login-CmsTvCgj.js`),
                         __vite__mapDeps([
                             21, 1, 22, 3, 4, 6, 23, 9, 7, 17, 18, 19, 20,
                         ]),
                     ),
                 './pages/auth/TwoFactorChallenge.vue': () =>
                     at(
-                        () => import(`./TwoFactorChallenge-BzSIZNk0.js`),
+                        () => import(`./TwoFactorChallenge-BDvJMZVX.js`),
                         __vite__mapDeps([24, 1, 19, 25, 6, 7]),
                     ),
                 './pages/auth/VerifyEmail.vue': () =>
                     at(
-                        () => import(`./VerifyEmail-ItXf-PRq.js`),
+                        () => import(`./VerifyEmail-DaWU1-FA.js`),
                         __vite__mapDeps([26, 1, 20]),
                     ),
                 './pages/deployments/Create.vue': () =>
                     at(
-                        () => import(`./Create-DxfzVVSh.js`),
+                        () => import(`./Create-CRcZ0IpV.js`),
                         __vite__mapDeps([
                             27, 1, 22, 3, 4, 6, 23, 9, 7, 17, 18, 19, 15, 20,
                             28,
@@ -10889,14 +10889,14 @@ var Ml = `PayHub Central`;
                     ),
                 './pages/deployments/Edit.vue': () =>
                     at(
-                        () => import(`./Edit-D3Ez2LhB.js`),
+                        () => import(`./Edit-CMBilDvM.js`),
                         __vite__mapDeps([
                             29, 1, 17, 4, 7, 18, 9, 19, 15, 20, 28, 30, 31, 6,
                         ]),
                     ),
                 './pages/deployments/Index.vue': () =>
                     at(
-                        () => import(`./Index-Oy6BfHyS.js`),
+                        () => import(`./Index-CDOhGDQQ.js`),
                         __vite__mapDeps([
                             32, 1, 9, 10, 33, 11, 7, 34, 13, 14, 15, 20, 30, 31,
                             6,
@@ -10904,40 +10904,40 @@ var Ml = `PayHub Central`;
                     ),
                 './pages/deployments/Show.vue': () =>
                     at(
-                        () => import(`./Show-CJ9cRF8-.js`),
+                        () => import(`./Show-CLVzfwlg.js`),
                         __vite__mapDeps([
-                            35, 3, 1, 4, 6, 2, 5, 7, 8, 9, 11, 34, 13, 15,
+                            35, 3, 1, 4, 6, 2, 5, 7, 8, 9, 11, 34, 13,
                         ]),
                     ),
                 './pages/settings/Profile.vue': () =>
                     at(
-                        () => import(`./Profile-BE2rMce8.js`),
+                        () => import(`./Profile-Qv4w7x83.js`),
                         __vite__mapDeps([36, 1, 17, 4, 7, 19]),
                     ),
                 './pages/settings/Security.vue': () =>
                     at(
-                        () => import(`./Security-CHqFjryv.js`),
+                        () => import(`./Security-DAzwjs9P.js`),
                         __vite__mapDeps([
                             37, 1, 17, 4, 7, 9, 23, 18, 19, 12, 20, 25, 6, 31,
                         ]),
                     ),
                 './pages/staff/Create.vue': () =>
                     at(
-                        () => import(`./Create-BqieCpzj.js`),
+                        () => import(`./Create-_XoQ4lF6.js`),
                         __vite__mapDeps([
                             38, 1, 17, 4, 7, 18, 9, 19, 15, 20, 39,
                         ]),
                     ),
                 './pages/staff/Edit.vue': () =>
                     at(
-                        () => import(`./Edit-Bvgy6kAx.js`),
+                        () => import(`./Edit-MmRLS-an.js`),
                         __vite__mapDeps([
                             40, 1, 17, 4, 7, 18, 9, 19, 15, 20, 39,
                         ]),
                     ),
                 './pages/staff/Index.vue': () =>
                     at(
-                        () => import(`./Index-D9SZkpgS.js`),
+                        () => import(`./Index-CE8SVRO1.js`),
                         __vite__mapDeps([
                             41, 1, 33, 9, 8, 11, 7, 34, 14, 15, 20, 31, 6,
                         ]),
