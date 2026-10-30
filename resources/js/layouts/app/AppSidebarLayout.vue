@@ -25,7 +25,7 @@ withDefaults(defineProps<Props>(), {
     </a>
     <AppShell>
         <AppSidebar />
-        <AppContent class="min-w-0 overflow-x-clip">
+        <AppContent class="min-w-0 overflow-x-clip bg-transparent">
             <AppSidebarHeader :breadcrumbs="breadcrumbs" />
             <SchedulerBanner />
             <slot />

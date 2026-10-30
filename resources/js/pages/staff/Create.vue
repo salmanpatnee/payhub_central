@@ -18,7 +18,7 @@ defineProps<{
 defineOptions({
     layout: {
         breadcrumbs: [
-            { title: 'Home', href: dashboard() },
+            { title: 'Dashboard', href: dashboard() },
             { title: 'Staff', href: index() },
             { title: 'Add staff', href: create() },
         ],

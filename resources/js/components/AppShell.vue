@@ -6,7 +6,7 @@ const isOpen = usePage().props.sidebarOpen;
 </script>
 
 <template>
-    <SidebarProvider :default-open="isOpen">
+    <SidebarProvider :default-open="isOpen" class="page-glow">
         <slot />
     </SidebarProvider>
 </template>

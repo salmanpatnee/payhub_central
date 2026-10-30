@@ -21,7 +21,7 @@ The Vue 3 and Inertia front end. It follows the Laravel Vue starter kit layout, 
 | `pages/staff/Index.vue`, `Create.vue`, `Edit.vue`, `components/RemoveStaffDialog.vue` | Staff logins (spec 0013). Your own row shows a "You" badge and no actions. Edit has two forms (details, and set new password) and sets its breadcrumb with `setLayoutProps` |
 | `composables/useNow.ts` | One shared clock (30 second tick) for every relative time |
 | `components/MoneyByCurrency.vue` | One row per currency. Never adds across currencies |
-| `components/DeploymentCard.vue` | The Home card (Balanced layout). Gets one period from the page, so switching makes no request |
+| `components/DeploymentCard.vue` | The Dashboard card (Sunrise look). The whole card is one link to the deployment page (stretched title link), with an arrow button. Gets one period from the page, so switching makes no request |
 | `components/PageHeader.vue`, `EmptyState.vue`, `StatCard.vue`, `RelativeTime.vue`, `SchedulerBanner.vue` | The shared parts every page uses |
 | `layouts/app/AppSidebarLayout.vue` | The shell: skip link, sidebar, top bar, scheduler banner, `<main id="main-content">` |
 
@@ -36,12 +36,14 @@ npm run build        # also regenerates the Wayfinder routes
 
 ## Conventions
 
-- Use tokens only. No hard coded colours in components. Green, amber and red mean status and nothing else, and always come with a word or icon. Orange `--brand` is for the logo, the nav marker and large shapes, never text.
+- Use tokens only. No hard coded colours in components. Green, amber and red mean status and nothing else, and always come with a word or icon. Orange `--brand` is for the logo mark, small shapes and hover edges (like the card arrow button), never text. Blue (`--info`) is for neutral counts such as Links, never for status.
 - Light only. Nothing sets a `dark` class. Do not add `dark:` styling or a theme switch.
 - Format money and time with the helpers above, never inline. Never add amounts across currencies.
 - Every page has exactly one `h1`, through `PageHeader`. Exceptions: auth pages (the auth layout's title) and settings pages (an `sr-only` h1). Pages use `p-4 md:p-6` padding and `max-w-7xl`.
 - Icons come from `@lucide/vue` (not `lucide-vue-next`).
 - Money in the browser is whole cents. No float maths.
+- The shell (`AppShell`) gives every page the blue and peach `page-glow` background, and the sidebar is the `floating` variant, so page content sits directly on the glow. Cards and tiles are the white objects.
+- The Dashboard page also shows a summary row: paid money per currency (never added across currencies) and a payments count, worked out in `pages/Dashboard.vue` from the cards for the chosen period.
 - The Home page period switch lives in `pages/Dashboard.vue` state, not the URL, and `usePoll` reloads only `deployments` so the choice survives a poll. The Deployment page keeps its own four option period switch in `Show.vue` state, and its `usePoll` reloads only `deployment`.
 
 ## Gotchas

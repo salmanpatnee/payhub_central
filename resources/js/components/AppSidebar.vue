@@ -20,7 +20,7 @@ import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Home',
+        title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
     },
@@ -38,7 +38,7 @@ const mainNavItems: NavItem[] = [
 </script>
 
 <template>
-    <Sidebar collapsible="icon" variant="inset">
+    <Sidebar collapsible="icon" variant="floating">
         <SidebarHeader>
             <SidebarMenu>
                 <SidebarMenuItem>

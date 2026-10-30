@@ -145,7 +145,7 @@ function barWidth(count: number): string {
 watchEffect(() => {
     setLayoutProps({
         breadcrumbs: [
-            { title: 'Home', href: dashboard() },
+            { title: 'Dashboard', href: dashboard() },
             { title: 'Deployments', href: index() },
             { title: props.deployment.name, href: page.url },
         ],

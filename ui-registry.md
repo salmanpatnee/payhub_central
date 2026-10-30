@@ -7,7 +7,7 @@ Visual patterns for PayHub Central. Read this before building any component, and
 ### Page container and header
 
 File: `resources/js/pages/Dashboard.vue`, `resources/js/components/PageHeader.vue`
-Last updated: 2026-10-27
+Last updated: 2026-10-30
 
 | Property | Class |
 | --- | --- |
@@ -17,7 +17,7 @@ Last updated: 2026-10-27
 | Header layout | `flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between` |
 | Actions | `flex shrink-0 flex-wrap items-center gap-2` |
 
-**Pattern notes:** every page starts with `PageHeader`. Exactly one `h1` per page. Breadcrumbs come from the layout, not the page.
+**Pattern notes:** every page starts with `PageHeader`. Exactly one `h1` per page. Breadcrumbs come from the layout, not the page. The blue and peach `page-glow` background comes from the shell (`AppShell`), not from pages. Cards sit on it as white objects.
 
 ### Scheduler banner
 
@@ -37,16 +37,32 @@ Last updated: 2026-10-27
 ### Logo
 
 File: `resources/js/components/AppLogo.vue`
-Last updated: 2026-10-27
+Last updated: 2026-10-30
 
 | Property | Class |
 | --- | --- |
-| Icon | `size-6 text-brand` (the exact PayHub orange, large shape only) |
+| Mark | `hidden size-7 rounded-[10px] bg-linear-to-br from-brand to-primary shadow-sm group-data-[collapsible=icon]:grid`, white dot `size-2.5 rounded-full` |
 | "Pay" | `text-foreground`, semibold |
 | "Hub", "Central" | `font-light text-muted-foreground` |
 | Text size | `text-lg font-semibold tracking-tight`, hidden when the sidebar is collapsed |
 
-**Pattern notes:** `text-brand` is for the logo, the nav marker and large shapes only. It fails contrast for text.
+**Pattern notes:** the mark shows only when the sidebar is collapsed to icons; expanded, the wordmark stands alone (also on the login page). The brand orange is for the mark and large shapes only. It fails contrast for text.
+
+### Sidebar (floating)
+
+File: `resources/js/components/AppSidebar.vue`, `NavMain.vue`, `NavUser.vue`, `AppShell.vue`
+Last updated: 2026-10-30
+
+| Property | Class |
+| --- | --- |
+| Variant | `variant="floating"` `collapsible="icon"` |
+| Panel | `[data-variant='floating'] [data-sidebar='sidebar']` in `app.css`: white at 85% with blur, `rounded-[1.375rem]`, soft blue shadow |
+| Tokens | `--sidebar-foreground` blue grey, `--sidebar-border` `hsl(225 30% 91%)`, `--sidebar-accent` soft orange, `--sidebar-accent-foreground` deep orange |
+| Nav item | `rounded-xl hover:bg-muted`, active `data-[active=true]:bg-sidebar-accent font-semibold`, active keeps its tint on hover |
+| User button | `rounded-2xl border border-sidebar-border bg-muted/60 hover:bg-muted data-[state=open]:bg-muted` |
+| Page behind | `SidebarProvider` carries `page-glow`; `AppContent` is `bg-transparent` |
+
+**Pattern notes:** the sidebar floats over the glow, content sits straight on it (no white inset card). Orange appears only on the active item. No count badges.
 
 ## Cards and numbers
 
@@ -128,45 +144,59 @@ Last updated: 2026-10-27
 
 **Pattern notes:** icon, title, short reason and at most one next step.
 
-### DeploymentCard (Balanced)
+### DeploymentCard (Sunrise)
 
 File: `resources/js/components/DeploymentCard.vue`
-Last updated: 2026-10-28
+Last updated: 2026-10-30
 
 | Property | Class |
 | --- | --- |
 | Background | `bg-card` (kit `Card`) |
-| Border | `border-border/70`, inner dividers `border-t border-border/50` |
-| Border radius | `rounded-xl` |
-| Name (`h2`) | `text-base font-semibold tracking-tight break-words` |
-| Domain | `text-xs break-all text-muted-foreground` |
-| Number cell value | `text-xl font-semibold tracking-tight tabular-nums`, danger count adds `text-danger` |
-| Number cell label | `text-[11px] font-semibold tracking-widest text-muted-foreground uppercase` |
-| Number cell hint | `text-xs text-muted-foreground` |
-| Spacing | `gap-0 p-0` on the card, sections `p-4` (header `pb-3`, cells and footer `py-3`) |
-| Cell grid | `grid-cols-2 xl:grid-cols-4`, `border-r` / `border-b` dividers |
-| Currency table | kit `Table`, first head cell holds the period name, `pl-4` / `pr-4` edges, code `text-xs font-semibold tracking-wider uppercase`, paid `text-sm font-medium tabular-nums`, pending `text-sm tabular-nums` |
-| Footer | `space-y-2 border-t border-border/50 text-xs text-muted-foreground` |
-| Warning chip | `inline-flex items-center gap-1 rounded-full bg-warning-soft px-2 py-0.5 font-medium text-warning ring-1 ring-warning-border ring-inset`, `TriangleAlert size-3` icon |
-| Hover state | none (the card is not a link yet) |
-| Shadow | `shadow-sm` (from `Card`) |
-| Accent usage | status only: Live, Unavailable, Paused badge, red failed count, amber chip |
+| Border | `border-border/70`, hover `hover:border-brand/50` |
+| Border radius | `rounded-2xl` |
+| Spacing | `group relative gap-3.5 p-4` |
+| Hover state | `hover:-translate-y-0.5 hover:shadow-lg transition duration-200`, off under `motion-reduce` |
+| Shadow | `shadow-sm` |
+| Name (`h2`) | `text-lg font-semibold tracking-tight break-words`, the `Link` stretches over the card with `after:absolute after:inset-0 after:z-10 after:rounded-2xl` |
+| Under the name | `text-xs text-muted-foreground` ("View deployment details") |
+| Arrow button | `size-9 rounded-full bg-primary/10 text-primary`, `group-hover:bg-brand group-hover:text-white`, icon moves `group-hover:translate-x-0.5` |
+| Stat tiles | `grid-cols-2 gap-2 xl:grid-cols-4`, tile `rounded-xl px-3 py-2.5`, value `text-2xl font-bold tracking-tight tabular-nums`, label `text-[11px] font-semibold tracking-widest uppercase` |
+| Tile tones | Links `bg-info-soft text-info`, Completed `bg-success-soft text-success`, Pending `bg-warning-soft text-warning`, Failed `bg-danger-soft text-danger` |
+| Currency table | in `overflow-hidden rounded-xl border border-border`, head `bg-muted/60`, code chip `rounded-md bg-muted px-2 py-0.5 text-xs font-bold tracking-wider`, paid `text-sm font-medium tabular-nums` |
+| Empty line | `rounded-xl bg-muted px-4 py-3 text-sm text-muted-foreground` |
+| Footer | `space-y-2 text-xs text-muted-foreground` |
+| Warning chip | `inline-flex items-center gap-1 rounded-full bg-warning-soft px-2 py-0.5 font-medium text-warning ring-1 ring-warning-border ring-inset`, `TriangleAlert size-3` |
 
-**Pattern notes:** grid is `grid-cols-1 sm:grid-cols-2` (2 per row, not 3). Money uses the table and `formatMoney`, never `MoneyByCurrency` (that stays for other pages). Always a word with the colour. Numbers are never faded on Unavailable or Paused cards, a note carries the warning. Measured contrast: chip 6.84, neutral badge 5.27, danger 6.47.
+**Pattern notes:** the whole card is the link, so keep one link per card. No domain line, no avatar, no outcome bar. Grid is `grid-cols-1 lg:grid-cols-2`. Money uses the table and `formatMoney`. Tile colours are status colours (and blue `info` for the neutral Links count), always with a word. Numbers are never faded on Unavailable or Paused cards.
+
+### Summary tile (Dashboard)
+
+File: `resources/js/pages/Dashboard.vue`
+Last updated: 2026-10-30
+
+| Property | Class |
+| --- | --- |
+| Tile | `flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3.5 shadow-sm` |
+| Chip | `size-10 rounded-xl text-xs font-bold`, currency `bg-info-soft text-info`, payments `bg-primary/10 text-primary` |
+| Label | `text-xs text-muted-foreground` |
+| Value | `text-2xl leading-tight font-bold tracking-tight tabular-nums` |
+| Grid | `grid-cols-1 gap-3.5 sm:grid-cols-[repeat(auto-fit,minmax(14rem,1fr))]` |
+
+**Pattern notes:** one tile per currency, never a total across currencies, plus one payments tile.
 
 ### Period switch (segmented control)
 
 File: `resources/js/pages/Dashboard.vue`
-Last updated: 2026-10-28
+Last updated: 2026-10-30
 
 | Property | Class |
 | --- | --- |
-| Track | `inline-flex w-full rounded-lg bg-muted p-1 sm:w-auto` |
-| Button | `flex-1 rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground sm:flex-none` |
-| Selected | `aria-pressed:bg-card aria-pressed:text-foreground aria-pressed:shadow-sm` |
+| Track | `inline-flex w-full gap-0.5 rounded-xl border border-border bg-card p-1 shadow-sm sm:w-auto` |
+| Button | `flex-1 rounded-lg px-4 py-1.5 text-sm font-semibold text-muted-foreground hover:text-foreground sm:flex-none` |
+| Selected | `aria-pressed:bg-foreground aria-pressed:text-background` |
 | Focus | `focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none` |
 
-**Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. Full width on phones, right aligned from `sm`. State lives in the page, not the URL. The deployment page (`pages/deployments/Show.vue`) reuses it with four options: the track adds `max-w-full overflow-x-auto` and the buttons add `whitespace-nowrap`, so it scrolls inside itself on phones.
+**Pattern notes:** a plain `role="group"` of `button`s with `aria-pressed`, because the kit has no toggle group. It sits in the `PageHeader` actions slot, so it is full width on phones and right aligned from `sm`. State lives in the page, not the URL. The deployment page (`pages/deployments/Show.vue`) still uses the older grey track (`bg-muted`, selected `bg-card`) with four options; align it when that page is restyled.
 
 ### Summary card (deployment page)
 

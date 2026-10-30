@@ -1,10 +1,11 @@
-<script setup lang="ts">
-import { CreditCard } from '@lucide/vue';
-</script>
-
 <template>
     <div class="flex items-center gap-2">
-        <CreditCard class="size-6 shrink-0 text-brand" aria-hidden="true" />
+        <span
+            class="hidden size-7 shrink-0 place-items-center rounded-[10px] bg-linear-to-br from-brand to-primary shadow-sm group-data-[collapsible=icon]:grid"
+            aria-hidden="true"
+        >
+            <span class="size-2.5 rounded-full bg-white"></span>
+        </span>
         <span
             class="text-lg font-semibold tracking-tight group-data-[collapsible=icon]:hidden"
         >

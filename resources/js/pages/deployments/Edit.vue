@@ -22,7 +22,7 @@ const confirmOpen = ref(false);
 watchEffect(() => {
     setLayoutProps({
         breadcrumbs: [
-            { title: 'Home', href: dashboard() },
+            { title: 'Dashboard', href: dashboard() },
             { title: 'Deployments', href: index() },
             {
                 title: props.deployment.name,

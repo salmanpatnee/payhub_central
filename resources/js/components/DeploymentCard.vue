@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { TriangleAlert } from '@lucide/vue';
+import { ArrowRight, TriangleAlert } from '@lucide/vue';
 import { computed } from 'vue';
 import RelativeTime from '@/components/RelativeTime.vue';
 import { Badge } from '@/components/ui/badge';
@@ -71,26 +71,26 @@ const cells = computed(() => {
             label: 'Links',
             value: links.total,
             hint: '',
-            danger: false,
+            tone: 'bg-info-soft text-info',
         },
         {
             label: 'Completed',
             value: links.completed,
             hint: `${formatPercent(links.completed, links.total)} of links`,
-            danger: false,
+            tone: 'bg-success-soft text-success',
         },
         {
             label: 'Pending',
             value: links.pending,
             hint:
                 links.expired > 0 ? `${links.expired} expired` : 'none expired',
-            danger: false,
+            tone: 'bg-warning-soft text-warning',
         },
         {
             label: 'Failed',
             value: links.failed,
             hint: `${formatPercent(links.failed, links.total)} of links`,
-            danger: links.failed > 0,
+            tone: 'bg-danger-soft text-danger',
         },
     ];
 });
@@ -107,75 +107,75 @@ const notes = computed(() =>
 </script>
 
 <template>
-    <Card class="gap-0 rounded-xl border-border/70 p-0">
-        <div class="flex items-start justify-between gap-2 p-4 pb-3">
-            <div class="min-w-0">
-                <h2 class="text-base font-semibold tracking-tight break-words">
+    <Card
+        class="group relative gap-3.5 rounded-2xl border-border/70 p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brand/50 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+    >
+        <div class="flex items-center gap-3">
+            <div class="min-w-0 flex-1">
+                <h2 class="text-lg font-semibold tracking-tight break-words">
                     <Link
                         :href="card.href"
-                        class="rounded-sm hover:underline focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none"
+                        class="rounded-sm after:absolute after:inset-0 after:z-10 after:rounded-2xl after:content-[''] focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none"
                     >
                         {{ card.name }}
                     </Link>
                 </h2>
-                <p
-                    v-if="card.domain"
-                    class="text-xs break-all text-muted-foreground"
-                >
-                    {{ card.domain }}
+                <p class="text-xs text-muted-foreground">
+                    View deployment details
                 </p>
             </div>
             <Badge v-if="badge" :variant="badge.variant">
                 {{ badge.label }}
             </Badge>
+            <span
+                class="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-brand group-hover:text-white"
+                aria-hidden="true"
+            >
+                <ArrowRight
+                    class="size-4 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
+                />
+            </span>
         </div>
 
         <p
             v-if="!stats"
-            class="border-t border-border/50 p-4 text-sm text-muted-foreground"
+            class="rounded-xl bg-muted px-4 py-3 text-sm text-muted-foreground"
         >
             No data yet
         </p>
         <template v-else>
-            <dl
-                class="grid grid-cols-2 border-t border-border/50 xl:grid-cols-4"
-            >
+            <dl class="grid grid-cols-2 gap-2 xl:grid-cols-4">
                 <div
-                    v-for="(cell, index) in cells"
+                    v-for="cell in cells"
                     :key="cell.label"
-                    class="border-border/50 p-4 py-3"
-                    :class="[
-                        index % 2 === 0 ? 'border-r' : '',
-                        index < 2 ? 'border-b xl:border-b-0' : '',
-                        index < 3 ? 'xl:border-r' : 'xl:border-r-0',
-                    ]"
+                    class="rounded-xl px-3 py-2.5"
+                    :class="cell.tone"
                 >
                     <dd
-                        class="text-xl font-semibold tracking-tight tabular-nums"
-                        :class="cell.danger ? 'text-danger' : ''"
+                        class="text-2xl leading-tight font-bold tracking-tight tabular-nums"
                     >
                         {{ cell.value }}
                     </dd>
                     <dt
-                        class="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase"
+                        class="text-[11px] font-semibold tracking-widest uppercase opacity-85"
                     >
                         {{ cell.label }}
                     </dt>
-                    <p v-if="cell.hint" class="text-xs text-muted-foreground">
+                    <p v-if="cell.hint" class="text-xs opacity-85">
                         {{ cell.hint }}
                     </p>
                 </div>
             </dl>
 
-            <div class="border-t border-border/50">
-                <p
-                    v-if="rows.length === 0"
-                    class="p-4 text-sm text-muted-foreground"
-                >
-                    {{ emptyLine }}
-                </p>
-                <Table v-else>
-                    <TableHeader>
+            <p
+                v-if="rows.length === 0"
+                class="rounded-xl bg-muted px-4 py-3 text-sm text-muted-foreground"
+            >
+                {{ emptyLine }}
+            </p>
+            <div v-else class="overflow-hidden rounded-xl border border-border">
+                <Table>
+                    <TableHeader class="bg-muted/60">
                         <TableRow>
                             <TableHead class="pl-4">
                                 {{ periodLabel }}
@@ -188,10 +188,12 @@ const notes = computed(() =>
                     </TableHeader>
                     <TableBody>
                         <TableRow v-for="row in rows" :key="row.code">
-                            <TableCell
-                                class="pl-4 text-xs font-semibold tracking-wider text-muted-foreground uppercase"
-                            >
-                                {{ row.paid.code }}
+                            <TableCell class="pl-4">
+                                <span
+                                    class="rounded-md bg-muted px-2 py-0.5 text-xs font-bold tracking-wider"
+                                >
+                                    {{ row.paid.code }}
+                                </span>
                             </TableCell>
                             <TableCell
                                 class="text-right text-sm font-medium tabular-nums"
@@ -211,7 +213,7 @@ const notes = computed(() =>
 
         <div
             v-if="card.updatedAt || warnings.length || notes.length"
-            class="space-y-2 border-t border-border/50 p-4 py-3 text-xs text-muted-foreground"
+            class="space-y-2 text-xs text-muted-foreground"
         >
             <div
                 v-if="card.updatedAt"

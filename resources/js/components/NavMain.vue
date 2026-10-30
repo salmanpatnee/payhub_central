@@ -32,6 +32,7 @@ function isActive(href: NavItem['href']): boolean {
                     as-child
                     :is-active="isActive(item.href)"
                     :tooltip="item.title"
+                    class="rounded-xl hover:bg-muted data-[active=true]:font-semibold data-[active=true]:hover:bg-sidebar-accent"
                 >
                     <Link :href="item.href">
                         <component :is="item.icon" />

@@ -29,7 +29,7 @@ defineProps<{
 defineOptions({
     layout: {
         breadcrumbs: [
-            { title: 'Home', href: dashboard() },
+            { title: 'Dashboard', href: dashboard() },
             { title: 'Deployments', href: index() },
         ],
     },

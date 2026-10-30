@@ -20,7 +20,7 @@ const props = defineProps<{
 watchEffect(() => {
     setLayoutProps({
         breadcrumbs: [
-            { title: 'Home', href: dashboard() },
+            { title: 'Dashboard', href: dashboard() },
             { title: 'Staff', href: index() },
             { title: props.person.name, href: '#' },
         ],
